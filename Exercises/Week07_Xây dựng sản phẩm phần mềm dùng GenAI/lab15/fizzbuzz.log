@@ -1,0 +1,10 @@
+2026-03-29 00:43:57 INFO Function wrapper called with args: (5,), kwargs: {}
+2026-03-29 00:43:57 INFO Function wrapper called 1 times
+2026-03-29 00:43:57 INFO Function wrapper called with args: (600,), kwargs: {}
+2026-03-29 00:43:57 INFO Function wrapper called 2 times
+2026-03-29 00:43:57 ERROR Argument out of bounds: 600 (must be between 0 and 500)
+2026-03-29 00:44:26 INFO Function wrapper called with args: (5,), kwargs: {}
+2026-03-29 00:44:26 INFO Function wrapper called 1 times
+2026-03-29 00:44:26 INFO Function wrapper called with args: ('abc',), kwargs: {}
+2026-03-29 00:44:26 INFO Function wrapper called 2 times
+2026-03-29 00:44:26 ERROR Invalid argument type: abc (type: <class 'str'>)
