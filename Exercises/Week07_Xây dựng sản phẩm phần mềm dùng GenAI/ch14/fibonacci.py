@@ -23,6 +23,3 @@ def fib_pair(n):
         return d, c + d
     else:
         return c, d
-    
-def fibonacci_fast(n):
-    return fib_pair(n)[0]

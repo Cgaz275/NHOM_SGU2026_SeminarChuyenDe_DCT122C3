@@ -2,7 +2,7 @@ from openai import OpenAI
 from openai.types.chat import ChatCompletion
 
 SURROUND = "You are provided with a partial Python script in {{{FIZZBUZZ_PRINTER}}}, where some of the code is missing."
-SINGLE_TASK = "Implement the decorators with the missing implementation. Output ONLY the complete, valid Python code inside a ```python``` block. Do not include any explanations."
+SINGLE_TASK = "Implement the decorators with the missing implementation in the code."
 
 
 def get_user_prompt(script_path: str) -> str:
@@ -19,7 +19,7 @@ def get_user_prompt(script_path: str) -> str:
 if __name__ == '__main__':
     client: OpenAI = OpenAI()
     system_prompt = f"{SURROUND} {SINGLE_TASK}"
-    user_prompt = get_user_prompt("fizzbuzz_printer_starter.py")
+    user_prompt = get_user_prompt("ch15/fizzbuzz_printer_starter.py")
     completion: ChatCompletion = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
