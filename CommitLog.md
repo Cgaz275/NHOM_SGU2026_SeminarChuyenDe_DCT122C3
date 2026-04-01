@@ -27,9 +27,9 @@ Tài liệu bài tập 2: [Đường dẫn folder tài liệu](https://github.co
 
 ## 3. Bài tập nhóm tuần 05 - Cơ sở lập trình với GenAI
 
-Bài tập 3 trên repo: [Folder bài tập 03](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week05/Exercises/Week05_C%C6%A1%20s%E1%BB%9F%20l%E1%BA%ADp%20tr%C3%ACnh%20v%E1%BB%9Bi%20GenAI)
+Bài tập 4 trên repo: [Folder bài tập 04](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week05/Exercises/Week05_C%C6%A1%20s%E1%BB%9F%20l%E1%BA%ADp%20tr%C3%ACnh%20v%E1%BB%9Bi%20GenAI)
 
-Tài liệu bài tập 3: [Đường dẫn folder tài liệu](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week05/Exercises/Week05_C%C6%A1%20s%E1%BB%9F%20l%E1%BA%ADp%20tr%C3%ACnh%20v%E1%BB%9Bi%20GenAI/documents)
+Tài liệu bài tập 4: [Đường dẫn folder tài liệu](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week05/Exercises/Week05_C%C6%A1%20s%E1%BB%9F%20l%E1%BA%ADp%20tr%C3%ACnh%20v%E1%BB%9Bi%20GenAI/documents)
 
 | Thời gian cập nhật | Người cập nhật | Nội dung              | Commit SHA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Loại    | Note                                           |
 | ------------------ | -------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------- |
@@ -41,9 +41,9 @@ Tài liệu bài tập 3: [Đường dẫn folder tài liệu](https://github.co
 
 ## 4. Bài tập nhóm tuần 06 - Prompt Engineering nâng cao
 
-Bài tập 4 trên repo: [Folder bài tập 04](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week06/Exercises/Week06_N%C3%A2ng%20cao%20l%E1%BA%ADp%20tr%C3%ACnh%20v%E1%BB%9Bi%20GenAI)
+Bài tập 5 trên repo: [Folder bài tập 05](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week06/Exercises/Week06_N%C3%A2ng%20cao%20l%E1%BA%ADp%20tr%C3%ACnh%20v%E1%BB%9Bi%20GenAI)
 
-Tài liệu bài tập 4: [Đường dẫn folder tài liệu](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week06/Exercises/Week06_N%C3%A2ng%20cao%20l%E1%BA%ADp%20tr%C3%ACnh%20v%E1%BB%9Bi%20GenAI)
+Tài liệu bài tập 5: [Đường dẫn folder tài liệu](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week06/Exercises/Week06_N%C3%A2ng%20cao%20l%E1%BA%ADp%20tr%C3%ACnh%20v%E1%BB%9Bi%20GenAI)
 
 | Thời gian cập nhật | Người cập nhật | Nội dung           | Commit SHA                                                                                                                                                                                        | Loại    | Note                                                                         |
 | ------------------ | -------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------- |
@@ -54,9 +54,9 @@ Tài liệu bài tập 4: [Đường dẫn folder tài liệu](https://github.co
 
 ## 5. Bài tập nhóm tuần 07 - From Code to Production
 
-Bài tập 5 trên repo: [Folder bài tập 05](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week07/Exercises/Week07_X%C3%A2y%20d%E1%BB%B1ng%20s%E1%BA%A3n%20ph%E1%BA%A9m%20ph%E1%BA%A7n%20m%E1%BB%81m%20d%C3%B9ng%20GenAI)
+Bài tập 6 trên repo: [Folder bài tập 06](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week07/Exercises/Week07_X%C3%A2y%20d%E1%BB%B1ng%20s%E1%BA%A3n%20ph%E1%BA%A9m%20ph%E1%BA%A7n%20m%E1%BB%81m%20d%C3%B9ng%20GenAI)
 
-Tài liệu bài tập 5: [Đường dẫn folder tài liệu](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week07/Exercises/Week07_X%C3%A2y%20d%E1%BB%B1ng%20s%E1%BA%A3n%20ph%E1%BA%A9m%20ph%E1%BA%A7n%20m%E1%BB%81m%20d%C3%B9ng%20GenAI)
+Tài liệu bài tập 6: [Đường dẫn folder tài liệu](https://github.com/Cgaz275/NHOM_SGU2026_SeminarChuyenDe_DCT122C3/tree/exercies/week07/Exercises/Week07_X%C3%A2y%20d%E1%BB%B1ng%20s%E1%BA%A3n%20ph%E1%BA%A9m%20ph%E1%BA%A7n%20m%E1%BB%81m%20d%C3%B9ng%20GenAI)
 
 | Thời gian cập nhật | Người cập nhật | Nội dung             | Commit SHA                                                                                                                                                                                          | Loại    | Note                                                    |
 | ------------------ | -------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------- |
