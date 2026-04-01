@@ -2,33 +2,33 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 const teamImages = [
   {
-    src: "https://api.builder.io/api/v1/image/assets/TEMP/19cafb30dc51fbddf5f9628f4b9fabb6a88debff?width=431",
-    alt: "Team portrait 1",
+    src: "/team_members/khanh.jpeg",
+    alt: "Khanh portrait",
     className: "-translate-y-1",
   },
   {
-    src: "https://api.builder.io/api/v1/image/assets/TEMP/aae2c19febac693d34f0c1e5f1889bf8afd39b4d?width=486",
-    alt: "Team portrait 2",
+    src: "/team_members/cga.png",
+    alt: "CGA portrait",
     className: "translate-y-5",
   },
   {
-    src: "https://api.builder.io/api/v1/image/assets/TEMP/60b62612d4005b4ba1d0827c938cf286cd2d8f7f?width=294",
-    alt: "Team portrait 3",
+    src: "/team_members/mun.jpeg",
+    alt: "Mun portrait",
     className: "-translate-y-2",
   },
   {
-    src: "https://api.builder.io/api/v1/image/assets/TEMP/92c0ba2ccb474d575948e98e31d0f3f5db707bc3?width=281",
-    alt: "Team portrait 4",
+    src: "/team_members/grok.png",
+    alt: "Grok portrait",
     className: "translate-y-1",
   },
   {
-    src: "https://api.builder.io/api/v1/image/assets/TEMP/1e0d51ccb21f575cda361c1778ce6fed2db4146b?width=314",
-    alt: "Team portrait 5",
+    src: "/team_members/D.jpeg",
+    alt: "D portrait",
     className: "-translate-y-4",
   },
   {
-    src: "https://api.builder.io/api/v1/image/assets/TEMP/be422b08b3472e368b45d948ae92dd45f8740074?width=463",
-    alt: "Team portrait 6",
+    src: "/team_members/Gemini.png",
+    alt: "Gemini portrait",
     className: "translate-y-0",
   },
 ];

@@ -221,7 +221,9 @@ body {
 
 /* ── Floating Card ────────────────────────────────────────── */
 .floating-card {
+  display: flex;
   width: 100%;
+  flex-direction: column;
   background: var(--seminar-card);
   box-shadow: 3px 3px 12px -1px #215d99;
   filter: drop-shadow(-8px 29px 23px rgba(0, 0, 0, 0.8));
@@ -244,6 +246,10 @@ body {
 }
 
 .floating-card-body {
+  display: flex;
+  min-height: 8.75rem;
+  flex: 1;
+  flex-direction: column;
   padding: 0.8rem;
 }
 
@@ -260,6 +266,7 @@ body {
 .floating-card-desc {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
+  flex: 1;
   font-size: 0.75rem;
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.8);
@@ -319,5 +326,9 @@ body {
 
   .floating-card {
     width: clamp(160px, 20vw, 280px);
+  }
+
+  .floating-card-body {
+    min-height: 9.5rem;
   }
 }
