@@ -1,11 +1,30 @@
 prompt 1:
-CONTEXT: You are provided with a Python function enclosed with {{{ FUNCTION }}} and examples enclosed with {{{ EXAMPLE}}} / {{{ TIME_COMPLEXITY}}}.
-TASK: return the time complexity of the function.
+CONTEXT: You are provided with a Python function enclosed with {{{ FUNCTION }}} and examples enclosed with {{{ EXAMPLE}}} / {{{ SPACE_COMPLEXITY}}}.
+TASK: return the space complexity of the function.
+
+EXAMPLE 1: {{{
+def get_squared(n: int) -> int:
+    squares = []
+    for i in range n:
+        squares.append(i ** 2)
+    return squares
+}}}
+SPACE COMPLEXITY 1: {{{ O(n) }}}
+EXAMPLE 2: {{{
+def get_numbers_up_to_limit(n: int) -> int:
+    result = ""
+    for i in int:
+        result += f"{i}, "
+    return result
+}}}
+SPACE COMPLEXITY 2: {{{ O(1) }}}
 
 FUNCTION: {{{
 def fibonacci_recursive(n):
-    if n <= 1:
-        return n
+    if n <= 0:
+        return 0
+    if n == 1:
+        return 1
     return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 }}}
 

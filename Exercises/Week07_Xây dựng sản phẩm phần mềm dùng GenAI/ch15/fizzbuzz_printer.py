@@ -1,12 +1,18 @@
 import logging
 
+
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s %(levelname)s %(message)s",
                     filename="fizzbuzz.log",
                     datefmt="%Y-%m-%d %H:%M:%S")
 
+
 logger = logging.getLogger(__name__)
+
+
+
 FIZZBUZZ_COUNTER = 0
+
 
 def log_function_args(func):
     def wrapper(*args, **kwargs):
@@ -14,6 +20,7 @@ def log_function_args(func):
         return func(*args, **kwargs)
 
     return wrapper
+
 
 def increment_counter(func):
     def wrapper(*args, **kwargs):
@@ -24,24 +31,15 @@ def increment_counter(func):
 
     return wrapper
 
-def validate_args_types_and_limits(min_value, max_value):    
+
+def validate_args_types_and_limits(min_limit: int, max_limit: int):
     def decorator(func):
-        def wrapper(*args, **kwargs):
-            if not args:
-                logger.error("No arguments provided")
-                raise ValueError("No arguments provided")
-
-            limit = args[0]
-
+        def wrapper(limit: int):
             if not isinstance(limit, int):
-                logger.error(f"Invalid argument type: {limit} (type: {type(limit)})")
-                raise TypeError(f"Argument must be an integer, got {type(limit)}")
-
-            if not (min_value <= limit <= max_value):
-                logger.error(f"Argument out of bounds: {limit} (must be between {min_value} and {max_value})")
-                raise ValueError(f"Argument must be between {min_value} and {max_value}, got {limit}")
-
-            return func(*args, **kwargs)
+                raise TypeError(f"Argument 'limit' must be of type int, got {type(limit)}")
+            if limit < min_limit or limit > max_limit:
+                raise ValueError(f"Argument 'limit' must be between {min_limit} and {max_limit}, got {limit}")
+            return func(limit)
 
         return wrapper
 
@@ -62,5 +60,6 @@ def print_fizzbuzz(limit: int) -> None:
         else:
             print(i)
 
+
 print_fizzbuzz(5)
-print_fizzbuzz("abc")
+print_fizzbuzz(50)

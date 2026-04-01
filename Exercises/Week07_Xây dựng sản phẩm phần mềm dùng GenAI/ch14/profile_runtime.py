@@ -1,9 +1,9 @@
 import time
-from fibonacci import fibonacci_fast
+from fibonacci import fibonacci_recursive, fibonacci_iterative
 
 n = 35
 start_time = time.time()
-result = fibonacci_fast(n)
+result = fibonacci_recursive(n)
 end_time = time.time()
 
 print(f"Result: {result}")
@@ -13,9 +13,9 @@ print(f"Runtime: {end_time - start_time} seconds")
 
 for n in range(10, 42, 5):
     start_time = time.time()
-    fibonacci_fast(n)
+    fibonacci_recursive(n)
     end_time = time.time()
-    print(f"Runtime for fibonacci_fast({n}): {end_time - start_time} seconds")
+    print(f"Runtime for fibonacci_recursive({n}): {end_time - start_time} seconds")
 
 # start = time.time()
 # fibonacci_recursive(43)
