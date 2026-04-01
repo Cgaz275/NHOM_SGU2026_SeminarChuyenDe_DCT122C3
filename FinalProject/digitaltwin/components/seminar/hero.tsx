@@ -41,7 +41,7 @@ export function Hero() {
           <FloatingCard
             title="CREATIVE"
             description="We don't just follow trends; we create them. We transform abstract ideas into vibrant, high-impact digital experiences"
-            imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/39c02d6df7daee07ddb568a110c261dda36deae4?width=222"
+            imageSrc="/team_members/D.jpeg"
             imageAlt="Creative portrait"
             className="rotate-[12deg]"
           />
@@ -55,7 +55,7 @@ export function Hero() {
           <FloatingCard
             title="COMMITMENT"
             description="Our commitment is rooted in precision and long-term reliability, ensuring that every solution we build is not only functional today but resilient."
-            imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/26c3b0690957592c8dfedcdaed7bc4bb715de442?width=231"
+            imageSrc="/team_members/mun.jpeg"
             imageAlt="Commitment portrait"
             className="rotate-[-19deg]"
           />
@@ -81,14 +81,14 @@ export function Hero() {
         <FloatingCard
           title="CREATIVE"
           description="We don't just follow trends; we create them. We transform abstract ideas into vibrant, high-impact digital experiences"
-          imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/39c02d6df7daee07ddb568a110c261dda36deae4?width=222"
+          imageSrc="/team_members/D.jpeg"
           imageAlt="Creative portrait"
           className="-rotate-3"
         />
         <FloatingCard
           title="COMMITMENT"
           description="Our commitment is rooted in precision and long-term reliability, ensuring that every solution we build is not only functional today but resilient."
-          imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/26c3b0690957592c8dfedcdaed7bc4bb715de442?width=231"
+          imageSrc="/team_members/mun.jpeg"
           imageAlt="Commitment portrait"
           className="rotate-3"
         />
