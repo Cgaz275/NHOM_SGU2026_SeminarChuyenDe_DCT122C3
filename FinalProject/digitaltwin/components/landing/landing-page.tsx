@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { FeatureGrid } from "./feature-grid";
 import { HeroMockup } from "./hero-mockup";
 
@@ -6,12 +8,12 @@ export function LandingPage() {
     <div className="min-h-screen bg-[#0e0e0e] text-white">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-6 sm:px-8 lg:px-12">
         <header className="flex items-center justify-between gap-4">
-          <a
+          <Link
             href="/"
             className="text-sm font-semibold tracking-[0.24em] text-white/90 uppercase"
           >
             Aurora
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-8 text-sm text-white/55 md:flex">
             <a className="transition-colors hover:text-white" href="#features">
