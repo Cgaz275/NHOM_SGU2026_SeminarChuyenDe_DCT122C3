@@ -1,8 +1,8 @@
 export function Masterpiece() {
   return (
     <section id="projects" className="section-shell py-10 sm:py-14 lg:py-18">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="section-heading max-w-2xl">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="section-heading">
           Every masterpiece begins with a single step
         </h2>
 
@@ -10,7 +10,7 @@ export function Masterpiece() {
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/1292960f90e034d3d4e486c68c045bd531792134?width=981"
             alt="Blue abstract lighting installation"
-            className="h-[16rem] w-full object-cover sm:h-[20rem] lg:h-[24rem]"
+            className="h-[18rem] w-full object-cover sm:h-[24rem] lg:h-[30rem]"
           />
         </div>
 
