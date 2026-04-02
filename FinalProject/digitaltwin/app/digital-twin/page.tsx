@@ -11,7 +11,9 @@ export default function DigitalTwinPage() {
         <div className="section-shell dt-content">
           <h1 className="dt-page-title">DIGITAL TWIN</h1>
           <p className="dt-page-subtitle">Let&apos;s chat ? → Khánh</p>
-          <DigitalTwinChat />
+          <div className="dt-chat-wrap">
+            <DigitalTwinChat />
+          </div>
         </div>
       </main>
       <Footer />
