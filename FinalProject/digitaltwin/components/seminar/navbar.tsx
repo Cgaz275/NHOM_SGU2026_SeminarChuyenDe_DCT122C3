@@ -1,5 +1,5 @@
 const links = [
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Team Projects", href: "/teamproject" },
   { label: "Digital Twin", href: "#digital-twin" },
 ];
