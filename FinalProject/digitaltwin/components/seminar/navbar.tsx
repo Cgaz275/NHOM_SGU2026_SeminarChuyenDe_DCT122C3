@@ -1,6 +1,6 @@
 const links = [
   { label: "About", href: "#about" },
-  { label: "Team Projects", href: "#projects" },
+  { label: "Team Projects", href: "/teamproject" },
   { label: "Digital Twin", href: "#digital-twin" },
 ];
 
@@ -9,7 +9,7 @@ export function Navbar() {
     <header className="section-shell pt-5 sm:pt-6">
       <div className="flex items-center justify-between gap-4">
         <a
-          href="#top"
+          href="/"
           className="text-xs font-bold tracking-[0.22em] text-white uppercase sm:text-sm"
         >
           SEMINAR
