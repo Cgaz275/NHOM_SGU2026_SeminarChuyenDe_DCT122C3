@@ -140,6 +140,53 @@ body {
   color: #fff;
 }
 
+.contact-cta-section {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.digital-twin-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.digital-twin-overlay {
+  display: none;
+}
+
+.digital-twin-content {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-section {
+  position: relative;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+.digital-twin-contact-blend {
+  position: absolute;
+  top: calc(-60vh);
+  left: 0;
+  right: 0;
+  height: 60vh;
+  background: linear-gradient(
+    180deg,
+    rgba(33, 93, 153, 0) 0%,
+    rgba(33, 93, 153, 0.15) 30%,
+    rgba(33, 93, 153, 0.4) 60%,
+    rgba(33, 93, 153, 1) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ── Hero Section ─────────────────────────────────────────── */
 .hero-section {
   position: relative;

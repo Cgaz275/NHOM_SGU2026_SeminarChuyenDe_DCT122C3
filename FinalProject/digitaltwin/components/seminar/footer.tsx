@@ -30,8 +30,8 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--seminar-blue)] pb-8">
-      <div className="section-shell">
+    <footer className="footer-section bg-[var(--seminar-blue)] pb-8">
+      <div className="section-shell footer-content">
         <div className="flex flex-col gap-4 border-t border-white/10 pt-5 text-white/80 sm:flex-row sm:items-center sm:justify-between">
           <a href="#top" className="text-xs font-bold tracking-[0.22em] uppercase">
             SEMINAR

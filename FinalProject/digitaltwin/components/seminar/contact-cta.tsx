@@ -1,7 +1,11 @@
 export function ContactCTA() {
   return (
-    <section id="contact" className="bg-[var(--seminar-blue)] py-16 sm:py-20 lg:py-24">
-      <div className="section-shell">
+    <section
+      id="contact"
+      className="contact-cta-section bg-[var(--seminar-blue)] py-16 sm:py-20 lg:py-24"
+    >
+      <div aria-hidden="true" className="digital-twin-contact-blend" />
+      <div className="section-shell relative z-10">
         <div className="mx-auto max-w-6xl">
           <h2 className="mx-auto max-w-4xl text-center text-[clamp(2.6rem,10vw,5.6rem)] font-light leading-[0.95] tracking-[-0.06em] text-white uppercase">
             We&apos;d love to

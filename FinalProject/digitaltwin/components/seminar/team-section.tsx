@@ -35,8 +35,12 @@ const teamImages = [
 
 export function TeamSection() {
   return (
-    <section id="digital-twin" className="section-shell py-12 sm:py-16 lg:py-20">
-      <SectionHeading
+    <section
+      id="digital-twin"
+      className="digital-twin-section section-shell py-12 sm:py-16 lg:py-20"
+    >
+      <div className="digital-twin-content">
+        <SectionHeading
         align="center"
         title="Get to know more about us"
         description="Let’s chat together with AI Digital Twin mode."
@@ -58,6 +62,7 @@ export function TeamSection() {
         <a href="#contact" className="outline-pill px-5 py-3 text-[0.68rem]">
           Chat with Digital Twin
         </a>
+      </div>
       </div>
     </section>
   );
