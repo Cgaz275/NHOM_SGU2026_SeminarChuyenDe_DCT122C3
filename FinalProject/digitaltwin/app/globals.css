@@ -861,6 +861,10 @@ body {
   padding-bottom: 4rem;
 }
 
+.dt-layout {
+  width: 100%;
+}
+
 .dt-chat-wrap {
   width: 100%;
 }
@@ -1031,6 +1035,11 @@ body {
     padding-bottom: 6rem;
   }
 
+  .dt-layout {
+    width: min(100%, 84rem);
+    margin-inline: auto;
+  }
+
   .dt-page-title {
     font-size: clamp(4rem, 11vw, 10.5rem);
   }
@@ -1040,12 +1049,12 @@ body {
   }
 
   .dt-chat-wrap {
-    display: flex;
-    justify-content: center;
+    display: block;
   }
 
   .dt-chat-card {
-    max-width: 88rem;
+    max-width: 100%;
+    margin-inline: 0;
   }
 
   .dt-messages {
