@@ -67,10 +67,29 @@ export function DigitalTwinChat({
   const [showPersonaMenu, setShowPersonaMenu] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const personaSelectorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        personaSelectorRef.current &&
+        !personaSelectorRef.current.contains(event.target as Node)
+      ) {
+        setShowPersonaMenu(false);
+      }
+    }
+
+    if (showPersonaMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [showPersonaMenu]);
 
   function handlePersonaSelect(personaId: number) {
     onPersonaChange(personaId);
@@ -125,7 +144,7 @@ export function DigitalTwinChat({
     <div className="dt-chat-card">
       {/* Chat Header with Persona Selector */}
       <div className="dt-chat-header">
-        <div className="dt-persona-selector">
+        <div className="dt-persona-selector" ref={personaSelectorRef}>
           <button
             className="dt-persona-btn"
             onClick={togglePersonaMenu}
