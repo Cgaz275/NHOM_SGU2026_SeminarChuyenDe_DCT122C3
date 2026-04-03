@@ -877,6 +877,7 @@ body {
   text-transform: uppercase;
   color: #fff;
   margin: 0 0 1.5rem 0;
+  text-align: center;
 }
 
 .dt-page-subtitle {
@@ -1012,10 +1013,175 @@ body {
   opacity: 0.5;
 }
 
+/* Chat header with persona selector */
+.dt-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem 0.75rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  min-height: 3rem;
+}
+
+.dt-persona-selector {
+  position: relative;
+}
+
+.dt-persona-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.dt-persona-btn:hover {
+  background: #edf6ff;
+  border-color: var(--seminar-blue);
+}
+
+.dt-persona-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.5rem;
+  min-width: 14rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.dt-persona-option {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.dt-persona-option:hover {
+  background: #edf6ff;
+  color: var(--seminar-blue);
+}
+
+.dt-persona-option.active {
+  background: var(--seminar-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+.dt-current-persona {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--seminar-blue);
+}
+
+/* Loading bubble styles */
+.dt-loading-bubble {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.6rem 0.8rem;
+  background: #edf6ff;
+  border-radius: 0.5rem;
+  width: fit-content;
+  margin-top: 0.25rem;
+}
+
+.dt-loading-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--seminar-blue);
+  animation: dt-pulse 1.4s infinite;
+}
+
+.dt-loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dt-loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dt-pulse {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-0.4rem);
+  }
+}
+
+/* Loading bubble styles */
+.dt-loading-bubble {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.6rem 0.8rem;
+  background: #edf6ff;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+.dt-loading-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--seminar-blue);
+  animation: dt-pulse 1.4s infinite;
+}
+
+.dt-loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dt-loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dt-pulse {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-0.4rem);
+  }
+}
+
 @media (min-width: 640px) {
   .dt-content {
     padding-top: 2.5rem;
     padding-bottom: 5rem;
+  }
+
+  .dt-chat-header {
+    padding: 1rem 1.5rem;
   }
 
   .dt-messages {
@@ -1057,6 +1223,10 @@ body {
     margin-inline: 0;
   }
 
+  .dt-chat-header {
+    padding: 1.25rem 2.75rem;
+  }
+
   .dt-messages {
     min-height: 24rem;
     max-height: 34rem;
@@ -1082,5 +1252,14 @@ body {
 
   .dt-send-btn {
     font-size: 0.88rem;
+  }
+
+  .dt-persona-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .dt-current-persona {
+    font-size: 0.95rem;
   }
 }
