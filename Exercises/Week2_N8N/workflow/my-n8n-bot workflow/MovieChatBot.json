@@ -1,0 +1,494 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        48
+      ],
+      "id": "5b21cb54-64c0-445f-891b-81bef61831fb",
+      "name": "Telegram Trigger",
+      "webhookId": "d2b57918-5ce4-47bc-b0f2-6ec6a1c51892",
+      "retryOnFail": true,
+      "executeOnce": false,
+      "alwaysOutputData": true,
+      "credentials": {
+        "telegramApi": {
+          "id": "rUztK62JMmjhz0XI",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://rapchieuphim.com/api/v1/movies",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        288,
+        96
+      ],
+      "id": "8970fa0b-e70a-4186-9b8c-fb944362a0af",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "maxItems": 3
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        512,
+        96
+      ],
+      "id": "c7d71cba-76b8-4ae3-bd79-f74b86cfa110",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/start",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "3e1cf206-78bb-4738-99b6-852da1cce04e"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "f112ccf0-2e05-42fa-99b7-eb389830b278",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/help",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "444a10d2-a7fc-48bd-ac51-1263fa64fa1b",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/movie",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "5d2344c8-b118-45a9-a63d-a43aa169b538",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notStartsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -16,
+        48
+      ],
+      "id": "d5943eb9-4ff7-4600-95d7-d6f4b19d3b97",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{\n// 1. LẤY CÂU HỎI CỦA KHÁCH\n\"CÂU HỎI CỦA NGƯỜI DÙNG: \\\"\" + $('Telegram Trigger').first().json.message.text + \"\\\"\\n\\n\" +\n\n// 2. NẠP DỮ LIỆU (CONTEXT)\n\"DỮ LIỆU THAM KHẢO:\\n\" +\n\"- Danh sách phim: \" + JSON.stringify($('Limit').all().map(i => i.json)) + \"\\n\" +\n\"- Bảng giá vé (HTML): \" + JSON.stringify($('HTTP Request1').first().json) + \"\\n\" + \n\"- Rạp tại TP.HCM: \" + JSON.stringify($json.danh_sach_rap_hcm) + \"\\n\\n\" +\n\n// 3. HUẤN LUYỆN AI (INSTRUCTION)\n\"NHIỆM VỤ CỦA BẠN:\\n\" +\n\"Bạn là trợ lý ảo chuyên về Rạp Chiếu Phim. Hãy trả lời câu hỏi của người dùng dựa trên Dữ liệu tham khảo ở trên.\\n\\n\" +\n\n\"QUY TẮC TRẢ LỜI (BẮT BUỘC):\\n\" +\n\"1. NẾU người dùng hỏi về: Phim ảnh, Nội dung phim, Giá vé, Địa chỉ rạp, Suất chiếu, hoặc gõ lệnh '/movie' -> Hãy trả lời nhiệt tình, ngắn gọn, dùng emoji, lấy thông tin từ dữ liệu đã cung cấp.\\n\" +\n\"2. NẾU người dùng hỏi vấn đề KHÁC (Ví dụ: Thời tiết, Toán học, Chính trị, Tình cảm, Code...) -> Hãy từ chối khéo léo bằng câu mẫu sau:\\n\" +\n\"   '🚫 Xin lỗi bạn, mình chỉ được lập trình để giải đáp thắc mắc về các bộ phim, giá vé và rạp chiếu thôi ạ! 🎬'\\n\" +\n\"3. Tuyệt đối không bịa đặt thông tin nếu không có trong dữ liệu.\"\n}}",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        1296,
+        96
+      ],
+      "id": "cc43a3b3-33ce-4388-b1fd-e33543c0bca6",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1296,
+        256
+      ],
+      "id": "800e0b8f-3eb9-4327-b857-c74308194e54",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "RE8yI5xNjHpumCd0",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "={{ $json.text }}",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1600,
+        96
+      ],
+      "id": "c05906f4-f27b-494d-948b-6ea539a55cfd",
+      "name": "Send a text message",
+      "webhookId": "eea1224a-039c-470e-862c-00804e451de1",
+      "credentials": {
+        "telegramApi": {
+          "id": "rUztK62JMmjhz0XI",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://rapchieuphim.com/api/v1/prices/parent/cgv",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        720,
+        96
+      ],
+      "id": "2204c6fd-397f-4840-aec9-70f9c60de8b6",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "url": "https://rapchieuphim.com/api/v1/cinemas",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        928,
+        96
+      ],
+      "id": "6c6e69f9-79a6-443c-a59a-0c290a13e04e",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Lấy dữ liệu từ node HTTP trước đó\n// Lưu ý: Nếu node HTTP trả về 1 mảng lớn, n8n thường tách nó ra nhiều item.\n// Dòng này giúp gom lại để xử lý.\nconst allCinemas = $input.all().map(item => item.json);\n\n// 2. Lọc: Chỉ lấy rạp ở \"Hồ Chí Minh\" và ưu tiên rạp \"CGV\"\nconst filtered = allCinemas.filter(rap => \n  (rap.address && rap.address.includes('Hồ Chí Minh')) && \n  (rap.name && rap.name.toUpperCase().includes('CGV'))\n);\n\n// 3. Cắt: Chỉ lấy 5 rạp đầu tiên (QUAN TRỌNG ĐỂ KHÔNG BỊ LỖI QUOTA)\nconst top5 = filtered.slice(0, 5);\n\n// 4. Dọn dẹp: Chỉ lấy Tên và Địa chỉ (bỏ hết mấy cái ID rác đi cho nhẹ token)\nconst finalData = top5.map(rap => ({\n  Ten_Rap: rap.name,\n  Dia_Chi: rap.address\n}));\n\n// 5. Trả về kết quả gọn nhẹ\nreturn [{json: { danh_sach_rap_hcm: finalData }}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1136,
+        96
+      ],
+      "id": "cef1f9be-1778-405a-b7d3-c8547a5fe94a",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "=Xin chào <b>{{ $json.message.from.first_name }}</b>! 👋  🤖 Mình là Trợ lý Rạp Phim AI đây. Mình có thể giúp bạn: 🎬 Xem phim đang hot & Review nhanh. 💰 Tra cứu giá vé thực tế từ CGV. 📍 Tìm rạp chiếu phim gần bạn tại TP.HCM.  👇 Bấm nút bên dưới hoặc gõ <b>/movie</b> để bắt đầu nhé!",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "🍿 Xem phim ngay",
+                    "additionalFields": {
+                      "callback_data": "/movie"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        288,
+        -240
+      ],
+      "id": "39761269-d7df-4d4f-8b41-627eeadc224d",
+      "name": "Send a text message1",
+      "webhookId": "60dde6df-5673-4cde-a83f-8dd8014175b7",
+      "credentials": {
+        "telegramApi": {
+          "id": "rUztK62JMmjhz0XI",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "🆘 <b>HƯỚNG DẪN SỬ DỤNG</b>  Bạn có thể giao tiếp với mình bằng cách:  1️⃣ <b>Dùng lệnh cơ bản:</b> • /start: Khởi động lại bot. • /movie: Xem danh sách phim, giá vé và rạp. • /help: Xem hướng dẫn này.  2️⃣ <b>Chat tự nhiên:</b> Bạn cứ hỏi những câu như: - \"Phim Mai giá vé bao nhiêu?\" - \"Review phim Đào, Phở và Piano\" - \"Rạp CGV nào gần Quận 1?\"  ⚠️ <b>Lưu ý:</b> Mình là AI nên đôi khi phản hồi hơi chậm (khoảng 5-10s), bạn kiên nhẫn đợi xíu nhé!",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        192,
+        -48
+      ],
+      "id": "91e93ff6-05a2-455c-bfb4-ebcd73519cd8",
+      "name": "Send a text message2",
+      "webhookId": "a4504284-fa40-4db0-b970-2c392218bfaf",
+      "credentials": {
+        "telegramApi": {
+          "id": "rUztK62JMmjhz0XI",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        []
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "7b3f25e7-6c4a-4111-8c23-694b188fae84",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "047f1cf918c3b79eb17b255c469280f19e0b243eff71f1d81e12e5860ef090e3"
+  },
+  "id": "0A53q95NjacrEVc2jhj1h",
+  "tags": []
+}
