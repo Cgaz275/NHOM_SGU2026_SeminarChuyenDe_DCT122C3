@@ -10,19 +10,19 @@ scrape_configs:
   - job_name: 'api-gateway'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8080'] # Default port order-service/api config? Adjust if needed.
+      - targets: ['api-gateway:8080']
 
   - job_name: 'discovery-server'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8761']
+      - targets: ['discovery-server:8761']
 
   - job_name: 'notification-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8083']
+      - targets: ['notification-service:8083']
 
   - job_name: 'order-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8081'] # adjust port accordingly based on order-service config
+      - targets: ['order-service:8081']
