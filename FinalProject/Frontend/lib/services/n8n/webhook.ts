@@ -1,4 +1,4 @@
-const N8N_WEBHOOK_URL = "https://alanewiston2.app.n8n.cloud/webhook/chat-api";
+const N8N_WEBHOOK_URL = "https://snailnoodles.app.n8n.cloud/webhook/chat-api";
 const SESSION_ID = "user_123";
 
 interface N8NPayload {
