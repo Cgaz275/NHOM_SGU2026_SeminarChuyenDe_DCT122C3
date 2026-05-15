@@ -10,6 +10,7 @@ const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const cardRoutes = require("./routes/cardRoutes");
 const chatRoutes = require("./routes/chatRoutes");
+const messageRoutes = require("./routes/messageRoutes");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/cards", cardRoutes);
+app.use("/api/v1/cards", messageRoutes);
 app.use("/api/v1/chat", chatRoutes);
 
 app.get("/api/v1/health", (req, res) => {

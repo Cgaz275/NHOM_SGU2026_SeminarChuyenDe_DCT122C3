@@ -165,10 +165,57 @@ async function updateAiConfig(req, res) {
   }
 }
 
+async function toggleTakeover(req, res) {
+  try {
+    if (!req.body || typeof req.body.isAiPaused !== "boolean") {
+      return res.status(400).json({
+        status: false,
+        data: null,
+        message: "Vui lòng cung cấp trạng thái tạm dừng AI hợp lệ",
+      });
+    }
+
+    const result = await cardService.toggleTakeover(
+      req.params.cardId,
+      req.user.uid,
+      req.body.isAiPaused
+    );
+
+    if (result && result.error === "not-found") {
+      return res.status(404).json({
+        status: false,
+        data: null,
+        message: "Không tìm thấy thẻ",
+      });
+    }
+
+    if (result && result.error === "forbidden") {
+      return res.status(400).json({
+        status: false,
+        data: null,
+        message: "Bạn không có quyền cập nhật thẻ này",
+      });
+    }
+
+    return res.status(200).json({
+      status: true,
+      data: result,
+      message: "Cập nhật trạng thái tạm dừng AI thành công",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      data: null,
+      message: "Cập nhật trạng thái tạm dừng AI thất bại",
+    });
+  }
+}
+
 module.exports = {
   createCard,
   getCardBySlug,
   getMyCards,
   updateCard,
   updateAiConfig,
+  toggleTakeover,
 };

@@ -170,10 +170,36 @@ async function updateAiConfig(cardId, userId, aiConfigData = {}) {
   return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
 }
 
+async function toggleTakeover(cardId, userId, isAiPaused) {
+  const cardRef = db.collection("cards").doc(cardId);
+  const snapshot = await cardRef.get();
+
+  if (!snapshot.exists) {
+    return { error: "not-found" };
+  }
+
+  const card = snapshot.data();
+
+  if (card.userId !== userId) {
+    return { error: "forbidden" };
+  }
+
+  const updatedAiConfig = {
+    ...(card.aiConfig || {}),
+    isAiPaused: Boolean(isAiPaused),
+  };
+
+  await cardRef.update({ aiConfig: updatedAiConfig });
+  const updatedSnapshot = await cardRef.get();
+
+  return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
+}
+
 module.exports = {
   createCard,
   getCardBySlug,
   getMyCards,
   updateCard,
   updateAiConfig,
+  toggleTakeover,
 };
