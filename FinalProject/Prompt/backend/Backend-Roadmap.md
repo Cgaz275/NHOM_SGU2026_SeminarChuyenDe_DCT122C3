@@ -81,10 +81,9 @@ Mục tiêu: Chấm điểm học thuật cao với Dashboard số liệu.
 [x] Báo cáo vi phạm (Reports): POST /api/v1/reports (Khách report) và GET /api/v1/reports (Admin xem list report).
 
 Phase 8: Dọn dẹp & Tối ưu hóa (Deployment Prep)
-[ ] Error Handling: Viết src/middlewares/errorHandler.js để chuẩn hóa toàn bộ JSON lỗi trả về cho Frontend (HTTP 400, 404, 500).
+[x] Error Handling: Viết src/middlewares/errorHandler.js để chuẩn hóa toàn bộ JSON lỗi trả về cho Frontend (HTTP 400, 404, 500).
 
-[ ] Bảo mật: Tích hợp express-rate-limit để chống spam API Chat và API Login.
+[x] Bảo mật: Tích hợp express-rate-limit để chống spam API Chat và API Login.
 
-[ ] Cập nhật file README.md hướng dẫn cách chạy project.
 
-[ ] Clean up code, xóa console.log thừa.
+[x] Clean up code, xóa console.log thừa.
