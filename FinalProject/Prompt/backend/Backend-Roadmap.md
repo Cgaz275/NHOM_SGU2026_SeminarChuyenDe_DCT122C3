@@ -72,13 +72,13 @@ Mục tiêu: Lưu trữ tin nhắn, cho phép chủ thẻ nhảy vào chat thủ
 Phase 7: Phân hệ Quản trị & Thống kê (Admin & Analytics)
 Mục tiêu: Chấm điểm học thuật cao với Dashboard số liệu.
 
-[ ] Middleware Admin: Thêm logic check role: 'admin' vào authMiddleware.js.
+[x] Middleware Admin: Thêm logic check role: 'admin' vào authMiddleware.js.
 
-[ ] Thống kê Card: GET /api/v1/analytics/cards/:cardId (Đếm lượt xem, lượt tải VCF).
+[x] Thống kê Card: GET /api/v1/analytics/cards/:cardId (Đếm lượt xem, lượt tải VCF).
 
-[ ] Thống kê Tổng (Admin): GET /api/v1/analytics/global (Đếm tổng users, tổng cards).
+[x] Thống kê Tổng (Admin): GET /api/v1/analytics/global (Đếm tổng users, tổng cards).
 
-[ ] Báo cáo vi phạm (Reports): POST /api/v1/reports (Khách report) và GET /api/v1/reports (Admin xem list report).
+[x] Báo cáo vi phạm (Reports): POST /api/v1/reports (Khách report) và GET /api/v1/reports (Admin xem list report).
 
 Phase 8: Dọn dẹp & Tối ưu hóa (Deployment Prep)
 [ ] Error Handling: Viết src/middlewares/errorHandler.js để chuẩn hóa toàn bộ JSON lỗi trả về cho Frontend (HTTP 400, 404, 500).
