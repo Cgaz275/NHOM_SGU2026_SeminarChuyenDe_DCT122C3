@@ -50,13 +50,13 @@ Mục tiêu: CRUD (Tạo, Đọc, Sửa, Xóa) cấu hình thẻ.
 Phase 5: Phân hệ AI Digital Twin & Cấu hình (AI Integration)
 Mục tiêu: Khớp nối dữ liệu Card với API LLM (OpenAI/Gemini).
 
-[ ] AI Config API: PUT /api/v1/cards/:cardId/ai-config (Cập nhật System Prompt, Knowledge Data và Tone Giọng).
+[x] AI Config API: PUT /api/v1/cards/:cardId/ai-config (Cập nhật System Prompt, Knowledge Data và Tone Giọng).
 
-[ ] AI Service: Hoàn thiện src/services/aiService.js. Viết hàm generateAIResponse(message, cardData).
+[x] AI Service: Hoàn thiện src/services/aiService.js. Viết hàm generateAIResponse(message, cardData).
 
-[ ] Logic Prompt: Lắp ráp System Prompt từ Global_AI_Rules, aiConfig.systemPrompt, toneMapper, và knowledgeData.
+[x] Logic Prompt: Lắp ráp System Prompt từ Global_AI_Rules, aiConfig.systemPrompt, toneMapper, và knowledgeData.
 
-[ ] Chat API: POST /api/v1/chat/cards/:cardId/chat (Nhận tin nhắn của khách -> Gọi AI -> Trả kết quả).
+[x] Chat API: POST /api/v1/chat/cards/:cardId/chat (Nhận tin nhắn của khách -> Gọi AI -> Trả kết quả).
 
 Phase 6: Phân hệ Hộp thư & Human Takeover (Tương tác trực tiếp)
 Mục tiêu: Lưu trữ tin nhắn, cho phép chủ thẻ nhảy vào chat thủ công.
