@@ -37,15 +37,15 @@ Mục tiêu: Đăng nhập, đăng ký và quản lý profile cá nhân.
 Phase 4: Phân hệ Thẻ Cá Nhân (Digital Cards - Trái tim hệ thống)
 Mục tiêu: CRUD (Tạo, Đọc, Sửa, Xóa) cấu hình thẻ.
 
-[ ] Card Service: Viết src/services/cardService.js xử lý logic thao tác với thẻ.
+[x] Card Service: Viết src/services/cardService.js xử lý logic thao tác với thẻ.
 
-[ ] API Tạo thẻ: POST /api/v1/cards (Tự động sinh slug và cấu hình AI mặc định).
+[x] API Tạo thẻ: POST /api/v1/cards (Tự động sinh slug và cấu hình AI mặc định).
 
-[ ] API Xem thẻ (Public): GET /api/v1/cards/:slug (Khách xem thẻ bằng Link/QR).
+[x] API Xem thẻ (Public): GET /api/v1/cards/:slug (Khách xem thẻ bằng Link/QR).
 
-[ ] API Quản lý thẻ: GET /api/v1/cards/me (Lấy danh sách thẻ của chủ tài khoản).
+[x] API Quản lý thẻ: GET /api/v1/cards/me (Lấy danh sách thẻ của chủ tài khoản).
 
-[ ] API Cập nhật thẻ: PUT /api/v1/cards/:cardId (Đổi avatar, theme, link MXH).
+[x] API Cập nhật thẻ: PUT /api/v1/cards/:cardId (Đổi avatar, theme, link MXH).
 
 Phase 5: Phân hệ AI Digital Twin & Cấu hình (AI Integration)
 Mục tiêu: Khớp nối dữ liệu Card với API LLM (OpenAI/Gemini).
