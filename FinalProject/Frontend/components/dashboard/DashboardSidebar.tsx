@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const navItems = [
   { name: 'Manage Profile', href: '/dashboard/profile-builder', icon: UserCircle },
-  { name: 'Manage Persona', href: '/dashboard/persona', icon: LayoutDashboard },
+  { name: 'Manage Persona', href: '/dashboard/ai-twin', icon: LayoutDashboard },
   { name: 'Manage QR', href: '/dashboard/qr', icon: QrCode },
   { name: 'Manage Messages', href: '/dashboard/messages', icon: MessageSquare },
 ];
