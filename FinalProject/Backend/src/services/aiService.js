@@ -1,5 +1,10 @@
+const OpenAI = require("openai");
 const { db } = require("../config/firebase");
 const { getToneInstruction } = require("../utils/toneMapper");
+
+const openai = new OpenAI({
+	apiKey: process.env.OPENAI_API_KEY,
+});
 
 async function processChat(cardId, userMessage) {
 	const cardRef = db.collection("cards").doc(cardId);
@@ -28,10 +33,32 @@ async function processChat(cardId, userMessage) {
 	const globalRules = globalRulesSnapshot.exists ? globalRulesSnapshot.data() : null;
 	const toneInstruction = getToneInstruction(aiConfig.toneOfVoice);
 
-	void globalRules;
-	void toneInstruction;
+	const systemPrompt = `Bạn là trợ lý AI ảo đại diện cho ${cardData.fullName}.
 
-	return `Ghi nhận tin nhắn: ${userMessage}. Đây là phản hồi giả lập từ AI của ${cardData.fullName}`;
+[LUẬT CHUNG]
+Guardrails: ${JSON.stringify(globalRules ? globalRules.Guardrails : [])}
+AI_Reading_Guide: ${JSON.stringify(globalRules ? globalRules.AI_Reading_Guide : [])}
+
+[TONE]
+${toneInstruction}`;
+
+	try {
+		const response = await openai.chat.completions.create({
+			model: "gpt-4o-mini",
+			messages: [
+				{ role: "system", content: systemPrompt },
+				{ role: "user", content: userMessage },
+			],
+			temperature: 0.7,
+		});
+
+		const reply = response.choices[0]?.message?.content || "";
+		return reply;
+	} catch (error) {
+		const apiError = new Error("Gọi OpenAI thất bại");
+		apiError.statusCode = 500;
+		throw apiError;
+	}
 }
 
 module.exports = {
