@@ -26,13 +26,13 @@ Mục tiêu: Bơm dữ liệu Knowledge Base và 4 thẻ Demo lên Firestore.
 Phase 3: Phân hệ Xác thực & Người dùng (Auth & Users)
 Mục tiêu: Đăng nhập, đăng ký và quản lý profile cá nhân.
 
-[ ] Middleware: Viết hàm src/middlewares/authMiddleware.js để verify Firebase ID Token (chặn các request không hợp lệ).
+[x] Middleware: Viết hàm src/middlewares/authMiddleware.js để verify Firebase ID Token (chặn các request không hợp lệ).
 
-[ ] Auth Service: Viết src/services/authService.js xử lý logic tạo user.
+[x] Auth Service: Viết src/services/authService.js xử lý logic tạo user.
 
-[ ] Auth API: Tạo POST /api/v1/auth/register và POST /api/v1/auth/login.
+[x] Auth API: Tạo POST /api/v1/auth/register và POST /api/v1/auth/login.
 
-[ ] User API: Tạo GET /api/v1/users/me (Lấy thông tin cá nhân) và PUT /api/v1/users/me (Cập nhật eKYC).
+[x] User API: Tạo GET /api/v1/users/me (Lấy thông tin cá nhân) và PUT /api/v1/users/me (Cập nhật eKYC).
 
 Phase 4: Phân hệ Thẻ Cá Nhân (Digital Cards - Trái tim hệ thống)
 Mục tiêu: CRUD (Tạo, Đọc, Sửa, Xóa) cấu hình thẻ.
