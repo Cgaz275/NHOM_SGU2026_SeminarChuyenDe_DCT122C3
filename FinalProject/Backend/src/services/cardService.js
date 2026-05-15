@@ -136,9 +136,44 @@ async function updateCard(cardId, userId, updateData = {}) {
   return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
 }
 
+async function updateAiConfig(cardId, userId, aiConfigData = {}) {
+  const cardRef = db.collection("cards").doc(cardId);
+  const snapshot = await cardRef.get();
+
+  if (!snapshot.exists) {
+    return { error: "not-found" };
+  }
+
+  const card = snapshot.data();
+
+  if (card.userId !== userId) {
+    return { error: "forbidden" };
+  }
+
+  const updates = {};
+
+  if (aiConfigData.aiConfig !== undefined) {
+    updates.aiConfig = aiConfigData.aiConfig;
+  }
+
+  if (aiConfigData.aiStatus !== undefined) {
+    updates.aiStatus = aiConfigData.aiStatus;
+  }
+
+  if (Object.keys(updates).length === 0) {
+    return { id: snapshot.id, ...card };
+  }
+
+  await cardRef.update(updates);
+  const updatedSnapshot = await cardRef.get();
+
+  return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
+}
+
 module.exports = {
   createCard,
   getCardBySlug,
   getMyCards,
   updateCard,
+  updateAiConfig,
 };
