@@ -6,10 +6,10 @@ import { LayoutDashboard, UserCircle, QrCode, MessageSquare, Menu, X } from 'luc
 import { useState } from 'react';
 
 const navItems = [
-  { name: 'Manage Profile', href: '/dashboard/profile-builder', icon: UserCircle },
-  { name: 'Manage Persona', href: '/dashboard/ai-twin', icon: LayoutDashboard },
-  { name: 'Manage QR', href: '/dashboard/qr', icon: QrCode },
-  { name: 'Manage Messages', href: '/dashboard/messages', icon: MessageSquare },
+  { name: 'Quản lý thông tin', href: '/dashboard/profile-builder', icon: UserCircle },
+  { name: 'Quản lý Persona', href: '/dashboard/ai-twin', icon: LayoutDashboard },
+  { name: 'Quản lý QR', href: '/dashboard/qr-manager', icon: QrCode },
+  { name: 'Quản lý tin nhắn', href: '/dashboard/messages', icon: MessageSquare },
 ];
 
 export function DashboardSidebar() {
