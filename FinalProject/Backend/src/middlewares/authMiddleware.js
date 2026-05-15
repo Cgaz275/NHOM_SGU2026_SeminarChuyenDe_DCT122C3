@@ -1,4 +1,4 @@
-const { auth } = require("../config/firebase");
+const { auth, db } = require("../config/firebase");
 
 async function verifyToken(req, res, next) {
   try {
@@ -35,16 +35,48 @@ async function verifyToken(req, res, next) {
   }
 }
 
-function verifyAdmin(req, res, next) {
-  if (req.user && req.user.role === "admin") {
-    return next();
-  }
+async function verifyAdmin(req, res, next) {
+  try {
+    const userId = req.user && req.user.uid ? req.user.uid : null;
+    const userEmail = req.user && req.user.email ? req.user.email : null;
 
-  return res.status(403).json({
-    status: false,
-    data: null,
-    message: "Bạn không có quyền truy cập chức năng này",
-  });
+    let userDoc = null;
+
+    if (userId) {
+      const snapshot = await db.collection("users").doc(userId).get();
+      if (snapshot.exists) {
+        userDoc = snapshot.data();
+      }
+    }
+
+    if (!userDoc && userEmail) {
+      const snapshot = await db
+        .collection("users")
+        .where("email", "==", userEmail)
+        .limit(1)
+        .get();
+
+      if (!snapshot.empty) {
+        userDoc = snapshot.docs[0].data();
+      }
+    }
+
+    if (!userDoc || userDoc.role !== "admin") {
+      return res.status(403).json({
+        status: false,
+        data: null,
+        message: "Bạn không có quyền truy cập chức năng này",
+      });
+    }
+
+    return next();
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      data: null,
+      message: "Xác thực quyền quản trị thất bại",
+    });
+  }
 }
 
 module.exports = {
