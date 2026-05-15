@@ -13,11 +13,14 @@ const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
 const reportRoutes = require("./routes/reportRoutes");
+const { globalLimiter } = require("./middlewares/rateLimiter");
+const { errorHandler } = require("./middlewares/errorHandler");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(globalLimiter);
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/users", userRoutes);
@@ -33,6 +36,8 @@ app.get("/api/v1/health", (req, res) => {
     message: "Backend và Firebase đang hoạt động!",
   });
 });
+
+app.use(errorHandler);
 
 const port = process.env.PORT || 5000;
 
