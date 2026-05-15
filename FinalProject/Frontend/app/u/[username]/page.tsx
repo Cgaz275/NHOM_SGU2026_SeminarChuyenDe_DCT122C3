@@ -1,0 +1,234 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
+import { motion } from 'framer-motion';
+import {
+  PublicProfile,
+  PublicProfileState,
+  ChatMessage,
+  LeadFormData,
+  ReportData,
+} from '../../../types/public-profile';
+import {
+  getPublicProfile,
+  sendChatMessage,
+  submitLeadForm,
+  submitAIReport,
+} from '../../../lib/mock-public-profile-api';
+
+import { ProfileHeroCard } from '../../../components/public-profile/ProfileHeroCard';
+import { SocialLinks } from '../../../components/public-profile/SocialLinks';
+import { AboutSection } from '../../../components/public-profile/AboutSection';
+import { SkillsSection } from '../../../components/public-profile/SkillsSection';
+import { FeaturedProjects } from '../../../components/public-profile/FeaturedProjects';
+import { ExperienceSection } from '../../../components/public-profile/ExperienceSection';
+import { SaveContactCard } from '../../../components/public-profile/SaveContactCard';
+import { AITwinChatWidget } from '../../../components/public-profile/AITwinChatWidget';
+import { LeadFallbackModal } from '../../../components/public-profile/LeadFallbackModal';
+import { ReportAIModal } from '../../../components/public-profile/ReportAIModal';
+import { StateSwitcher } from '../../../components/public-profile/StateSwitcher';
+import { LoadingSkeleton } from '../../../components/public-profile/LoadingSkeleton';
+import { EmptyState } from '../../../components/public-profile/EmptyState';
+import { Toast } from '../../../components/ui/Toast';
+
+export default function PublicProfilePage() {
+  const params = useParams();
+  const username = params?.username as string;
+
+  const [profile, setProfile] = useState<PublicProfile | null>(null);
+  const [pageState, setPageState] = useState<PublicProfileState>('loading');
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [isTyping, setIsTyping] = useState(false);
+
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+
+  const [toast, setToast] = useState<{
+    message: string;
+    type: 'success' | 'error';
+    visible: boolean;
+  }>({
+    message: '',
+    type: 'success',
+    visible: false,
+  });
+
+  const showToast = (
+    message: string,
+    type: 'success' | 'error' = 'success'
+  ) => {
+    setToast({ message, type, visible: true });
+
+    setTimeout(() => {
+      setToast((prev) => ({ ...prev, visible: false }));
+    }, 3000);
+  };
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (!username) return;
+
+      try {
+        setPageState('loading');
+
+        const data = await getPublicProfile(username);
+
+        setProfile(data);
+        setPageState('published');
+
+        setMessages([
+          {
+            id: 'init-1',
+            role: 'assistant',
+            content: `Hi, I'm ${data.name}'s AI Twin. You can ask me about his skills, projects, experience, or collaboration availability.`,
+            timestamp: new Date(),
+          },
+        ]);
+      } catch (err) {
+        setPageState('not_found');
+      }
+    };
+
+    fetchProfile();
+  }, [username]);
+
+  const handleSendMessage = async (msgContent: string) => {
+    if (!profile) return;
+
+    const userMsg: ChatMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: msgContent,
+      timestamp: new Date(),
+    };
+
+    setMessages((prev) => [...prev, userMsg]);
+    setIsTyping(true);
+
+    try {
+      const aiResponse = await sendChatMessage(profile.id, msgContent);
+      setMessages((prev) => [...prev, aiResponse]);
+    } catch (error) {
+      showToast('Failed to connect to AI', 'error');
+      setIsLeadModalOpen(true);
+    } finally {
+      setIsTyping(false);
+    }
+  };
+
+  const handleLeadSubmit = async (data: LeadFormData) => {
+    if (!profile) return;
+
+    try {
+      await submitLeadForm(profile.id, data);
+
+      showToast(
+        `Your information has been sent. ${profile.name} will contact you later.`
+      );
+
+      setIsLeadModalOpen(false);
+    } catch (error) {
+      showToast('Failed to send your information. Please try again.', 'error');
+    }
+  };
+
+  const handleReportSubmit = async (data: ReportData) => {
+    if (!profile) return;
+
+    try {
+      await submitAIReport(profile.id, data);
+
+      showToast('Thanks. This report has been submitted for review.');
+      setIsReportModalOpen(false);
+    } catch (error) {
+      showToast('Failed to submit report. Please try again.', 'error');
+    }
+  };
+
+  const currentAiStatus =
+    pageState === 'ai_disabled'
+      ? 'ai_disabled'
+      : pageState === 'ai_error'
+      ? 'ai_error'
+      : profile?.aiStatus || 'ai_ready';
+
+  if (['updating', 'locked', 'not_found'].includes(pageState)) {
+    return (
+      <div className="min-h-screen bg-background text-foreground flex flex-col relative font-sans">
+        <EmptyState state={pageState} />
+        <StateSwitcher currentState={pageState} onStateChange={setPageState} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background text-foreground pb-20 pt-8 px-4 font-sans selection:bg-brand-blue/30 relative">
+      <div className="max-w-6xl mx-auto">
+        {pageState === 'loading' || !profile ? (
+          <LoadingSkeleton />
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8"
+          >
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <ProfileHeroCard profile={profile} />
+
+              <div className="px-2">
+                <SocialLinks links={profile.socialLinks} />
+              </div>
+
+              <SaveContactCard profile={profile} />
+            </div>
+
+            <div className="lg:col-span-7 flex flex-col gap-6">
+              <AboutSection bio={profile.bio} />
+              <SkillsSection skills={profile.skills} />
+              <FeaturedProjects projects={profile.featuredProjects} />
+              <ExperienceSection experience={profile.experience} />
+
+              <div id="ai-chat">
+                <AITwinChatWidget
+                  profileName={profile.name}
+                  aiStatus={currentAiStatus}
+                  messages={messages}
+                  isTyping={isTyping}
+                  onSendMessage={handleSendMessage}
+                  onOpenLeadForm={() => setIsLeadModalOpen(true)}
+                  onOpenReport={() => setIsReportModalOpen(true)}
+                />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </div>
+
+      {profile && (
+        <>
+          <LeadFallbackModal
+            isOpen={isLeadModalOpen}
+            onClose={() => setIsLeadModalOpen(false)}
+            onSubmit={handleLeadSubmit}
+            profileName={profile.name}
+          />
+
+          <ReportAIModal
+            isOpen={isReportModalOpen}
+            onClose={() => setIsReportModalOpen(false)}
+            onSubmit={handleReportSubmit}
+          />
+        </>
+      )}
+
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        isVisible={toast.visible}
+      />
+
+      <StateSwitcher currentState={pageState} onStateChange={setPageState} />
+    </div>
+  );
+}
