@@ -256,7 +256,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
 }
 
 .hero-footer-desc {
@@ -312,7 +312,7 @@ body {
   flex: 1;
   flex-direction: column;
   padding: 0.8rem;
-  background: linear-gradient(180deg, #141414 0%, #050505 100%);
+  background: linear-gradient(180deg, #ffffff 100%, #ffffff 100%);
 }
 
 .floating-card-title {
@@ -320,7 +320,7 @@ body {
   font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #000000;
   line-height: 1.2;
   letter-spacing: 0.1em;
 }
@@ -331,7 +331,7 @@ body {
   flex: 1;
   font-size: 0.75rem;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(0, 0, 0, 0.72);
 }
 
 /* ── Responsive overrides ─────────────────────────────────── */
