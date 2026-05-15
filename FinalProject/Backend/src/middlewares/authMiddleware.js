@@ -35,6 +35,19 @@ async function verifyToken(req, res, next) {
   }
 }
 
+function verifyAdmin(req, res, next) {
+  if (req.user && req.user.role === "admin") {
+    return next();
+  }
+
+  return res.status(403).json({
+    status: false,
+    data: null,
+    message: "Bạn không có quyền truy cập chức năng này",
+  });
+}
+
 module.exports = {
   verifyToken,
+  verifyAdmin,
 };
