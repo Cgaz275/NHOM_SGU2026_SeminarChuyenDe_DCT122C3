@@ -61,13 +61,13 @@ Mục tiêu: Khớp nối dữ liệu Card với API LLM (OpenAI/Gemini).
 Phase 6: Phân hệ Hộp thư & Human Takeover (Tương tác trực tiếp)
 Mục tiêu: Lưu trữ tin nhắn, cho phép chủ thẻ nhảy vào chat thủ công.
 
-[ ] Cấu hình Takeover: Thêm route tắt/bật AI PUT /api/v1/cards/:cardId/takeover (cập nhật trường isAiPaused).
+[x] Cấu hình Takeover: Thêm route tắt/bật AI PUT /api/v1/cards/:cardId/takeover (cập nhật trường isAiPaused).
 
-[ ] Gửi tin nhắn tĩnh: POST /api/v1/cards/:cardId/messages (Dùng khi AI bị lỗi hoặc khi khách submit Form Liên Hệ).
+[x] Gửi tin nhắn tĩnh: POST /api/v1/cards/:cardId/messages (Dùng khi AI bị lỗi hoặc khi khách submit Form Liên Hệ).
 
-[ ] Quản lý Inbox: GET /api/v1/cards/:cardId/messages (Chủ thẻ xem danh sách tin nhắn khách gửi).
+[x] Quản lý Inbox: GET /api/v1/cards/:cardId/messages (Chủ thẻ xem danh sách tin nhắn khách gửi).
 
-[ ] Đánh dấu đọc: PUT /api/v1/cards/:cardId/messages/:messageId/read.
+[x] Đánh dấu đọc: PUT /api/v1/cards/:cardId/messages/:messageId/read.
 
 Phase 7: Phân hệ Quản trị & Thống kê (Admin & Analytics)
 Mục tiêu: Chấm điểm học thuật cao với Dashboard số liệu.
