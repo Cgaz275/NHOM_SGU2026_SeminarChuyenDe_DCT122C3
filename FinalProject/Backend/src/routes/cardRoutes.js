@@ -7,6 +7,8 @@ const router = express.Router();
 router.post("/", verifyToken, cardController.createCard);
 router.get("/me", verifyToken, cardController.getMyCards);
 router.put("/:cardId", verifyToken, cardController.updateCard);
+router.put("/:cardId/ai-config", verifyToken, cardController.updateAiConfig);
+router.put("/:cardId/takeover", verifyToken, cardController.toggleTakeover);
 router.get("/:slug", cardController.getCardBySlug);
 
 module.exports = router;

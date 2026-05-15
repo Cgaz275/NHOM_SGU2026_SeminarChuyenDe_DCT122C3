@@ -116,9 +116,106 @@ async function updateCard(req, res) {
   }
 }
 
+async function updateAiConfig(req, res) {
+  try {
+    if (!req.body || (req.body.aiConfig === undefined && req.body.aiStatus === undefined)) {
+      return res.status(400).json({
+        status: false,
+        data: null,
+        message: "Vui lòng cung cấp cấu hình AI hoặc trạng thái AI để cập nhật",
+      });
+    }
+
+    const result = await cardService.updateAiConfig(
+      req.params.cardId,
+      req.user.uid,
+      {
+        aiConfig: req.body.aiConfig,
+        aiStatus: req.body.aiStatus,
+      }
+    );
+
+    if (result && result.error === "not-found") {
+      return res.status(404).json({
+        status: false,
+        data: null,
+        message: "Không tìm thấy thẻ",
+      });
+    }
+
+    if (result && result.error === "forbidden") {
+      return res.status(400).json({
+        status: false,
+        data: null,
+        message: "Bạn không có quyền cập nhật thẻ này",
+      });
+    }
+
+    return res.status(200).json({
+      status: true,
+      data: result,
+      message: "Cập nhật cấu hình AI thành công",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      data: null,
+      message: "Cập nhật cấu hình AI thất bại",
+    });
+  }
+}
+
+async function toggleTakeover(req, res) {
+  try {
+    if (!req.body || typeof req.body.isAiPaused !== "boolean") {
+      return res.status(400).json({
+        status: false,
+        data: null,
+        message: "Vui lòng cung cấp trạng thái tạm dừng AI hợp lệ",
+      });
+    }
+
+    const result = await cardService.toggleTakeover(
+      req.params.cardId,
+      req.user.uid,
+      req.body.isAiPaused
+    );
+
+    if (result && result.error === "not-found") {
+      return res.status(404).json({
+        status: false,
+        data: null,
+        message: "Không tìm thấy thẻ",
+      });
+    }
+
+    if (result && result.error === "forbidden") {
+      return res.status(400).json({
+        status: false,
+        data: null,
+        message: "Bạn không có quyền cập nhật thẻ này",
+      });
+    }
+
+    return res.status(200).json({
+      status: true,
+      data: result,
+      message: "Cập nhật trạng thái tạm dừng AI thành công",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      data: null,
+      message: "Cập nhật trạng thái tạm dừng AI thất bại",
+    });
+  }
+}
+
 module.exports = {
   createCard,
   getCardBySlug,
   getMyCards,
   updateCard,
+  updateAiConfig,
+  toggleTakeover,
 };
