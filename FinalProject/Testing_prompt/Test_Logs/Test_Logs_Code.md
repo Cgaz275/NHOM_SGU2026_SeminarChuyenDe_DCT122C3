@@ -69,3 +69,21 @@
 **File Code sinh ra:** `Testing/Backend/tests/Module_5_Fallback_Inbox.test.js`
 **Số lượng Test Cases (it blocks):** 5
 **Ghi chú:** Đã hoàn thiện mã nguồn Backend Test cho Module 5 (Fallback & Inbox). Áp dụng mock Middleware Authentication để kiểm tra quyền truy cập (xem/xóa) tin nhắn của chủ thẻ. Đặc biệt đã cover rủi ro Core Risk (Spam tin nhắn rác) bằng cách giả lập Middleware Rate Limiter chặn ở request thứ 4 (trả về 429). Đã xử lý đầy đủ Validate dữ liệu Form liên hệ bằng HTTP 400.
+
+---
+
+**Ngày cập nhật:** 2026-05-16
+**Tác nhân:** @Test_Agent
+**File Code sinh ra:** `Testing/Frontend/cypress/e2e/Module_5_Fallback_Inbox.cy.js`
+**Số lượng Test Cases (it blocks):** 4
+**Ghi chú:** Đã sinh mã nguồn Frontend Cypress cho Module 5. Chia test case thành 2 cụm: Khách vãng lai thao tác trên Form tĩnh và Chủ thẻ quản lý Inbox. Kỹ thuật đắt giá nhất là xử lý Graceful Degradation: Sử dụng `cy.intercept` chặn API `/chat` trả về lỗi 503 (sập LLM) để test xem UI có thực sự tự động ẩn khung Chatbot và hiển thị lại Form tĩnh hay không.
+
+---
+
+**Ngày cập nhật:** 2026-05-16
+**Tác nhân:** @Test_Agent
+**File Code sinh ra:** `Testing/Backend/tests/Module_6_Human_Takeover.test.js` và `Testing/Frontend/cypress/e2e/Module_6_Human_Takeover.cy.js`
+**Số lượng Test Cases (it blocks):** 5 (BE) + 4 (FE)
+**Ghi chú:** Đã hoàn thành mã nguồn Automation (cả FE & BE) cho Module 6 (Human Takeover).
+- **Backend:** Mock state `isAiPaused` bằng biến local nội bộ để kiểm tra Middleware khóa chặn API `/chat`. Cover chặt tình huống khách cố tình gọi LLM khi chủ thẻ đang tiếp quản -> trả về HTTP 403 Forbidden nhằm khóa mọi thất thoát Token AI.
+- **Frontend:** Giả lập hành vi Socket/Polling thông qua `cy.intercept` GET request để xác nhận tin nhắn của "Admin" hiện lên giao diện Khách. Test thành công luồng UI thông báo "Chủ thẻ đang tham gia" một cách nhẹ nhàng nếu có Xung đột luồng chat.
