@@ -65,7 +65,6 @@ Khác biệt với name card truyền thống, hệ thống tích hợp **AI Dig
 ### 4.3. Quản trị viên (Admin Panel)
 - Quản lý User (Khóa/Mở, xem chi tiết).
 - Kiểm duyệt nội dung (Xử lý các thẻ bị report).
-- Xem Dashboard Analytics (Token usage, Scan QR count).
 
 ---
 
@@ -95,6 +94,11 @@ Khác biệt với name card truyền thống, hệ thống tích hợp **AI Dig
 ---
 
 ## 8. RỦI RO & GIẢ ĐỊNH
+### 8.1. Các giả định
+- **Tài nguyên:** Hạ tầng miễn phí đủ dùng (Vercel, Firebase/Supabase) và một khoản chi phí nhỏ nạp vào OpenRouter là đủ lưu lượng cho MVP.
+- **Nguồn dữ liệu:** Chủ thẻ cung cấp thông tin nghiêm túc vào form chuyên môn để tạo ra `persona_data.json` chất lượng, giúp AI trả lời chính xác.
+
+### 8.2. Rủi ro & Biện pháp
 - **AI Hallucination & Prompt Injection:** Rủi ro AI bịa đặt hoặc bị thao túng. => **Giải pháp:** Guardrails chặt chẽ trong System Prompt, validate input.
 - **API Exhaustion (Cháy Token):** => **Giải pháp:** Rate limiting (20 câu/ngày/IP), dùng model rẻ/nhanh cho Demo.
 - **Spam Form/Inbox:** => **Giải pháp:** CAPTCHA, chặn submit > 3 lần/phút/IP.
@@ -109,5 +113,7 @@ Khác biệt với name card truyền thống, hệ thống tích hợp **AI Dig
 4. **Human Takeover:** Khách đang chat AI -> Chủ thẻ xem Inbox realtime -> Nhấn "Tiếp quản" -> AI ngưng -> Chủ thẻ chat tay.
 5. **Fallback:** AI lỗi hoặc chủ thẻ tắt AI -> Hiện Form liên hệ tĩnh -> Khách nhập Form -> Gửi email báo chủ thẻ.
 6. **Lưu Danh Bạ:** Khách xem thẻ -> Nhấn "Lưu liên lạc" -> Tải file `.vcf`.
+7. **Quản lý Người dùng (Admin):** Admin xem danh sách toàn bộ User -> Tìm kiếm/Lọc theo tên hoặc email -> Kích hoạt hoặc Khóa tài khoản -> Xem chi tiết các Digital Card của User.
+8. **Quản lý Báo cáo & Xử lý vi phạm (Admin):** Admin xem danh sách Report -> Xem chi tiết lý do -> Ra quyết định Khóa thẻ (chọn thời hạn) hoặc bỏ qua báo cáo -> Vô hiệu hóa URL vi phạm.
 
 *(Lưu ý: PRD này được tổng hợp để Agent nắm bắt nhanh Context, Rules và Workflows của hệ thống, hỗ trợ chính xác trong quá trình code, test và review).*
