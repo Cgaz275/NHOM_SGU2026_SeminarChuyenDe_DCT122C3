@@ -11,6 +11,10 @@
   --text-muted: #B7B7B7;
   --danger: #E5484D;
   --success: #2ECC71;
+
+  --seminar-blue: #2367A2;
+  --seminar-card: #101010;
+  --seminar-surface: #ffffff;
 }
 
 @theme inline {
@@ -208,7 +212,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 20vh;
+  min-height: clamp(360px, 48vw, 680px);
+  overflow: visible;
 }
 
 .hero-title {
@@ -251,7 +256,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
 }
 
 .hero-footer-desc {
@@ -307,6 +312,7 @@ body {
   flex: 1;
   flex-direction: column;
   padding: 0.8rem;
+  background: linear-gradient(180deg, #ffffff 100%, #ffffff 100%);
 }
 
 .floating-card-title {
@@ -314,7 +320,7 @@ body {
   font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #1e1e1e;
+  color: #000000;
   line-height: 1.2;
   letter-spacing: 0.1em;
 }
@@ -325,7 +331,7 @@ body {
   flex: 1;
   font-size: 0.75rem;
   line-height: 1.4;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.72);
 }
 
 /* ── Responsive overrides ─────────────────────────────────── */
