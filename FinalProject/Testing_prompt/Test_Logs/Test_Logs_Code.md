@@ -87,3 +87,13 @@
 **Ghi chú:** Đã hoàn thành mã nguồn Automation (cả FE & BE) cho Module 6 (Human Takeover).
 - **Backend:** Mock state `isAiPaused` bằng biến local nội bộ để kiểm tra Middleware khóa chặn API `/chat`. Cover chặt tình huống khách cố tình gọi LLM khi chủ thẻ đang tiếp quản -> trả về HTTP 403 Forbidden nhằm khóa mọi thất thoát Token AI.
 - **Frontend:** Giả lập hành vi Socket/Polling thông qua `cy.intercept` GET request để xác nhận tin nhắn của "Admin" hiện lên giao diện Khách. Test thành công luồng UI thông báo "Chủ thẻ đang tham gia" một cách nhẹ nhàng nếu có Xung đột luồng chat.
+
+---
+
+**Ngày cập nhật:** 2026-05-16
+**Tác nhân:** @Test_Agent
+**File Code sinh ra:** `Testing/Backend/tests/Module_7_Admin_Panel.test.js` và `Testing/Frontend/cypress/e2e/Module_7_Admin_Panel.cy.js`
+**Số lượng Test Cases (it blocks):** 5 (BE) + 3 (FE)
+**Ghi chú:** Đã sinh mã nguồn kiểm thử tự động cho Module 7 (Admin Panel).
+- **Backend:** Xây dựng Mock Middleware chia làm hai cấp độ (`verifyToken` và `verifyAdmin`). Tập trung cao độ vào test case Broken Access Control (Lỗ hổng phân quyền): Khi gửi token của User thường để gọi API Admin, hệ thống trả về chính xác HTTP 403 Forbidden. Đã test full API quản lý User và Báo cáo vi phạm.
+- **Frontend:** Mô phỏng 2 phiên người dùng riêng biệt. Tài khoản User thường không hề thấy Menu Admin trên DOM và cũng không thể gõ URL lén (redirect). Tài khoản Admin test được quy trình Tìm kiếm User, Khóa tài khoản và Xử lý Báo cáo vi phạm với các pop-up/Toast message tương ứng.
