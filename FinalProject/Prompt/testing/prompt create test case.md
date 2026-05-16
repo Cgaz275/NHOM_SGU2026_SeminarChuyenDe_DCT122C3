@@ -55,5 +55,5 @@ Sau khi sinh ra danh sách Test Cases, bạn BẮT BUỘC phải thực hiện 2
    > **Ghi chú:** [Tóm tắt các edge cases cốt lõi đã cover hoặc nhắc nhở FE/BE cần lưu ý]
 
 ---
-Hãy bắt đầu sinh danh sách Test Cases. Sau khi hoàn thành, hãy nhắc tôi lưu nội dung Test Cases vào file `Test case/Test_Cases/[Tên_Module]_TC.md` và lưu đoạn Log vào file `Test case/Test_Logs/Test_Logs.md`.
+Hãy bắt đầu sinh danh sách Test Cases. Sau khi hoàn thành, hãy nhắc tôi lưu nội dung Test Cases vào file `Test case/Test_Cases/[Tên_Module]_TC.md` và lưu đoạn Log vào file `Test case/Test_Logs/Test_Logs_TC.md`.
 ```
