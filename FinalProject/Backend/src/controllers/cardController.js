@@ -211,11 +211,46 @@ async function toggleTakeover(req, res) {
   }
 }
 
+async function deleteCard(req, res) {
+  try {
+    const result = await cardService.deleteCard(req.params.cardId, req.user.uid);
+
+    if (result && result.error === "not-found") {
+      return res.status(404).json({
+        status: false,
+        data: null,
+        message: "Không tìm thấy thẻ",
+      });
+    }
+
+    if (result && result.error === "forbidden") {
+      return res.status(400).json({
+        status: false,
+        data: null,
+        message: "Bạn không có quyền xóa thẻ này",
+      });
+    }
+
+    return res.status(200).json({
+      status: true,
+      data: result,
+      message: "Xóa thẻ thành công",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      data: null,
+      message: "Xóa thẻ thất bại",
+    });
+  }
+}
+
 module.exports = {
   createCard,
   getCardBySlug,
   getMyCards,
   updateCard,
+  deleteCard,
   updateAiConfig,
   toggleTakeover,
 };

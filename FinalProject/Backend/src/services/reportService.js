@@ -24,7 +24,22 @@ async function getAllReports() {
   return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 }
 
+async function resolveReport(reportId) {
+  const reportRef = db.collection("reports").doc(reportId);
+  const snapshot = await reportRef.get();
+
+  if (!snapshot.exists) {
+    return { error: "not-found" };
+  }
+
+  await reportRef.update({ status: "resolved" });
+  const updatedSnapshot = await reportRef.get();
+
+  return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
+}
+
 module.exports = {
   createReport,
   getAllReports,
+  resolveReport,
 };

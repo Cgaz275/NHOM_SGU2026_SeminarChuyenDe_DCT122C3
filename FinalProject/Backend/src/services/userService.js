@@ -38,7 +38,29 @@ async function updateProfile(userId, payload = {}) {
   return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
 }
 
+async function getAllUsers() {
+  const snapshot = await db.collection("users").orderBy("createdAt", "desc").get();
+
+  return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+}
+
+async function updateUserStatus(userId, status) {
+  const userRef = db.collection("users").doc(userId);
+  const snapshot = await userRef.get();
+
+  if (!snapshot.exists) {
+    return { error: "not-found" };
+  }
+
+  await userRef.update({ status });
+  const updatedSnapshot = await userRef.get();
+
+  return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
+}
+
 module.exports = {
   getProfile,
   updateProfile,
+  getAllUsers,
+  updateUserStatus,
 };

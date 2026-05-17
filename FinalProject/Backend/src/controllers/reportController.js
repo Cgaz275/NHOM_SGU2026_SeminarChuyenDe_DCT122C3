@@ -44,7 +44,34 @@ async function getAllReports(req, res) {
   }
 }
 
+async function resolveReport(req, res) {
+  try {
+    const result = await reportService.resolveReport(req.params.reportId);
+
+    if (result && result.error === "not-found") {
+      return res.status(404).json({
+        status: false,
+        data: null,
+        message: "Không tìm thấy báo cáo",
+      });
+    }
+
+    return res.status(200).json({
+      status: true,
+      data: result,
+      message: "Xử lý báo cáo thành công",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      data: null,
+      message: "Xử lý báo cáo thất bại",
+    });
+  }
+}
+
 module.exports = {
   createReport,
   getAllReports,
+  resolveReport,
 };

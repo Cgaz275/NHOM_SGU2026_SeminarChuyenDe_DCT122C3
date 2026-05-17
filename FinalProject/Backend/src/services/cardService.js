@@ -76,13 +76,20 @@ async function getCardBySlug(slug) {
   }
 
   const doc = snapshot.docs[0];
-  return { id: doc.id, ...doc.data() };
+  const data = doc.data();
+
+  if (data.status === "deleted") {
+    return null;
+  }
+
+  return { id: doc.id, ...data };
 }
 
 async function getMyCards(userId) {
   const snapshot = await db.collection("cards").where("userId", "==", userId).get();
+  const cards = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 
-  return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  return cards.filter((card) => card.status !== "deleted");
 }
 
 async function updateCard(cardId, userId, updateData = {}) {
@@ -195,6 +202,34 @@ async function toggleTakeover(cardId, userId, isAiPaused) {
   return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
 }
 
+async function deleteCard(cardId, userId) {
+  const cardRef = db.collection("cards").doc(cardId);
+  const snapshot = await cardRef.get();
+
+  if (!snapshot.exists) {
+    return { error: "not-found" };
+  }
+
+  const card = snapshot.data();
+
+  if (card.userId !== userId) {
+    return { error: "forbidden" };
+  }
+
+  if (card.status === "deleted") {
+    return { id: snapshot.id, ...card };
+  }
+
+  await cardRef.update({
+    status: "deleted",
+    deletedAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
+
+  const updatedSnapshot = await cardRef.get();
+
+  return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
+}
+
 module.exports = {
   createCard,
   getCardBySlug,
@@ -202,4 +237,5 @@ module.exports = {
   updateCard,
   updateAiConfig,
   toggleTakeover,
+  deleteCard,
 };
