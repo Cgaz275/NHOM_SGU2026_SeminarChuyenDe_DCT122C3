@@ -1,7 +1,6 @@
 # 📋 MASTER TEST PLAN (MVP)
 **Dự án:** Persona-Based Digital Card
 **Phạm vi:** Phiên bản MVP phục vụ Seminar Chuyên Đề
-**Đối tượng sử dụng:** @Test_Agent, @Leader_Agent
 
 Tài liệu này định nghĩa Kế hoạch Kiểm thử Tổng thể (Master Test Plan) cho dự án, phân rã từ `PRD.md` và `api-tree.md`.
 

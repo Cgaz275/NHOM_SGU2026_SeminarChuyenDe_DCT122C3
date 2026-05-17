@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
 import { Toast } from '@/components/ui/Toast';
-import { loginWithEmail, loginWithGoogle } from '@/lib/mock-auth-api';
+import { loginWithGoogle } from '@/lib/mock-auth-api';
+import { loginService } from '@/services/authService';
 import { GoogleButton } from './GoogleButton';
 import Link from 'next/link';
 
@@ -47,13 +48,21 @@ export function LoginForm() {
     
     setIsLoading(true);
     try {
-      await loginWithEmail(email, password);
-      showToast('Đăng nhập thành công.', 'success');
-      setTimeout(() => {
-        router.push('/dashboard/profile-builder');
-      }, 1000);
-    } catch (error) {
-      showToast('Email hoặc mật khẩu không đúng.', 'error');
+      const res = await loginService(email, password);
+      if (res.success) {
+        // Lưu token nếu có
+        if (res.data && res.data.token) {
+          localStorage.setItem('token', res.data.token);
+        }
+        showToast(res.message || 'Đăng nhập thành công.', 'success');
+        setTimeout(() => {
+          router.push('/dashboard/profile-builder');
+        }, 1000);
+      } else {
+        showToast(res.message || 'Email hoặc mật khẩu không đúng.', 'error');
+      }
+    } catch (error: any) {
+      showToast(error.message || 'Đã xảy ra lỗi khi kết nối tới máy chủ.', 'error');
     } finally {
       setIsLoading(false);
     }
