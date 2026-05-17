@@ -22,8 +22,10 @@ async function leaveMessage(cardId, data = {}) {
     cardId,
     senderName: data.senderName || null,
     senderEmail: data.senderEmail || null,
+    senderPhone: data.senderPhone || null,
     content: data.content || null,
     isRead: false,
+    isDeleted: false,
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
   };
 
@@ -47,8 +49,9 @@ async function getMessages(cardId, userId) {
     .get();
 
   const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  const visibleItems = items.filter((item) => item.isDeleted !== true);
 
-  return { data: items };
+  return { data: visibleItems };
 }
 
 async function markAsRead(messageId, cardId, userId) {
@@ -77,8 +80,52 @@ async function markAsRead(messageId, cardId, userId) {
   return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
 }
 
+async function markAsReadByMessageId(messageId, userId) {
+  const messageRef = db.collection("messages").doc(messageId);
+  const snapshot = await messageRef.get();
+
+  if (!snapshot.exists) {
+    return { error: "message-not-found" };
+  }
+
+  const message = snapshot.data();
+  const ownerCheck = await ensureCardOwner(message.cardId, userId);
+
+  if (ownerCheck.error) {
+    return ownerCheck;
+  }
+
+  await messageRef.update({ isRead: true });
+  const updatedSnapshot = await messageRef.get();
+
+  return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
+}
+
+async function deleteMessage(messageId, userId) {
+  const messageRef = db.collection("messages").doc(messageId);
+  const snapshot = await messageRef.get();
+
+  if (!snapshot.exists) {
+    return { error: "message-not-found" };
+  }
+
+  const message = snapshot.data();
+  const ownerCheck = await ensureCardOwner(message.cardId, userId);
+
+  if (ownerCheck.error) {
+    return ownerCheck;
+  }
+
+  await messageRef.update({ isDeleted: true });
+  const updatedSnapshot = await messageRef.get();
+
+  return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
+}
+
 module.exports = {
   leaveMessage,
   getMessages,
   markAsRead,
+  markAsReadByMessageId,
+  deleteMessage,
 };

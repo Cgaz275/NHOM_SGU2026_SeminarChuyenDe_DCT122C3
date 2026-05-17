@@ -40,5 +40,11 @@ router.post("/", reportController.createReport);
  *         description: Danh sách báo cáo
  */
 router.get("/", verifyToken, verifyAdmin, reportController.getAllReports);
+router.put(
+	"/:reportId/resolve",
+	verifyToken,
+	verifyAdmin,
+	reportController.resolveReport
+);
 
 module.exports = router;

@@ -55,7 +55,34 @@ async function getGlobalAnalytics(req, res) {
   }
 }
 
+async function trackVcfDownload(req, res) {
+  try {
+    const result = await analyticsService.trackVcfDownload(req.params.cardId);
+
+    if (result && result.error === "not-found") {
+      return res.status(404).json({
+        status: false,
+        data: null,
+        message: "Không tìm thấy thẻ",
+      });
+    }
+
+    return res.status(200).json({
+      status: true,
+      data: result,
+      message: "Ghi nhận tải VCF thành công",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      data: null,
+      message: "Ghi nhận tải VCF thất bại",
+    });
+  }
+}
+
 module.exports = {
   getCardAnalytics,
   getGlobalAnalytics,
+  trackVcfDownload,
 };

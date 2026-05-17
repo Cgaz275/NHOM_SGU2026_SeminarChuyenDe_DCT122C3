@@ -51,25 +51,6 @@ router.get("/me", verifyToken, cardController.getMyCards);
  *         description: Cập nhật thành công
  */
 router.put("/:cardId", verifyToken, cardController.updateCard);
-
-/**
- * @swagger
- * /cards/{cardId}/ai-config:
- *   put:
- *     summary: Cập nhật cấu hình AI cho thẻ
- *     tags: [Cards]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: cardId
- *         required: true
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: Cập nhật cấu hình AI thành công
- */
 router.put("/:cardId/ai-config", verifyToken, cardController.updateAiConfig);
 
 /**

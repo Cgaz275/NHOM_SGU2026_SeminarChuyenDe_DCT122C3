@@ -18,6 +18,7 @@ async function registerUser(decodedToken, payload = {}) {
         ? decodedToken.firebase.sign_in_provider
         : "firebase",
     isVerified: true,
+    status: "active",
     kycStatus: "pending",
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
   };

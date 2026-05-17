@@ -1,4 +1,15 @@
-const { db } = require("../config/firebase");
+const { admin, db } = require("../config/firebase");
+
+async function ensureCardExists(cardId) {
+  const cardRef = db.collection("cards").doc(cardId);
+  const snapshot = await cardRef.get();
+
+  if (!snapshot.exists) {
+    return false;
+  }
+
+  return true;
+}
 
 async function ensureCardOwner(cardId, userId) {
   const cardRef = db.collection("cards").doc(cardId);
@@ -29,10 +40,19 @@ async function getCardAnalytics(cardId, userId) {
     .where("cardId", "==", cardId)
     .get();
 
+  const analyticsRef = db.collection("analytics_cards").doc(cardId);
+  const analyticsSnapshot = await analyticsRef.get();
+  const analyticsData = analyticsSnapshot.exists ? analyticsSnapshot.data() : null;
+
   return {
     data: {
-      views: 150,
-      vcfDownloads: 45,
+      views: analyticsData && analyticsData.totalViews ? analyticsData.totalViews : 0,
+      vcfDownloads:
+        analyticsData && analyticsData.vcfDownloads ? analyticsData.vcfDownloads : 0,
+      aiChatInteractions:
+        analyticsData && analyticsData.aiChatInteractions
+          ? analyticsData.aiChatInteractions
+          : 0,
       messagesCount: messagesSnapshot.size,
     },
   };
@@ -50,7 +70,42 @@ async function getGlobalAnalytics() {
   };
 }
 
+async function trackVcfDownload(cardId) {
+  const cardExists = await ensureCardExists(cardId);
+
+  if (!cardExists) {
+    return { error: "not-found" };
+  }
+
+  const analyticsRef = db.collection("analytics_cards").doc(cardId);
+  const snapshot = await analyticsRef.get();
+
+  if (!snapshot.exists) {
+    const payload = {
+      totalViews: 0,
+      vcfDownloads: 1,
+      aiChatInteractions: 0,
+      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+    };
+
+    await analyticsRef.set(payload);
+    const createdSnapshot = await analyticsRef.get();
+
+    return { id: createdSnapshot.id, ...createdSnapshot.data() };
+  }
+
+  await analyticsRef.update({
+    vcfDownloads: admin.firestore.FieldValue.increment(1),
+    lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+  });
+
+  const updatedSnapshot = await analyticsRef.get();
+
+  return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
+}
+
 module.exports = {
   getCardAnalytics,
   getGlobalAnalytics,
+  trackVcfDownload,
 };
