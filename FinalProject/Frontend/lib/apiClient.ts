@@ -32,6 +32,7 @@ export async function apiClient<T>(
   };
 
   try {
+    console.log("📡 FE đang cố gọi API tới địa chỉ:", url);
     const response = await fetch(url, config);
     const result = await response.json();
     

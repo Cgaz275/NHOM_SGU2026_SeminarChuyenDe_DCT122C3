@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { LayoutDashboard, UserCircle, QrCode, MessageSquare, Menu, X } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { LayoutDashboard, UserCircle, QrCode, MessageSquare, Menu, X, LogOut } from 'lucide-react';
 import { useState } from 'react';
+import { logoutService } from '@/services/authService';
 
 const navItems = [
   { name: 'Quản lý thông tin', href: '/dashboard/profile-builder', icon: UserCircle },
@@ -14,7 +15,13 @@ const navItems = [
 
 export function DashboardSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleLogout = async () => {
+    await logoutService();
+    router.push('/login');
+  };
 
   return (
     <>
@@ -50,6 +57,13 @@ export function DashboardSidebar() {
               </Link>
             );
           })}
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-white/70 hover:bg-white/5 hover:text-white w-full text-left"
+          >
+            <LogOut size={20} />
+            <span className="font-medium text-sm">Đăng xuất</span>
+          </button>
         </div>
       )}
 
@@ -79,8 +93,16 @@ export function DashboardSidebar() {
           })}
         </nav>
 
-        <div className="mt-auto px-4">
-          <div className="text-xs text-white/40">
+        <div className="mt-auto">
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-white/70 hover:bg-white/5 hover:text-white w-full mb-4"
+          >
+            <LogOut size={20} />
+            <span className="font-medium text-sm">Đăng xuất</span>
+          </button>
+          
+          <div className="px-4 text-xs text-white/40">
             &copy; {new Date().getFullYear()} Seminar
           </div>
         </div>

@@ -172,17 +172,21 @@ export function LiveProfilePreview({ data }: LiveProfilePreviewProps) {
             </p>
           </div>
 
-          {/* Skills Placeholder */}
-          <div className="w-full mt-4 text-left">
-            <h3 className="text-sm font-semibold text-white mb-3">Skills</h3>
-            <div className="flex flex-wrap gap-2">
-              {['Design', 'Frontend', 'Next.js', 'React'].map(skill => (
-                <span key={skill} className="px-3 py-1.5 text-xs font-medium text-white/80 bg-white/5 border border-white/10 rounded-full">
-                  {skill}
-                </span>
-              ))}
+          {/* Skills */}
+          
+            <div className="w-full mt-4 text-left">
+              <h3 className="text-sm font-semibold text-white mb-3">Skills</h3>
+              {data.skills && data.skills.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {data.skills.map(skill => (
+                  <span key={skill} className="px-3 py-1.5 text-xs font-medium text-white/80 bg-white/5 border border-white/10 rounded-full">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            )}
             </div>
-          </div>
+          
 
         </div>
       </div>

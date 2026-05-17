@@ -45,6 +45,7 @@ export interface ProfileBuilderData {
   privacy: PrivacySettings;
   theme: ThemeSettings;
   lastSavedAt: string | null;
+  skills?: string[];
 }
 
 export type ProfileBuilderStatus = 'loading' | 'draft-saved' | 'unsaved-changes' | 'saving' | 'publishing' | 'published' | 'error';

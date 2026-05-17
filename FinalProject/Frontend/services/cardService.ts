@@ -1,5 +1,7 @@
 import { apiClient } from '../lib/apiClient';
 import { ProfileBuilderData } from '@/types/profile-builder';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { storage } from '../lib/firebase';
 
 const defaultProfileData: ProfileBuilderData = {
   id: '',
@@ -44,6 +46,7 @@ function mapBackendToFrontend(card: any): ProfileBuilderData {
     },
     theme: card.theme || { theme: 'Dark Blue', fontStyle: 'Modern Sans' },
     lastSavedAt: card.createdAt ? new Date(card.createdAt._seconds ? card.createdAt._seconds * 1000 : card.createdAt).toISOString() : null,
+    skills: card.aiConfig?.knowledgeBase?.skills?.map((s: any) => s.name) || [],
   };
 }
 
@@ -114,8 +117,15 @@ export async function checkSlugAvailability(slug: string): Promise<boolean> {
 }
 
 export async function mockUploadAvatar(file: File): Promise<string> {
-  // For now, keep returning object URL. Real impl would upload to Firebase Storage
-  return URL.createObjectURL(file);
+  // Tạo reference đến file trên Firebase Storage
+  const fileRef = ref(storage, `avatars/${Date.now()}_${file.name}`);
+  
+  // Upload file
+  await uploadBytes(fileRef, file);
+  
+  // Lấy download URL
+  const downloadURL = await getDownloadURL(fileRef);
+  return downloadURL;
 }
 
 export async function resetProfileDraft(): Promise<ProfileBuilderData> {

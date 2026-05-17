@@ -11,11 +11,11 @@ import {
   ReportData,
 } from '../../../types/public-profile';
 import {
-  getPublicProfile,
   sendChatMessage,
   submitLeadForm,
   submitAIReport,
 } from '../../../lib/mock-public-profile-api';
+import { apiClient } from '../../../lib/apiClient';
 
 import { ProfileHeroCard } from '../../../components/public-profile/ProfileHeroCard';
 import { SocialLinks } from '../../../components/public-profile/SocialLinks';
@@ -72,7 +72,43 @@ export default function PublicProfilePage() {
       try {
         setPageState('loading');
 
-        const data = await getPublicProfile(username);
+        const res = await apiClient<any>(`/cards/${username}`);
+        if (!res.success || !res.data) {
+          setPageState('not_found');
+          return;
+        }
+        const card = res.data;
+        
+        const data: PublicProfile = {
+          id: card.id,
+          username: card.slug || username,
+          name: card.fullName || 'No Name',
+          role: card.jobTitle || 'No Title',
+          slogan: card.slogan || '',
+          bio: card.bio || '',
+          skills: card.aiConfig?.knowledgeBase?.skills?.map((s: any) => s.name) || [],
+          socialLinks: Object.entries(card.socialLinks || {}).map(([platform, url]) => ({
+            id: platform,
+            platform,
+            url: url as string,
+            iconName: platform
+          })),
+          featuredProjects: card.aiConfig?.knowledgeBase?.projects?.map((p: any) => ({
+            id: p.id,
+            title: p.projectName,
+            dateRange: '',
+            description: p.description,
+            tags: []
+          })) || [],
+          experience: card.aiConfig?.knowledgeBase?.experiences?.map((e: any) => ({
+            id: e.id,
+            company: e.companyName,
+            dateRange: '',
+            description: e.description
+          })) || [],
+          avatarUrl: card.avatarUrl,
+          aiStatus: card.aiStatus === 'AI Ready' ? 'ai_ready' : 'ai_disabled'
+        };
 
         setProfile(data);
         setPageState('published');
