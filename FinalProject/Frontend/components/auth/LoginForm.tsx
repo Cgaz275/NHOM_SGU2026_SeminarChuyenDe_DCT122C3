@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
 import { Toast } from '@/components/ui/Toast';
-import { loginWithGoogle } from '@/lib/mock-auth-api';
 import { loginService } from '@/services/authService';
 import { GoogleButton } from './GoogleButton';
 import Link from 'next/link';
@@ -51,8 +50,8 @@ export function LoginForm() {
       const res = await loginService(email, password);
       if (res.success) {
         // Lưu token nếu có
-        if (res.data && res.data.token) {
-          localStorage.setItem('token', res.data.token);
+        if ('token' in res && res.token) {
+          localStorage.setItem('token', res.token);
         }
         showToast(res.message || 'Đăng nhập thành công.', 'success');
         setTimeout(() => {
@@ -71,11 +70,7 @@ export function LoginForm() {
   const handleGoogleLogin = async () => {
     setIsGoogleLoading(true);
     try {
-      await loginWithGoogle();
-      showToast('Đăng nhập Google thành công.', 'success');
-      setTimeout(() => {
-        router.push('/dashboard/profile-builder');
-      }, 1000);
+      showToast('Tính năng đăng nhập Google đang được phát triển.', 'success');
     } catch (error) {
       showToast('Không thể đăng nhập bằng Google.', 'error');
     } finally {

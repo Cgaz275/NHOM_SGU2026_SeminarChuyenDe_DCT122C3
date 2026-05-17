@@ -1,6 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { AITwinConfig, TestChatMessage } from '@/types/ai-twin';
-import { sendTestMessage, regenerateTestResponse, resetTestConversation } from '@/lib/mock-ai-twin-api';
+import { 
+  sendTestMessage, 
+  regenerateTestResponse, 
+  resetTestConversation 
+} from '@/services/aiTwinService';
 import { Send, RotateCcw, RefreshCcw, User, Bot, AlertTriangle } from 'lucide-react';
 
 interface TestChatSectionProps {

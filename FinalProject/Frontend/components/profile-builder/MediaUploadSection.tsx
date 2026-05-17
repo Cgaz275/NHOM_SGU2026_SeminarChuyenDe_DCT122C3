@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { MediaData } from '@/types/profile-builder';
-import { mockUploadAvatar } from '@/lib/mock-profile-builder-api';
+import { mockUploadAvatar } from '@/services/cardService';
 import { UploadCloud, Loader2, User, X } from 'lucide-react';
 import Image from 'next/image';
 

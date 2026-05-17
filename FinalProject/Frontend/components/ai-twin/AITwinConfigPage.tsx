@@ -3,7 +3,16 @@
 import { useState, useEffect } from 'react';
 // import { AIStatusBar } from './AIStatusBar';
 import { AITwinTabs } from './AITwinTabs';
-import { getAITwinConfig, saveAITwinConfig, addKnowledgeItem, updateKnowledgeItem, deleteKnowledgeItem, trainAITwin, publishAITwin, togglePublicAI } from '@/lib/mock-ai-twin-api';
+import { 
+  getAITwinConfig, 
+  saveAITwinConfig, 
+  addKnowledgeItem, 
+  updateKnowledgeItem, 
+  deleteKnowledgeItem, 
+  trainAITwin, 
+  publishAITwin, 
+  togglePublicAI 
+} from '@/services/aiTwinService';
 import { AITwinConfig, KnowledgeItemType } from '@/types/ai-twin';
 import { Toast } from '@/components/ui/Toast';
 import { PersonaSection } from './PersonaSection';

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { checkSlugAvailability } from '@/lib/mock-profile-builder-api';
+import { checkSlugAvailability } from '@/services/cardService';
 import { SlugStatus } from '@/types/profile-builder';
 import { Check, X, Loader2 } from 'lucide-react';
 

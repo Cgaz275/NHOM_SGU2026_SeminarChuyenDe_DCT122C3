@@ -25,7 +25,7 @@ const router = express.Router();
  *       201:
  *         description: Đăng ký thành công
  */
-router.post("/register", authController.register);
+router.post("/register", verifyToken, authController.register);
 
 /**
  * @swagger
@@ -48,7 +48,7 @@ router.post("/register", authController.register);
  *       200:
  *         description: Đăng nhập thành công, trả về token
  */
-router.post("/login", authController.login);
-router.post("/forgot-password", authController.forgotPassword);
+router.post("/login", verifyToken, authController.login);
+router.post("/forgot-password", verifyToken, authController.forgotPassword);
 
 module.exports = router;

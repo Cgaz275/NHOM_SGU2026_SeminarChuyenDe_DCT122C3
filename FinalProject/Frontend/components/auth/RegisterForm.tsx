@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
 import { Toast } from '@/components/ui/Toast';
-import { registerWithEmail } from '@/lib/mock-auth-api';
+import { registerService } from '@/services/authService';
 import Link from 'next/link';
 
 export function RegisterForm() {
@@ -55,13 +55,20 @@ export function RegisterForm() {
     
     setIsLoading(true);
     try {
-      await registerWithEmail(email, password);
-      showToast('Tạo tài khoản thành công.', 'success');
-      setTimeout(() => {
-        router.push('/dashboard/profile-builder');
-      }, 1000);
-    } catch (error) {
-      showToast('Không thể tạo tài khoản. Vui lòng thử lại.', 'error');
+      const res = await registerService(email, password);
+      if (res.success) {
+        if (res.token) {
+          localStorage.setItem('token', res.token);
+        }
+        showToast(res.message || 'Tạo tài khoản thành công.', 'success');
+        setTimeout(() => {
+          router.push('/dashboard/profile-builder');
+        }, 1000);
+      } else {
+        showToast(res.message || 'Không thể tạo tài khoản. Vui lòng thử lại.', 'error');
+      }
+    } catch (error: any) {
+      showToast(error.message || 'Lỗi kết nối máy chủ.', 'error');
     } finally {
       setIsLoading(false);
     }

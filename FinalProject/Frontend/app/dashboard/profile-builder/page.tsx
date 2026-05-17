@@ -17,7 +17,7 @@ import {
   saveProfileDraft, 
   publishProfile, 
   resetProfileDraft 
-} from '@/lib/mock-profile-builder-api';
+} from '@/services/cardService';
 
 export default function ProfileBuilderPage() {
   const [data, setData] = useState<ProfileBuilderData | null>(null);
