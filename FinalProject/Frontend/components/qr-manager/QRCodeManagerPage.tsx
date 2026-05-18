@@ -27,7 +27,7 @@ export function QRCodeManagerPage() {
       try {
         const profile = await getProfileDraft();
         if (profile && profile.basicInfo.slug) {
-          const backendIp = '192.168.1.8:5000'; // IP của Backend
+          const backendIp = 'latticed-willetta-subovarian.ngrok-free.app'; // IP của Backend
           const publicUrl = `http://${backendIp}/api/v1/cards/qr/${profile.id}`;
           
           setQrData({

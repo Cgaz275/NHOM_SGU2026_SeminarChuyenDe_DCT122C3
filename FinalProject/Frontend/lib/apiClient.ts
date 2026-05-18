@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://192.168.1.8:5000/api/v1';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://latticed-willetta-subovarian.ngrok-free.app/api/v1';
 
 /**
  * HTTP Client đóng gói Fetch API.

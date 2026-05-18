@@ -153,7 +153,11 @@ export const loginWithGoogle = async () => {
     };
 
   } catch (error: any) {
+    if (error.code === 'auth/popup-closed-by-user') {
+      console.log("Người dùng đã đóng popup đăng nhập.");
+      return { success: false, message: 'Bạn đã đóng cửa sổ đăng nhập Google.' };
+    }
     console.error("Lỗi đăng nhập Google:", error);
-    return { success: false, message: error.message };
+    return { success: false, message: error.message || 'Đăng nhập Google thất bại.' };
   }
 };
