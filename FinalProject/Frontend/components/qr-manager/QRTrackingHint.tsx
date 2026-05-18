@@ -21,9 +21,6 @@ export function QRTrackingHint({ scanCount, copyCount, downloadCount }: QRTracki
           <span className="text-xs text-white/50">Lượt tải QR</span>
         </div>
       </div>
-      <p className="text-xs text-center text-white/40">
-        Lượt quét QR, lượt sao chép liên kết và lượt tải mã sẽ được ghi nhận trong Basic Analytics.
-      </p>
     </div>
   );
 }

@@ -5,11 +5,9 @@ import { motion } from 'framer-motion';
 import { QRCodePreviewCard } from './QRCodePreviewCard';
 import { QRActionButtons } from './QRActionButtons';
 import { SlugWarning } from './SlugWarning';
-import { QRTrackingHint } from './QRTrackingHint';
 import { Toast } from '@/components/ui/Toast';
 import { QRCodeData } from '@/types/qr-manager';
 import { getProfileDraft } from '@/services/cardService';
-import { trackQREvent, copyProfileUrl } from '@/lib/mock-qr-manager-api';
 
 export function QRCodeManagerPage() {
   const [qrData, setQrData] = useState<QRCodeData | null>(null);
@@ -61,8 +59,6 @@ export function QRCodeManagerPage() {
     if (!qrData) return;
     try {
       await navigator.clipboard.writeText(qrData.publicUrl);
-      await copyProfileUrl(qrData.publicUrl); // mock api call
-      await trackQREvent('qr_copy_url');
       showToast('Đã sao chép URL hồ sơ.', 'success');
     } catch (error) {
       showToast('Lỗi khi sao chép URL.', 'error');
@@ -73,7 +69,6 @@ export function QRCodeManagerPage() {
     if (!qrData) return;
     try {
       await navigator.clipboard.writeText(qrData.publicUrl);
-      await trackQREvent('qr_copy_link');
       showToast('Đã sao chép liên kết.', 'success');
     } catch (error) {
       showToast('Lỗi khi sao chép liên kết.', 'error');
@@ -121,7 +116,6 @@ export function QRCodeManagerPage() {
         downloadLink.click();
         document.body.removeChild(downloadLink);
 
-        await trackQREvent('qr_download_png');
         showToast('Đã tải mã QR PNG.', 'success');
         resolve();
       };
@@ -149,7 +143,6 @@ export function QRCodeManagerPage() {
       document.body.removeChild(downloadLink);
       URL.revokeObjectURL(url);
 
-      await trackQREvent('qr_download_svg');
       showToast('Đã tải mã QR SVG.', 'success');
     } catch (error) {
       showToast('Lỗi khi tải mã SVG.', 'error');
@@ -210,11 +203,7 @@ export function QRCodeManagerPage() {
           </div>
         )}
 
-        <QRTrackingHint
-          scanCount={qrData.scanCount}
-          copyCount={qrData.copyCount}
-          downloadCount={qrData.downloadCount}
-        />
+
       </motion.div>
 
       <Toast 
