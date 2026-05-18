@@ -27,7 +27,7 @@ export function QRCodeManagerPage() {
       try {
         const profile = await getProfileDraft();
         if (profile && profile.basicInfo.slug) {
-          const backendIp = 'latticed-willetta-subovarian.ngrok-free.app'; // IP của Backend
+          const backendIp = 'latticed-willetta-subovarian.ngrok-free.dev'; // IP của Backend
           const publicUrl = `http://${backendIp}/api/v1/cards/qr/${profile.id}`;
           
           setQrData({
@@ -35,7 +35,7 @@ export function QRCodeManagerPage() {
             ownerName: profile.basicInfo.fullName || 'Người dùng',
             username: profile.basicInfo.slug,
             publicUrl: publicUrl, // Link giấu trong QR (Mã QR Động)
-            displayUrl: `192.168.1.8:3000/u/${profile.basicInfo.slug}`, // Link hiển thị trên giao diện
+            displayUrl: `shorty-lazily-dainty.ngrok-free.dev/u/${profile.basicInfo.slug}`, // Link hiển thị trên giao diện
             status: 'published',
             slugChangedRecently: false,
             scanCount: 0,

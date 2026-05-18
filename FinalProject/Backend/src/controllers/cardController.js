@@ -256,7 +256,7 @@ async function redirectQr(req, res) {
       return res.status(404).send("Thẻ không tồn tại hoặc đã bị xóa.");
     }
 
-    const frontendBaseUrl = "https://192.168.1.8:3000"; // Đổi thành IP để test trên điện thoại
+    const frontendBaseUrl = "https://shorty-lazily-dainty.ngrok-free.dev"; // Đổi thành IP để test trên điện thoại
 
     return res.redirect(`${frontendBaseUrl}/u/${card.slug}`);
   } catch (error) {

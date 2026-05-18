@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://latticed-willetta-subovarian.ngrok-free.app/api/v1';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://latticed-willetta-subovarian.ngrok-free.dev/api/v1';
 
 /**
  * HTTP Client đóng gói Fetch API.
@@ -25,6 +25,8 @@ export async function apiClient<T>(
       headers.set('Authorization', `Bearer ${token}`);
     }
   }
+
+  headers.set('ngrok-skip-browser-warning', 'true');
 
   const config: RequestInit = {
     ...options,

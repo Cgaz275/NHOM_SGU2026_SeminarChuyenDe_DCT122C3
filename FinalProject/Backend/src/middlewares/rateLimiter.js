@@ -5,6 +5,7 @@ const globalLimiter = rateLimit({
   max: 100,
   standardHeaders: true,
   legacyHeaders: false,
+  validate: false,
   message: {
     status: false,
     message: "Bạn đã gửi quá nhiều yêu cầu, vui lòng thử lại sau",
@@ -16,6 +17,7 @@ const chatLimiter = rateLimit({
   max: 10,
   standardHeaders: true,
   legacyHeaders: false,
+  validate: false,
   message: {
     status: false,
     message: "Bạn đã gửi quá nhiều tin nhắn, vui lòng thử lại sau",
