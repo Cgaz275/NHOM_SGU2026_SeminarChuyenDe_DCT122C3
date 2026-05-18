@@ -27,67 +27,92 @@ let mockReports: AdminReport[] = [
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export async function getAdminUsers(): Promise<AdminUser[]> {
-  await delay(800);
-  return [...mockUsers];
+  const res = await apiClient<any[]>('/users');
+  if (res.success && res.data) {
+    return res.data.map((u: any) => ({
+      id: u.id,
+      accountId: u.id.substring(0, 8),
+      fullName: u.fullName || 'No Name',
+      email: u.email,
+      registeredAt: u.createdAt?._seconds ? new Date(u.createdAt._seconds * 1000).toISOString() : new Date().toISOString(),
+      status: u.status === 'banned' ? 'locked' : 'verified',
+    }));
+  }
+  return [];
 }
 
 export async function getAdminReports(): Promise<AdminReport[]> {
-  await delay(800);
-  return [...mockReports];
+  const res = await apiClient<any[]>('/reports');
+  if (res.success && res.data) {
+    return res.data.map((r: any) => ({
+      id: r.id,
+      accountId: r.cardId ? r.cardId.substring(0, 8) : 'N/A',
+      fullName: r.fullName || 'Ẩn danh',
+      email: r.email || 'N/A',
+      accountStatus: 'verified',
+      reason: r.reason,
+      createdAt: r.createdAt?._seconds ? new Date(r.createdAt._seconds * 1000).toISOString() : new Date().toISOString(),
+      reportStatus: r.status || 'pending',
+    }));
+  }
+  return [];
 }
 
+
 export async function getUserById(userId: string): Promise<AdminUser | null> {
-  await delay(400);
-  const user = mockUsers.find(u => u.id === userId || u.accountId === userId);
-  return user || null;
+  const users = await getAdminUsers();
+  return users.find(u => u.id === userId || u.accountId === userId) || null;
 }
 
 export async function getReportById(reportId: string): Promise<AdminReport | null> {
-  await delay(400);
-  const report = mockReports.find(r => r.id === reportId);
-  return report || null;
+  const reports = await getAdminReports();
+  return reports.find(r => r.id === reportId) || null;
 }
 
 export async function lockUser(userId: string): Promise<AdminActionResponse> {
-  await delay(600);
-  const userIndex = mockUsers.findIndex(u => u.id === userId || u.accountId === userId);
-  if (userIndex !== -1) {
-    mockUsers[userIndex].status = 'locked';
-    // Update reports as well
-    mockReports = mockReports.map(r => 
-      r.accountId === mockUsers[userIndex].accountId ? { ...r, accountStatus: 'locked' } : r
-    );
+  const res = await apiClient<any>(`/users/${userId}/status`, {
+    method: 'PUT',
+    body: JSON.stringify({ status: 'banned' })
+  });
+  if (res.success) {
     return { success: true, message: 'Đã khóa tài khoản thành công.' };
   }
-  return { success: false, message: 'Không tìm thấy tài khoản.' };
+  return { success: false, message: res.message || 'Không thể khóa tài khoản.' };
 }
 
 export async function unlockUser(userId: string): Promise<AdminActionResponse> {
-  await delay(600);
-  const userIndex = mockUsers.findIndex(u => u.id === userId || u.accountId === userId);
-  if (userIndex !== -1) {
-    mockUsers[userIndex].status = 'verified'; // Assumes verified after unlocking
-    // Update reports as well
-    mockReports = mockReports.map(r => 
-      r.accountId === mockUsers[userIndex].accountId ? { ...r, accountStatus: 'verified' } : r
-    );
+  const res = await apiClient<any>(`/users/${userId}/status`, {
+    method: 'PUT',
+    body: JSON.stringify({ status: 'active' })
+  });
+  if (res.success) {
     return { success: true, message: 'Đã mở khóa tài khoản thành công.' };
   }
-  return { success: false, message: 'Không tìm thấy tài khoản.' };
+  return { success: false, message: res.message || 'Không thể mở khóa tài khoản.' };
 }
 
 export async function resolveReport(reportId: string): Promise<AdminActionResponse> {
-  await delay(600);
-  const reportIndex = mockReports.findIndex(r => r.id === reportId);
-  if (reportIndex !== -1) {
-    mockReports[reportIndex].reportStatus = 'resolved';
+  const res = await apiClient<any>(`/reports/${reportId}/resolve`, {
+    method: 'PUT'
+  });
+  if (res.success) {
     return { success: true, message: 'Đã xử lý báo cáo thành công.' };
   }
-  return { success: false, message: 'Không tìm thấy báo cáo.' };
+  return { success: false, message: res.message || 'Không thể xử lý báo cáo.' };
 }
 
+
+import { apiClient } from './apiClient';
+
 export async function checkAdminPermission(): Promise<boolean> {
-  await delay(1000);
-  // Mocking permission granted. Change to false to test PermissionDeniedState
-  return true;
+  try {
+    const res = await apiClient<any>('/users/me');
+    if (res.success && res.data && res.data.role === 'admin') {
+      return true;
+    }
+    return false;
+  } catch (error) {
+    return false;
+  }
 }
+

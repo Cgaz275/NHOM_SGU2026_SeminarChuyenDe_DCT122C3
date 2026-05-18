@@ -5,13 +5,22 @@ import { AdminSidebar } from './AdminSidebar';
 import { checkAdminPermission } from '@/lib/mock-admin-api';
 import { AdminLoadingState } from './AdminLoadingState';
 import { PermissionDeniedState } from './PermissionDeniedState';
+import { usePathname, useRouter } from 'next/navigation';
 
 export function AdminLayout({ children }: { children: ReactNode }) {
   const [hasPermission, setHasPermission] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     async function checkPerms() {
+      if (pathname === '/admin/login') {
+        setIsLoading(false);
+        setHasPermission(true);
+        return;
+      }
+
       setIsLoading(true);
       try {
         const result = await checkAdminPermission();
@@ -23,7 +32,18 @@ export function AdminLayout({ children }: { children: ReactNode }) {
       }
     }
     checkPerms();
-  }, []);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isLoading && !hasPermission && pathname !== '/admin/login') {
+      router.push('/admin/login');
+    }
+  }, [isLoading, hasPermission, pathname, router]);
+
+  // Nếu là trang login thì không render sidebar và layout admin
+  if (pathname === '/admin/login') {
+    return <>{children}</>;
+  }
 
   if (isLoading) {
     return (
@@ -34,8 +54,13 @@ export function AdminLayout({ children }: { children: ReactNode }) {
   }
 
   if (!hasPermission) {
-    return <PermissionDeniedState />;
+    return (
+      <div className="min-h-screen bg-[#0B0B0B] flex items-center justify-center">
+        <AdminLoadingState />
+      </div>
+    ); // Hiển thị loading trong khi redirect
   }
+
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-[#0B0B0B] text-white">

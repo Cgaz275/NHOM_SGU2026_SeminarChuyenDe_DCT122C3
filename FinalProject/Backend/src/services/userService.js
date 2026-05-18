@@ -41,8 +41,24 @@ async function updateProfile(userId, payload = {}) {
 async function getAllUsers() {
   const snapshot = await db.collection("users").orderBy("createdAt", "desc").get();
 
-  return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  const users = await Promise.all(snapshot.docs.map(async (doc) => {
+    const userData = { id: doc.id, ...doc.data() };
+    
+    // Tìm thẻ của user này để lấy tên hiển thị ưu tiên
+    const cardSnapshot = await db.collection("cards").where("userId", "==", doc.id).limit(1).get();
+    
+    if (!cardSnapshot.empty) {
+      const cardData = cardSnapshot.docs[0].data();
+      // Ưu tiên lấy fullName từ thẻ, nếu không có mới dùng fullName từ user
+      userData.fullName = cardData.fullName || cardData.title || userData.fullName;
+    }
+    
+    return userData;
+  }));
+
+  return users;
 }
+
 
 async function updateUserStatus(userId, status) {
   const userRef = db.collection("users").doc(userId);
