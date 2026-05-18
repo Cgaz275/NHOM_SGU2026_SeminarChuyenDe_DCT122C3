@@ -9,7 +9,9 @@ import { LeadDrawer } from './LeadDrawer';
 import { ConfirmActionModal } from './ConfirmActionModal';
 import { Toast } from '@/components/ui/Toast';
 import { Conversation, ConversationFilter } from '@/types/inbox';
-import * as api from '@/lib/mock-inbox-api';
+import * as api from '@/services/conversationService';
+
+
 
 export function PersonaInboxPage() {
   const [conversations, setConversations] = useState<Conversation[]>([]);

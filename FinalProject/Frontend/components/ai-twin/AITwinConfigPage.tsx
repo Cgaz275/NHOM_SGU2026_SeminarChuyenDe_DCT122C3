@@ -165,12 +165,29 @@ export function AITwinConfigPage() {
 
   return (
     <div className="max-w-5xl mx-auto p-4 md:p-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">AI Digital Twin Configuration</h1>
-        <p className="text-white/60">
-          Configure how your AI assistant speaks, what it knows, and when it can go public.
-        </p>
+      <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">AI Digital Twin Configuration</h1>
+          <p className="text-white/60">
+            Configure how your AI assistant speaks, what it knows, and when it can go public.
+          </p>
+        </div>
+        <div className="flex gap-3">
+          <button
+            onClick={handleSave}
+            className="px-5 py-2.5 bg-[#008FEA] hover:bg-[#0077c2] text-white font-medium rounded-lg transition-colors text-sm"
+          >
+            Save Changes
+          </button>
+          <button
+            onClick={handleTrain}
+            className="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors text-sm"
+          >
+            Train AI
+          </button>
+        </div>
       </div>
+
 
       {/* <div className="mb-8">
         <AIStatusBar 

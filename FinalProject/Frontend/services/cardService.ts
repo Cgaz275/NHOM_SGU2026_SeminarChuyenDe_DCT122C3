@@ -41,14 +41,15 @@ function mapBackendToFrontend(card: any): ProfileBuilderData {
     privacy: {
       showEmail: card.isEmailPublic ?? true,
       showPhone: card.isPhonePublic ?? true,
-      showSocialLinks: true,
-      allowAiContactMention: true,
+      showSocialLinks: card.isSocialLinksPublic ?? true,
+      allowAiContactMention: card.allowAiContactMention ?? true,
     },
     theme: card.theme || { theme: 'Dark Blue', fontStyle: 'Modern Sans' },
     lastSavedAt: card.createdAt ? new Date(card.createdAt._seconds ? card.createdAt._seconds * 1000 : card.createdAt).toISOString() : null,
     skills: card.aiConfig?.knowledgeBase?.skills?.map((s: any) => s.name) || [],
   };
 }
+
 
 function mapFrontendToBackend(data: ProfileBuilderData): any {
   return {
@@ -60,17 +61,42 @@ function mapFrontendToBackend(data: ProfileBuilderData): any {
     socialLinks: data.socialLinks,
     isEmailPublic: data.privacy.showEmail,
     isPhonePublic: data.privacy.showPhone,
+    isSocialLinksPublic: data.privacy.showSocialLinks,
+    allowAiContactMention: data.privacy.allowAiContactMention,
     theme: data.theme,
+    slug: data.basicInfo.slug,
+    aiConfig: {
+      knowledgeBase: {
+        skills: data.skills?.map(s => ({ name: s })) || []
+      }
+    }
   };
 }
 
+
+
 export async function getProfileDraft(): Promise<ProfileBuilderData> {
-  const res = await apiClient<any[]>('/cards/me');
-  if (res.success && res.data && res.data.length > 0) {
-    return mapBackendToFrontend(res.data[0]);
+  const [cardsRes, userRes] = await Promise.all([
+    apiClient<any[]>('/cards/me'),
+    apiClient<any>('/users/me')
+  ]);
+
+  let profileData = JSON.parse(JSON.stringify(defaultProfileData));
+
+  if (cardsRes.success && cardsRes.data && cardsRes.data.length > 0) {
+    profileData = mapBackendToFrontend(cardsRes.data[0]);
   }
-  return JSON.parse(JSON.stringify(defaultProfileData));
+
+  // Tự động lấy email từ user profile nếu trong card chưa có
+  if (userRes.success && userRes.data && userRes.data.email) {
+    if (!profileData.socialLinks.email) {
+      profileData.socialLinks.email = userRes.data.email;
+    }
+  }
+
+  return profileData;
 }
+
 
 export async function saveProfileDraft(data: ProfileBuilderData): Promise<{ success: boolean; lastSavedAt: string }> {
   const payload = mapFrontendToBackend(data);
@@ -102,19 +128,35 @@ export async function publishProfile(data: ProfileBuilderData): Promise<{ succes
     throw new Error('Thiếu thông tin bắt buộc');
   }
   
-  // Save first
+  // Lưu dữ liệu trước
   await saveProfileDraft(data);
+
+  // Cập nhật trạng thái thành published
+  if (data.id) {
+    const res = await apiClient<any>(`/cards/${data.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ status: 'published' }),
+    });
+    
+    if (!res.success) {
+      throw new Error(res.message || 'Lỗi xuất bản thẻ');
+    }
+  }
 
   return { success: true, message: 'Đã xuất bản thẻ thành công' };
 }
 
+
 export async function checkSlugAvailability(slug: string): Promise<boolean> {
-  // Try to fetch card by slug. If not found, it's available.
-  const res = await apiClient<any>(`/cards/${slug}`);
-  // If success is false and status is 404, then it's available. 
-  // Wait, apiClient returns success: false for 404.
-  return !res.success; 
+  const res = await apiClient<any>(`/cards/check-slug?slug=${slug}`);
+  if (res.success) {
+    // res.data = true nghĩa là bị trùng (không dùng được) -> trả về false
+    // res.data = false nghĩa là không trùng (dùng được) -> trả về true
+    return !res.data;
+  }
+  return false; 
 }
+
 
 export async function mockUploadAvatar(file: File): Promise<string> {
   // Tạo reference đến file trên Firebase Storage

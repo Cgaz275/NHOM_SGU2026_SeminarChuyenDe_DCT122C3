@@ -1,16 +1,10 @@
 'use client';
 
 import { SocialLinksData } from '@/types/profile-builder';
-import { 
-  // Facebook, 
-  // Instagram, 
-  // Twitter, 
-  // Github, 
-  // Dribbble, 
-  Mail, 
-  Phone,
-  Link as LinkIcon
-} from 'lucide-react';
+import { Mail, Phone, Link as LinkIcon } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaTwitter, FaGithub, FaDribbble, FaBehance } from 'react-icons/fa';
+
+
 
 interface SocialLinksSectionProps {
   data: SocialLinksData;
@@ -26,13 +20,15 @@ export function SocialLinksSection({ data, onChange }: SocialLinksSectionProps) 
     { key: 'email', label: 'Email', icon: Mail, placeholder: 'hello@example.com', type: 'email' },
     { key: 'phone', label: 'Phone', icon: Phone, placeholder: '+1 234 567 8900', type: 'tel' },
     { key: 'portfolio', label: 'Portfolio Website', icon: LinkIcon, placeholder: 'https://yourwebsite.com', type: 'url' },
-    // { key: 'facebook', label: 'Facebook', icon: Facebook, placeholder: 'https://facebook.com/...', type: 'url' },
-    // { key: 'instagram', label: 'Instagram', icon: Instagram, placeholder: 'https://instagram.com/...', type: 'url' },
-    // { key: 'x', label: 'X (Twitter)', icon: Twitter, placeholder: 'https://x.com/...', type: 'url' },
-    // { key: 'github', label: 'GitHub', icon: Github, placeholder: 'https://github.com/...', type: 'url' },
-    { key: 'behance', label: 'Behance', icon: LinkIcon, placeholder: 'https://behance.net/...', type: 'url' },
-    // { key: 'dribbble', label: 'Dribbble', icon: Dribbble, placeholder: 'https://dribbble.com/...', type: 'url' },
+    { key: 'facebook', label: 'Facebook', icon: FaFacebook, placeholder: 'https://facebook.com/...', type: 'url' },
+    { key: 'instagram', label: 'Instagram', icon: FaInstagram, placeholder: 'https://instagram.com/...', type: 'url' },
+    { key: 'x', label: 'X (Twitter)', icon: FaTwitter, placeholder: 'https://x.com/...', type: 'url' },
+    { key: 'github', label: 'GitHub', icon: FaGithub, placeholder: 'https://github.com/...', type: 'url' },
+    { key: 'behance', label: 'Behance', icon: FaBehance, placeholder: 'https://behance.net/...', type: 'url' },
+    { key: 'dribbble', label: 'Dribbble', icon: FaDribbble, placeholder: 'https://dribbble.com/...', type: 'url' },
   ];
+
+
 
   return (
     <div className="flex flex-col gap-6 bg-[#101010] border border-white/10 rounded-xl p-6">

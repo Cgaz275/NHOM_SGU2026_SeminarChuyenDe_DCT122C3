@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://192.168.1.8:5000/api/v1';
 
 /**
  * HTTP Client đóng gói Fetch API.
@@ -47,9 +47,10 @@ export async function apiClient<T>(
 
     return {
       success: true,
-      data: result.data || result, // Fallback nếu BE không bọc trong field data
+      data: result.data !== undefined ? result.data : result, // Sửa lỗi || làm mất giá trị false
       message: result.message || 'Thành công',
     };
+
   } catch (error: any) {
     console.error('API Client Error:', error);
     return {

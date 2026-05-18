@@ -32,15 +32,26 @@ async function getCard() {
 export async function getAITwinConfig(): Promise<AITwinConfig> {
   const card = await getCard();
   if (card && card.aiConfig) {
+    // Đảm bảo tất cả các skill đều có ID để React không báo lỗi key
+    const skills = card.aiConfig.knowledgeBase?.skills?.map((s: any, index: number) => ({
+      id: s.id || `skill-${index}`,
+      ...s
+    })) || [];
+
     return {
       ...defaultAITwinConfig,
       ...card.aiConfig,
+      knowledgeBase: {
+        ...card.aiConfig.knowledgeBase,
+        skills: skills
+      },
       id: card.id,
       status: card.aiStatus || 'AI Draft',
     };
   }
   return JSON.parse(JSON.stringify(defaultAITwinConfig));
 }
+
 
 export async function saveAITwinConfig(config: Partial<AITwinConfig>): Promise<AITwinConfig> {
   const card = await getCard();

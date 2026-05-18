@@ -1,16 +1,10 @@
 const userService = require("../services/userService");
+const authService = require("../services/authService");
 
 async function getMe(req, res) {
   try {
-    const profile = await userService.getProfile(req.user.uid);
-
-    if (!profile) {
-      return res.status(404).json({
-        status: false,
-        data: null,
-        message: "Không tìm thấy người dùng",
-      });
-    }
+    // Tự động tạo user nếu chưa tồn tại trong database
+    const profile = await authService.registerUser(req.user);
 
     return res.status(200).json({
       status: true,
@@ -18,6 +12,7 @@ async function getMe(req, res) {
       message: "Lấy hồ sơ thành công",
     });
   } catch (error) {
+    console.error("Lỗi trong getMe:", error);
     return res.status(500).json({
       status: false,
       data: null,
@@ -25,6 +20,7 @@ async function getMe(req, res) {
     });
   }
 }
+
 
 async function updateMe(req, res) {
   try {

@@ -89,6 +89,46 @@ router.put("/:cardId/takeover", verifyToken, cardController.toggleTakeover);
  *       200:
  *         description: Lấy thông tin thẻ thành công
  */
+router.get("/check-slug", verifyToken, cardController.checkSlug);
+
+/**
+ * @swagger
+ * /cards/qr/{cardId}:
+ *   get:
+ *     summary: Chuyển hướng từ mã QR cố định (ID) sang đường dẫn tĩnh (Slug) hiện tại
+ *     tags: [Cards]
+ *     parameters:
+ *       - in: path
+ *         name: cardId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       302:
+ *         description: Tự động Redirect sang trang công khai của chủ thẻ
+ *       404:
+ *         description: Không tìm thấy thẻ hoặc thẻ đã bị xóa
+ */
+router.get("/qr/:cardId", cardController.redirectQr); 
+// Lưu ý: Không dùng verifyToken ở đây vì ai quét mã QR cũng phải vào được!
+
+/**
+ * @swagger
+ * /cards/{slug}:
+ *   get:
+ *     summary: Xem thẻ theo đường dẫn tĩnh (Slug)
+ *     tags: [Cards]
+ *     parameters:
+ *       - in: path
+ *         name: slug
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Lấy thông tin thẻ thành công
+ */
 router.get("/:slug", cardController.getCardBySlug);
 
 module.exports = router;
+

@@ -8,7 +8,8 @@ import { SlugWarning } from './SlugWarning';
 import { QRTrackingHint } from './QRTrackingHint';
 import { Toast } from '@/components/ui/Toast';
 import { QRCodeData } from '@/types/qr-manager';
-import { getQRCodeData, trackQREvent, copyProfileUrl } from '@/lib/mock-qr-manager-api';
+import { getProfileDraft } from '@/services/cardService';
+import { trackQREvent, copyProfileUrl } from '@/lib/mock-qr-manager-api';
 
 export function QRCodeManagerPage() {
   const [qrData, setQrData] = useState<QRCodeData | null>(null);
@@ -24,16 +25,37 @@ export function QRCodeManagerPage() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await getQRCodeData();
-        setQrData(data);
+        const profile = await getProfileDraft();
+        if (profile && profile.basicInfo.slug) {
+          const backendIp = '192.168.1.8:5000'; // IP của Backend
+          const publicUrl = `http://${backendIp}/api/v1/cards/qr/${profile.id}`;
+          
+          setQrData({
+            id: profile.id || 'new',
+            ownerName: profile.basicInfo.fullName || 'Người dùng',
+            username: profile.basicInfo.slug,
+            publicUrl: publicUrl, // Link giấu trong QR (Mã QR Động)
+            displayUrl: `192.168.1.8:3000/u/${profile.basicInfo.slug}`, // Link hiển thị trên giao diện
+            status: 'published',
+            slugChangedRecently: false,
+            scanCount: 0,
+            copyCount: 0,
+            downloadCount: 0,
+            updatedAt: profile.lastSavedAt || new Date().toISOString(),
+          });
+        } else {
+
+          setQrData(null);
+        }
       } catch (error) {
-        showToast('Không thể tải dữ liệu QR. Vui lòng thử lại sau.', 'error');
+        setToastState({ isVisible: true, message: 'Không thể tải dữ liệu QR. Vui lòng thử lại sau.', type: 'error' });
       } finally {
         setIsLoading(false);
       }
     };
     loadData();
-  }, [showToast]);
+  }, []);
+
 
   const handleCopyUrl = async () => {
     if (!qrData) return;
@@ -70,6 +92,11 @@ export function QRCodeManagerPage() {
       if (!ctx) {
         showToast('Trình duyệt không hỗ trợ Canvas.', 'error');
         resolve();
+        return;
+      }
+
+      if (!qrSvgRef.current) {
+        showToast('Không tìm thấy thẻ SVG mã QR để xử lý.', 'error');
         return;
       }
 

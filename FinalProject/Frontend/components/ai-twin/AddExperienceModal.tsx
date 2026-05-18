@@ -36,13 +36,14 @@ export function AddExperienceModal({ isOpen, onClose, onAdd, initialData }: AddE
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-white mb-2">Start Date</label>
-            <input required type="text" placeholder="e.g. 2020" value={startDate} onChange={e => setStartDate(e.target.value)} className="w-full bg-[#101010] border border-white/10 rounded-lg px-4 py-2 text-white focus:border-[#008FEA] focus:outline-none" />
+            <input required type="date" value={startDate} onChange={e => setStartDate(e.target.value)} onKeyDown={e => e.preventDefault()} className="w-full bg-[#101010] border border-white/10 rounded-lg px-4 py-2 text-white focus:border-[#008FEA] focus:outline-none" />
           </div>
           <div>
             <label className="block text-sm font-medium text-white mb-2">End Date</label>
-            <input required type="text" placeholder="e.g. Present" value={endDate} onChange={e => setEndDate(e.target.value)} className="w-full bg-[#101010] border border-white/10 rounded-lg px-4 py-2 text-white focus:border-[#008FEA] focus:outline-none" />
+            <input required type="date" value={endDate} onChange={e => setEndDate(e.target.value)} onKeyDown={e => e.preventDefault()} className="w-full bg-[#101010] border border-white/10 rounded-lg px-4 py-2 text-white focus:border-[#008FEA] focus:outline-none" />
           </div>
         </div>
+
         <div>
           <label className="block text-sm font-medium text-white mb-2">Description</label>
           <textarea required value={description} onChange={e => setDescription(e.target.value)} rows={3} className="w-full bg-[#101010] border border-white/10 rounded-lg px-4 py-2 text-white focus:border-[#008FEA] focus:outline-none resize-none" />

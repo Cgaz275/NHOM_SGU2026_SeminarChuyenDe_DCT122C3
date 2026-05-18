@@ -16,6 +16,8 @@ const messageRoutes = require("./routes/messageRoutes");
 const messageApiRoutes = require("./routes/messageApiRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
 const reportRoutes = require("./routes/reportRoutes");
+const conversationRoutes = require("./routes/conversationRoutes");
+
 const { globalLimiter } = require("./middlewares/rateLimiter");
 const { errorHandler } = require("./middlewares/errorHandler");
 
@@ -36,6 +38,8 @@ app.use("/api/v1/messages", messageApiRoutes);
 app.use("/api/v1/chat", chatRoutes);
 app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/reports", reportRoutes);
+app.use("/api/v1/conversations", conversationRoutes);
+
 
 app.get("/api/v1/health", (req, res) => {
   res.status(200).json({
