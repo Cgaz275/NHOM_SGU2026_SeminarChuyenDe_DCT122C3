@@ -256,7 +256,7 @@ async function redirectQr(req, res) {
       return res.status(404).send("Thẻ không tồn tại hoặc đã bị xóa.");
     }
 
-    const frontendBaseUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+    const frontendBaseUrl = "http://192.168.1.8:3000"; // Đổi thành IP để test trên điện thoại
 
     return res.redirect(`${frontendBaseUrl}/u/${card.slug}`);
   } catch (error) {

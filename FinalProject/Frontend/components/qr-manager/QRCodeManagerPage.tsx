@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 import { QRCodePreviewCard } from './QRCodePreviewCard';
 import { QRActionButtons } from './QRActionButtons';
 import { SlugWarning } from './SlugWarning';
+import { QRTrackingHint } from './QRTrackingHint';
 import { Toast } from '@/components/ui/Toast';
 import { QRCodeData } from '@/types/qr-manager';
 import { getProfileDraft } from '@/services/cardService';
+import { trackQREvent, copyProfileUrl } from '@/lib/mock-qr-manager-api';
 
 export function QRCodeManagerPage() {
   const [qrData, setQrData] = useState<QRCodeData | null>(null);
@@ -25,15 +27,15 @@ export function QRCodeManagerPage() {
       try {
         const profile = await getProfileDraft();
         if (profile && profile.basicInfo.slug) {
-          const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
-          const publicUrl = `${backendUrl}/cards/qr/${profile.id}`;
+          const backendIp = '192.168.1.8:5000'; // IP của Backend
+          const publicUrl = `http://${backendIp}/api/v1/cards/qr/${profile.id}`;
           
           setQrData({
             id: profile.id || 'new',
             ownerName: profile.basicInfo.fullName || 'Người dùng',
             username: profile.basicInfo.slug,
             publicUrl: publicUrl, // Link giấu trong QR (Mã QR Động)
-            displayUrl: `${typeof window !== 'undefined' ? window.location.host : 'localhost:3000'}/u/${profile.basicInfo.slug}`, // Link hiển thị trên giao diện
+            displayUrl: `192.168.1.8:3000/u/${profile.basicInfo.slug}`, // Link hiển thị trên giao diện
             status: 'published',
             slugChangedRecently: false,
             scanCount: 0,
@@ -59,6 +61,8 @@ export function QRCodeManagerPage() {
     if (!qrData) return;
     try {
       await navigator.clipboard.writeText(qrData.publicUrl);
+      await copyProfileUrl(qrData.publicUrl); // mock api call
+      await trackQREvent('qr_copy_url');
       showToast('Đã sao chép URL hồ sơ.', 'success');
     } catch (error) {
       showToast('Lỗi khi sao chép URL.', 'error');
@@ -69,6 +73,7 @@ export function QRCodeManagerPage() {
     if (!qrData) return;
     try {
       await navigator.clipboard.writeText(qrData.publicUrl);
+      await trackQREvent('qr_copy_link');
       showToast('Đã sao chép liên kết.', 'success');
     } catch (error) {
       showToast('Lỗi khi sao chép liên kết.', 'error');
@@ -116,6 +121,7 @@ export function QRCodeManagerPage() {
         downloadLink.click();
         document.body.removeChild(downloadLink);
 
+        await trackQREvent('qr_download_png');
         showToast('Đã tải mã QR PNG.', 'success');
         resolve();
       };
@@ -143,6 +149,7 @@ export function QRCodeManagerPage() {
       document.body.removeChild(downloadLink);
       URL.revokeObjectURL(url);
 
+      await trackQREvent('qr_download_svg');
       showToast('Đã tải mã QR SVG.', 'success');
     } catch (error) {
       showToast('Lỗi khi tải mã SVG.', 'error');
@@ -203,7 +210,11 @@ export function QRCodeManagerPage() {
           </div>
         )}
 
-
+        <QRTrackingHint
+          scanCount={qrData.scanCount}
+          copyCount={qrData.copyCount}
+          downloadCount={qrData.downloadCount}
+        />
       </motion.div>
 
       <Toast 

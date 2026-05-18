@@ -23,7 +23,7 @@ export function AITwinChatWidget({
   isTyping,
 }: AITwinChatWidgetProps) {
   const [inputValue, setInputValue] = useState('');
-  const endOfMessagesRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -135,7 +135,7 @@ export function AITwinChatWidget({
             </div>
           </motion.div>
         )}
-        <div ref={endOfMessagesRef} />
+        <div ref={messagesEndRef} />
       </div>
 
       {/* Input Area */}
