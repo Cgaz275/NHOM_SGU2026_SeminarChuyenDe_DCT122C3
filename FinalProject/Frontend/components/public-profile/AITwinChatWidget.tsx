@@ -26,7 +26,7 @@ export function AITwinChatWidget({
   const endOfMessagesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    endOfMessagesRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
 
   const handleSend = async (e: React.FormEvent) => {
@@ -54,18 +54,18 @@ export function AITwinChatWidget({
           </div>
           <div>
             <h2 className="text-white font-semibold flex items-center gap-2">
-              {profileName}&apos;s AI Twin
+              AI Twin của {profileName}
               <Sparkles className="w-4 h-4 text-electric-blue" />
             </h2>
             <p className="text-xs text-text-muted">
-              {aiStatus === 'ai_ready' ? 'AI Ready' : aiStatus === 'ai_disabled' ? 'AI Disabled' : 'AI Error'}
+              {aiStatus === 'ai_ready' ? 'AI Sẵn sàng' : aiStatus === 'ai_disabled' ? 'AI Đã tắt' : 'Lỗi AI'}
             </p>
           </div>
         </div>
         <button
           onClick={onOpenReport}
           className="p-2 text-text-muted hover:text-danger transition-colors rounded-full hover:bg-danger/10"
-          title="Report AI"
+          title="Báo cáo AI"
         >
           <AlertTriangle className="w-5 h-5" />
         </button>
@@ -75,7 +75,7 @@ export function AITwinChatWidget({
       <div className="bg-brand-blue/10 border-b border-brand-blue/20 px-6 py-2 flex items-center gap-2">
         <AlertCircle className="w-4 h-4 text-brand-blue flex-shrink-0" />
         <p className="text-xs text-brand-blue/90">
-          This is an AI assistant representing {profileName}. It may not be the real person.
+          Đây là trợ lý AI đại diện cho {profileName}. Nó có thể không phải là người thật.
         </p>
       </div>
 
@@ -114,7 +114,7 @@ export function AITwinChatWidget({
                     onClick={onOpenLeadForm}
                     className="mt-3 w-full py-2 px-4 bg-brand-blue/20 hover:bg-brand-blue/30 text-brand-blue rounded-full text-xs font-semibold transition-colors"
                   >
-                    Leave Contact Info
+                    Để lại thông tin liên hệ
                   </button>
                 )}
               </div>
@@ -143,13 +143,13 @@ export function AITwinChatWidget({
         {isDisabled ? (
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm text-text-muted text-center">
-              {profileName}&apos;s AI Twin is currently unavailable.
+              AI Twin của {profileName} hiện không khả dụng.
             </p>
             <button
               onClick={onOpenLeadForm}
               className="py-2 px-6 rounded-full bg-white/10 hover:bg-white/15 text-white text-sm font-medium transition-colors"
             >
-              Leave your contact information
+              Để lại thông tin liên hệ của bạn
             </button>
           </div>
         ) : (
@@ -158,7 +158,7 @@ export function AITwinChatWidget({
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Ask me anything..."
+              placeholder="Hỏi tôi bất cứ điều gì..."
               className="w-full bg-[#1A1A1A] border border-white/10 rounded-full py-3 pl-5 pr-12 text-sm text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all placeholder:text-text-muted"
             />
             <button

@@ -19,7 +19,8 @@ export function ToneSelector({ value, onChange }: ToneSelectorProps) {
 
   return (
     <div className="space-y-4">
-      <label className="block text-sm font-medium text-white">AI Tone</label>
+      <label className="block text-sm font-medium text-white">Giọng điệu AI</label>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {tones.map((tone) => (
           <div

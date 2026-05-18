@@ -49,11 +49,11 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
       <div className="bg-[#1A1A1A] border border-white/10 rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <h2 className="text-xl font-semibold text-white">Skills</h2>
+            <h2 className="text-xl font-semibold text-white">Kỹ năng</h2>
             <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.skills.length}</span>
           </div>
           <button onClick={() => handleAddClick('skill')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
-            <Plus size={16} /> Add Skill
+            <Plus size={16} /> Thêm kỹ năng
           </button>
         </div>
         <SkillList items={knowledgeBase.skills} onEdit={(item) => handleEditClick('skill', item)} onDelete={(id) => onDelete('skill', id)} />
@@ -63,11 +63,11 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
       <div className="bg-[#1A1A1A] border border-white/10 rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <h2 className="text-xl font-semibold text-white">Experience</h2>
+            <h2 className="text-xl font-semibold text-white">Kinh nghiệm</h2>
             <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.experiences.length}</span>
           </div>
           <button onClick={() => handleAddClick('experience')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
-            <Plus size={16} /> Add Experience
+            <Plus size={16} /> Thêm kinh nghiệm
           </button>
         </div>
         <ExperienceList items={knowledgeBase.experiences} onEdit={(item) => handleEditClick('experience', item)} onDelete={(id) => onDelete('experience', id)} />
@@ -77,11 +77,11 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
       <div className="bg-[#1A1A1A] border border-white/10 rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <h2 className="text-xl font-semibold text-white">Projects</h2>
+            <h2 className="text-xl font-semibold text-white">Dự án</h2>
             <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.projects.length}</span>
           </div>
           <button onClick={() => handleAddClick('project')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
-            <Plus size={16} /> Add Project
+            <Plus size={16} /> Thêm dự án
           </button>
         </div>
         <ProjectList items={knowledgeBase.projects} onEdit={(item) => handleEditClick('project', item)} onDelete={(id) => onDelete('project', id)} />
@@ -91,11 +91,11 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
       <div className="bg-[#1A1A1A] border border-white/10 rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <h2 className="text-xl font-semibold text-white">Services</h2>
+            <h2 className="text-xl font-semibold text-white">Dịch vụ</h2>
             <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.services.length}</span>
           </div>
           <button onClick={() => handleAddClick('service')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
-            <Plus size={16} /> Add Service
+            <Plus size={16} /> Thêm dịch vụ
           </button>
         </div>
         <ServiceList items={knowledgeBase.services} onEdit={(item) => handleEditClick('service', item)} onDelete={(id) => onDelete('service', id)} />
@@ -105,11 +105,11 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
       {/* <div className="bg-[#1A1A1A] border border-white/10 rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <h2 className="text-xl font-semibold text-white">FAQ</h2>
+            <h2 className="text-xl font-semibold text-white">Câu hỏi thường gặp</h2>
             <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.faqs.length}</span>
           </div>
           <button onClick={() => handleAddClick('faq')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
-            <Plus size={16} /> Add FAQ
+            <Plus size={16} /> Thêm Câu hỏi thường gặp
           </button>
         </div>
         <FAQList items={knowledgeBase.faqs} onEdit={(item) => handleEditClick('faq', item)} onDelete={(id) => onDelete('faq', id)} />

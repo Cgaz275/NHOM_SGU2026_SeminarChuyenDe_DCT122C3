@@ -7,9 +7,10 @@ interface AITwinTabsProps {
 
 export function AITwinTabs({ activeTab, onTabChange }: AITwinTabsProps) {
   const tabs = [
-    { id: 'persona', label: 'Persona', icon: User },
-    { id: 'knowledge', label: 'Knowledge Base', icon: Database },
+    { id: 'persona', label: 'Tính cách', icon: User },
+    { id: 'knowledge', label: 'Cơ sở Kiến thức', icon: Database },
   ];
+
 
   return (
     <div className="flex overflow-x-auto hide-scrollbar border-b border-white/10 mb-6">

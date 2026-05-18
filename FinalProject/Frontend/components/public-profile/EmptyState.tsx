@@ -12,18 +12,18 @@ export function EmptyState({ state }: EmptyStateProps) {
 
   switch (state) {
     case 'updating':
-      title = 'Profile is updating';
-      description = 'This profile is currently being updated. Please check back later.';
+      title = 'Hồ sơ đang được cập nhật';
+      description = 'Hồ sơ này hiện đang được cập nhật. Vui lòng quay lại sau.';
       Icon = RefreshCw;
       break;
     case 'locked':
-      title = 'Profile unavailable';
-      description = 'This profile is currently locked or unavailable.';
+      title = 'Hồ sơ không khả dụng';
+      description = 'Hồ sơ này hiện đã bị khóa hoặc không khả dụng.';
       Icon = Lock;
       break;
     case 'not_found':
-      title = 'Digital profile not found';
-      description = "The profile you're looking for doesn't exist or has been removed.";
+      title = 'Không tìm thấy hồ sơ số';
+      description = "Hồ sơ bạn đang tìm kiếm không tồn tại hoặc đã bị xóa.";
       Icon = HelpCircle;
       break;
     default:

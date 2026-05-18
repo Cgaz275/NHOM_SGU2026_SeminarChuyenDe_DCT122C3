@@ -9,7 +9,7 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
 
   return (
     <div className="rounded-[24px] bg-card border border-white/10 p-6 md:p-8 mt-6">
-      <h2 className="text-xl font-bold text-foreground mb-4">Experience</h2>
+      <h2 className="text-xl font-bold text-foreground mb-4">Kinh nghiệm</h2>
       <div className="flex flex-col gap-6">
         {experience.map((exp) => (
           <div key={exp.id} className="relative border-l-2 border-white/10 pl-4">

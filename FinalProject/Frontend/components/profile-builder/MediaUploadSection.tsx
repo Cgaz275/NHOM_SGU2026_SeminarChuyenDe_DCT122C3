@@ -28,7 +28,7 @@ export function MediaUploadSection({ data, onChange }: MediaUploadSectionProps) 
       const url = await mockUploadAvatar(file);
       onChange({ ...data, avatarUrl: url });
     } catch (err: any) {
-      setError(err.message || 'Failed to upload image.');
+      setError(err.message || 'Tải ảnh lên thất bại.');
     } finally {
       setIsUploading(false);
       if (fileInputRef.current) {
@@ -44,12 +44,12 @@ export function MediaUploadSection({ data, onChange }: MediaUploadSectionProps) 
   return (
     <div className="flex flex-col gap-6 bg-[#101010] border border-white/10 rounded-xl p-6">
       <div>
-        <h2 className="text-lg font-semibold text-white">Media</h2>
-        <p className="text-sm text-white/50 mt-1">Upload an avatar for your digital card.</p>
+        <h2 className="text-lg font-semibold text-white">Hình ảnh</h2>
+        <p className="text-sm text-white/50 mt-1">Tải lên ảnh đại diện cho thẻ số của bạn.</p>
       </div>
 
       <div className="flex flex-col gap-4">
-        <label className="text-sm font-medium text-white/90">Profile Avatar</label>
+        <label className="text-sm font-medium text-white/90">Ảnh đại diện</label>
         
         <div className="flex items-center gap-6">
           {/* Avatar Preview */}
@@ -59,7 +59,7 @@ export function MediaUploadSection({ data, onChange }: MediaUploadSectionProps) 
             ) : data.avatarUrl ? (
               <Image 
                 src={data.avatarUrl} 
-                alt="Avatar preview" 
+                alt="Xem trước ảnh đại diện" 
                 fill 
                 className="object-cover"
                 unoptimized // for blob URLs
@@ -72,7 +72,7 @@ export function MediaUploadSection({ data, onChange }: MediaUploadSectionProps) 
               <button
                 onClick={handleRemove}
                 className="absolute top-1 right-1 bg-black/60 p-1 rounded-full text-white/80 hover:text-white hover:bg-[#E5484D] transition-colors"
-                title="Remove avatar"
+                title="Xóa ảnh đại diện"
               >
                 <X size={14} />
               </button>
@@ -94,11 +94,11 @@ export function MediaUploadSection({ data, onChange }: MediaUploadSectionProps) 
               className="flex items-center gap-2 bg-[#2367A2]/20 hover:bg-[#2367A2]/30 text-[#008FEA] border border-[#2367A2]/30 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed w-fit"
             >
               <UploadCloud size={16} />
-              {isUploading ? 'Uploading...' : 'Upload Image'}
+              {isUploading ? 'Đang tải...' : 'Tải ảnh lên'}
             </button>
             
             <p className="text-xs text-white/40 max-w-[250px]">
-              Recommended: 400x400px. Image files only. Max size 5MB.
+              Khuyên dùng: 400x400px. Chỉ chấp nhận file ảnh. Tối đa 5MB.
             </p>
 
             {error && (
@@ -109,7 +109,7 @@ export function MediaUploadSection({ data, onChange }: MediaUploadSectionProps) 
 
         <div className="mt-2 p-3 bg-white/5 rounded-lg border border-white/5">
           <p className="text-xs text-white/50 text-center">
-            Images are previewed locally. Real upload will be connected later.
+            Ảnh hiện tại chỉ xem trước. Chức năng tải lên thực tế sẽ được đấu nối sau.
           </p>
         </div>
       </div>

@@ -60,7 +60,7 @@ export function SlugInput({ value, onChange, status, setStatus }: SlugInputProps
   return (
     <div className="flex flex-col gap-1.5">
       <label className="text-sm font-medium text-white/90">
-        Profile Slug <span className="text-[#E5484D]">*</span>
+        Slug hồ sơ <span className="text-[#E5484D]">*</span>
       </label>
       <div className="relative flex items-center bg-[#101010] border border-white/10 rounded-lg overflow-hidden focus-within:border-[#008FEA] transition-colors">
         <span className="pl-3 pr-1 py-2.5 text-white/40 text-sm select-none">
@@ -70,7 +70,7 @@ export function SlugInput({ value, onChange, status, setStatus }: SlugInputProps
           type="text"
           value={value}
           onChange={handleChange}
-          placeholder="your-name"
+          placeholder="ten-cua-ban"
           className="flex-1 bg-transparent py-2.5 pr-10 text-white text-sm outline-none w-full"
         />
         
@@ -86,18 +86,19 @@ export function SlugInput({ value, onChange, status, setStatus }: SlugInputProps
       {/* Helper text based on status */}
       <div className="h-4 text-xs">
         {status === 'idle' && !value && (
-          <span className="text-white/40">Only lowercase letters, numbers, and hyphens.</span>
+          <span className="text-white/40">Chỉ dùng chữ cái viết thường, số và dấu gạch ngang.</span>
         )}
         {status === 'available' && (
-          <span className="text-[#2ECC71]">Slug is available.</span>
+          <span className="text-[#2ECC71]">Slug hợp lệ.</span>
         )}
         {status === 'unavailable' && (
-          <span className="text-[#E5484D]">This slug is already taken.</span>
+          <span className="text-[#E5484D]">Slug này đã bị trùng.</span>
         )}
         {status === 'error' && value && (
-          <span className="text-[#E5484D]">Invalid format. Use only lowercase letters, numbers, and hyphens.</span>
+          <span className="text-[#E5484D]">Định dạng không hợp lệ. Chỉ dùng chữ cái viết thường, số và dấu gạch ngang.</span>
         )}
       </div>
     </div>
+
   );
 }

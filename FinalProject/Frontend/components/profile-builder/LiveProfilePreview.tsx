@@ -122,10 +122,10 @@ export function LiveProfilePreview({ data }: LiveProfilePreviewProps) {
 
           {/* Name & Role */}
           <h1 className="text-2xl font-bold text-white mb-1">
-            {basicInfo.fullName || 'Your Name'}
+            {basicInfo.fullName || 'Tên của bạn'}
           </h1>
           <p className={`text-sm font-medium mb-3 ${styles.accentText}`}>
-            {basicInfo.role || 'Your Role'}
+            {basicInfo.role || 'Vai trò của bạn'}
           </p>
 
           {/* Slogan */}
@@ -156,26 +156,27 @@ export function LiveProfilePreview({ data }: LiveProfilePreviewProps) {
           <div className="flex flex-col w-full gap-3 mb-8">
             <button className={`w-full py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors ${styles.buttonPrimary}`}>
               <MessageSquare size={18} />
-              Ask my AI Twin
+              Hỏi AI Twin của tôi
             </button>
             <button className={`w-full py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors ${styles.buttonSecondary}`}>
               <UserPlus size={18} />
-              Save Contact
+              Lưu danh bạ
             </button>
           </div>
 
           {/* Bio */}
           <div className="w-full text-left bg-white/5 p-4 rounded-2xl border border-white/5">
-            <h3 className="text-sm font-semibold text-white mb-2">About</h3>
+            <h3 className="text-sm font-semibold text-white mb-2">Giới thiệu</h3>
             <p className="text-sm text-white/70 leading-relaxed whitespace-pre-wrap">
-              {basicInfo.bio || 'Add a bio to introduce yourself...'}
+              {basicInfo.bio || 'Thêm tiểu sử để giới thiệu bản thân...'}
             </p>
           </div>
 
           {/* Skills */}
           
             <div className="w-full mt-4 text-left">
-              <h3 className="text-sm font-semibold text-white mb-3">Skills</h3>
+              <h3 className="text-sm font-semibold text-white mb-3">Kỹ năng</h3>
+
               {data.skills && data.skills.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {data.skills.map(skill => (

@@ -30,12 +30,12 @@ export function PublishSection({
   return (
     <div className="flex flex-col gap-6 bg-[#101010] border border-white/10 rounded-xl p-6">
       <div>
-        <h2 className="text-lg font-semibold text-white">Publish Options</h2>
-        <p className="text-sm text-white/50 mt-1">Review and make your profile live.</p>
+        <h2 className="text-lg font-semibold text-white">Tùy chọn xuất bản</h2>
+        <p className="text-sm text-white/50 mt-1">Xem lại và đưa hồ sơ của bạn lên mạng.</p>
       </div>
 
       <div className="bg-[#0B0B0B] border border-white/5 rounded-lg p-4">
-        <h3 className="text-sm font-medium text-white mb-3">Pre-publish Checklist</h3>
+        <h3 className="text-sm font-medium text-white mb-3">Kiểm tra trước khi xuất bản</h3>
         <ul className="flex flex-col gap-2">
           <li className="flex items-center gap-2 text-sm">
             {hasRequiredFields ? (
@@ -44,7 +44,7 @@ export function PublishSection({
               <AlertCircle size={16} className="text-[#E5484D]" />
             )}
             <span className={hasRequiredFields ? 'text-white/80' : 'text-[#E5484D]'}>
-              Required fields (Name, Role, Slug) completed
+              Các trường bắt buộc (Tên, Vai trò, Slug) đã điền
             </span>
           </li>
           <li className="flex items-center gap-2 text-sm">
@@ -54,15 +54,15 @@ export function PublishSection({
               <AlertCircle size={16} className="text-[#E5484D]" />
             )}
             <span className={isSlugValid ? 'text-white/80' : 'text-[#E5484D]'}>
-              {slugStatus === 'unavailable' ? 'Slug is already taken' : 
-               slugStatus === 'error' ? 'Invalid slug format' :
-               slugStatus === 'available' ? 'Slug is available' : 'Awaiting slug validation'}
+              {slugStatus === 'unavailable' ? 'Slug đã bị trùng' : 
+               slugStatus === 'error' ? 'Định dạng slug không hợp lệ' :
+               slugStatus === 'available' ? 'Slug hợp lệ' : 'Đang chờ kiểm tra slug'}
             </span>
           </li>
           <li className="flex items-center gap-2 text-sm">
             <CheckCircle2 size={16} className="text-[#2ECC71]" />
             <span className="text-white/80">
-              Privacy settings configured ({data.privacy.showEmail ? 'Email visible' : 'Email hidden'})
+              Cài đặt riêng tư đã cấu hình ({data.privacy.showEmail ? 'Hiện Email' : 'Ẩn Email'})
             </span>
           </li>
         </ul>
@@ -79,7 +79,7 @@ export function PublishSection({
           ) : (
             <Globe size={18} />
           )}
-          {isPublishing ? 'Publishing...' : 'Publish Card'}
+          {isPublishing ? 'Đang xuất bản...' : 'Xuất bản Thẻ'}
         </button>
         
         <button
@@ -92,12 +92,12 @@ export function PublishSection({
           ) : (
             <Save size={18} />
           )}
-          {isSaving ? 'Saving...' : 'Save Draft'}
+          {isSaving ? 'Đang lưu...' : 'Lưu nháp'}
         </button>
 
         <button
           onClick={() => {
-            if (confirm('Are you sure you want to reset all changes to the last saved state?')) {
+            if (confirm('Bạn có chắc muốn đặt lại tất cả các thay đổi về trạng thái đã lưu gần nhất không?')) {
               onReset();
             }
           }}
@@ -105,9 +105,10 @@ export function PublishSection({
           className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent hover:bg-[#E5484D]/10 text-[#E5484D] px-6 py-2.5 rounded-lg font-medium transition-colors ml-auto border border-transparent hover:border-[#E5484D]/30"
         >
           <RefreshCcw size={16} />
-          Reset Changes
+          Đặt lại thay đổi
         </button>
       </div>
     </div>
+
   );
 }

@@ -9,7 +9,7 @@ interface ProjectListProps {
 
 export function ProjectList({ items, onEdit, onDelete }: ProjectListProps) {
   if (items.length === 0) {
-    return <div className="text-center py-6 text-sm text-white/50">No projects added yet.</div>;
+    return <div className="text-center py-6 text-sm text-white/50">Chưa có dự án nào được thêm.</div>;
   }
 
   return (
@@ -21,7 +21,7 @@ export function ProjectList({ items, onEdit, onDelete }: ProjectListProps) {
               <h4 className="font-semibold text-white">{item.projectName}</h4>
               {item.projectUrl && (
                 <a href={item.projectUrl} target="_blank" rel="noreferrer" className="text-[#008FEA] hover:underline flex items-center gap-1 text-xs">
-                  <ExternalLink size={12} /> Link
+                  <ExternalLink size={12} /> Liên kết
                 </a>
               )}
             </div>

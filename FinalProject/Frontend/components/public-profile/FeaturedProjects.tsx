@@ -9,10 +9,11 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
 
   return (
     <div className="rounded-[24px] bg-card border border-white/10 p-6 md:p-8 mt-6">
-      <h2 className="text-xl font-bold text-foreground mb-4">Featured Projects</h2>
+      <h2 className="text-xl font-bold text-foreground mb-4">Dự án nổi bật</h2>
       <div className="flex flex-col gap-6">
         {projects.map((project) => (
           <div key={project.id} className="group relative border-l-2 border-white/10 pl-4 hover:border-brand-blue transition-colors">
+            <div className="absolute w-2 h-2 rounded-full bg-brand-blue -left-[5px] top-2" />
             <h3 className="text-lg font-semibold text-white group-hover:text-electric-blue transition-colors">
               {project.title}
             </h3>

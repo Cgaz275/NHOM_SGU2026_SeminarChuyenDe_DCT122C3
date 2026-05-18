@@ -47,7 +47,7 @@ export function AITwinConfigPage() {
         const data = await getAITwinConfig();
         setConfig(data);
       } catch (error) {
-        showToast('Failed to load AI configuration.', 'error');
+        showToast('Tải cấu hình AI thất bại.', 'error');
       } finally {
         setIsLoading(false);
       }
@@ -67,9 +67,9 @@ export function AITwinConfigPage() {
     try {
       const updatedConfig = await addKnowledgeItem(type, item);
       setConfig(updatedConfig);
-      showToast(`${type} added successfully.`);
+      showToast(`Đã thêm ${type} thành công.`);
     } catch (error) {
-      showToast(`Failed to add ${type}.`, 'error');
+      showToast(`Thêm ${type} thất bại.`, 'error');
     }
   };
 
@@ -77,20 +77,20 @@ export function AITwinConfigPage() {
     try {
       const updatedConfig = await updateKnowledgeItem(type, id, item);
       setConfig(updatedConfig);
-      showToast(`${type} updated successfully.`);
+      showToast(`Đã cập nhật ${type} thành công.`);
     } catch (error) {
-      showToast(`Failed to update ${type}.`, 'error');
+      showToast(`Cập nhật ${type} thất bại.`, 'error');
     }
   };
 
   const handleDeleteKnowledge = async (type: KnowledgeItemType, id: string) => {
-    if (!window.confirm('Are you sure you want to delete this item?')) return;
+    if (!window.confirm('Bạn có chắc muốn xóa mục này không?')) return;
     try {
       const updatedConfig = await deleteKnowledgeItem(type, id);
       setConfig(updatedConfig);
-      showToast(`${type} deleted successfully.`);
+      showToast(`Đã xóa ${type} thành công.`);
     } catch (error) {
-      showToast(`Failed to delete ${type}.`, 'error');
+      showToast(`Xóa ${type} thất bại.`, 'error');
     }
   };
 
@@ -99,9 +99,9 @@ export function AITwinConfigPage() {
     try {
       const updatedConfig = await saveAITwinConfig(config);
       setConfig(updatedConfig);
-      showToast('Configuration saved successfully.');
+      showToast('Đã lưu cấu hình thành công.');
     } catch (error) {
-      showToast('Failed to save configuration.', 'error');
+      showToast('Lưu cấu hình thất bại.', 'error');
     }
   };
 
@@ -110,9 +110,9 @@ export function AITwinConfigPage() {
     try {
       const updatedConfig = await trainAITwin(config);
       setConfig(updatedConfig);
-      showToast('AI training completed.');
+      showToast('Đã hoàn thành huấn luyện AI.');
     } catch (error) {
-      showToast('Failed to train AI.', 'error');
+      showToast('Huấn luyện AI thất bại.', 'error');
     }
   };
 
@@ -121,9 +121,9 @@ export function AITwinConfigPage() {
     try {
       const updatedConfig = await publishAITwin(config);
       setConfig(updatedConfig);
-      showToast('AI published successfully.');
+      showToast('Đã xuất bản AI thành công.');
     } catch (error) {
-      showToast('Failed to publish AI.', 'error');
+      showToast('Xuất bản AI thất bại.', 'error');
     }
   };
 
@@ -133,12 +133,12 @@ export function AITwinConfigPage() {
       const updatedConfig = await togglePublicAI(enabled);
       setConfig(updatedConfig);
       if (enabled) {
-        showToast('Public AI enabled.');
+        showToast('Đã bật AI công khai.');
       } else {
-        showToast('Public AI disabled. Visitors will see the fallback contact form.');
+        showToast('Đã tắt AI công khai. Khách truy cập sẽ thấy form liên hệ dự phòng.');
       }
     } catch (error) {
-      showToast('Failed to toggle public access.', 'error');
+      showToast('Chuyển đổi quyền truy cập công khai thất bại.', 'error');
     }
   };
 
@@ -158,7 +158,7 @@ export function AITwinConfigPage() {
   if (!config) {
     return (
       <div className="p-8 text-center text-white/50">
-        Failed to load configuration.
+        Tải cấu hình thất bại.
       </div>
     );
   }
@@ -167,9 +167,9 @@ export function AITwinConfigPage() {
     <div className="max-w-5xl mx-auto p-4 md:p-8">
       <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">AI Digital Twin Configuration</h1>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Cấu hình AI Digital Twin</h1>
           <p className="text-white/60">
-            Configure how your AI assistant speaks, what it knows, and when it can go public.
+            Cấu hình cách trợ lý AI của bạn nói chuyện, những gì nó biết và khi nào nó có thể công khai.
           </p>
         </div>
         <div className="flex gap-3">
@@ -177,13 +177,13 @@ export function AITwinConfigPage() {
             onClick={handleSave}
             className="px-5 py-2.5 bg-[#008FEA] hover:bg-[#0077c2] text-white font-medium rounded-lg transition-colors text-sm"
           >
-            Save Changes
+            Lưu thay đổi
           </button>
           <button
             onClick={handleTrain}
             className="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors text-sm"
           >
-            Train AI
+            Huấn luyện AI
           </button>
         </div>
       </div>

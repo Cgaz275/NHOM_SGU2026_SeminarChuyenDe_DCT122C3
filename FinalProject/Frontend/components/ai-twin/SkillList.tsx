@@ -9,7 +9,7 @@ interface SkillListProps {
 
 export function SkillList({ items, onEdit, onDelete }: SkillListProps) {
   if (items.length === 0) {
-    return <div className="text-center py-6 text-sm text-white/50">No skills added yet.</div>;
+    return <div className="text-center py-6 text-sm text-white/50">Chưa có kỹ năng nào được thêm.</div>;
   }
 
   return (

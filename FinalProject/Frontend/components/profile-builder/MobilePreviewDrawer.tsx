@@ -34,7 +34,7 @@ export function MobilePreviewDrawer({ data }: MobilePreviewDrawerProps) {
           className="flex items-center gap-2 bg-[#008FEA] hover:bg-[#008FEA]/90 text-white px-5 py-3 rounded-full shadow-lg font-medium shadow-[#008FEA]/20 transition-transform active:scale-95"
         >
           <Eye size={20} />
-          Preview
+          Xem trước
         </button>
       </div>
 
@@ -58,7 +58,8 @@ export function MobilePreviewDrawer({ data }: MobilePreviewDrawerProps) {
               className="fixed inset-x-0 bottom-0 z-50 h-[90vh] bg-[#0B0B0B] border-t border-white/10 rounded-t-3xl overflow-hidden flex flex-col lg:hidden"
             >
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#101010]">
-                <h3 className="text-lg font-bold text-white">Live Preview</h3>
+                <h3 className="text-lg font-bold text-white">Xem trước trực tiếp</h3>
+
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 -mr-2 text-white/50 hover:text-white transition-colors"

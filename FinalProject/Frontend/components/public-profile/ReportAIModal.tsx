@@ -10,11 +10,11 @@ interface ReportAIModalProps {
 }
 
 const QUICK_REASONS = [
-  'Aggressive response',
-  'Misleading information',
+  'Phản hồi thô lỗ',
+  'Thông tin sai lệch',
   'Spam',
-  'Privacy concern',
-  'Other',
+  'Vấn đề riêng tư',
+  'Khác',
 ];
 
 export function ReportAIModal({ isOpen, onClose, onSubmit }: ReportAIModalProps) {
@@ -63,9 +63,9 @@ export function ReportAIModal({ isOpen, onClose, onSubmit }: ReportAIModalProps)
                     <AlertTriangle className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">Report AI</h3>
+                    <h3 className="text-xl font-bold text-white">Báo cáo AI</h3>
                     <p className="text-sm text-text-muted mt-1">
-                      Tell us what happened.
+                      Hãy cho chúng tôi biết điều gì đã xảy ra.
                     </p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export function ReportAIModal({ isOpen, onClose, onSubmit }: ReportAIModalProps)
                 <form id="report-form" onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-text-muted mb-3">
-                      Reason for report <span className="text-danger">*</span>
+                      Lý do báo cáo <span className="text-danger">*</span>
                     </label>
                     <div className="flex flex-wrap gap-2">
                       {QUICK_REASONS.map((reason) => (
@@ -103,14 +103,14 @@ export function ReportAIModal({ isOpen, onClose, onSubmit }: ReportAIModalProps)
 
                   <div>
                     <label className="block text-sm font-medium text-text-muted mb-1.5">
-                      Additional details <span className="text-xs opacity-50">(Optional)</span>
+                      Chi tiết bổ sung <span className="text-xs opacity-50">(Không bắt buộc)</span>
                     </label>
                     <textarea
                       rows={3}
                       value={details}
                       onChange={(e) => setDetails(e.target.value)}
                       className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-danger/50 focus:ring-1 focus:ring-danger/50 transition-all resize-none"
-                      placeholder="Please provide more context if needed..."
+                      placeholder="Vui lòng cung cấp thêm ngữ cảnh nếu cần..."
                     />
                   </div>
                 </form>
@@ -122,7 +122,7 @@ export function ReportAIModal({ isOpen, onClose, onSubmit }: ReportAIModalProps)
                   onClick={onClose}
                   className="flex-1 py-2.5 rounded-full border border-white/10 hover:bg-white/5 text-white font-medium transition-colors"
                 >
-                  Cancel
+                  Hủy
                 </button>
                 <button
                   type="submit"
@@ -133,7 +133,7 @@ export function ReportAIModal({ isOpen, onClose, onSubmit }: ReportAIModalProps)
                   {isSubmitting ? (
                     <span className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
                   ) : (
-                    'Submit report'
+                    'Gửi báo cáo'
                   )}
                 </button>
               </div>

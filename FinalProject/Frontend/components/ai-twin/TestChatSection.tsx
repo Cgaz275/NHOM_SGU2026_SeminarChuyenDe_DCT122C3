@@ -72,7 +72,7 @@ export function TestChatSection({ config }: TestChatSectionProps) {
   };
 
   const handleReset = async () => {
-    if (window.confirm('Reset this test conversation?')) {
+    if (window.confirm('Đặt lại cuộc trò chuyện thử nghiệm này?')) {
       await resetTestConversation();
       setMessages([]);
     }
@@ -92,11 +92,11 @@ export function TestChatSection({ config }: TestChatSectionProps) {
         <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
           <AlertTriangle className="text-red-400 shrink-0 mt-0.5" size={20} />
           <div>
-            <h3 className="text-sm font-semibold text-red-400">Cannot test AI</h3>
+            <h3 className="text-sm font-semibold text-red-400">Không thể thử nghiệm AI</h3>
             <p className="text-sm text-red-400/80 mt-1">
-              {isPromptTooLong && "System prompt exceeds 2,000 characters. "}
-              {isKnowledgeTooLong && "Knowledge base exceeds 15,000 characters. "}
-              Please reduce the size to test.
+              {isPromptTooLong && "System prompt vượt quá 2.000 ký tự. "}
+              {isKnowledgeTooLong && "Cơ sở kiến thức vượt quá 15.000 ký tự. "}
+              Vui lòng giảm kích thước để thử nghiệm.
             </p>
           </div>
         </div>
@@ -110,17 +110,17 @@ export function TestChatSection({ config }: TestChatSectionProps) {
               <Bot size={20} className="text-[#008FEA]" />
             </div>
             <div>
-              <h2 className="text-white font-medium">Test your AI Twin</h2>
+              <h2 className="text-white font-medium">Thử nghiệm AI Twin của bạn</h2>
               <div className="flex items-center gap-2 text-xs text-white/50">
                 <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                Sandbox Mode (Not Public)
+                Chế độ Thử nghiệm (Không công khai)
               </div>
             </div>
           </div>
           <button 
             onClick={handleReset}
             className="p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-            title="Reset conversation"
+            title="Đặt lại cuộc trò chuyện"
           >
             <RefreshCcw size={18} />
           </button>
@@ -132,7 +132,7 @@ export function TestChatSection({ config }: TestChatSectionProps) {
             <div className="h-full flex flex-col items-center justify-center text-center text-white/40 space-y-4">
               <Bot size={48} className="opacity-50" />
               <p className="max-w-xs">
-                Start a conversation to test how your AI responds based on your current knowledge base and rules.
+                Bắt đầu một cuộc trò chuyện để thử nghiệm cách AI của bạn phản hồi dựa trên cơ sở kiến thức và quy tắc hiện tại.
               </p>
             </div>
           ) : (
@@ -178,7 +178,7 @@ export function TestChatSection({ config }: TestChatSectionProps) {
                 disabled={isDisabled || isTyping}
                 className="flex items-center gap-2 text-xs text-white/60 hover:text-white transition-colors disabled:opacity-50"
               >
-                <RotateCcw size={14} /> Regenerate response
+                <RotateCcw size={14} /> Tạo lại phản hồi
               </button>
             </div>
           )}
@@ -189,7 +189,7 @@ export function TestChatSection({ config }: TestChatSectionProps) {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               disabled={isDisabled || isTyping}
-              placeholder="Message your AI..."
+              placeholder="Nhắn tin cho AI của bạn..."
               className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl pl-4 pr-12 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#008FEA] transition-colors resize-none disabled:opacity-50"
               rows={1}
             />
@@ -202,7 +202,7 @@ export function TestChatSection({ config }: TestChatSectionProps) {
             </button>
           </div>
           <div className="text-center mt-2">
-            <p className="text-[10px] text-white/40">This is a test chat. Messages are not public.</p>
+            <p className="text-[10px] text-white/40">Đây là cuộc trò chuyện thử nghiệm. Tin nhắn không được công khai.</p>
           </div>
         </div>
       </div>

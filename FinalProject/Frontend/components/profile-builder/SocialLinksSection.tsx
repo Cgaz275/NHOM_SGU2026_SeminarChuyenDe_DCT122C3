@@ -18,8 +18,8 @@ export function SocialLinksSection({ data, onChange }: SocialLinksSectionProps) 
 
   const socialFields: { key: keyof SocialLinksData; label: string; icon: React.ElementType; placeholder: string; type: string }[] = [
     { key: 'email', label: 'Email', icon: Mail, placeholder: 'hello@example.com', type: 'email' },
-    { key: 'phone', label: 'Phone', icon: Phone, placeholder: '+1 234 567 8900', type: 'tel' },
-    { key: 'portfolio', label: 'Portfolio Website', icon: LinkIcon, placeholder: 'https://yourwebsite.com', type: 'url' },
+    { key: 'phone', label: 'Số điện thoại', icon: Phone, placeholder: '+1 234 567 8900', type: 'tel' },
+    { key: 'portfolio', label: 'Website Cá nhân / Portfolio', icon: LinkIcon, placeholder: 'https://yourwebsite.com', type: 'url' },
     { key: 'facebook', label: 'Facebook', icon: FaFacebook, placeholder: 'https://facebook.com/...', type: 'url' },
     { key: 'instagram', label: 'Instagram', icon: FaInstagram, placeholder: 'https://instagram.com/...', type: 'url' },
     { key: 'x', label: 'X (Twitter)', icon: FaTwitter, placeholder: 'https://x.com/...', type: 'url' },
@@ -33,9 +33,10 @@ export function SocialLinksSection({ data, onChange }: SocialLinksSectionProps) 
   return (
     <div className="flex flex-col gap-6 bg-[#101010] border border-white/10 rounded-xl p-6">
       <div>
-        <h2 className="text-lg font-semibold text-white">Social Links & Contact</h2>
-        <p className="text-sm text-white/50 mt-1">Add your social profiles and contact methods.</p>
+        <h2 className="text-lg font-semibold text-white">Liên kết mạng xã hội & Liên hệ</h2>
+        <p className="text-sm text-white/50 mt-1">Thêm các tài khoản mạng xã hội và phương thức liên hệ của bạn.</p>
       </div>
+
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {socialFields.map((field) => {

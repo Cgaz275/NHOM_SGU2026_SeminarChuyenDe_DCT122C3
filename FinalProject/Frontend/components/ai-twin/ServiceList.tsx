@@ -9,7 +9,7 @@ interface ServiceListProps {
 
 export function ServiceList({ items, onEdit, onDelete }: ServiceListProps) {
   if (items.length === 0) {
-    return <div className="text-center py-6 text-sm text-white/50">No services added yet.</div>;
+    return <div className="text-center py-6 text-sm text-white/50">Chưa có dịch vụ nào được thêm.</div>;
   }
 
   return (
@@ -20,7 +20,7 @@ export function ServiceList({ items, onEdit, onDelete }: ServiceListProps) {
             <h4 className="font-semibold text-white mb-1">{item.serviceName}</h4>
             <p className="text-sm text-white/60 mb-2">{item.description}</p>
             {item.pricingNote && (
-              <p className="text-xs text-white/40 mb-1">Pricing: {item.pricingNote}</p>
+              <p className="text-xs text-white/40 mb-1">Giá cả: {item.pricingNote}</p>
             )}
             <p className="text-xs text-[#008FEA]">CTA: {item.callToAction}</p>
           </div>

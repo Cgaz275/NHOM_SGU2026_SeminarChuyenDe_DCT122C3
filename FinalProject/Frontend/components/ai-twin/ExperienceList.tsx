@@ -9,7 +9,7 @@ interface ExperienceListProps {
 
 export function ExperienceList({ items, onEdit, onDelete }: ExperienceListProps) {
   if (items.length === 0) {
-    return <div className="text-center py-6 text-sm text-white/50">No experience added yet.</div>;
+    return <div className="text-center py-6 text-sm text-white/50">Chưa có kinh nghiệm nào được thêm.</div>;
   }
 
   return (
@@ -19,7 +19,7 @@ export function ExperienceList({ items, onEdit, onDelete }: ExperienceListProps)
           <div>
             <div className="flex items-center gap-2 mb-1">
               <h4 className="font-semibold text-white">{item.role}</h4>
-              <span className="text-white/40 text-sm">at</span>
+              <span className="text-white/40 text-sm">tại</span>
               <span className="text-[#008FEA] text-sm font-medium">{item.companyName}</span>
             </div>
             <div className="text-xs text-white/40 mb-2">

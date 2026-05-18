@@ -25,14 +25,14 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
     setError('');
 
     if (!formData.name || !formData.email || !formData.message) {
-      setError('Please fill in all required fields.');
+      setError('Vui lòng điền đầy đủ các trường bắt buộc.');
       return;
     }
 
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setError('Please enter a valid email address.');
+      setError('Vui lòng nhập địa chỉ email hợp lệ.');
       return;
     }
 
@@ -43,7 +43,7 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
       // Reset form on success
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (err) {
-      setError('Failed to send message. Please try again later.');
+      setError('Không thể gửi tin nhắn. Vui lòng thử lại sau.');
     } finally {
       setIsSubmitting(false);
     }
@@ -69,9 +69,9 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
             >
               <div className="flex items-center justify-between p-6 border-b border-white/5">
                 <div>
-                  <h3 className="text-xl font-bold text-white">Leave Contact Info</h3>
+                  <h3 className="text-xl font-bold text-white">Để lại thông tin liên hệ</h3>
                   <p className="text-sm text-text-muted mt-1">
-                    {profileName} can contact you directly if the AI cannot answer your question.
+                    {profileName} có thể liên hệ trực tiếp với bạn nếu AI không thể trả lời câu hỏi.
                   </p>
                 </div>
                 <button
@@ -92,7 +92,7 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
                   
                   <div>
                     <label className="block text-sm font-medium text-text-muted mb-1.5">
-                      Name <span className="text-danger">*</span>
+                      Họ và tên <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
@@ -100,7 +100,7 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all"
-                      placeholder="Your name"
+                      placeholder="Tên của bạn"
                     />
                   </div>
 
@@ -120,20 +120,20 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
 
                   <div>
                     <label className="block text-sm font-medium text-text-muted mb-1.5">
-                      Phone Number <span className="text-xs opacity-50">(Optional)</span>
+                      Số điện thoại <span className="text-xs opacity-50">(Không bắt buộc)</span>
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+84..."
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-text-muted mb-1.5">
-                      Message / Need <span className="text-danger">*</span>
+                      Tin nhắn / Nhu cầu <span className="text-danger">*</span>
                     </label>
                     <textarea
                       required
@@ -141,12 +141,12 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all resize-none"
-                      placeholder="How can we help you?"
+                      placeholder="Chúng tôi có thể giúp gì cho bạn?"
                     />
                   </div>
 
                   <p className="text-xs text-text-muted">
-                    By submitting this form, you agree that the profile owner may contact you back.
+                    Bằng cách gửi biểu mẫu này, bạn đồng ý rằng chủ sở hữu hồ sơ có thể liên hệ lại với bạn.
                   </p>
                 </form>
               </div>
@@ -157,7 +157,7 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
                   onClick={onClose}
                   className="flex-1 py-2.5 rounded-full border border-white/10 hover:bg-white/5 text-white font-medium transition-colors"
                 >
-                  Cancel
+                  Hủy
                 </button>
                 <button
                   type="submit"
@@ -169,7 +169,7 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
                     <span className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
                   ) : (
                     <>
-                      Send <Send className="w-4 h-4" />
+                      Gửi <Send className="w-4 h-4" />
                     </>
                   )}
                 </button>

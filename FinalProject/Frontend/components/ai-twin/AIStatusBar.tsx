@@ -40,7 +40,7 @@
 //   const Icon = statusConfig.icon;
 
 //   const formatDate = (dateString?: string) => {
-//     if (!dateString) return 'Never trained';
+//     if (!dateString) return 'Chưa bao giờ huấn luyện';
 //     const date = new Date(dateString);
 //     return date.toLocaleString();
 //   };
@@ -53,7 +53,7 @@
 //           <span className="text-sm font-medium">{status}</span>
 //         </div>
 //         <div className="text-sm text-white/50">
-//           Last trained: {formatDate(lastTrainedAt)}
+//           Huấn luyện lần cuối: {formatDate(lastTrainedAt)}
 //         </div>
 //       </div>
 
@@ -68,13 +68,13 @@
 //         <div className="flex items-center gap-2">
 //           <Database size={16} className="text-white/40" />
 //           <span className={knowledgeBaseLength > 15000 ? 'text-red-400' : knowledgeBaseLength > 13500 ? 'text-orange-400' : 'text-white/70'}>
-//             Knowledge: {knowledgeBaseLength}/15,000
+//             Kiến thức: {knowledgeBaseLength}/15,000
 //           </span>
 //         </div>
 //         <div className="w-px h-4 bg-white/10" />
 //         <div className="flex items-center gap-2">
 //           <div className={`w-2 h-2 rounded-full ${isPublicEnabled ? 'bg-green-400' : 'bg-gray-500'}`} />
-//           <span className="text-white/70">{isPublicEnabled ? 'Public' : 'Hidden'}</span>
+//           <span className="text-white/70">{isPublicEnabled ? 'Công khai' : 'Ẩn'}</span>
 //         </div>
 //       </div>
 //     </div>

@@ -13,17 +13,17 @@ export function PrivacySection({ data, onChange }: PrivacySectionProps) {
   };
 
   const toggles = [
-    { key: 'showEmail', label: 'Show Email', desc: 'Display your email on your public profile.' },
-    { key: 'showPhone', label: 'Show Phone', desc: 'Display your phone number on your public profile.' },
-    { key: 'showSocialLinks', label: 'Show Social Links', desc: 'Display your social media icons.' },
-    { key: 'allowAiContactMention', label: 'Allow AI to mention contact info', desc: 'Let your AI Twin share your email or phone when asked.' },
+    { key: 'showEmail', label: 'Hiển thị Email', desc: 'Hiển thị email của bạn trên hồ sơ công khai.' },
+    { key: 'showPhone', label: 'Hiển thị Số điện thoại', desc: 'Hiển thị số điện thoại của bạn trên hồ sơ công khai.' },
+    { key: 'showSocialLinks', label: 'Hiển thị Liên kết mạng xã hội', desc: 'Hiển thị các biểu tượng mạng xã hội của bạn.' },
+    { key: 'allowAiContactMention', label: 'Cho phép AI chia sẻ thông tin liên hệ', desc: 'Cho phép AI Twin chia sẻ email hoặc số điện thoại của bạn khi được hỏi.' },
   ];
 
   return (
     <div className="flex flex-col gap-6 bg-[#101010] border border-white/10 rounded-xl p-6">
       <div>
-        <h2 className="text-lg font-semibold text-white">Privacy</h2>
-        <p className="text-sm text-white/50 mt-1">Control what information is public.</p>
+        <h2 className="text-lg font-semibold text-white">Quyền riêng tư</h2>
+        <p className="text-sm text-white/50 mt-1">Kiểm soát những thông tin nào được công khai.</p>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -36,7 +36,7 @@ export function PrivacySection({ data, onChange }: PrivacySectionProps) {
                 <span className="text-xs text-white/50">{toggle.desc}</span>
                 {!isChecked && toggle.key === 'allowAiContactMention' && (
                   <span className="text-xs text-[#F5A524] mt-1">
-                    AI will not be allowed to share your email or phone number.
+                    AI sẽ không được phép chia sẻ email hoặc số điện thoại của bạn.
                   </span>
                 )}
               </div>
@@ -59,5 +59,6 @@ export function PrivacySection({ data, onChange }: PrivacySectionProps) {
         })}
       </div>
     </div>
+
   );
 }

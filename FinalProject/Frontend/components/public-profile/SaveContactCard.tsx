@@ -67,7 +67,7 @@ END:VCARD`;
 
   return (
     <div className="rounded-[24px] bg-card border border-white/10 p-6 md:p-8 mt-6">
-      <h2 className="text-xl font-bold text-foreground mb-4">Contact Info</h2>
+      <h2 className="text-xl font-bold text-foreground mb-4">Thông tin liên hệ</h2>
 
       {/* Contact Card Preview */}
       <div
@@ -131,7 +131,7 @@ END:VCARD`;
           className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-brand-blue hover:bg-electric-blue text-white font-semibold transition-all duration-300 shadow-[0_0_20px_-5px_rgba(35,103,162,0.5)] hover:shadow-[0_0_25px_-5px_rgba(0,143,234,0.6)]"
         >
           <Download className="w-5 h-5" />
-          Download Contact Card
+          Tải thẻ danh thiếp
         </button>
 
         <button
@@ -139,7 +139,7 @@ END:VCARD`;
           className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-colors"
         >
           <FileBox className="w-5 h-5" />
-          Export vCard
+          Xuất file vCard
         </button>
       </div>
     </div>

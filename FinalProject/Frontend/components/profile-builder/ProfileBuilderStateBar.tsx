@@ -14,48 +14,49 @@ export function ProfileBuilderStateBar({ status, lastSavedAt }: ProfileBuilderSt
       case 'draft-saved':
         return {
           icon: <Save size={16} className="text-white/60" />,
-          text: 'Draft Saved',
+          text: 'Đã lưu nháp',
           color: 'text-white/60'
         };
       case 'unsaved-changes':
         return {
           icon: <AlertCircle size={16} className="text-[#F5A524]" />,
-          text: 'Unsaved Changes',
+          text: 'Có thay đổi chưa lưu',
           color: 'text-[#F5A524]'
         };
       case 'saving':
         return {
           icon: <Loader2 size={16} className="text-[#008FEA] animate-spin" />,
-          text: 'Saving draft...',
+          text: 'Đang lưu nháp...',
           color: 'text-[#008FEA]'
         };
       case 'publishing':
         return {
           icon: <Loader2 size={16} className="text-[#008FEA] animate-spin" />,
-          text: 'Publishing...',
+          text: 'Đang xuất bản...',
           color: 'text-[#008FEA]'
         };
       case 'published':
         return {
           icon: <CheckCircle2 size={16} className="text-[#2ECC71]" />,
-          text: 'Published Successfully',
+          text: 'Đã xuất bản thành công',
           color: 'text-[#2ECC71]'
         };
       case 'error':
         return {
           icon: <AlertCircle size={16} className="text-[#E5484D]" />,
-          text: 'Error occurred',
+          text: 'Đã xảy ra lỗi',
           color: 'text-[#E5484D]'
         };
       case 'loading':
       default:
         return {
           icon: <Loader2 size={16} className="text-white/40 animate-spin" />,
-          text: 'Loading...',
+          text: 'Đang tải...',
           color: 'text-white/40'
         };
     }
   };
+
 
   const display = getStatusDisplay();
 
@@ -74,7 +75,7 @@ export function ProfileBuilderStateBar({ status, lastSavedAt }: ProfileBuilderSt
       {lastSavedAt && status !== 'loading' && (
         <div className="flex items-center gap-1.5 text-xs text-white/40">
           <Clock size={14} />
-          Last saved at {formatTime(lastSavedAt)}
+          Đã lưu lúc {formatTime(lastSavedAt)}
         </div>
       )}
     </div>

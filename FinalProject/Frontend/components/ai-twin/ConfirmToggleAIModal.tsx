@@ -17,13 +17,13 @@ export function ConfirmToggleAIModal({ isOpen, onClose, onConfirm, isEnabling }:
     <Modal 
       isOpen={isOpen} 
       onClose={onClose} 
-      title={isEnabling ? "Enable public AI?" : "Disable public AI?"}
+      title={isEnabling ? "Bật AI công khai?" : "Tắt AI công khai?"}
     >
       <div className="space-y-4">
         <p className="text-sm text-white/80">
           {isEnabling 
-            ? "Visitors will be able to chat with your AI Twin using the current configuration."
-            : "Visitors will no longer be able to chat with your AI Twin. The public profile will show a fallback contact form instead."}
+            ? "Khách truy cập sẽ có thể trò chuyện với AI Twin của bạn bằng cấu hình hiện tại."
+            : "Khách truy cập sẽ không thể trò chuyện với AI Twin của bạn nữa. Trang cá nhân công khai sẽ hiển thị form liên hệ dự phòng thay thế."}
         </p>
         
         <div className="flex justify-end gap-3 pt-4 border-t border-white/10">
@@ -31,7 +31,7 @@ export function ConfirmToggleAIModal({ isOpen, onClose, onConfirm, isEnabling }:
             onClick={onClose} 
             className="px-4 py-2 text-sm font-medium text-white hover:bg-white/5 rounded-lg transition-colors"
           >
-            Cancel
+            Hủy
           </button>
           <button 
             onClick={handleConfirm} 
@@ -41,7 +41,7 @@ export function ConfirmToggleAIModal({ isOpen, onClose, onConfirm, isEnabling }:
                 : 'bg-red-600 hover:bg-red-500'
             }`}
           >
-            {isEnabling ? 'Enable AI' : 'Disable AI'}
+            {isEnabling ? 'Bật AI' : 'Tắt AI'}
           </button>
         </div>
       </div>

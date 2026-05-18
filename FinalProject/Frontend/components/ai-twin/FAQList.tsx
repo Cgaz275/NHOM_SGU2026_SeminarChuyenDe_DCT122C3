@@ -9,7 +9,7 @@
 
 // export function FAQList({ items, onEdit, onDelete }: FAQListProps) {
 //   if (items.length === 0) {
-//     return <div className="text-center py-6 text-sm text-white/50">No FAQs added yet.</div>;
+//     return <div className="text-center py-6 text-sm text-white/50">Chưa có Câu hỏi thường gặp nào được thêm.</div>;
 //   }
 
 //   return (
