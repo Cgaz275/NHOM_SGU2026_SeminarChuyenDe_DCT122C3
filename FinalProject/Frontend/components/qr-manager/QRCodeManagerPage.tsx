@@ -25,15 +25,15 @@ export function QRCodeManagerPage() {
       try {
         const profile = await getProfileDraft();
         if (profile && profile.basicInfo.slug) {
-          const backendIp = '192.168.1.8:5000'; // IP của Backend
-          const publicUrl = `http://${backendIp}/api/v1/cards/qr/${profile.id}`;
+          const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+          const publicUrl = `${backendUrl}/cards/qr/${profile.id}`;
           
           setQrData({
             id: profile.id || 'new',
             ownerName: profile.basicInfo.fullName || 'Người dùng',
             username: profile.basicInfo.slug,
             publicUrl: publicUrl, // Link giấu trong QR (Mã QR Động)
-            displayUrl: `192.168.1.8:3000/u/${profile.basicInfo.slug}`, // Link hiển thị trên giao diện
+            displayUrl: `${typeof window !== 'undefined' ? window.location.host : 'localhost:3000'}/u/${profile.basicInfo.slug}`, // Link hiển thị trên giao diện
             status: 'published',
             slugChangedRecently: false,
             scanCount: 0,
