@@ -16,7 +16,8 @@ async function chatWithCard(req, res) {
       req.body.message,
       req.body.conversationId,
       req.body.guestName,
-      req.body.guestContact
+      req.body.guestContact,
+      req.body.forceHumanTakeover
     );
 
     return res.status(200).json({
@@ -84,9 +85,12 @@ async function getChatHistory(req, res) {
       };
     });
 
+    const convData = convDoc.data() || {};
+    const mode = convData.mode || "ai_active";
+
     return res.status(200).json({
       status: true,
-      data: { conversationId, messages },
+      data: { conversationId, messages, mode },
       message: "Lấy lịch sử chat thành công",
     });
   } catch (error) {

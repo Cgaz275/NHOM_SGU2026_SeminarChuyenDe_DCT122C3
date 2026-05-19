@@ -11,7 +11,8 @@ import {
   deleteKnowledgeItem, 
   trainAITwin, 
   publishAITwin, 
-  togglePublicAI 
+  togglePublicAI,
+  toggleGlobalAIPause
 } from '@/services/aiTwinService';
 import { AITwinConfig, KnowledgeItemType } from '@/types/ai-twin';
 import { Toast } from '@/components/ui/Toast';
@@ -106,6 +107,22 @@ export function AITwinConfigPage() {
     }
   };
 
+  const handleToggleGlobalAIPause = async () => {
+    if (!config || !config.id) return;
+    const nextPausedState = !config.isAiPaused;
+    try {
+      const success = await toggleGlobalAIPause(config.id, nextPausedState);
+      if (success) {
+        setConfig(prev => prev ? { ...prev, isAiPaused: nextPausedState } : null);
+        showToast(nextPausedState ? 'Đã tạm dừng AI hoạt động.' : 'Đã kích hoạt AI hoạt động lại.');
+      } else {
+        showToast('Thay đổi trạng thái AI thất bại.', 'error');
+      }
+    } catch {
+      showToast('Lỗi kết nối khi thay đổi trạng thái AI.', 'error');
+    }
+  };
+
   const handleTrain = async () => {
     if (!config) return;
     try {
@@ -174,6 +191,17 @@ export function AITwinConfigPage() {
           </p>
         </div>
         <div className="flex gap-3">
+          <button
+            onClick={handleToggleGlobalAIPause}
+            className={`px-4 py-2.5 font-medium rounded-lg transition-all text-sm flex items-center gap-2 ${
+              config.isAiPaused
+                ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30'
+                : 'bg-green-500/20 text-green-400 border border-green-500/30 hover:bg-green-500/30'
+            }`}
+          >
+            <div className={`w-2 h-2 rounded-full ${config.isAiPaused ? 'bg-amber-400 animate-pulse' : 'bg-green-400'}`} />
+            {config.isAiPaused ? 'AI Đang Tạm Dừng' : 'AI Đang Hoạt Động'}
+          </button>
           <button
             onClick={handleSave}
             className="px-5 py-2.5 bg-[#008FEA] hover:bg-[#0077c2] text-white font-medium rounded-lg transition-colors text-sm"

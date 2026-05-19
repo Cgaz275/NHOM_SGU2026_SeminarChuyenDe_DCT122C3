@@ -10,7 +10,6 @@ export function ConversationFilters({ filter, onFilterChange }: ConversationFilt
   const filterOptions: { label: string; value: ConversationFilter['type'] }[] = [
     { label: 'Tất cả', value: 'all' },
     { label: 'Chưa đọc', value: 'unread' },
-    { label: 'Đã lưu trữ', value: 'archived' },
     { label: 'Lead mới', value: 'new_lead' },
     { label: 'AI tạm dừng', value: 'ai_paused' },
   ];

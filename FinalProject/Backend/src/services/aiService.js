@@ -6,7 +6,7 @@ const openai = new OpenAI({
 	apiKey: process.env.OPENAI_API_KEY,
 });
 
-async function processChat(cardId, userMessage, conversationId = null, guestName = null, guestContact = null) {
+async function processChat(cardId, userMessage, conversationId = null, guestName = null, guestContact = null, forceHumanTakeover = false) {
 	const cardRef = db.collection("cards").doc(cardId);
 	const snapshot = await cardRef.get();
 
@@ -19,10 +19,12 @@ async function processChat(cardId, userMessage, conversationId = null, guestName
 	const cardData = snapshot.data();
 	const aiConfig = cardData.aiConfig || {};
 
-	if ((cardData.status !== "active" && cardData.status !== "published") || (cardData.aiStatus !== "Ready" && cardData.aiStatus !== "AI Ready") || aiConfig.isAiPaused === true) {
-		const error = new Error(`AI hiện không khả dụng. [Debug] status: ${cardData.status}, aiStatus: ${cardData.aiStatus}, isAiPaused: ${aiConfig.isAiPaused}`);
-		error.statusCode = 403;
-		throw error;
+	if (!forceHumanTakeover) {
+		if ((cardData.status !== "active" && cardData.status !== "published") || (cardData.aiStatus !== "Ready" && cardData.aiStatus !== "AI Ready") || aiConfig.isAiPaused === true) {
+			const error = new Error(`AI hiện không khả dụng. [Debug] status: ${cardData.status}, aiStatus: ${cardData.aiStatus}, isAiPaused: ${aiConfig.isAiPaused}`);
+			error.statusCode = 403;
+			throw error;
+		}
 	}
 
 	const globalRulesSnapshot = await db
@@ -101,7 +103,7 @@ ${toneInstruction}`;
 			lastMessageAt: now,
 			status: "unread",
 			isArchived: false,
-			mode: "ai_active",
+			mode: forceHumanTakeover ? "human_takeover" : "ai_active",
 			visitorName: guestName || "Khách truy cập",
 			visitorEmail: guestContact || "",
 			visitorPhone: "",
@@ -110,11 +112,15 @@ ${toneInstruction}`;
 		activeConversationId = newConv.id;
 		convRef = newConv;
 	} else {
-		await convRef.update({
+		const updateData = {
 			lastMessage: userMessage,
 			lastMessageAt: now,
 			status: "unread"
-		});
+		};
+		if (forceHumanTakeover) {
+			updateData.mode = "human_takeover";
+		}
+		await convRef.update(updateData);
 	}
 
 	// Lưu tin nhắn của khách

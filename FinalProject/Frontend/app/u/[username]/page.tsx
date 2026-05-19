@@ -7,11 +7,9 @@ import {
   PublicProfile,
   PublicProfileState,
   ChatMessage,
-  LeadFormData,
   ReportData,
 } from '../../../types/public-profile';
 import {
-  submitLeadForm,
   submitAIReport,
 } from '../../../lib/mock-public-profile-api';
 import { apiClient } from '../../../lib/apiClient';
@@ -31,7 +29,7 @@ import { LoadingSkeleton } from '../../../components/public-profile/LoadingSkele
 import { EmptyState } from '../../../components/public-profile/EmptyState';
 import { Toast } from '../../../components/ui/Toast';
 import { GuestIntroModal } from '../../../components/public-profile/GuestIntroModal';
-import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, doc } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
 
 export default function PublicProfilePage() {
@@ -49,6 +47,7 @@ export default function PublicProfilePage() {
   const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
   const [guestInfo, setGuestInfo] = useState<{ name: string; contact: string } | null>(null);
   const [isHumanTakeover, setIsHumanTakeover] = useState(false);
+  const [pendingOpenLead, setPendingOpenLead] = useState(false);
 
   const [toast, setToast] = useState<{
     message: string;
@@ -115,7 +114,7 @@ export default function PublicProfilePage() {
             description: e.description
           })) || [],
           avatarUrl: card.avatarUrl,
-          aiStatus: card.aiStatus === 'AI Ready' ? 'ai_ready' : 'ai_disabled',
+          aiStatus: (card.aiStatus === 'AI Ready' && card.aiConfig?.isAiPaused !== true) ? 'ai_ready' : 'ai_disabled',
           aiDisplayName: card.aiConfig?.aiDisplayName,
           greetingMessage: card.aiConfig?.greetingMessage
         };
@@ -144,12 +143,13 @@ export default function PublicProfilePage() {
         // Nếu có thông tin khách cũ → gọi API lấy lịch sử chat và khôi phục
         if (restoredGuest?.contact) {
           try {
-            const histRes = await apiClient<{ conversationId: string; messages: any[] }>(
+            const histRes = await apiClient<{ conversationId: string; messages: any[]; mode?: string }>(
               `/chat/cards/${card.id}/history?guestContact=${encodeURIComponent(restoredGuest.contact)}`
             );
             if (histRes.success && histRes.data && histRes.data.messages?.length > 0) {
-              const { conversationId: oldId, messages: oldMsgs } = histRes.data;
+              const { conversationId: oldId, messages: oldMsgs, mode: oldMode } = histRes.data;
               setConversationId(oldId);
+              setIsHumanTakeover(oldMode === 'human_takeover');
               const restoredMsgs: ChatMessage[] = oldMsgs.map((m: any) => ({
                 id: m.id,
                 role: m.sender === 'visitor' ? 'user' : 'assistant',
@@ -197,12 +197,23 @@ export default function PublicProfilePage() {
               return [...prev, ownerMsg];
             });
           }
-          // Theo dõi mode thay đổi
-          if (data.sender === 'system' && data.content?.includes('Tiếp quản')) {
-            setIsHumanTakeover(true);
-          }
         }
       });
+    });
+
+    return () => unsubscribe();
+  }, [conversationId]);
+
+  // Lắng nghe trạng thái tiếp quản (mode) thời gian thực từ cuộc hội thoại
+  useEffect(() => {
+    if (!conversationId || !db) return;
+
+    const convDocRef = doc(db, 'conversations', conversationId);
+    const unsubscribe = onSnapshot(convDocRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.data();
+        setIsHumanTakeover(data?.mode === 'human_takeover');
+      }
     });
 
     return () => unsubscribe();
@@ -235,6 +246,7 @@ export default function PublicProfilePage() {
           conversationId,
           guestName: guestInfo?.name,
           guestContact: guestInfo?.contact,
+          forceHumanTakeover: isHumanTakeover || currentAiStatus !== 'ai_ready',
         }),
       });
 
@@ -275,15 +287,21 @@ export default function PublicProfilePage() {
     localStorage.setItem(`guest_info_${profile.id}`, JSON.stringify(info));
     setIsGuestModalOpen(false);
 
+    if (pendingOpenLead) {
+      setPendingOpenLead(false);
+      setIsLeadModalOpen(true);
+    }
+
     // Tìm lịch sử chat cũ theo email/zalo
     try {
-      const histRes = await apiClient<{ conversationId: string; messages: any[] }>(
+      const histRes = await apiClient<{ conversationId: string; messages: any[]; mode?: string }>(
         `/chat/cards/${profile.id}/history?guestContact=${encodeURIComponent(info.contact)}`
       );
 
       if (histRes.success && histRes.data && histRes.data.messages?.length > 0) {
-        const { conversationId: oldConvId, messages: oldMessages } = histRes.data;
+        const { conversationId: oldConvId, messages: oldMessages, mode: oldMode } = histRes.data;
         setConversationId(oldConvId);
+        setIsHumanTakeover(oldMode === 'human_takeover');
 
         // Map tin nhắn cũ về dạng ChatMessage để hiện lên giao diện
         const restoredMsgs: ChatMessage[] = oldMessages.map((m) => ({
@@ -306,19 +324,59 @@ export default function PublicProfilePage() {
     }
   };
 
-  const handleLeadSubmit = async (data: LeadFormData) => {
+  const handleOpenLeadForm = () => {
+    if (!guestInfo) {
+      setPendingOpenLead(true);
+      setIsGuestModalOpen(true);
+    } else {
+      setIsLeadModalOpen(true);
+    }
+  };
+
+  const handleLeadSubmit = async (message: string) => {
     if (!profile) return;
 
-    try {
-      await submitLeadForm(profile.id, data);
-
-      showToast(
-        `Your information has been sent. ${profile.name} will contact you later.`
-      );
-
+    // Nếu chưa có thông tin khách → hiển thị modal xin chào trước
+    if (!guestInfo) {
       setIsLeadModalOpen(false);
+      setIsGuestModalOpen(true);
+      return;
+    }
+
+    try {
+      const res = await apiClient<{ reply: string; conversationId?: string }>(`/chat/cards/${profile.id}/chat`, {
+        method: 'POST',
+        body: JSON.stringify({
+          message,
+          conversationId,
+          guestName: guestInfo.name,
+          guestContact: guestInfo.contact,
+          forceHumanTakeover: true,
+        }),
+      });
+
+      if (res.success) {
+        if (res.data?.conversationId) {
+          setConversationId(res.data.conversationId);
+        }
+        
+        // Thêm tin nhắn của khách vào UI
+        const userMsg: ChatMessage = {
+          id: Date.now().toString(),
+          role: 'user',
+          content: message,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, userMsg]);
+        setIsHumanTakeover(true);
+
+        showToast('Tin nhắn đã được gửi! AI đã tạm dừng để chờ phản hồi từ chủ thẻ.');
+        setIsLeadModalOpen(false);
+      } else {
+        showToast(res.message || 'Không thể gửi tin nhắn.', 'error');
+      }
     } catch (error) {
-      showToast('Failed to send your information. Please try again.', 'error');
+      showToast('Không thể gửi tin nhắn. Vui lòng thử lại.', 'error');
     }
   };
 
@@ -386,7 +444,7 @@ export default function PublicProfilePage() {
                   messages={messages}
                   isTyping={isTyping}
                   onSendMessage={handleSendMessage}
-                  onOpenLeadForm={() => setIsLeadModalOpen(true)}
+                  onOpenLeadForm={handleOpenLeadForm}
                   onOpenReport={() => setIsReportModalOpen(true)}
                   isHumanTakeover={isHumanTakeover}
                 />

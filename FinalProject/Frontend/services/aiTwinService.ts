@@ -183,3 +183,11 @@ export async function deleteKnowledgeItem(type: KnowledgeItemType, itemId: strin
   if (type === 'faq') kb.faqs = filterArr(kb.faqs);
   return saveAITwinConfig(config);
 }
+
+export async function toggleGlobalAIPause(cardId: string, isAiPaused: boolean): Promise<boolean> {
+  const res = await apiClient<any>(`/cards/${cardId}/takeover`, {
+    method: 'PUT',
+    body: JSON.stringify({ isAiPaused }),
+  });
+  return res.success;
+}

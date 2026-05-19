@@ -1,22 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send } from 'lucide-react';
-import { LeadFormData } from '../../types/public-profile';
 
 interface LeadFallbackModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (data: LeadFormData) => Promise<void>;
+  onSubmit: (message: string) => Promise<void>;
   profileName: string;
 }
 
 export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: LeadFallbackModalProps) {
-  const [formData, setFormData] = useState<LeadFormData>({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
+  const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
 
@@ -24,24 +18,16 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
     e.preventDefault();
     setError('');
 
-    if (!formData.name || !formData.email || !formData.message) {
-      setError('Vui lòng điền đầy đủ các trường bắt buộc.');
-      return;
-    }
-
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setError('Vui lòng nhập địa chỉ email hợp lệ.');
+    if (!message.trim()) {
+      setError('Vui lòng nhập tin nhắn của bạn.');
       return;
     }
 
     try {
       setIsSubmitting(true);
-      await onSubmit(formData);
+      await onSubmit(message.trim());
       onClose();
-      // Reset form on success
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setMessage('');
     } catch (err) {
       setError('Không thể gửi tin nhắn. Vui lòng thử lại sau.');
     } finally {
@@ -67,11 +53,11 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               className="bg-card w-full max-w-md rounded-2xl border border-white/10 shadow-2xl pointer-events-auto overflow-hidden flex flex-col max-h-[90vh]"
             >
-              <div className="flex items-center justify-between p-6 border-b border-white/5">
+              <div className="flex items-center justify-between p-6 border-b border-white/5 bg-white/[0.02]">
                 <div>
-                  <h3 className="text-xl font-bold text-white">Để lại thông tin liên hệ</h3>
+                  <h3 className="text-xl font-bold text-white">Để lại tin nhắn cho tôi</h3>
                   <p className="text-sm text-text-muted mt-1">
-                    {profileName} có thể liên hệ trực tiếp với bạn nếu AI không thể trả lời câu hỏi.
+                    AI hiện tại đang tạm dừng hoặc không online. Vui lòng để lại tin nhắn, {profileName} sẽ đọc và trả lời trực tiếp cho bạn!
                   </p>
                 </div>
                 <button
@@ -82,8 +68,8 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
                 </button>
               </div>
 
-              <div className="p-6 overflow-y-auto">
-                <form id="lead-form" onSubmit={handleSubmit} className="space-y-4">
+              <div className="p-6 overflow-y-auto bg-card">
+                <form id="lead-fallback-form" onSubmit={handleSubmit} className="space-y-4">
                   {error && (
                     <div className="p-3 rounded-lg bg-danger/10 border border-danger/20 text-danger text-sm">
                       {error}
@@ -91,62 +77,21 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
                   )}
                   
                   <div>
-                    <label className="block text-sm font-medium text-text-muted mb-1.5">
-                      Họ và tên <span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all"
-                      placeholder="Tên của bạn"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-text-muted mb-1.5">
-                      Email <span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-text-muted mb-1.5">
-                      Số điện thoại <span className="text-xs opacity-50">(Không bắt buộc)</span>
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all"
-                      placeholder="+84..."
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-text-muted mb-1.5">
-                      Tin nhắn / Nhu cầu <span className="text-danger">*</span>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-text-muted mb-2">
+                      Nội dung tin nhắn *
                     </label>
                     <textarea
                       required
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all resize-none"
-                      placeholder="Chúng tôi có thể giúp gì cho bạn?"
+                      rows={5}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/50 transition-all resize-none placeholder:text-white/20 text-sm"
+                      placeholder="Nhập nội dung bạn muốn gửi..."
                     />
                   </div>
 
                   <p className="text-xs text-text-muted">
-                    Bằng cách gửi biểu mẫu này, bạn đồng ý rằng chủ sở hữu hồ sơ có thể liên hệ lại với bạn.
+                    Tin nhắn này sẽ được gửi trực tiếp đến hộp thư của {profileName} và AI sẽ tạm dừng để đợi chủ sở hữu trả lời.
                   </p>
                 </form>
               </div>
@@ -155,21 +100,21 @@ export function LeadFallbackModal({ isOpen, onClose, onSubmit, profileName }: Le
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 py-2.5 rounded-full border border-white/10 hover:bg-white/5 text-white font-medium transition-colors"
+                  className="flex-1 py-2.5 rounded-xl border border-white/10 hover:bg-white/5 text-white font-medium transition-colors text-sm"
                 >
                   Hủy
                 </button>
                 <button
                   type="submit"
-                  form="lead-form"
-                  disabled={isSubmitting}
-                  className="flex-1 py-2.5 rounded-full bg-brand-blue hover:bg-electric-blue text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  form="lead-fallback-form"
+                  disabled={isSubmitting || !message.trim()}
+                  className="flex-1 py-2.5 rounded-xl bg-brand-blue hover:bg-electric-blue text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm"
                 >
                   {isSubmitting ? (
                     <span className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
                   ) : (
                     <>
-                      Gửi <Send className="w-4 h-4" />
+                      Gửi tin nhắn <Send className="w-4 h-4" />
                     </>
                   )}
                 </button>

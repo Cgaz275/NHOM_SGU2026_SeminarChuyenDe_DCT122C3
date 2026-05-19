@@ -62,7 +62,7 @@ export function AITwinChatWidget({
               <Sparkles className="w-4 h-4 text-electric-blue" />
             </h2>
             <p className="text-xs text-text-muted">
-              {aiStatus === 'ai_ready' ? 'AI Sẵn sàng' : aiStatus === 'ai_disabled' ? 'AI Đã tắt' : 'Lỗi AI'}
+              {aiStatus === 'ai_ready' ? 'AI Sẵn sàng' : 'AI Tạm dừng'}
             </p>
           </div>
         </div>
@@ -128,7 +128,7 @@ export function AITwinChatWidget({
                     onClick={onOpenLeadForm}
                     className="mt-3 w-full py-2 px-4 bg-brand-blue/20 hover:bg-brand-blue/30 text-brand-blue rounded-full text-xs font-semibold transition-colors"
                   >
-                    Để lại thông tin liên hệ
+                    Để lại tin nhắn cho tôi
                   </button>
                 )}
               </div>
@@ -154,7 +154,7 @@ export function AITwinChatWidget({
 
       {/* Input Area */}
       <div className="p-4 bg-white/[0.02] border-t border-white/5">
-        {isDisabled ? (
+        {(isDisabled && !isHumanTakeover) ? (
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm text-text-muted text-center">
               AI Twin của {profileName} hiện không khả dụng.
@@ -163,7 +163,7 @@ export function AITwinChatWidget({
               onClick={onOpenLeadForm}
               className="py-2 px-6 rounded-full bg-white/10 hover:bg-white/15 text-white text-sm font-medium transition-colors"
             >
-              Để lại thông tin liên hệ của bạn
+              Để lại tin nhắn cho tôi
             </button>
           </div>
         ) : (

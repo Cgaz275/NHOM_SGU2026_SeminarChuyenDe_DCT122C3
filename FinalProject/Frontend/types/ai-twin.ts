@@ -76,6 +76,7 @@ export interface AITwinConfig extends SystemPromptConfig {
   guardrails: GuardrailSettings;
   status: AITwinStatus;
   isPublicEnabled: boolean;
+  isAiPaused?: boolean;
   lastTrainedAt?: string;
   updatedAt: string;
 }
