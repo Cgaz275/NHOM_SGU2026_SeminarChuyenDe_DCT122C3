@@ -30,5 +30,6 @@ const router = express.Router();
  *         description: Trả về câu trả lời từ AI
  */
 router.post("/cards/:cardId/chat", chatLimiter, chatController.chatWithCard);
+router.get("/cards/:cardId/history", chatController.getChatHistory);
 
 module.exports = router;

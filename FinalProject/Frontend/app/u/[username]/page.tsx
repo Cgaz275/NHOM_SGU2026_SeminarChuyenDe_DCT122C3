@@ -125,22 +125,44 @@ export default function PublicProfilePage() {
 
         // Khôi phục thông tin khách từ lần trước (nếu có)
         const savedGuest = localStorage.getItem(`guest_info_${card.id}`);
+        let restoredGuest: { name: string; contact: string } | null = null;
         if (savedGuest) {
           try {
-            setGuestInfo(JSON.parse(savedGuest));
+            restoredGuest = JSON.parse(savedGuest);
+            setGuestInfo(restoredGuest);
           } catch {}
         }
 
         const greeting = card.aiConfig?.greetingMessage || `Hi, I'm ${data.name}'s AI Twin. You can ask me about his skills, projects, experience, or collaboration availability.`;
+        const greetingMsg: ChatMessage = {
+          id: 'init-1',
+          role: 'assistant',
+          content: greeting,
+          timestamp: new Date(),
+        };
 
-        setMessages([
-          {
-            id: 'init-1',
-            role: 'assistant',
-            content: greeting,
-            timestamp: new Date(),
-          },
-        ]);
+        // Nếu có thông tin khách cũ → gọi API lấy lịch sử chat và khôi phục
+        if (restoredGuest?.contact) {
+          try {
+            const histRes = await apiClient<{ conversationId: string; messages: any[] }>(
+              `/chat/cards/${card.id}/history?guestContact=${encodeURIComponent(restoredGuest.contact)}`
+            );
+            if (histRes.success && histRes.data && histRes.data.messages?.length > 0) {
+              const { conversationId: oldId, messages: oldMsgs } = histRes.data;
+              setConversationId(oldId);
+              const restoredMsgs: ChatMessage[] = oldMsgs.map((m: any) => ({
+                id: m.id,
+                role: m.sender === 'visitor' ? 'user' : 'assistant',
+                content: m.sender === 'owner' ? `👤 ${m.content}` : m.content,
+                timestamp: m.createdAt ? new Date(m.createdAt) : new Date(),
+              }));
+              setMessages([greetingMsg, ...restoredMsgs]);
+              return; // Không cần set messages mặc định bên dưới
+            }
+          } catch {}
+        }
+
+        setMessages([greetingMsg]);
       } catch (err) {
         setPageState('not_found');
       }
@@ -246,11 +268,42 @@ export default function PublicProfilePage() {
     }
   };
 
-  const handleGuestSubmit = (info: { name: string; contact: string }) => {
+  const handleGuestSubmit = async (info: { name: string; contact: string }) => {
+    if (!profile) return;
     setGuestInfo(info);
     // Lưu vào localStorage để khách không cần nhập lại khi quay lại
-    localStorage.setItem(`guest_info_${profile?.id}`, JSON.stringify(info));
+    localStorage.setItem(`guest_info_${profile.id}`, JSON.stringify(info));
     setIsGuestModalOpen(false);
+
+    // Tìm lịch sử chat cũ theo email/zalo
+    try {
+      const histRes = await apiClient<{ conversationId: string; messages: any[] }>(
+        `/chat/cards/${profile.id}/history?guestContact=${encodeURIComponent(info.contact)}`
+      );
+
+      if (histRes.success && histRes.data && histRes.data.messages?.length > 0) {
+        const { conversationId: oldConvId, messages: oldMessages } = histRes.data;
+        setConversationId(oldConvId);
+
+        // Map tin nhắn cũ về dạng ChatMessage để hiện lên giao diện
+        const restoredMsgs: ChatMessage[] = oldMessages.map((m) => ({
+          id: m.id,
+          role: m.sender === 'visitor' ? 'user' : 'assistant',
+          content: m.sender === 'owner' ? `👤 ${m.content}` : m.content,
+          timestamp: m.createdAt ? new Date(m.createdAt) : new Date(),
+        }));
+
+        // Giữ lại lời chào ban đầu, thêm lịch sử phía sau
+        setMessages((prev) => {
+          const greeting = prev[0]; // lời chào ban đầu
+          return greeting ? [greeting, ...restoredMsgs] : restoredMsgs;
+        });
+
+        showToast(`✨ Đã khôi phục ${oldMessages.length} tin nhắn từ lần trước!`);
+      }
+    } catch {
+      // Không tìm thấy lịch sử cũ → bắt đầu chat mới, không cần báo lỗi
+    }
   };
 
   const handleLeadSubmit = async (data: LeadFormData) => {
@@ -362,6 +415,7 @@ export default function PublicProfilePage() {
             isOpen={isGuestModalOpen}
             aiDisplayName={profile.aiDisplayName || ''}
             profileName={profile.name}
+            cardId={profile.id}
             onSubmit={handleGuestSubmit}
             onClose={() => setIsGuestModalOpen(false)}
           />

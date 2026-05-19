@@ -70,11 +70,26 @@ ${toneInstruction}`;
 	let convRef;
 	let activeConversationId = conversationId;
 
+	// Nếu có conversationId → kiểm tra xem có tồn tại không
 	if (activeConversationId) {
 		convRef = db.collection("conversations").doc(activeConversationId);
 		const convSnap = await convRef.get();
 		if (!convSnap.exists) {
 			activeConversationId = null;
+		}
+	}
+
+	// Nếu không có conversationId nhưng có guestContact → tìm conversation cũ
+	if (!activeConversationId && guestContact) {
+		const existingSnap = await db.collection("conversations")
+			.where("cardId", "==", cardId)
+			.where("visitorEmail", "==", guestContact)
+			.orderBy("createdAt", "desc")
+			.limit(1)
+			.get();
+		if (!existingSnap.empty) {
+			activeConversationId = existingSnap.docs[0].id;
+			convRef = db.collection("conversations").doc(activeConversationId);
 		}
 	}
 

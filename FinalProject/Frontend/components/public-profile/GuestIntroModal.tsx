@@ -2,18 +2,19 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, Mail, MessageCircle, Sparkles, X } from 'lucide-react';
+import { User, Mail, MessageCircle, Sparkles, X, Loader2, History, ArrowRight } from 'lucide-react';
 
 interface GuestInfo {
   name: string;
-  contact: string; // email hoặc zalo
+  contact: string;
 }
 
 interface GuestIntroModalProps {
   isOpen: boolean;
   aiDisplayName: string;
   profileName: string;
-  onSubmit: (info: GuestInfo) => void;
+  cardId: string; // cần để tìm lịch sử
+  onSubmit: (info: GuestInfo, foundHistoryCount?: number) => Promise<void>;
   onClose: () => void;
 }
 
@@ -21,25 +22,26 @@ export function GuestIntroModal({
   isOpen,
   aiDisplayName,
   profileName,
+  cardId,
   onSubmit,
   onClose,
 }: GuestIntroModalProps) {
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim()) {
-      setError('Vui lòng nhập tên của bạn');
-      return;
-    }
-    if (!contact.trim()) {
-      setError('Vui lòng nhập Email hoặc Zalo');
-      return;
-    }
+    if (!name.trim()) { setError('Vui lòng nhập tên của bạn'); return; }
+    if (!contact.trim()) { setError('Vui lòng nhập Email hoặc Zalo'); return; }
     setError('');
-    onSubmit({ name: name.trim(), contact: contact.trim() });
+    setIsLoading(true);
+    try {
+      await onSubmit({ name: name.trim(), contact: contact.trim() });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -64,7 +66,8 @@ export function GuestIntroModal({
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-1.5 text-white/40 hover:text-white hover:bg-white/10 rounded-full transition-colors"
+              disabled={isLoading}
+              className="absolute top-4 right-4 p-1.5 text-white/40 hover:text-white hover:bg-white/10 rounded-full transition-colors disabled:opacity-30"
             >
               <X className="w-4 h-4" />
             </button>
@@ -72,16 +75,24 @@ export function GuestIntroModal({
             {/* Header */}
             <div className="relative flex flex-col items-center text-center mb-6">
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#2367A2] to-[#008FEA] flex items-center justify-center mb-3 shadow-[0_0_30px_rgba(0,143,234,0.4)]">
-                <Sparkles className="w-7 h-7 text-white" />
+                {isLoading
+                  ? <Loader2 className="w-7 h-7 text-white animate-spin" />
+                  : <Sparkles className="w-7 h-7 text-white" />
+                }
               </div>
               <h2 className="text-xl font-bold text-white mb-1">
-                Xin chào! 👋
+                {isLoading ? 'Đang tìm lịch sử...' : 'Xin chào! 👋'}
               </h2>
               <p className="text-white/60 text-sm leading-relaxed">
-                Trước khi nói chuyện với{' '}
-                <span className="text-[#008FEA] font-medium">{aiDisplayName || `AI Twin của ${profileName}`}</span>
-                , hãy để lại thông tin để{' '}
-                <span className="text-white/80 font-medium">{profileName}</span> có thể liên hệ lại với bạn nhé!
+                {isLoading
+                  ? 'Hệ thống đang kiểm tra xem bạn đã từng trò chuyện trước đây chưa...'
+                  : <>
+                      Trước khi nói chuyện với{' '}
+                      <span className="text-[#008FEA] font-medium">{aiDisplayName || `AI Twin của ${profileName}`}</span>
+                      , hãy để lại thông tin để{' '}
+                      <span className="text-white/80 font-medium">{profileName}</span> có thể liên hệ lại nhé!
+                    </>
+                }
               </p>
             </div>
 
@@ -99,7 +110,8 @@ export function GuestIntroModal({
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Nguyễn Văn A"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#008FEA] focus:bg-white/8 transition-colors"
+                    disabled={isLoading}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#008FEA] transition-colors disabled:opacity-50"
                     autoFocus
                   />
                 </div>
@@ -117,15 +129,22 @@ export function GuestIntroModal({
                     value={contact}
                     onChange={(e) => setContact(e.target.value)}
                     placeholder="email@gmail.com hoặc số Zalo"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#008FEA] focus:bg-white/8 transition-colors"
+                    disabled={isLoading}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#008FEA] transition-colors disabled:opacity-50"
                   />
                 </div>
               </div>
 
+              {/* History hint */}
+              <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                <History className="w-3.5 h-3.5 text-white/30 flex-shrink-0" />
+                <p className="text-white/30 text-xs">
+                  Nhập đúng email/Zalo đã dùng trước để tiếp tục hội thoại cũ
+                </p>
+              </div>
+
               {/* Error */}
-              {error && (
-                <p className="text-red-400 text-xs">{error}</p>
-              )}
+              {error && <p className="text-red-400 text-xs">{error}</p>}
 
               {/* Privacy note */}
               <p className="text-white/30 text-xs text-center">
@@ -135,10 +154,13 @@ export function GuestIntroModal({
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-[#2367A2] to-[#008FEA] text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(0,143,234,0.3)] hover:shadow-[0_0_30px_rgba(0,143,234,0.5)]"
+                disabled={isLoading}
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-[#2367A2] to-[#008FEA] text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(0,143,234,0.3)] hover:shadow-[0_0_30px_rgba(0,143,234,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <MessageCircle className="w-4 h-4" />
-                Bắt đầu trò chuyện
+                {isLoading
+                  ? <><Loader2 className="w-4 h-4 animate-spin" /> Đang tìm lịch sử...</>
+                  : <><MessageCircle className="w-4 h-4" /> Bắt đầu trò chuyện <ArrowRight className="w-4 h-4" /></>
+                }
               </button>
             </form>
           </motion.div>
