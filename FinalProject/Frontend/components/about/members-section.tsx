@@ -5,35 +5,35 @@ import MemberCard from './member-card';
 const MEMBERS = [
   {
     name: 'Châu Gia Anh',
-    role: 'Leader - Fullstack / Designer',
+    role: 'Lãnh đạo - Fullstack / Designer',
     description:
-      "As the driving force behind the team, Châu Gia Anh combines visionary leadership with deep technical expertise. Beyond her leadership role, she bridges the gap between design and development, crafting user-centric solutions that are as beautiful as they are functional. Her strategic thinking and execution skills keep the team focused and pushing boundaries.",
+      "Là lực đẩy chính đứng sau nhóm, Châu Gia Anh kết hợp tầm nhìn lãnh đạo với chuyên môn kỹ thuật sâu. Ngoài vai trò lãnh đạo, cô còn là cầu nối giữa thiết kế và phát triển, tạo ra các giải pháp tập trung vào người dùng vừa đẹp vừa chức năng. Tư duy chiến lược và kỹ năng thực thi của cô giữ nhóm tập trung và vượt qua giới hạn.",
     imageSrc: '/team_members/cga.png',
-    meetLabel: 'Meet Tâm',
+    meetLabel: 'Gặp Tâm',
   },
   {
     name: 'Đào Thị Thanh Tâm',
-    role: 'Member - Business Analyst / Tester',
+    role: 'Thành viên - Business Analyst / Tester',
     description:
-      "The heart of our workflows, Tâm ensures every aspect is analyzed and tested with precision. Her keen eye for detail catches issues before they become problems, while her analytical mindset helps shape product direction. She bridges business needs with technical implementation, making sure products not only work but deliver real value.",
+      "Tim là trái tim của quy trình làm việc của chúng tôi, đảm bảo mọi khía cạnh được phân tích và kiểm tra một cách chính xác. Mắt tinh tế của cô bắt được các vấn đề trước khi chúng trở thành vấn đề, trong khi tư duy phân tích giúp định hình hướng sản phẩm. Cô là cầu nối giữa nhu cầu kinh doanh và triển khai kỹ thuật, đảm bảo sản phẩm không chỉ hoạt động mà còn mang lại giá trị thực.",
     imageSrc: '/team_members/mun.jpeg',
-    meetLabel: 'Meet Khánh',
+    meetLabel: 'Gặp Khánh',
   },
   {
     name: 'Dương Lê Khánh',
-    role: 'Member - Fullstack',
+    role: 'Thành viên - Fullstack',
     description:
-      "Khánh is a dynamic and highly versatile Fullstack Developer who serves as the technical backbone. With deep expertise across the entire tech stack, he seamlessly builds from database to user interface, constantly improving technical standards and tackling any challenge that comes his way.",
+      "Khánh là một Fullstack Developer năng động và linh hoạt cao, đóng vai trò là xương sống kỹ thuật. Với chuyên môn sâu trên toàn bộ tech stack, anh xây dựng liền mạch từ cơ sở dữ liệu đến giao diện người dùng, liên tục cải thiện các tiêu chuẩn kỹ thuật và giải quyết mọi thách thức phía trước.",
     imageSrc: '/team_members/khanh.jpeg',
-    meetLabel: 'Meet Đại',
+    meetLabel: 'Gặp Đại',
   },
   {
     name: 'Phan Thành Đại',
-    role: 'Member - AI Engineer',
+    role: 'Thành viên - AI Engineer',
     description:
-      "Đại is the technical powerhouse of the team, specializing in AI systems. He brings cutting-edge solutions and explores innovations that push the boundaries of what's possible. His expertise in developing and deploying AI systems fills a critical gap in technology while keeping us ahead of the curve.",
+      "Đại là nguồn lực kỹ thuật của nhóm, chuyên về các hệ thống AI. Anh mang đến các giải pháp tiên tiến và khám phá những đổi mới vượt qua ranh giới của những gì có thể. Chuyên môn của anh trong phát triển và triển khai các hệ thống AI lấp đầy một khoảng trống quan trọng trong công nghệ đồng thời giữ chúng tôi dẫn đầu.",
     imageSrc: '/team_members/D.jpeg',
-    meetLabel: 'Meet Đại',
+    meetLabel: 'Gặp Đại',
   },
 ];
 

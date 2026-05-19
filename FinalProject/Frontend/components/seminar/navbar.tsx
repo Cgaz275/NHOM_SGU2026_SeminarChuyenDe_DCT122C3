@@ -1,7 +1,8 @@
 const links = [
-  { label: "About", href: "/about" },
-  { label: "Team Projects", href: "/teamproject" },
-  { label: "Digital Twin", href: "/digital-twin" },
+  { label: "Trang chủ", href: "/" },
+  { label: "Đội ngũ phát triển", href: "/about" },
+  // { label: "Dự án nhóm", href: "/teamproject" },
+  { label: "Digital Twin Demo", href: "/digital-twin" },
 ];
 
 export function Navbar() {
@@ -28,7 +29,7 @@ export function Navbar() {
         </nav>
 
         <a href="/login" className="outline-pill px-4 py-2 text-[0.66rem]">
-          Login
+          Đăng nhập
         </a>
       </div>
     </header>

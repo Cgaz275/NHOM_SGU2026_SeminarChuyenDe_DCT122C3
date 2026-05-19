@@ -42,8 +42,8 @@ export function TeamSection() {
       <div className="digital-twin-content">
         <SectionHeading
         align="center"
-        title="Get to know more about us"
-        description="Let’s chat together with AI Digital Twin mode."
+        title="Tìm hiểu thêm về chúng tôi"
+        description="Nhắn tin với Digital Twin của chúng tôi và tìm hiểu về chức năng cốt lỗi của nền tảng, cách chúng tôi tạo ra trải nghiệm kỹ thuật số độc đáo và cách chúng tôi có thể giúp bạn thể hiện bản thân một cách chuyên nghiệp và sinh động."
         className="mx-auto max-w-3xl"
       />
 
@@ -60,7 +60,7 @@ export function TeamSection() {
 
       <div className="mt-8 flex justify-center">
         <a href="#contact" className="outline-pill px-5 py-3 text-[0.68rem]">
-          Chat with Digital Twin
+          Chat với Demo Digital Twin của chúng tôi
         </a>
       </div>
       </div>

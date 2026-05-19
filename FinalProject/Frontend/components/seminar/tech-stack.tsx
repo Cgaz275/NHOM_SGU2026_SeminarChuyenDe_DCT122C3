@@ -23,19 +23,15 @@ export function TechStack() {
   return (
     <section id="about" className="section-shell py-12 sm:py-16 lg:py-20">
       <SectionHeading
-        title="We leverage a diverse and modern technological foundation"
+        title="Cung cấp dịch vụ Digial Twin Card được cá nhân hóa theo persona"
         titleClassName="!max-w-4xl lg:!max-w-6xl"
         className="pl-4 sm:pl-6 lg:pl-10"
       />
 
       <div className="mt-7 mx-auto flex h-full w-full max-w-6xl flex-col rounded-[2rem] bg-[var(--seminar-blue)] px-5 py-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] min-h-[20rem] sm:min-h-[22rem] sm:px-8 sm:py-8 lg:min-h-[24rem]">
         <p className="max-w-3xl text-sm leading-7 text-white/95 sm:text-base">
-          Our expertise spans across cutting-edge web development, intelligent AI
-          automation, and immersive visual design. By integrating these diverse
-          technologies, we build seamless digital experiences that are as
-          high-performing as they are visually stunning.
+        Chúng tôi cung cấp dịch vụ Digital Twin Card được cá nhân hóa theo bản sắc riêng và kinh nghiệm của bạn, quản lý gọn gàng và dễ sử dụng. Giúp bạn thể hiện được bộ kỹ năng của mình một cách chuyên nghiệp và sinh động, kết nối nhanh với các nhà tuyển dụng hoặc khách hàng tiềm năng của bạn.
         </p>
-
         <div className="mt-auto flex flex-col items-start gap-3 pt-2">
           {skillRows.map((row, rowIndex) => (
             <div
