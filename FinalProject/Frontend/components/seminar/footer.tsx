@@ -51,7 +51,7 @@ export function Footer() {
           </div>
 
           <p className="text-[0.68rem] text-white/70">
-            © 2026 Seminar. All rights reserved.
+            © 2026 Seminar. Bảo lưu mọi quyền.
           </p>
         </div>
       </div>
