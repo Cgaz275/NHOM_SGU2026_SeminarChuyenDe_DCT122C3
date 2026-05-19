@@ -50,7 +50,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-semibold text-white">Kỹ năng</h2>
-            <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.skills.length}</span>
+            <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.skills?.length || 0}</span>
           </div>
           <button onClick={() => handleAddClick('skill')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
             <Plus size={16} /> Thêm kỹ năng
@@ -64,7 +64,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-semibold text-white">Kinh nghiệm</h2>
-            <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.experiences.length}</span>
+            <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.experiences?.length || 0}</span>
           </div>
           <button onClick={() => handleAddClick('experience')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
             <Plus size={16} /> Thêm kinh nghiệm
@@ -78,7 +78,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-semibold text-white">Dự án</h2>
-            <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.projects.length}</span>
+            <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.projects?.length || 0}</span>
           </div>
           <button onClick={() => handleAddClick('project')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
             <Plus size={16} /> Thêm dự án
@@ -92,7 +92,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-semibold text-white">Dịch vụ</h2>
-            <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.services.length}</span>
+            <span className="bg-white/10 text-white/70 px-2 py-0.5 rounded-full text-xs">{knowledgeBase.services?.length || 0}</span>
           </div>
           <button onClick={() => handleAddClick('service')} className="flex items-center gap-2 text-sm text-[#008FEA] hover:text-[#007AC8] transition-colors">
             <Plus size={16} /> Thêm dịch vụ

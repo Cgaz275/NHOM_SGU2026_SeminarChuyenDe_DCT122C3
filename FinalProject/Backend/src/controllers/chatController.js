@@ -10,11 +10,15 @@ async function chatWithCard(req, res) {
       });
     }
 
-    const reply = await aiService.processChat(req.params.cardId, req.body.message);
+    const { reply, conversationId } = await aiService.processChat(
+      req.params.cardId,
+      req.body.message,
+      req.body.conversationId
+    );
 
     return res.status(200).json({
       status: true,
-      data: { reply },
+      data: { reply, conversationId },
       message: "Gửi tin nhắn thành công",
     });
   } catch (error) {

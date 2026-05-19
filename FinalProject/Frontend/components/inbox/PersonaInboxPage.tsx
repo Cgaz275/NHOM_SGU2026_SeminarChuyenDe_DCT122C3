@@ -10,6 +10,8 @@ import { ConfirmActionModal } from './ConfirmActionModal';
 import { Toast } from '@/components/ui/Toast';
 import { Conversation, ConversationFilter } from '@/types/inbox';
 import * as api from '@/services/conversationService';
+import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 
 
@@ -55,6 +57,34 @@ export function PersonaInboxPage() {
   useEffect(() => {
     loadConversations();
   }, []);
+
+  useEffect(() => {
+    if (!selectedId) return;
+
+    // Lắng nghe tin nhắn mới của cuộc trò chuyện đang chọn
+    const messagesRef = collection(db, 'conversations', selectedId, 'messages');
+    const q = query(messagesRef, orderBy('createdAt', 'asc'));
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const newMessages = snapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          ...data,
+          createdAt: data.createdAt?.toDate ? data.createdAt.toDate().toISOString() : data.createdAt,
+        };
+      });
+
+      // Cập nhật lại messages của cuộc trò chuyện trong state conversations
+      setConversations((prevConversations) =>
+        prevConversations.map((c) =>
+          c.id === selectedId ? { ...c, messages: newMessages as any } : c
+        )
+      );
+    });
+
+    return () => unsubscribe();
+  }, [selectedId]);
 
   const selectedConversation = useMemo(() => {
     return conversations.find((c) => c.id === selectedId) || null;

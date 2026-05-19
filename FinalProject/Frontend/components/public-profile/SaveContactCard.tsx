@@ -15,8 +15,8 @@ interface SaveContactCardProps {
 export function SaveContactCard({ profile, onExportVCard }: SaveContactCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Dummy link để gen QR
-  const dummyProfileUrl = 'https://digitalcard.app/u/munny';
+  // Lấy link hiện tại để gen QR
+  const profileUrl = typeof window !== 'undefined' ? window.location.href : `https://digitalcard.app/u/${profile.username}`;
 
   const handleDownloadCard = async () => {
     if (!cardRef.current) return;
@@ -47,7 +47,7 @@ export function SaveContactCard({ profile, onExportVCard }: SaveContactCardProps
 VERSION:3.0
 FN:${profile.name}
 TITLE:${profile.role}
-URL:${dummyProfileUrl}
+URL:${profileUrl}
 NOTE:${profile.slogan}
 END:VCARD`;
 
@@ -108,14 +108,14 @@ END:VCARD`;
           </p>
 
           <p className="text-text-muted text-[10px] mt-3 truncate">
-            {dummyProfileUrl}
+            {profileUrl}
           </p>
         </div>
 
         {/* Real QR Code */}
         <div className="relative z-10 flex-shrink-0 w-24 h-24 bg-white rounded-xl flex items-center justify-center p-2">
           <QRCodeSVG
-            value={dummyProfileUrl}
+            value={profileUrl}
             size={80}
             bgColor="#FFFFFF"
             fgColor="#000000"

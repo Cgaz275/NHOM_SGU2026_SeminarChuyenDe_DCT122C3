@@ -143,7 +143,7 @@ export function AITwinConfigPage() {
   };
 
   const calculateKnowledgeLength = (config: AITwinConfig | null) => {
-    if (!config) return 0;
+    if (!config || !config.knowledgeBase) return 0;
     return JSON.stringify(config.knowledgeBase).length;
   };
 
@@ -193,7 +193,7 @@ export function AITwinConfigPage() {
         <AIStatusBar 
           status={config.status}
           lastTrainedAt={config.lastTrainedAt}
-          systemPromptLength={config.systemPrompt.length}
+          systemPromptLength={config.systemPrompt?.length || 0}
           knowledgeBaseLength={calculateKnowledgeLength(config)}
           isPublicEnabled={config.isPublicEnabled}
         />
@@ -210,7 +210,7 @@ export function AITwinConfigPage() {
         )}
         {activeTab === 'knowledge' && (
           <KnowledgeBaseSection
-            knowledgeBase={config.knowledgeBase}
+            knowledgeBase={config.knowledgeBase || {}}
             onAdd={handleAddKnowledge}
             onUpdate={handleUpdateKnowledge}
             onDelete={handleDeleteKnowledge}

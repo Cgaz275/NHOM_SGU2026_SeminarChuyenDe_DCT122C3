@@ -8,6 +8,7 @@ interface ConversationCardProps {
 
 export function ConversationCard({ conversation, isSelected, onClick }: ConversationCardProps) {
   const getInitials = (name: string) => {
+    if (!name) return 'K';
     return name
       .split(' ')
       .map((n) => n[0])

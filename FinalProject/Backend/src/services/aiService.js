@@ -1,12 +1,12 @@
 const OpenAI = require("openai");
-const { db } = require("../config/firebase");
+const { admin, db } = require("../config/firebase");
 const { getToneInstruction } = require("../utils/toneMapper");
 
 const openai = new OpenAI({
 	apiKey: process.env.OPENAI_API_KEY,
 });
 
-async function processChat(cardId, userMessage) {
+async function processChat(cardId, userMessage, conversationId = null) {
 	const cardRef = db.collection("cards").doc(cardId);
 	const snapshot = await cardRef.get();
 
@@ -31,6 +31,7 @@ async function processChat(cardId, userMessage) {
 		.get();
 
 	const globalRules = globalRulesSnapshot.exists ? globalRulesSnapshot.data() : null;
+
 	const toneInstruction = getToneInstruction(aiConfig.toneOfVoice);
 
 	const knowledgeBase = aiConfig.knowledgeBase || {};
@@ -65,6 +66,50 @@ AI_Reading_Guide: ${JSON.stringify(globalRules ? globalRules.AI_Reading_Guide : 
 [TONE]
 ${toneInstruction}`;
 
+	const now = admin.firestore.FieldValue.serverTimestamp();
+	let convRef;
+	let activeConversationId = conversationId;
+
+	if (activeConversationId) {
+		convRef = db.collection("conversations").doc(activeConversationId);
+		const convSnap = await convRef.get();
+		if (!convSnap.exists) {
+			activeConversationId = null;
+		}
+	}
+
+	if (!activeConversationId) {
+		const newConv = await db.collection("conversations").add({
+			cardId,
+			createdAt: now,
+			lastMessage: userMessage,
+			lastMessageAt: now,
+			status: "unread",
+			isArchived: false,
+			mode: "ai_active",
+			visitorName: "Khách truy cập",
+			visitorEmail: "",
+			visitorPhone: "",
+			leadTag: "none"
+		});
+		activeConversationId = newConv.id;
+		convRef = newConv;
+	} else {
+		await convRef.update({
+			lastMessage: userMessage,
+			lastMessageAt: now,
+			status: "unread"
+		});
+	}
+
+	// Lưu tin nhắn của khách
+	await convRef.collection("messages").add({
+		sender: "visitor",
+		content: userMessage,
+		type: "text",
+		createdAt: now
+	});
+
 	try {
 		const response = await openai.chat.completions.create({
 			model: "gpt-4o-mini",
@@ -76,7 +121,22 @@ ${toneInstruction}`;
 		});
 
 		const reply = response.choices[0]?.message?.content || "";
-		return reply;
+
+		// Lưu tin nhắn của AI
+		await convRef.collection("messages").add({
+			sender: "ai",
+			content: reply,
+			type: "text",
+			createdAt: now
+		});
+
+		// Cập nhật lastMessage là câu trả lời của AI
+		await convRef.update({
+			lastMessage: reply,
+			lastMessageAt: now
+		});
+
+		return { reply, conversationId: activeConversationId };
 	} catch (error) {
 		console.error("OpenAI Error:", error);
 		const apiError = new Error(`Gọi OpenAI thất bại: ${error.message}`);

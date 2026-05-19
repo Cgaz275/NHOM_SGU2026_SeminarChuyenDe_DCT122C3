@@ -39,6 +39,7 @@ export default function PublicProfilePage() {
   const [pageState, setPageState] = useState<PublicProfileState>('loading');
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isTyping, setIsTyping] = useState(false);
+  const [conversationId, setConversationId] = useState<string | null>(null);
 
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
@@ -148,12 +149,15 @@ export default function PublicProfilePage() {
     setIsTyping(true);
 
     try {
-      const res = await apiClient<{ reply: string }>(`/chat/cards/${profile.id}/chat`, {
+      const res = await apiClient<{ reply: string; conversationId?: string }>(`/chat/cards/${profile.id}/chat`, {
         method: 'POST',
-        body: JSON.stringify({ message: msgContent }),
+        body: JSON.stringify({ message: msgContent, conversationId }),
       });
 
       if (res.success && res.data) {
+        if (res.data.conversationId) {
+          setConversationId(res.data.conversationId);
+        }
         const aiResponse: ChatMessage = {
           id: Date.now().toString(),
           role: 'assistant',
