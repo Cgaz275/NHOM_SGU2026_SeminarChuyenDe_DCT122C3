@@ -27,8 +27,8 @@ export function Navbar() {
           ))}
         </nav>
 
-        <a href="#contact" className="outline-pill px-4 py-2 text-[0.66rem]">
-          Contact
+        <a href="/login" className="outline-pill px-4 py-2 text-[0.66rem]">
+          Login
         </a>
       </div>
     </header>
