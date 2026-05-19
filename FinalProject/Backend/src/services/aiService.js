@@ -19,8 +19,8 @@ async function processChat(cardId, userMessage) {
 	const cardData = snapshot.data();
 	const aiConfig = cardData.aiConfig || {};
 
-	if (cardData.status !== "active" || cardData.aiStatus !== "Ready" || aiConfig.isAiPaused === true) {
-		const error = new Error("AI hiện không khả dụng, vui lòng để lại lời nhắn");
+	if ((cardData.status !== "active" && cardData.status !== "published") || (cardData.aiStatus !== "Ready" && cardData.aiStatus !== "AI Ready") || aiConfig.isAiPaused === true) {
+		const error = new Error(`AI hiện không khả dụng. [Debug] status: ${cardData.status}, aiStatus: ${cardData.aiStatus}, isAiPaused: ${aiConfig.isAiPaused}`);
 		error.statusCode = 403;
 		throw error;
 	}
@@ -34,9 +34,15 @@ async function processChat(cardId, userMessage) {
 	const toneInstruction = getToneInstruction(aiConfig.toneOfVoice);
 
 	const knowledgeBase = aiConfig.knowledgeBase || {};
-	const skills = knowledgeBase.skills?.map(s => s.name).join(", ") || "Chưa cập nhật";
-	const projects = JSON.stringify(knowledgeBase.projects || []);
-	const experiences = JSON.stringify(knowledgeBase.experiences || []);
+	const skills = Array.isArray(knowledgeBase.skills)
+		? knowledgeBase.skills.map(s => s.name).join(", ")
+		: "Chưa cập nhật";
+	const projects = Array.isArray(knowledgeBase.projects)
+		? JSON.stringify(knowledgeBase.projects)
+		: "[]";
+	const experiences = Array.isArray(knowledgeBase.experiences)
+		? JSON.stringify(knowledgeBase.experiences)
+		: "[]";
 
 	const systemPrompt = `Bạn là trợ lý AI ảo đại diện cho ${cardData.fullName}.
 Vai trò: ${cardData.jobTitle || 'Chưa cập nhật'}.
@@ -46,6 +52,11 @@ Tiểu sử: ${cardData.bio || 'Chưa cập nhật'}.
 Kỹ năng: ${skills}
 Dự án: ${projects}
 Kinh nghiệm: ${experiences}
+
+[HƯỚNG DẪN TRẢ LỜI]
+- Khi người dùng hỏi về các dự án, chỉ liệt kê: Tên dự án, Thời gian, và Link dẫn tới (nếu có).
+- KHÔNG hiển thị phần mô tả của dự án trong câu trả lời đầu tiên. Chỉ khi khách hàng hỏi thêm về dự án đó thì mới trả lời chi tiết phần mô tả.
+- KHÔNG sử dụng ký tự ** để làm đậm các nhãn (ví dụ: viết "Tên dự án: " thay vì "**Tên dự án:**").
 
 [LUẬT CHUNG]
 Guardrails: ${JSON.stringify(globalRules ? globalRules.Guardrails : [])}
@@ -67,7 +78,8 @@ ${toneInstruction}`;
 		const reply = response.choices[0]?.message?.content || "";
 		return reply;
 	} catch (error) {
-		const apiError = new Error("Gọi OpenAI thất bại");
+		console.error("OpenAI Error:", error);
+		const apiError = new Error(`Gọi OpenAI thất bại: ${error.message}`);
 		apiError.statusCode = 500;
 		throw apiError;
 	}
