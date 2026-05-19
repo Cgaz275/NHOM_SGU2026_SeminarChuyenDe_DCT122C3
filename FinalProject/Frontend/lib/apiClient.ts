@@ -1,6 +1,8 @@
 import { auth } from './firebase';
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://latticed-willetta-subovarian.ngrok-free.dev/api/v1';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL
+  ? `${process.env.NEXT_PUBLIC_API_URL}/api/v1`
+  : 'http://latticed-willetta-subovarian.ngrok-free.dev/api/v1';
 
 /**
  * HTTP Client đóng gói Fetch API.
