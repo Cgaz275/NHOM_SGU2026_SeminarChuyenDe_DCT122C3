@@ -1,291 +1,388 @@
-You are a senior frontend engineer and UI/UX designer.
+# Prompt triển khai màn hình Quản lý mã QR
 
-Continue working inside the existing Next.js 15 App Router project.
+Bạn là một senior frontend engineer và UI/UX designer.
 
-IMPORTANT:
-Use the existing frontend project folder casing. Do not create a duplicated `Frontend` / `FrontEnd` folder.
+Tiếp tục làm việc bên trong dự án Next.js 15 App Router hiện có.
 
-Do not break existing routes:
+## Quan trọng
+
+Sử dụng đúng chữ hoa/chữ thường của thư mục frontend hiện tại. Không tạo thêm thư mục trùng lặp như `Frontend` hoặc `FrontEnd`.
+
+Không làm hỏng các route hiện có:
+
 - `/u/[username]`
 - `/dashboard/profile-builder`
 - `/dashboard/ai-twin`
 - `/login`
 - `/register`
 
-Task:
-Build a polished frontend interface for the “QR Code Manager” screen of a Persona-Based Digital Card platform.
+## Nhiệm vụ
 
-Important language requirement:
-All visible UI text must be written in Vietnamese.
-The code, component names, variable names, and file names can remain in English, but anything displayed to the user must be Vietnamese.
+Xây dựng giao diện frontend hoàn chỉnh cho màn hình “Quản lý mã QR” của nền tảng Persona-Based Digital Card.
 
-Route:
-Create the screen at:
-`/dashboard/qr-manager`
+## Yêu cầu ngôn ngữ
 
-Purpose:
-This screen allows the card owner to view, copy, and download the unique QR code that points to their public Digital Profile.
+Toàn bộ nội dung hiển thị trên giao diện phải viết bằng tiếng Việt.
 
-The QR is used for:
-- Demo presentation
-- Printed business cards
-- Posters
-- Slides
-- Sharing the public profile quickly
+Code, tên component, tên biến và tên file có thể giữ bằng tiếng Anh, nhưng mọi text người dùng nhìn thấy trên UI phải là tiếng Việt.
 
-Important:
-This is frontend-only for now.
-Use mock data and mock API functions only.
-Do not connect a real database, backend, analytics, or auth.
-Make the implementation API-ready for future integration.
+## Route
 
-Visual reference:
-Follow the provided reference image closely:
-- Dark dashboard layout
-- Left sidebar with SEMINAR logo
-- Active menu item: “Quản lý QR”
-- Centered large QR card
-- Status badge on the top-right of the card
-- QR code displayed in a white square with enough padding
-- URL slug displayed below QR
-- Buttons:
+Tạo màn hình tại:
+
+```txt
+/dashboard/qr-manager
+```
+
+## Mục đích màn hình
+
+Màn hình này cho phép chủ thẻ xem, sao chép và tải xuống mã QR duy nhất trỏ đến hồ sơ Digital Profile công khai của họ.
+
+Mã QR được dùng cho:
+
+- Thuyết trình demo
+- In trên danh thiếp
+- Poster
+- Slide
+- Chia sẻ nhanh hồ sơ công khai
+
+## Phạm vi triển khai
+
+Đây chỉ là frontend-only ở thời điểm hiện tại.
+
+Chỉ sử dụng mock data và mock API function.
+
+Không kết nối database thật, backend thật, analytics thật hoặc auth thật.
+
+Tuy nhiên, kiến trúc cần sẵn sàng để sau này có thể thay bằng API thật.
+
+## Tham khảo giao diện
+
+Bám sát ảnh tham khảo đã cung cấp:
+
+- Dashboard nền tối
+- Sidebar bên trái có logo SEMINAR
+- Menu đang active: “Quản lý QR”
+- Card QR lớn nằm ở giữa
+- Badge trạng thái nằm góc trên bên phải của card
+- QR code hiển thị trong ô vuông nền trắng, có padding đủ rộng
+- URL slug hiển thị bên dưới QR
+- Các nút:
   - Sao chép URL
   - Tải PNG
   - Tải SVG
   - Sao chép liên kết
-- Blue glow / dark-tech style
+- Phong cách dark-tech, có ánh sáng xanh / blue glow
 
-Main colors:
-- Background: #0B0B0B or #000000
-- Sidebar: #101010
-- Card surface: #101010 or dark gradient
-- Brand blue: #2367A2
-- Electric blue: #008FEA
-- Text primary: #FFFFFF
-- Text muted: #B7B7B7
-- Border: rgba(255,255,255,0.14)
-- Success: #2ECC71
-- Warning: #F5A524
-- Danger: #E5484D
+## Màu sắc chính
 
-Suggested file structure:
-- app/dashboard/qr-manager/page.tsx
-- components/dashboard/DashboardSidebar.tsx
-- components/qr-manager/QRCodeManagerPage.tsx
-- components/qr-manager/QRCodePreviewCard.tsx
-- components/qr-manager/QRStatusBadge.tsx
-- components/qr-manager/QRActionButtons.tsx
-- components/qr-manager/QRTrackingHint.tsx
-- components/qr-manager/SlugWarning.tsx
-- components/ui/Toast.tsx
-- lib/mock-qr-manager-api.ts
-- types/qr-manager.ts
+- Background: `#0B0B0B` hoặc `#000000`
+- Sidebar: `#101010`
+- Card surface: `#101010` hoặc dark gradient
+- Brand blue: `#2367A2`
+- Electric blue: `#008FEA`
+- Text primary: `#FFFFFF`
+- Text muted: `#B7B7B7`
+- Border: `rgba(255,255,255,0.14)`
+- Success: `#2ECC71`
+- Warning: `#F5A524`
+- Danger: `#E5484D`
 
-If `DashboardSidebar` or `Toast` already exists, reuse it carefully.
-Only modify shared components if necessary.
-Do not break existing pages.
+## Cấu trúc file gợi ý
 
-Dashboard sidebar:
-Use the same dashboard sidebar style as the previous dashboard screens.
+Tạo hoặc cập nhật các file sau:
 
-Sidebar items:
+- `app/dashboard/qr-manager/page.tsx`
+- `components/dashboard/DashboardSidebar.tsx`
+- `components/qr-manager/QRCodeManagerPage.tsx`
+- `components/qr-manager/QRCodePreviewCard.tsx`
+- `components/qr-manager/QRStatusBadge.tsx`
+- `components/qr-manager/QRActionButtons.tsx`
+- `components/qr-manager/QRTrackingHint.tsx`
+- `components/qr-manager/SlugWarning.tsx`
+- `components/ui/Toast.tsx`
+- `lib/mock-qr-manager-api.ts`
+- `types/qr-manager.ts`
+
+Nếu `DashboardSidebar` hoặc `Toast` đã tồn tại, hãy tái sử dụng cẩn thận.
+
+Chỉ chỉnh sửa shared components khi thật sự cần thiết.
+
+Không làm hỏng các page hiện có.
+
+## Dashboard sidebar
+
+Sử dụng cùng style sidebar dashboard với các màn hình dashboard trước đó.
+
+Các item trong sidebar:
+
 - Quản lý thông tin
 - Quản lý Persona
 - Quản lý QR
 - Quản lý tin nhắn
 
-For this page:
-- Active item should be “Quản lý QR”.
+Đối với page này:
 
-Page layout:
-Desktop:
-- Full dashboard layout.
-- Sidebar on the left.
-- Main content on the right.
-- Center the QR manager card horizontally near the top.
-- The QR card should have max-width around 680px to 760px.
-- Use a large rounded card with blue glow and subtle gradient.
+- Item active phải là “Quản lý QR”.
 
-Mobile:
-- Sidebar collapses into top bar / hamburger.
-- QR card becomes full width.
-- Buttons stack vertically.
-- QR code remains large enough to scan.
-- Avoid horizontal scroll.
+## Layout trang
 
-Page header:
-Use Vietnamese text.
+### Desktop
+
+- Dùng layout dashboard đầy đủ.
+- Sidebar nằm bên trái.
+- Main content nằm bên phải.
+- Card quản lý QR được căn giữa theo chiều ngang, nằm gần phía trên.
+- QR card có `max-width` khoảng `680px` đến `760px`.
+- Dùng card bo góc lớn, có blue glow và gradient nhẹ.
+
+### Mobile
+
+- Sidebar thu gọn thành top bar hoặc hamburger.
+- QR card full width.
+- Các button xếp dọc.
+- QR code vẫn đủ lớn để quét.
+- Tránh horizontal scroll.
+
+## Header trang
+
+Dùng nội dung tiếng Việt.
 
 Title:
-“Quản lý mã QR”
+
+> Quản lý mã QR
 
 Subtitle:
-“Chia sẻ hồ sơ số của bạn nhanh chóng qua mã QR hoặc đường dẫn cá nhân.”
 
-QR card content:
-- Main card title:
-  “Mã QR hồ sơ”
+> Chia sẻ hồ sơ số của bạn nhanh chóng qua mã QR hoặc đường dẫn cá nhân.
+
+## Nội dung QR card
+
+Card cần có:
+
+- Tiêu đề chính:
+  > Mã QR hồ sơ
 - Subtitle:
-  “Quét mã để mở hồ sơ công khai của bạn”
-- Status badge:
-  - “Đã xuất bản” if profile is published
-  - “Bản nháp” if profile is draft
-  - “Đang cập nhật” if profile is updating
-- Large QR preview
+  > Quét mã để mở hồ sơ công khai của bạn
+- Badge trạng thái:
+  - “Đã xuất bản” nếu profile đã publish
+  - “Bản nháp” nếu profile là draft
+  - “Đang cập nhật” nếu profile đang cập nhật
+- QR preview lớn
 - URL field:
-  `digitalcard.app/u/anthony-simon`
-- Button next to URL:
-  “Sao chép URL”
+  ```txt
+  digitalcard.app/u/anthony-simon
+  ```
+- Button cạnh URL:
+  > Sao chép URL
 - Action buttons:
   - “Tải PNG”
   - “Tải SVG”
   - “Sao chép liên kết”
 
-QR generation requirement:
-Use a real URL-to-QR library to generate the QR code from the public profile URL.
+## Yêu cầu tạo QR
 
-Preferred library:
-Use `qrcode.react` with `QRCodeSVG`.
+Phải dùng thư viện URL-to-QR thật để generate QR code từ public profile URL.
 
-If no QR library exists in the project, install:
-`npm install qrcode.react`
+Thư viện ưu tiên:
 
-Do not use:
+```txt
+qrcode.react với QRCodeSVG
+```
+
+Nếu project chưa có QR library, hãy cài:
+
+```bash
+npm install qrcode.react
+```
+
+Không được dùng:
+
 - QR icon
-- placeholder image
-- fake QR graphic
-- static QR image
-- lucide-react QR icon as the actual QR
+- Placeholder image
+- Hình QR giả
+- Static QR image
+- Icon QR từ `lucide-react` làm QR thật
 
-The generated QR must be real, scannable, and must encode this dummy URL:
-`https://digitalcard.app/u/anthony-simon`
+QR được tạo ra phải là QR thật, có thể quét được, và phải encode dummy URL sau:
 
-The QR value must come from a variable:
-`const publicProfileUrl = "https://digitalcard.app/u/anthony-simon";`
+```txt
+https://digitalcard.app/u/anthony-simon
+```
 
-Do not hard-code the URL directly inside the JSX.
+Giá trị QR phải lấy từ biến:
 
-QR visual rules:
-- QR must be black on white for strong contrast.
-- QR must have enough padding / quiet zone.
-- Do not use low contrast brand colors for the actual QR pattern.
-- The surrounding card can use blue/black brand styling, but the QR itself must remain highly scannable.
-- Minimum PNG export target should be 1000x1000px.
-- SVG export should preserve vector quality.
+```ts
+const publicProfileUrl = "https://digitalcard.app/u/anthony-simon";
+```
 
-Download behavior:
-Make PNG and SVG download functional on the client side, not just fake toast.
+Không hard-code URL trực tiếp bên trong JSX.
 
-The PNG and SVG downloads must export the real generated QR code, not a fake placeholder.
-The downloaded files must encode the same `publicProfileUrl`.
+## Quy tắc hiển thị QR
 
-Implement:
-1. Copy URL
-- Copies `https://digitalcard.app/u/anthony-simon` to clipboard.
-- Shows toast:
-  “Đã sao chép URL hồ sơ.”
+- QR phải là màu đen trên nền trắng để đảm bảo độ tương phản.
+- QR phải có đủ padding / quiet zone.
+- Không dùng màu brand có độ tương phản thấp cho phần pattern thật của QR.
+- Phần card xung quanh có thể dùng phong cách xanh/đen theo brand, nhưng QR thật phải dễ quét.
+- File PNG export tối thiểu phải đạt `1000x1000px`.
+- File SVG export phải giữ chất lượng vector.
 
-2. Copy Link
-- Same as Copy URL.
-- Shows toast:
-  “Đã sao chép liên kết.”
+## Hành vi tải xuống
 
-3. Download PNG
-- Generate or export QR as PNG.
-- PNG should be at least 1000x1000px.
+Chức năng tải PNG và SVG phải hoạt động thật ở client side, không chỉ hiện toast giả.
+
+PNG và SVG tải xuống phải export đúng QR thật đã generate, không phải placeholder.
+
+Các file tải xuống phải encode cùng một giá trị `publicProfileUrl`.
+
+## Các action cần implement
+
+### 1. Copy URL
+
+- Copy `https://digitalcard.app/u/anthony-simon` vào clipboard.
+- Hiển thị toast:
+  > Đã sao chép URL hồ sơ.
+
+### 2. Copy Link
+
+- Hành vi giống Copy URL.
+- Hiển thị toast:
+  > Đã sao chép liên kết.
+
+### 3. Download PNG
+
+- Generate hoặc export QR thành PNG.
+- PNG phải đạt tối thiểu `1000x1000px`.
 - Filename:
-  `anthony-simon-qr-code.png`
-- Shows toast:
-  “Đã tải mã QR PNG.”
+  ```txt
+  anthony-simon-qr-code.png
+  ```
+- Hiển thị toast:
+  > Đã tải mã QR PNG.
 
-4. Download SVG
-- Export QR as SVG.
+### 4. Download SVG
+
+- Export QR thành SVG.
 - Filename:
-  `anthony-simon-qr-code.svg`
-- Shows toast:
-  “Đã tải mã QR SVG.”
+  ```txt
+  anthony-simon-qr-code.svg
+  ```
+- Hiển thị toast:
+  > Đã tải mã QR SVG.
 
-Implementation hint:
-- Use `QRCodeSVG` for the visible QR preview.
-- Assign a wrapper/ref to the QR SVG.
-- For SVG download, serialize the SVG node and save it as a `.svg` file.
-- For PNG download, draw the serialized SVG onto a canvas with 1000x1000 size, then export it as PNG.
-- Keep this logic clean and reusable.
-- Do not add heavy libraries unless necessary.
+## Gợi ý triển khai
 
-Slug warning:
-Add a warning section if slug was recently changed.
+- Dùng `QRCodeSVG` cho phần QR preview hiển thị.
+- Gắn wrapper hoặc ref vào SVG QR.
+- Khi tải SVG, serialize SVG node rồi lưu thành file `.svg`.
+- Khi tải PNG, vẽ SVG đã serialize lên canvas kích thước `1000x1000`, sau đó export thành PNG.
+- Giữ logic sạch, dễ tái sử dụng.
+- Không thêm thư viện nặng nếu không cần thiết.
+
+## Slug warning
+
+Thêm warning section nếu slug vừa được thay đổi gần đây.
 
 Mock condition:
-Include a boolean mock value:
-`slugChangedRecently`
 
-If true, show warning:
-“Slug đã thay đổi gần đây. Mã QR cũ có thể không còn trỏ đúng hồ sơ hiện tại.”
+```ts
+slugChangedRecently
+```
 
-If false, hide the warning.
+Nếu `true`, hiển thị warning:
 
-Tracking hint:
-Add a small helper card or text below the QR actions:
-“Lượt quét QR, lượt sao chép liên kết và lượt tải mã sẽ được ghi nhận trong Basic Analytics.”
+> Slug đã thay đổi gần đây. Mã QR cũ có thể không còn trỏ đúng hồ sơ hiện tại.
 
-Optional small stats preview:
-Show mock metrics as small pills/cards:
+Nếu `false`, ẩn warning.
+
+## Tracking hint
+
+Thêm một helper card hoặc đoạn text nhỏ bên dưới các QR action:
+
+> Lượt quét QR, lượt sao chép liên kết và lượt tải mã sẽ được ghi nhận trong Basic Analytics.
+
+## Optional stats preview
+
+Hiển thị các mock metrics dạng pill/card nhỏ:
+
 - Lượt quét: 128
 - Lượt sao chép: 24
 - Lượt tải QR: 12
 
-Keep these as mock data only.
+Các số liệu này chỉ là mock data.
 
-Mock API:
-Create:
-`lib/mock-qr-manager-api.ts`
+## Mock API
 
-Export Promise-based functions:
-- getQRCodeData()
-- copyProfileUrl()
-- downloadQRCodePNG()
-- downloadQRCodeSVG()
-- trackQREvent(eventType)
+Tạo file:
+
+```txt
+lib/mock-qr-manager-api.ts
+```
+
+Export các Promise-based functions:
+
+```ts
+getQRCodeData()
+copyProfileUrl()
+downloadQRCodePNG()
+downloadQRCodeSVG()
+trackQREvent(eventType)
+```
 
 Event types:
-- qr_copy_url
-- qr_copy_link
-- qr_download_png
-- qr_download_svg
 
-Rules:
-- Use artificial delay.
+```ts
+qr_copy_url
+qr_copy_link
+qr_download_png
+qr_download_svg
+```
+
+Quy tắc:
+
+- Dùng artificial delay.
 - Return mock success/error responses.
-- Keep the mock API easy to replace later with real backend calls.
-- Even if clipboard/download is implemented in the UI component, still call mock tracking functions.
+- Giữ mock API dễ thay thế bằng backend thật sau này.
+- Ngay cả khi clipboard/download được xử lý trong UI component, vẫn cần gọi mock tracking functions.
 
-Types:
-Create:
-`types/qr-manager.ts`
+## Types
 
-Types:
-- QRCodeData
-- QRProfileStatus
-- QREventType
-- QRDownloadFormat
-- QRActionResponse
+Tạo file:
 
-Suggested QRCodeData shape:
-- id
-- ownerName
-- username
-- publicUrl
-- displayUrl
-- status
-- slugChangedRecently
-- scanCount
-- copyCount
-- downloadCount
-- updatedAt
+```txt
+types/qr-manager.ts
+```
 
-Validation/state:
-Create UI states:
+Các type cần có:
+
+- `QRCodeData`
+- `QRProfileStatus`
+- `QREventType`
+- `QRDownloadFormat`
+- `QRActionResponse`
+
+Shape gợi ý cho `QRCodeData`:
+
+```ts
+{
+  id: string;
+  ownerName: string;
+  username: string;
+  publicUrl: string;
+  displayUrl: string;
+  status: QRProfileStatus;
+  slugChangedRecently: boolean;
+  scanCount: number;
+  copyCount: number;
+  downloadCount: number;
+  updatedAt: string;
+}
+```
+
+## Validation và state
+
+Tạo các UI state sau:
+
 - Loading QR data
 - Published
 - Draft
@@ -295,33 +392,43 @@ Create UI states:
 - Downloading SVG
 - Error state
 
-If profile status is Draft:
-- Show badge:
-  “Bản nháp”
-- Show helper warning:
-  “Hồ sơ chưa được xuất bản. Mã QR hiện chưa khả dụng cho khách truy cập.”
-- Disable Download PNG/SVG and Copy buttons.
+## Quy tắc theo trạng thái profile
 
-If profile status is Published:
-- Enable all actions.
+### Nếu profile status là Draft
 
-If profile status is Updating:
-- Show badge:
-  “Đang cập nhật”
-- Keep actions enabled, but show slug warning if relevant.
+- Hiển thị badge:
+  > Bản nháp
+- Hiển thị helper warning:
+  > Hồ sơ chưa được xuất bản. Mã QR hiện chưa khả dụng cho khách truy cập.
+- Disable các button Download PNG/SVG và Copy.
 
-User experience:
-- Buttons should have clear loading states.
-- Toasts should appear after copy/download actions.
-- QR card should look polished and demo-ready.
-- Do not show raw technical errors.
-- Use accessible labels for buttons.
-- Use keyboard-friendly controls.
-- Keep the page responsive.
-- Use subtle Framer Motion entrance animation.
-- Keep animations simple.
+### Nếu profile status là Published
 
-Vietnamese UI copy examples:
+- Enable tất cả action.
+
+### Nếu profile status là Updating
+
+- Hiển thị badge:
+  > Đang cập nhật
+- Vẫn cho phép action hoạt động.
+- Nếu slug có thay đổi gần đây thì hiển thị slug warning.
+
+## Trải nghiệm người dùng
+
+- Button phải có loading state rõ ràng.
+- Toast xuất hiện sau các action copy/download.
+- QR card cần nhìn polished, demo-ready.
+- Không hiển thị raw technical errors.
+- Button cần có accessible label.
+- Hỗ trợ keyboard-friendly controls.
+- Page phải responsive.
+- Dùng Framer Motion cho entrance animation nhẹ.
+- Animation đơn giản, không làm rối giao diện.
+
+## Vietnamese UI copy examples
+
+Có thể sử dụng các câu sau:
+
 - “Quản lý mã QR”
 - “Chia sẻ hồ sơ số của bạn nhanh chóng”
 - “Mã QR hồ sơ”
@@ -338,37 +445,43 @@ Vietnamese UI copy examples:
 - “Đã tải mã QR SVG.”
 - “Slug đã thay đổi gần đây. Mã QR cũ có thể không còn trỏ đúng hồ sơ hiện tại.”
 
-Important API-ready architecture:
-- Do not hard-code mock data inside deeply nested components.
-- Keep mock QR data and mock API functions in `mock-qr-manager-api.ts`.
-- The page should own the main state and call mock API functions.
-- Child components should receive values and callbacks through props.
-- Future real API integration should only require replacing mock API functions.
+## Kiến trúc API-ready quan trọng
 
-Do not implement:
-- Real auth
-- Real database
-- Real analytics dashboard
-- Real profile publishing logic
-- Real slug editing
+- Không hard-code mock data sâu bên trong nested components.
+- Mock QR data và mock API functions phải nằm trong `mock-qr-manager-api.ts`.
+- Page chính quản lý main state và gọi mock API functions.
+- Child components nhận data và callbacks thông qua props.
+- Khi tích hợp API thật trong tương lai, chỉ cần thay mock API functions.
+
+## Không implement các phần sau
+
+Không triển khai:
+
+- Auth thật
+- Database thật
+- Analytics dashboard thật
+- Logic publish profile thật
+- Chỉnh sửa slug thật
 - Payment
 - NFC integration
 
-Manual verification checklist:
-After implementation, I should be able to:
-1. Run the dev server.
-2. Open `/dashboard/qr-manager`.
-3. See a dark dashboard layout with active “Quản lý QR” sidebar item.
-4. See a large real scannable QR code generated from a URL-to-QR library.
-5. Confirm it does not use a QR icon or placeholder image.
-6. Scan the QR and get the dummy URL `https://digitalcard.app/u/anthony-simon`.
-7. Click “Sao chép URL” and see success toast.
-8. Click “Sao chép liên kết” and see success toast.
-9. Click “Tải PNG” and download a PNG file named `anthony-simon-qr-code.png`.
-10. Confirm the PNG is at least 1000x1000px.
-11. Click “Tải SVG” and download an SVG file named `anthony-simon-qr-code.svg`.
-12. Confirm both downloaded QR files encode `https://digitalcard.app/u/anthony-simon`.
-13. Confirm the QR has enough white padding and strong contrast.
-14. Confirm the slug warning appears when `slugChangedRecently` is true.
-15. Confirm draft status disables copy/download actions.
-16. Confirm mobile layout stacks cleanly.
+## Checklist kiểm tra thủ công
+
+Sau khi implement xong, tôi cần có thể:
+
+1. Chạy dev server.
+2. Mở `/dashboard/qr-manager`.
+3. Thấy dashboard nền tối với sidebar active item “Quản lý QR”.
+4. Thấy QR code lớn, thật, có thể quét được, được generate từ thư viện URL-to-QR.
+5. Xác nhận không dùng QR icon hoặc placeholder image.
+6. Quét QR và nhận được dummy URL `https://digitalcard.app/u/anthony-simon`.
+7. Click “Sao chép URL” và thấy success toast.
+8. Click “Sao chép liên kết” và thấy success toast.
+9. Click “Tải PNG” và tải được file PNG tên `anthony-simon-qr-code.png`.
+10. Xác nhận PNG có kích thước tối thiểu `1000x1000px`.
+11. Click “Tải SVG” và tải được file SVG tên `anthony-simon-qr-code.svg`.
+12. Xác nhận cả hai file QR tải xuống đều encode `https://digitalcard.app/u/anthony-simon`.
+13. Xác nhận QR có đủ padding trắng và độ tương phản mạnh.
+14. Xác nhận slug warning xuất hiện khi `slugChangedRecently` là `true`.
+15. Xác nhận trạng thái draft sẽ disable các action copy/download.
+16. Xác nhận mobile layout xếp gọn, không bị tràn ngang.

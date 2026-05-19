@@ -1,12 +1,12 @@
-You are a senior frontend engineer and UI/UX designer.
+Bạn là một senior frontend engineer và UI/UX designer.
 
-Continue working inside the existing Next.js 15 App Router project.
+Tiếp tục làm việc bên trong project Next.js 15 App Router hiện có.
 
 IMPORTANT:
-Use the existing frontend project folder casing.
-Do not create a duplicated `Frontend` / `FrontEnd` folder.
+Sử dụng đúng casing của folder frontend hiện tại.
+Không tạo thêm folder bị trùng như `Frontend` / `FrontEnd`.
 
-Do not break existing routes:
+Không làm hỏng các route hiện có:
 - `/u/[username]`
 - `/dashboard/profile-builder`
 - `/dashboard/ai-twin`
@@ -15,35 +15,35 @@ Do not break existing routes:
 - `/register`
 
 Task:
-Rebuild the `/dashboard/inbox` page based on the provided screenshot.
+Xây dựng lại trang `/dashboard/inbox` dựa trên screenshot đã cung cấp.
 
-This page is a Persona Inbox screen where the card owner can view visitor conversations and basic customer contact information.
+Đây là màn hình Persona Inbox, nơi chủ thẻ có thể xem các cuộc hội thoại từ khách truy cập và thông tin liên hệ cơ bản của khách hàng.
 
 Route:
 `/dashboard/inbox`
 
-Important language requirement:
-All visible UI text must be Vietnamese.
-Code, component names, variable names, and file names can remain English.
+Yêu cầu ngôn ngữ quan trọng:
+Toàn bộ text hiển thị trên UI phải là tiếng Việt.
+Code, tên component, tên biến và tên file có thể giữ tiếng Anh.
 
-Do not implement real backend logic.
-Use mock data and local React state only.
-Do not connect database, authentication, realtime service, AI API, email service, or notification service.
+Không implement logic backend thật.
+Chỉ sử dụng mock data và local React state.
+Không kết nối database, authentication, realtime service, AI API, email service hoặc notification service.
 
 Visual direction:
-Follow the screenshot closely:
-- Dark dashboard sidebar on the left
-- Dark conversation list column
-- Light chat transcript area in the center
-- Blue chat header
-- Dark right customer information panel
-- Search input and filter chips above conversation list
-- Chat input fixed at the bottom of chat area
-- Minimal, clean dashboard UI
-- Do not overbuild features that are not visible in the screenshot
+Bám sát screenshot:
+- Sidebar dashboard nền tối ở bên trái
+- Cột danh sách hội thoại nền tối
+- Khu vực chat transcript nền sáng ở giữa
+- Chat header màu xanh
+- Panel thông tin khách hàng nền tối ở bên phải
+- Search input và filter chips nằm phía trên danh sách hội thoại
+- Chat input cố định ở cuối khu vực chat
+- UI dashboard tối giản, sạch sẽ
+- Không overbuild các chức năng không xuất hiện trong screenshot
 
 Dashboard sidebar:
-Use the same dashboard sidebar style as existing dashboard screens.
+Sử dụng cùng style dashboard sidebar với các màn hình dashboard hiện có.
 
 Sidebar logo:
 “SEMINAR”
@@ -58,23 +58,23 @@ Active sidebar item:
 “Quản lý tin nhắn”
 
 Main layout:
-Use a 4-column desktop layout:
+Sử dụng layout desktop 4 cột:
 1. Sidebar
 2. Conversation list
 3. Chat transcript
 4. Customer info panel
 
 Recommended widths:
-- Sidebar: around 220px
-- Conversation list: around 300px
+- Sidebar: khoảng 220px
+- Conversation list: khoảng 300px
 - Chat transcript: flexible
-- Customer info panel: around 260px
+- Customer info panel: khoảng 260px
 
 Mobile:
-- Keep it simple.
-- Stack views or allow horizontal layout fallback.
-- Conversation list and chat area should not visually break.
-- Chat messages should remain readable.
+- Giữ đơn giản.
+- Có thể stack các view hoặc cho phép horizontal layout fallback.
+- Conversation list và chat area không được bị vỡ giao diện.
+- Chat messages phải dễ đọc.
 
 Conversation list column:
 
@@ -95,71 +95,262 @@ Filter chips:
 - “Lead mới”
 - “AI tạm dừng”
 
-Conversation item should show:
+Conversation item cần hiển thị:
 - Avatar initials
 - Visitor name
-- Email or phone if available
+- Email hoặc phone nếu có
 - Last message preview
 - Last message time
-- Small status badges
+- Các status badge nhỏ
 
 Mock conversations:
-Create exactly 4 conversations like the screenshot:
+Tạo đúng 4 conversations giống screenshot.
+
+Important:
+Mock data phải match chính xác với Conversation shape hiện tại của frontend.
+Mỗi conversation phải có:
+- id
+- visitorName
+- visitorEmail
+- visitorPhone
+- source
+- status
+- mode
+- leadTag
+- lastMessage
+- lastMessageAt
+- unreadCount
+- isArchived
+- emailNotificationEnabled
+- lead
+- messages
+
+Mỗi lead object phải có:
+- name
+- email
+- phone
+
+Mỗi message phải có:
+- id
+- sender
+- content
+- createdAt
+
+Các field optional của message:
+- isSystemEvent
+- type
+
+Sử dụng ISO string hợp lệ cho `lastMessageAt` và `createdAt`.
+Không dùng display-only string như “32 phút trước” làm data value cho `lastMessageAt`.
+UI có thể format ISO date thành relative time.
+
+Mock data:
 
 1. Labubu
-Email:
+
+id:
+conv_labubu
+
+visitorName:
+Labubu
+
+visitorEmail:
 labubu@gmail.com
-Phone:
+
+visitorPhone:
 0700700707
-Last message:
+
+source:
+qr
+
+status:
+unread
+
+mode:
+ai_active
+
+leadTag:
+new_lead
+
+lastMessage:
 “Cho tôi xin thông tin liên hệ.”
-Time:
-“32 phút trước”
-Badges:
-- “AI đang trả lời”
-- “Lead mới”
+
+lastMessageAt:
+Dùng ISO string khoảng 32 phút trước thời điểm hiện tại.
+
+unreadCount:
+2
+
+isArchived:
+false
+
+emailNotificationEnabled:
+true
+
+lead:
+name: Labubu
+email: labubu@gmail.com
+phone: 0700700707
+
+messages:
+- visitor: “Xin chào, bạn là AI hả?”
+- ai: “Mình là AI Twin của Anthony. Mình có thể trả lời về kỹ năng, dự án và kinh nghiệm của Anthony.”
+- visitor: “Cho tôi xin thông tin liên hệ.”
 
 2. Minh Anh
-Email:
+
+id:
+conv_minh_anh
+
+visitorName:
+Minh Anh
+
+visitorEmail:
 minhanh@example.com
-Phone:
+
+visitorPhone:
 0912345678
-Last message:
+
+source:
+link
+
+status:
+read
+
+mode:
+human_takeover
+
+leadTag:
+interested
+
+lastMessage:
 “Dạ, em cảm ơn anh.”
-Time:
-“2 giờ trước”
-Badges:
-- “Người thật tiếp quản”
-- “Có nhu cầu hợp tác”
+
+lastMessageAt:
+Dùng ISO string khoảng 2 giờ trước thời điểm hiện tại.
+
+unreadCount:
+0
+
+isArchived:
+false
+
+emailNotificationEnabled:
+true
+
+lead:
+name: Minh Anh
+email: minhanh@example.com
+phone: 0912345678
+
+messages:
+- visitor: “Em muốn hỏi thêm về dịch vụ làm portfolio.”
+- owner: “Anh có thể tư vấn thêm cho em nhé.”
+- visitor: “Dạ, em cảm ơn anh.”
 
 3. Khách ẩn danh
-Email:
-empty
-Phone:
-empty
-Last message:
+
+id:
+conv_anonymous
+
+visitorName:
+Khách ẩn danh
+
+visitorEmail:
+empty string
+
+visitorPhone:
+empty string
+
+source:
+qr
+
+status:
+read
+
+mode:
+ai_active
+
+leadTag:
+none
+
+lastMessage:
 “Kể cho tôi nghe về Anthony đi.”
-Time:
-“5 giờ trước”
-Badges:
-- “AI đang trả lời”
+
+lastMessageAt:
+Dùng ISO string khoảng 5 giờ trước thời điểm hiện tại.
+
+unreadCount:
+0
+
+isArchived:
+false
+
+emailNotificationEnabled:
+false
+
+lead:
+undefined hoặc omit field này
+
+messages:
+- visitor: “Kể cho tôi nghe về Anthony đi.”
+- ai: “Anthony là một lập trình viên đang xây dựng portfolio cá nhân và AI Digital Twin để hỗ trợ giao tiếp với khách truy cập.”
 
 4. Công ty ABC
-Email:
+
+id:
+conv_company_abc
+
+visitorName:
+Công ty ABC
+
+visitorEmail:
 contact@abc.vn
-Phone:
+
+visitorPhone:
 0281234567
-Last message:
+
+source:
+form
+
+status:
+read
+
+mode:
+ai_paused
+
+leadTag:
+needs_reply
+
+lastMessage:
 “Báo giá dịch vụ làm web.”
-Time:
-“1 ngày trước”
-Badges:
-- “AI tạm dừng”
-- “Cần phản hồi”
+
+lastMessageAt:
+Dùng ISO string khoảng 1 ngày trước thời điểm hiện tại.
+
+unreadCount:
+0
+
+isArchived:
+false
+
+emailNotificationEnabled:
+true
+
+lead:
+name: Công ty ABC
+email: contact@abc.vn
+phone: 0281234567
+
+messages:
+- visitor: “Chào bạn, bên mình cần báo giá dịch vụ làm web.”
+- ai: “Mình đã ghi nhận nhu cầu của bạn. Chủ thẻ sẽ phản hồi thêm khi cần.”
+- system: “AI đã tạm dừng trong hội thoại này.” với isSystemEvent true và type system
+- visitor: “Báo giá dịch vụ làm web.”
 
 Selected conversation:
-Default selected conversation should be “Labubu”.
-Selected item should have a blue left border or blue highlight like the screenshot.
+Default selected conversation phải là “Labubu”.
+Selected item cần có blue left border hoặc blue highlight giống screenshot.
 
 Chat transcript area:
 
@@ -171,7 +362,8 @@ Header:
   “Tiếp quản hội thoại”
 - Three-dot menu icon
 
-For the selected Labubu conversation:
+Với selected conversation Labubu:
+
 Visitor name:
 “Labubu”
 
@@ -182,18 +374,19 @@ Status:
 “Chưa đọc”
 
 Chat area:
-Use light background, close to white or #F5F5F5.
+Dùng nền sáng, gần trắng hoặc #F5F5F5.
 
 Message bubble rules:
 - Visitor messages align left
 - AI messages align right
-- Visitor bubbles are black/dark
-- AI bubbles are light blue
-- Keep message bubbles compact like the screenshot
+- Visitor bubbles màu đen/tối
+- AI bubbles màu xanh nhạt
+- Message bubbles gọn giống screenshot
 
-Sender labels are not necessary inside bubbles unless already visually useful.
+Sender labels không bắt buộc trong bubble, trừ khi thật sự hữu ích về mặt UI.
 
-Default messages for Labubu:
+Default messages cho Labubu:
+
 Visitor:
 “Xin chào, bạn là AI hả?”
 
@@ -204,20 +397,20 @@ Visitor:
 “Cho tôi xin thông tin liên hệ.”
 
 Chat input:
-At bottom of transcript.
+Nằm ở cuối transcript.
 
 Placeholder:
 “Bật Tiếp quản để nhắn trực tiếp với khách.”
 
 Send button:
-Use a send icon button.
-The input can be disabled by default if AI is still active.
+Dùng send icon button.
+Input có thể disabled mặc định nếu AI vẫn đang active.
 
 Human takeover:
-Keep this simple.
+Giữ logic đơn giản.
 
-When clicking “Tiếp quản hội thoại”:
-- Show confirmation modal.
+Khi click “Tiếp quản hội thoại”:
+- Hiển thị confirmation modal.
 
 Modal title:
 “Tiếp quản hội thoại?”
@@ -229,23 +422,23 @@ Buttons:
 - “Hủy”
 - “Tiếp quản”
 
-After confirming:
-- Change status badge to “Người thật tiếp quản”
-- Change header button to “Trả lại cho AI”
+Sau khi confirm:
+- Đổi status badge thành “Người thật tiếp quản”
+- Đổi header button thành “Trả lại cho AI”
 - Enable chat input
-- Input placeholder becomes:
+- Input placeholder đổi thành:
   “Nhập tin nhắn với tư cách chủ thẻ...”
-- Show a small banner above messages:
+- Hiển thị một banner nhỏ phía trên messages:
   “Chủ thẻ đang trực tiếp hỗ trợ. AI đã tạm dừng trong hội thoại này.”
 
-When typing and sending a message:
-- Add a new owner message aligned right with a stronger blue bubble.
-- Clear the input.
+Khi typing và gửi message:
+- Thêm một owner message mới align right với blue bubble đậm hơn.
+- Clear input.
 - Show toast:
   “Đã gửi tin nhắn.”
 
-When clicking “Trả lại cho AI”:
-- Show confirmation modal.
+Khi click “Trả lại cho AI”:
+- Hiển thị confirmation modal.
 
 Modal title:
 “Trả lại hội thoại cho AI?”
@@ -262,13 +455,14 @@ Customer info panel:
 Right panel title:
 “Thông tin khách”
 
-Show:
+Hiển thị:
 - Large circular avatar initial
 - Visitor name
 - Email
 - Phone number
 
-For Labubu:
+Với Labubu:
+
 Name:
 “Labubu”
 
@@ -278,10 +472,11 @@ Email:
 Phone:
 “0700700707”
 
-Use icons for email and phone if available.
+Dùng icons cho email và phone nếu có sẵn.
 
-Do not add extra lead management actions unless necessary.
-Do NOT implement:
+Không thêm các lead management actions không cần thiết.
+
+Không implement:
 - Mark as contacted
 - Send email
 - Copy email
@@ -296,36 +491,40 @@ Do NOT implement:
 - Realtime service
 
 States:
-Implement only simple states:
+Chỉ implement các state đơn giản:
+
 1. Loading
+
 Text:
 “Đang tải hội thoại...”
 
 2. Empty inbox
+
 Text:
 “Chưa có hội thoại nào.”
 
 3. No conversation selected
+
 Text:
 “Chọn một hội thoại để xem nội dung.”
 
 Mock API:
-Create or update:
+Create hoặc update:
 `lib/mock-inbox-api.ts`
 
-Export Promise-based mock functions:
+Export các Promise-based mock functions:
 - getConversations()
 - getConversationById(conversationId)
 - toggleHumanTakeover(conversationId, enabled)
 - sendOwnerMessage(conversationId, message)
 
 Rules:
-- Use artificial delay.
-- Do not use random errors.
-- Keep mock API simple and easy to replace later.
+- Dùng artificial delay.
+- Không dùng random errors.
+- Giữ mock API đơn giản và dễ thay thế bằng API thật sau này.
 
 Types:
-Create or update:
+Create hoặc update:
 `types/inbox.ts`
 
 Required types:
@@ -334,27 +533,52 @@ Required types:
 - ConversationSource
 - ConversationStatus
 - LeadTag
+- LeadInfo
 - ChatMessage
 - ChatMessageSender
+- ConversationFilter
+- InboxActionResponse
 
-Suggested Conversation shape:
-- id
-- visitorName
-- visitorEmail
-- visitorPhone
-- source
-- status
-- mode
-- leadTag
-- lastMessage
-- lastMessageAt
-- messages
+Conversation shape phải hỗ trợ chính xác frontend UI hiện tại:
 
-Suggested ChatMessage shape:
-- id
-- sender
-- content
-- createdAt
+Conversation:
+- id: string
+- visitorName: string
+- visitorEmail: string
+- visitorPhone: string
+- source: ConversationSource
+- status: ConversationStatus
+- mode: ConversationMode
+- leadTag: LeadTag
+- lastMessage: string
+- lastMessageAt: string
+- unreadCount: number
+- isArchived: boolean
+- emailNotificationEnabled: boolean
+- lead?: LeadInfo
+- messages: ChatMessage[]
+
+LeadInfo:
+- name: string
+- email: string
+- phone: string
+
+ChatMessage:
+- id: string
+- sender: ChatMessageSender
+- content: string
+- createdAt: string
+- isSystemEvent?: boolean
+- type?: 'text' | 'system' | string
+
+ConversationFilter:
+- search: string
+- type: 'all' | 'unread' | 'archived' | 'new_lead' | 'ai_paused'
+
+InboxActionResponse:
+- success: boolean
+- message?: string
+- messageId?: string
 
 Allowed ConversationMode:
 - ai_active
@@ -371,10 +595,17 @@ Allowed ConversationSource:
 - link
 - form
 
+Allowed LeadTag:
+- new_lead
+- interested
+- needs_reply
+- none
+
 Allowed ChatMessageSender:
 - visitor
 - ai
 - owner
+- system
 
 Suggested file structure:
 - app/dashboard/inbox/page.tsx
@@ -390,36 +621,37 @@ Suggested file structure:
 - lib/mock-inbox-api.ts
 - types/inbox.ts
 
-If `DashboardSidebar` or `Toast` already exists, reuse it carefully.
-Only modify shared components if necessary.
-Do not break existing pages.
+Nếu `DashboardSidebar` hoặc `Toast` đã tồn tại, hãy reuse cẩn thận.
+Chỉ chỉnh sửa shared components nếu thật sự cần thiết.
+Không làm hỏng các page hiện có.
 
 UX requirements:
-- All visible UI text must be Vietnamese.
-- Keep the interface close to the screenshot.
-- Do not overbuild beyond the screenshot.
-- Conversation list should be scrollable.
-- Transcript should be scrollable.
-- Chat input should stay at the bottom.
-- Use toast feedback for sending message and takeover changes.
-- Use confirmation modal only for Human Takeover on/off.
-- Use subtle hover states.
-- Do not show raw technical errors.
+- Toàn bộ text hiển thị trên UI phải là tiếng Việt.
+- Giữ giao diện sát screenshot.
+- Không overbuild vượt quá screenshot.
+- Conversation list phải scroll được.
+- Transcript phải scroll được.
+- Chat input phải nằm cố định ở phía dưới.
+- Dùng toast feedback cho gửi message và thay đổi takeover.
+- Chỉ dùng confirmation modal cho Human Takeover on/off.
+- Dùng hover states nhẹ.
+- Không hiển thị raw technical errors.
 
 Manual verification checklist:
-After implementation, I should be able to:
-1. Open `/dashboard/inbox`.
-2. See the dark sidebar with “Quản lý tin nhắn” active.
-3. See “Hộp thư Persona” and “4 hội thoại”.
-4. See the search input and filter chips.
-5. See exactly 4 mock conversations.
-6. See Labubu selected by default.
-7. See the light chat transcript area.
-8. See the blue chat header.
-9. See Labubu’s messages matching the screenshot.
-10. See the right “Thông tin khách” panel.
-11. Click “Tiếp quản hội thoại” and confirm.
-12. See the AI paused banner.
-13. Type and send an owner message.
-14. Click “Trả lại cho AI” and confirm.
-15. Confirm the layout stays close to the provided screenshot.
+Sau khi implement, tôi phải có thể:
+
+1. Mở `/dashboard/inbox`.
+2. Thấy dark sidebar với “Quản lý tin nhắn” đang active.
+3. Thấy “Hộp thư Persona” và “4 hội thoại”.
+4. Thấy search input và filter chips.
+5. Thấy đúng 4 mock conversations.
+6. Thấy Labubu được selected mặc định.
+7. Thấy khu vực chat transcript nền sáng.
+8. Thấy chat header màu xanh.
+9. Thấy messages của Labubu khớp screenshot.
+10. Thấy panel bên phải “Thông tin khách”.
+11. Click “Tiếp quản hội thoại” và confirm.
+12. Thấy banner AI paused.
+13. Type và gửi owner message.
+14. Click “Trả lại cho AI” và confirm.
+15. Xác nhận layout vẫn sát với screenshot đã cung cấp.

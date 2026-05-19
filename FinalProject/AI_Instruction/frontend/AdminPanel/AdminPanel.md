@@ -1,11 +1,11 @@
-You are a senior frontend engineer and UI/UX designer.
+Bạn là một senior frontend engineer và UI/UX designer.
 
-Continue working inside the existing Next.js 15 App Router project.
+Tiếp tục làm việc bên trong project Next.js 15 App Router hiện có.
 
-IMPORTANT:
-Use the existing frontend project folder casing. Do not create a duplicated `Frontend` / `FrontEnd` folder.
+QUAN TRỌNG:
+Sử dụng đúng casing của thư mục frontend hiện tại trong project. Không tạo thêm thư mục trùng lặp như `Frontend` / `FrontEnd`.
 
-Do not break existing routes:
+Không được làm hỏng các route hiện có:
 - `/u/[username]`
 - `/dashboard/profile-builder`
 - `/dashboard/ai-twin`
@@ -14,123 +14,125 @@ Do not break existing routes:
 - `/login`
 - `/register`
 
-Task:
-Build a polished frontend interface for the “Admin Panel” of a Persona-Based Digital Card platform.
+Nhiệm vụ:
+Xây dựng giao diện frontend hoàn chỉnh và chỉn chu cho “Admin Panel” của nền tảng Persona-Based Digital Card.
 
-Important language requirement:
-All visible UI text must be written in Vietnamese.
-The code, component names, variable names, and file names can remain in English, but anything displayed to the user must be Vietnamese.
+Yêu cầu ngôn ngữ quan trọng:
+Toàn bộ text hiển thị trên UI phải viết bằng tiếng Việt.
+Code, tên component, tên biến và tên file có thể giữ tiếng Anh, nhưng bất kỳ nội dung nào người dùng nhìn thấy trên giao diện đều phải là tiếng Việt.
 
 Route:
-Create the admin panel at:
+Tạo admin panel tại:
 `/admin`
 
-Also support:
+Đồng thời hỗ trợ các route:
 - `/admin/users`
 - `/admin/reports`
 
-If the user opens `/admin`, redirect or default to `/admin/users`.
+Nếu người dùng mở `/admin`, hãy redirect hoặc default sang `/admin/users`.
 
-Purpose:
-Admin Panel is used by administrators to manage user accounts and handle reported users.
+Mục đích:
+Admin Panel được dùng bởi quản trị viên để quản lý tài khoản người dùng và xử lý các tài khoản bị báo cáo.
 
-Scope:
-Only implement these 2 admin features:
+Phạm vi:
+Chỉ triển khai đúng 2 chức năng admin sau:
 1. Quản lý người dùng
 2. Quản lý báo cáo
 
-Do NOT implement:
+Không được triển khai:
 - Analytics dashboard
-- AI usage chart
-- Platform statistics
-- Card management
-- Template management
-- System settings
-- Payment
+- Biểu đồ AI usage
+- Thống kê nền tảng
+- Quản lý card
+- Quản lý template
+- Cài đặt hệ thống
+- Thanh toán
 - Export reports
-- Advanced moderation workflow
+- Quy trình kiểm duyệt nâng cao
 
-This is frontend-only for now.
-Use mock data and mock API functions only.
-Do not connect a real database, backend, authentication, or admin permission system.
-Make the UI API-ready for future backend integration.
+Hiện tại chỉ làm frontend-only.
+Sử dụng mock data và mock API functions.
+Không kết nối database thật, backend thật, authentication thật hoặc hệ thống phân quyền admin thật.
+Thiết kế UI theo hướng API-ready để dễ thay mock API bằng backend thật trong tương lai.
 
-Visual reference:
-Follow the provided reference images closely:
-- Dark admin layout.
-- Sidebar on the left.
-- Large “ADMIN” logo text at top-left.
-- Sidebar items:
+Tham chiếu giao diện:
+Bám sát các ảnh reference đã cung cấp:
+- Layout admin nền tối.
+- Sidebar nằm bên trái.
+- Logo chữ lớn “ADMIN” ở góc trên bên trái.
+- Sidebar chỉ có các item:
   - Quản lý người dùng
   - Quản lý báo cáo
-- Main content on the right.
-- Large rounded dark container.
-- Data table with dark blue-gray surface.
-- Search box on the top-right.
-- Pagination at the bottom.
-- Status badges with green/red/gray indicators.
-- Admin action buttons in each row.
-- Premium dark-tech dashboard style.
+- Nội dung chính nằm bên phải.
+- Container chính bo góc lớn, nền tối.
+- Bảng dữ liệu có surface màu dark blue-gray.
+- Ô tìm kiếm nằm phía trên bên phải.
+- Pagination nằm phía dưới.
+- Status badge có indicator màu xanh lá / đỏ / xám.
+- Mỗi row có các nút thao tác admin.
+- Tổng thể theo phong cách premium dark-tech dashboard.
 
-Main colors:
-- Background: #000000 or #0B0B0B
-- Sidebar: #101010
-- Card surface: #101010
-- Table surface: #121A24 or dark navy gray
-- Brand blue: #2367A2
-- Electric blue: #008FEA
-- Text primary: #FFFFFF
-- Text muted: #B7B7B7
-- Border: rgba(255,255,255,0.14)
-- Success: #2ECC71
-- Danger: #E5484D
-- Warning: #F5A524
-- Disabled: #6B7280
+Màu chủ đạo:
+- Background: `#000000` hoặc `#0B0B0B`
+- Sidebar: `#101010`
+- Card surface: `#101010`
+- Table surface: `#121A24` hoặc dark navy gray
+- Brand blue: `#2367A2`
+- Electric blue: `#008FEA`
+- Text primary: `#FFFFFF`
+- Text muted: `#B7B7B7`
+- Border: `rgba(255,255,255,0.14)`
+- Success: `#2ECC71`
+- Danger: `#E5484D`
+- Warning: `#F5A524`
+- Disabled: `#6B7280`
 
-Suggested file structure:
-- app/admin/page.tsx
-- app/admin/users/page.tsx
-- app/admin/reports/page.tsx
-- components/admin/AdminLayout.tsx
-- components/admin/AdminSidebar.tsx
-- components/admin/AdminTable.tsx
-- components/admin/AdminSearchBar.tsx
-- components/admin/AdminPagination.tsx
-- components/admin/UserManagementPage.tsx
-- components/admin/ReportManagementPage.tsx
-- components/admin/UserStatusBadge.tsx
-- components/admin/ReportStatusBadge.tsx
-- components/admin/AdminActionButtons.tsx
-- components/admin/ConfirmAdminActionModal.tsx
-- components/admin/UserDetailModal.tsx
-- components/admin/ReportDetailModal.tsx
-- components/admin/AdminEmptyState.tsx
-- components/admin/AdminLoadingState.tsx
-- components/admin/PermissionDeniedState.tsx
-- components/ui/Toast.tsx
-- lib/mock-admin-api.ts
-- types/admin.ts
+Cấu trúc file đề xuất:
+- `app/admin/page.tsx`
+- `app/admin/users/page.tsx`
+- `app/admin/reports/page.tsx`
+- `components/admin/AdminLayout.tsx`
+- `components/admin/AdminSidebar.tsx`
+- `components/admin/AdminTable.tsx`
+- `components/admin/AdminSearchBar.tsx`
+- `components/admin/AdminPagination.tsx`
+- `components/admin/UserManagementPage.tsx`
+- `components/admin/ReportManagementPage.tsx`
+- `components/admin/UserStatusBadge.tsx`
+- `components/admin/ReportStatusBadge.tsx`
+- `components/admin/AdminActionButtons.tsx`
+- `components/admin/ConfirmAdminActionModal.tsx`
+- `components/admin/UserDetailModal.tsx`
+- `components/admin/ReportDetailModal.tsx`
+- `components/admin/AdminEmptyState.tsx`
+- `components/admin/AdminLoadingState.tsx`
+- `components/admin/PermissionDeniedState.tsx`
+- `components/ui/Toast.tsx`
+- `lib/mock-admin-api.ts`
+- `types/admin.ts`
 
-If `Toast` already exists, reuse it carefully.
-Only modify shared components if necessary.
-Do not break existing pages.
+Nếu `Toast` đã tồn tại, hãy tái sử dụng cẩn thận.
+Chỉ chỉnh shared components khi thật sự cần thiết.
+Không được làm hỏng các page hiện có.
 
 Admin layout:
+
 Desktop:
 - Full screen dark layout.
-- Left sidebar width around 220px.
-- Main content on the right.
-- Main content centered with a max width around 1100px or 1200px.
-- Content card should have large rounded corners, subtle border, and soft blue glow.
+- Sidebar bên trái, width khoảng `220px`.
+- Main content nằm bên phải.
+- Main content căn giữa với max width khoảng `1100px` hoặc `1200px`.
+- Content card cần bo góc lớn, border nhẹ và có soft blue glow.
 
 Mobile:
-- Sidebar collapses into a top bar or drawer.
-- Tables should become horizontally scrollable.
-- Search bar should stack above table.
-- Action buttons remain accessible.
-- Avoid layout breaking on small screens.
+- Sidebar collapse thành top bar hoặc drawer.
+- Table phải có horizontal scroll.
+- Search bar nên stack phía trên table.
+- Các nút thao tác vẫn phải dễ bấm.
+- Tránh layout bị vỡ trên màn hình nhỏ.
 
 Admin sidebar:
+
 Logo:
 “ADMIN”
 
@@ -142,10 +144,10 @@ Menu items:
    Route: `/admin/reports`
 
 Active state:
-- Highlight active menu item with blue accent.
-- Do not show other admin items.
+- Highlight item đang active bằng blue accent.
+- Không hiển thị thêm bất kỳ admin item nào khác.
 
-Page 1: User Management
+Trang 1: User Management
 
 Route:
 `/admin/users`
@@ -157,12 +159,12 @@ Description:
 “Xem, tìm kiếm và quản lý trạng thái tài khoản người dùng.”
 
 Toolbar:
-- Do NOT add the “Thêm tài khoản mới” button.
-- The toolbar should only contain the search input and any minimal layout spacing needed.
-- Search input placeholder:
+- Không thêm button “Thêm tài khoản mới”.
+- Toolbar chỉ chứa search input và phần spacing/layout tối thiểu nếu cần.
+- Placeholder của search input:
   “Tìm kiếm theo email, tên, trạng thái...”
 
-User table columns:
+Các cột trong user table:
 1. “#”
 2. “ID tài khoản”
 3. “Tên đầy đủ”
@@ -172,30 +174,32 @@ User table columns:
 7. “Thao tác quản lý”
 
 User status values:
-Only use these 2 statuses:
+Chỉ sử dụng đúng 2 trạng thái:
 - “Đã xác thực”
 - “Đã khóa”
 
-Do NOT use:
+Không được dùng:
 - “Chưa xác thực”
 
-Status visual rules:
+Quy tắc hiển thị status:
 - Đã xác thực: green dot / green badge
-- Đã khóa: red or gray locked badge
+- Đã khóa: red hoặc gray locked badge
 
 User row actions:
 - View detail
   Tooltip / label:
   “Xem chi tiết”
+
 - Lock account
   Tooltip / label:
   “Khóa tài khoản”
+
 - Unlock account
   Tooltip / label:
   “Mở khóa tài khoản”
 
-Important:
-Lock/unlock account must show confirmation modal before applying.
+Quan trọng:
+Lock/unlock account phải hiển thị confirmation modal trước khi áp dụng thay đổi.
 
 Confirm lock modal:
 Title:
@@ -219,11 +223,11 @@ Buttons:
 - “Hủy”
 - “Mở khóa”
 
-After lock success:
+Sau khi lock thành công:
 Toast:
 “Đã khóa tài khoản.”
 
-After unlock success:
+Sau khi unlock thành công:
 Toast:
 “Đã mở khóa tài khoản.”
 
@@ -231,38 +235,38 @@ User detail modal:
 Title:
 “Chi tiết người dùng”
 
-Show only:
+Chỉ hiển thị:
 - ID tài khoản
 - Tên đầy đủ
 - Email
 - Ngày đăng ký
 - Trạng thái xác thực
 
-Do not add advanced profile/card management in this modal.
+Không thêm quản lý profile/card nâng cao trong modal này.
 
 Search behavior:
-- Filter users by:
+- Filter users theo:
   - Full name
   - Email
   - Status
-- Client-side mock search is fine.
+- Client-side mock search là đủ.
 
 Pagination:
-- Show pagination at bottom:
+- Hiển thị pagination phía dưới:
   “Trước”
   page numbers
   “Sau”
-- Mock pagination is fine.
-- Use page size 7 or 10.
+- Mock pagination là đủ.
+- Dùng page size 7 hoặc 10.
 
 Sorting:
-Optional but useful:
-- Sort by name
-- Sort by registration date
-- Sort by status
-If implemented, keep simple and client-side only.
+Optional nhưng hữu ích:
+- Sort theo name
+- Sort theo registration date
+- Sort theo status
+Nếu triển khai sorting, giữ đơn giản và client-side only.
 
-Page 2: Report Management
+Trang 2: Report Management
 
 Route:
 `/admin/reports`
@@ -274,10 +278,10 @@ Description:
 “Theo dõi và xử lý các tài khoản bị người khác báo cáo.”
 
 Toolbar:
-- Search input placeholder:
+- Placeholder của search input:
   “Tìm kiếm theo email, tên, trạng thái, lý do...”
 
-Report table columns:
+Các cột trong report table:
 1. “#”
 2. “ID tài khoản”
 3. “Tên đầy đủ”
@@ -288,15 +292,15 @@ Report table columns:
 8. “Trạng thái báo cáo”
 9. “Thao tác quản lý”
 
-Account status values in reports:
-Only use these 2 statuses:
+Account status values trong reports:
+Chỉ dùng đúng 2 trạng thái:
 - “Đã xác thực”
 - “Đã khóa”
 
-Do NOT use:
+Không được dùng:
 - “Chưa xác thực”
 
-Report reasons examples:
+Ví dụ report reasons:
 - “Quấy rối”
 - “Nội dung không phù hợp”
 - “Tài khoản giả mạo”
@@ -308,7 +312,7 @@ Report status values:
 - “Chưa xử lý”
 - “Đã xử lý”
 
-Report status visual rules:
+Quy tắc hiển thị report status:
 - Chưa xử lý: warning/yellow badge
 - Đã xử lý: green badge
 
@@ -316,9 +320,11 @@ Report row actions:
 - View report detail
   Tooltip / label:
   “Xem chi tiết”
+
 - Resolve report
   Tooltip / label:
   “Đánh dấu đã xử lý”
+
 - Lock/unlock related account
   Tooltip / label:
   “Khóa tài khoản” / “Mở khóa tài khoản”
@@ -327,7 +333,7 @@ Report detail modal:
 Title:
 “Chi tiết báo cáo”
 
-Show:
+Hiển thị:
 - ID tài khoản
 - Tên đầy đủ
 - Email
@@ -336,7 +342,7 @@ Show:
 - Ngày tạo
 - Trạng thái báo cáo
 
-Do not add complex moderation workflow.
+Không thêm workflow kiểm duyệt phức tạp.
 
 Resolve report confirmation modal:
 Title:
@@ -349,32 +355,33 @@ Buttons:
 - “Hủy”
 - “Xác nhận”
 
-After resolve success:
+Sau khi resolve thành công:
 Toast:
 “Báo cáo đã được xử lý.”
 
 Search behavior:
-- Filter reports by:
+- Filter reports theo:
   - Full name
   - Email
   - Account status
   - Report reason
   - Report status
-- Client-side mock search is fine.
+- Client-side mock search là đủ.
 
 Pagination:
-- Same style as User Management.
+- Cùng style với User Management.
 
-States to design:
+Các state cần thiết kế:
+
 1. Loading
 Text:
 “Đang tải dữ liệu...”
 
 2. No data
-For users:
+Đối với users:
 “Chưa có người dùng nào.”
 
-For reports:
+Đối với reports:
 “Chưa có báo cáo nào.”
 
 3. Permission denied
@@ -388,143 +395,144 @@ Button:
 “Quay lại”
 
 4. Confirm action
-Used for:
+Dùng cho:
 - Lock account
 - Unlock account
 - Resolve report
 
 5. Report resolved
-Show status:
+Hiển thị status:
 “Đã xử lý”
 
 Mock data:
-Create realistic mock data.
+Tạo mock data thực tế.
 
-At least 10 users:
-Each user should include:
-- id
-- accountId
-- fullName
-- email
-- registeredAt
-- status
+Ít nhất 10 users:
+Mỗi user cần có:
+- `id`
+- `accountId`
+- `fullName`
+- `email`
+- `registeredAt`
+- `status`
 
-User status must only be:
-- verified
-- locked
+User status chỉ được là:
+- `verified`
+- `locked`
 
-Example users:
-1. Alyvia Kelley - a.kelley@gmail.com - Đã xác thực
-2. Jaiden Nixon - jaiden.n@gmail.com - Đã xác thực
-3. Ace Foley - ace.fo@yahoo.com - Đã khóa
-4. Nikolai Schmidt - nikolai.schmidt1964@outlook.com - Đã khóa
-5. Clayton Charles - me@clayton.com - Đã xác thực
-6. Prince Chen - prince.chen1997@gmail.com - Đã xác thực
-7. Mina Tran - mina.tran@gmail.com - Đã xác thực
-8. An Nguyen - an.nguyen@gmail.com - Đã xác thực
-9. Bao Pham - bao.pham@gmail.com - Đã khóa
-10. Linh Vo - linh.vo@gmail.com - Đã xác thực
+Ví dụ users:
+1. Alyvia Kelley - `a.kelley@gmail.com` - Đã xác thực
+2. Jaiden Nixon - `jaiden.n@gmail.com` - Đã xác thực
+3. Ace Foley - `ace.fo@yahoo.com` - Đã khóa
+4. Nikolai Schmidt - `nikolai.schmidt1964@outlook.com` - Đã khóa
+5. Clayton Charles - `me@clayton.com` - Đã xác thực
+6. Prince Chen - `prince.chen1997@gmail.com` - Đã xác thực
+7. Mina Tran - `mina.tran@gmail.com` - Đã xác thực
+8. An Nguyen - `an.nguyen@gmail.com` - Đã xác thực
+9. Bao Pham - `bao.pham@gmail.com` - Đã khóa
+10. Linh Vo - `linh.vo@gmail.com` - Đã xác thực
 
-At least 8 reports:
-Each report should include:
-- id
-- accountId
-- fullName
-- email
-- accountStatus
-- reason
-- createdAt
-- reportStatus
+Ít nhất 8 reports:
+Mỗi report cần có:
+- `id`
+- `accountId`
+- `fullName`
+- `email`
+- `accountStatus`
+- `reason`
+- `createdAt`
+- `reportStatus`
 
-Report accountStatus must only be:
-- verified
-- locked
+Report `accountStatus` chỉ được là:
+- `verified`
+- `locked`
 
 Mock API:
-Create:
+Tạo file:
 `lib/mock-admin-api.ts`
 
-Export Promise-based functions:
-- getAdminUsers()
-- getAdminReports()
-- getUserById(userId)
-- getReportById(reportId)
-- lockUser(userId)
-- unlockUser(userId)
-- resolveReport(reportId)
-- checkAdminPermission()
+Export các Promise-based functions:
+- `getAdminUsers()`
+- `getAdminReports()`
+- `getUserById(userId)`
+- `getReportById(reportId)`
+- `lockUser(userId)`
+- `unlockUser(userId)`
+- `resolveReport(reportId)`
+- `checkAdminPermission()`
 
 Rules:
-- Use artificial delay.
+- Dùng artificial delay.
 - Return mock success/error responses.
-- Keep mock API easy to replace later with real backend calls.
-- Do not make the demo unstable with random errors unless fully handled.
+- Giữ mock API dễ thay thế bằng backend thật sau này.
+- Không làm demo bất ổn bằng random errors, trừ khi đã handle đầy đủ.
 
 Types:
-Create:
+Tạo file:
 `types/admin.ts`
 
 Required types:
-- AdminUser
-- AdminReport
-- AdminUserStatus
-- AdminReportStatus
-- AdminActionType
-- AdminActionResponse
-- AdminPermissionState
+- `AdminUser`
+- `AdminReport`
+- `AdminUserStatus`
+- `AdminReportStatus`
+- `AdminActionType`
+- `AdminActionResponse`
+- `AdminPermissionState`
 
-Suggested AdminUser shape:
-- id
-- accountId
-- fullName
-- email
-- registeredAt
-- status
+Suggested `AdminUser` shape:
+- `id`
+- `accountId`
+- `fullName`
+- `email`
+- `registeredAt`
+- `status`
 
-Suggested AdminReport shape:
-- id
-- accountId
-- fullName
-- email
-- accountStatus
-- reason
-- createdAt
-- reportStatus
+Suggested `AdminReport` shape:
+- `id`
+- `accountId`
+- `fullName`
+- `email`
+- `accountStatus`
+- `reason`
+- `createdAt`
+- `reportStatus`
 
 Required status enums:
-AdminUserStatus:
-- verified
-- locked
 
-AdminReportStatus:
-- pending
-- resolved
+`AdminUserStatus`:
+- `verified`
+- `locked`
 
-Important:
-Do NOT include `unverified` in AdminUserStatus.
-Do NOT render “Chưa xác thực” anywhere in the UI.
+`AdminReportStatus`:
+- `pending`
+- `resolved`
 
-Important API-ready architecture:
-- Do not hard-code mock data inside deeply nested components.
-- Keep mock admin data and mock API functions in `mock-admin-api.ts`.
-- Page components should own loading and action state.
-- Child components should receive values and callbacks through props.
-- Future real API integration should only require replacing mock API functions.
+Quan trọng:
+Không thêm `unverified` vào `AdminUserStatus`.
+Không render chữ “Chưa xác thực” ở bất kỳ đâu trên UI.
+
+Kiến trúc API-ready quan trọng:
+- Không hard-code mock data trong các component con nằm sâu.
+- Tách mock admin data và mock API functions trong `mock-admin-api.ts`.
+- Page components chịu trách nhiệm quản lý loading state và action state.
+- Child components nhận values và callbacks thông qua props.
+- Khi tích hợp API thật trong tương lai, chỉ cần thay các mock API functions.
 
 UX requirements:
-- All visible UI text must be Vietnamese.
-- Tables must be readable and not too cramped.
-- Use sticky or clear table headers if useful.
-- Use status badges with icons/dots.
-- Use clear hover state for table rows.
-- Use accessible buttons and labels.
-- Use confirmation modals for dangerous actions.
-- Use toast feedback for success/error actions.
-- Do not show raw technical errors.
-- Keep animation subtle.
-- Keep the interface clean and limited to the defined scope.
+- Toàn bộ text hiển thị trên UI phải là tiếng Việt.
+- Table phải dễ đọc, không quá chật.
+- Có thể dùng sticky hoặc clear table headers nếu hữu ích.
+- Dùng status badges kèm icons/dots.
+- Có hover state rõ ràng cho table rows.
+- Buttons và labels cần accessible.
+- Dùng confirmation modals cho các action nguy hiểm.
+- Dùng toast feedback cho success/error actions.
+- Không hiển thị raw technical errors cho người dùng.
+- Animation nhẹ, không lạm dụng.
+- Giao diện sạch, gọn và chỉ giới hạn trong đúng scope đã định nghĩa.
 
-Do not implement:
+Không được triển khai:
 - Advanced analytics
 - AI usage charts
 - Platform statistics
@@ -537,31 +545,31 @@ Do not implement:
 - Real backend
 - Real database
 - Add account feature
-- “Thêm tài khoản mới” button
-- “Chưa xác thực” user status
+- Button “Thêm tài khoản mới”
+- User status “Chưa xác thực”
 
 Manual verification checklist:
-After implementation, I should be able to:
-1. Run the dev server.
-2. Open `/admin`.
-3. Confirm it redirects or defaults to `/admin/users`.
-4. Open `/admin/users`.
-5. See the dark admin layout with active “Quản lý người dùng” sidebar item.
-6. Confirm there is no “Thêm tài khoản mới” button.
-7. Confirm user statuses only show “Đã xác thực” and “Đã khóa”.
-8. Search users by name, email, and status.
-9. View user detail modal.
-10. Lock a user with confirmation modal.
-11. Unlock a user with confirmation modal.
-12. See success toast after lock/unlock.
-13. Use pagination.
-14. Open `/admin/reports`.
-15. See active “Quản lý báo cáo” sidebar item.
-16. Confirm report account statuses only show “Đã xác thực” and “Đã khóa”.
-17. Search reports by name, email, reason, and status.
-18. View report detail modal.
-19. Resolve a report with confirmation modal.
-20. Lock/unlock related account from report table with confirmation.
-21. See “Đã xử lý” status after resolving a report.
-22. Confirm loading, no data, and permission denied states exist.
-23. Confirm mobile layout works with scrollable tables.
+Sau khi triển khai, tôi phải có thể:
+1. Chạy dev server.
+2. Mở `/admin`.
+3. Xác nhận route này redirect hoặc default sang `/admin/users`.
+4. Mở `/admin/users`.
+5. Thấy dark admin layout với sidebar item “Quản lý người dùng” đang active.
+6. Xác nhận không có button “Thêm tài khoản mới”.
+7. Xác nhận user statuses chỉ hiển thị “Đã xác thực” và “Đã khóa”.
+8. Search users theo tên, email và trạng thái.
+9. Xem user detail modal.
+10. Khóa user bằng confirmation modal.
+11. Mở khóa user bằng confirmation modal.
+12. Thấy success toast sau khi lock/unlock.
+13. Dùng được pagination.
+14. Mở `/admin/reports`.
+15. Thấy sidebar item “Quản lý báo cáo” đang active.
+16. Xác nhận report account statuses chỉ hiển thị “Đã xác thực” và “Đã khóa”.
+17. Search reports theo tên, email, lý do và trạng thái.
+18. Xem report detail modal.
+19. Resolve report bằng confirmation modal.
+20. Lock/unlock related account từ report table bằng confirmation modal.
+21. Thấy status “Đã xử lý” sau khi resolve report.
+22. Xác nhận có loading, no data và permission denied states.
+23. Xác nhận mobile layout hoạt động tốt với scrollable tables.

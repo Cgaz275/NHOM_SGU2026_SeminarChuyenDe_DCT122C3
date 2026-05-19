@@ -1,35 +1,36 @@
-You are a senior frontend engineer and UI/UX designer.
+Bạn là một senior frontend engineer và UI/UX designer.
 
-Continue working inside the existing Next.js 15 App Router project.
+Tiếp tục làm việc bên trong dự án Next.js 15 App Router hiện có.
 
 IMPORTANT:
-Use the existing frontend project folder casing. Do not create a duplicated `Frontend` / `FrontEnd` folder.
-Do not break existing routes:
+Sử dụng đúng kiểu viết hoa/thường của folder frontend hiện tại. Không tạo thêm folder trùng lặp như `Frontend` / `FrontEnd`.
+
+Không được làm hỏng các route hiện có:
 - `/u/[username]`
 - `/dashboard/profile-builder`
 - `/dashboard/ai-twin`
 
 Task:
-Build polished Login and Register pages for the Persona-Based Digital Card platform.
+Xây dựng trang Login và Register hoàn chỉnh, chỉn chu cho nền tảng Persona-Based Digital Card.
 
 Important language requirement:
-All visible UI text must be written in Vietnamese.
-The code, component names, variable names, and file names can remain in English, but anything displayed to the user must be Vietnamese.
+Toàn bộ text hiển thị trên UI phải được viết bằng tiếng Việt.
+Code, tên component, tên biến và tên file có thể giữ tiếng Anh, nhưng mọi nội dung hiển thị cho người dùng phải là tiếng Việt.
 
 Image asset:
-Use this image for the left-side AI illustration:
+Sử dụng ảnh này cho phần minh họa AI bên trái:
 `/login/ai.jpg`
 
-The actual file is located at:
+File thực tế nằm tại:
 `frontend/public/login/ai.jpg`
 
-Use Next.js image path:
+Sử dụng đường dẫn ảnh của Next.js:
 `/login/ai.jpg`
 
-Do not use external image URLs.
+Không sử dụng URL ảnh bên ngoài.
 
 Routes:
-Create these routes:
+Tạo các route sau:
 - `/login`
 - `/register`
 
@@ -41,48 +42,48 @@ Suggested file structure:
 - components/auth/RegisterForm.tsx
 - components/auth/AuthHero.tsx
 - components/auth/GoogleButton.tsx
-- components/ui/Toast.tsx if needed
+- components/ui/Toast.tsx nếu cần
 - lib/mock-auth-api.ts
 - types/auth.ts
 
 Purpose:
-The login/register pages allow the card owner to access the dashboard where they manage their digital card and AI Digital Twin.
+Trang login/register cho phép chủ sở hữu digital card truy cập dashboard để quản lý thẻ cá nhân số và AI Digital Twin của họ.
 
-This is frontend-only for now.
-Use mock authentication behavior.
-Do not connect real authentication, real Google OAuth, database, backend, or session storage yet.
-Make the structure API-ready so the mock auth service can be replaced later.
+Hiện tại chỉ làm frontend-only.
+Sử dụng mock authentication behavior.
+Không kết nối authentication thật, Google OAuth thật, database, backend hoặc session storage ở giai đoạn này.
+Thiết kế cấu trúc API-ready để sau này có thể thay mock auth service bằng API thật.
 
 Visual reference:
-Follow the provided reference images closely.
+Bám sát các hình ảnh tham khảo đã cung cấp.
 
 Layout:
 Desktop:
-- Full-screen dark layout.
-- Two-column design.
-- Left column:
-  - Large uppercase headline.
-  - Short supporting text.
-  - AI illustration image.
-- Right column:
-  - Centered auth card.
-  - Rounded dark card.
-  - Blue outer glow.
-  - Form fields.
-  - Primary blue CTA button.
-  - Secondary links.
-  - Google sign-in button on Login page.
-- Keep generous spacing and premium dark-tech style.
+- Giao diện dark layout toàn màn hình.
+- Thiết kế 2 cột.
+- Cột trái:
+  - Headline lớn, viết hoa.
+  - Đoạn mô tả ngắn.
+  - Ảnh minh họa AI.
+- Cột phải:
+  - Auth card được căn giữa.
+  - Card tối màu, bo góc.
+  - Có hiệu ứng blue outer glow.
+  - Có các form fields.
+  - Nút CTA chính màu xanh.
+  - Các link phụ.
+  - Nút đăng nhập bằng Google trên trang Login.
+- Giữ spacing rộng rãi và phong cách dark-tech cao cấp.
 
 Mobile:
-- Single-column layout.
-- Hero text can be shortened or stacked above the form.
-- AI image may be smaller or hidden if screen height is too small.
-- Auth card should be full-width with comfortable padding.
-- Avoid horizontal scroll.
+- Layout một cột.
+- Hero text có thể được rút gọn hoặc xếp phía trên form.
+- Ảnh AI có thể nhỏ hơn hoặc ẩn đi nếu chiều cao màn hình quá thấp.
+- Auth card full-width với padding thoải mái.
+- Tránh horizontal scroll.
 
 Design style:
-- Background: #000000 or #0B0B0B
+- Background: #000000 hoặc #0B0B0B
 - Card surface: #101010
 - Brand blue: #2367A2
 - Electric blue glow: #008FEA
@@ -94,16 +95,16 @@ Design style:
 - Success: #2ECC71
 
 Use:
-- Large bold headline on the left.
-- Rounded card with radius around 32px to 40px.
-- Blue glow around the card.
-- Pill-shaped blue buttons.
-- Clean white inputs.
-- Smooth hover/focus states.
-- Subtle Framer Motion entrance animation.
+- Headline lớn, đậm ở bên trái.
+- Card bo góc khoảng 32px đến 40px.
+- Blue glow xung quanh card.
+- Nút xanh dạng pill.
+- Input trắng, sạch sẽ.
+- Hover/focus state mượt.
+- Framer Motion entrance animation nhẹ nhàng.
 
 Left hero content:
-Use Vietnamese text.
+Sử dụng text tiếng Việt.
 
 Headline:
 “CHÀO MỪNG BẠN TRỞ LẠI VỚI DIGITAL TWIN”
@@ -112,10 +113,10 @@ Supporting text:
 “Quản lý thẻ cá nhân số và AI Persona của bạn trong một không gian duy nhất.”
 
 Image:
-Use `/login/ai.jpg`.
-Place below the supporting text.
-Use rounded corners or soft shadow if suitable.
-The image should not stretch or distort.
+Sử dụng `/login/ai.jpg`.
+Đặt ảnh bên dưới đoạn supporting text.
+Có thể dùng rounded corners hoặc soft shadow nếu phù hợp.
+Ảnh không được bị kéo giãn hoặc méo.
 
 Login page:
 Route:
@@ -145,22 +146,22 @@ Buttons:
 - Google button: “Tiếp tục với Google”
 
 Behavior:
-- Validate email required and valid format.
-- Validate password required.
-- On submit, call mock `loginWithEmail(email, password)`.
-- Show loading state on the button:
+- Validate email bắt buộc và đúng định dạng.
+- Validate password bắt buộc.
+- Khi submit, gọi mock `loginWithEmail(email, password)`.
+- Hiển thị loading state trên button:
   “Đang đăng nhập...”
-- On success:
-  - Show toast: “Đăng nhập thành công.”
-  - Mock redirect to `/dashboard/profile-builder`.
-- On error:
-  - Show inline error or toast: “Email hoặc mật khẩu không đúng.”
+- Khi success:
+  - Hiển thị toast: “Đăng nhập thành công.”
+  - Mock redirect đến `/dashboard/profile-builder`.
+- Khi error:
+  - Hiển thị inline error hoặc toast: “Email hoặc mật khẩu không đúng.”
 - Google button:
-  - Call mock `loginWithGoogle()`.
-  - Show toast: “Đăng nhập Google thành công.”
-  - Mock redirect to `/dashboard/profile-builder`.
-- “Tạo tài khoản mới” links to `/register`.
-- “Quên mật khẩu?” can be a mock link or button. On click show toast:
+  - Gọi mock `loginWithGoogle()`.
+  - Hiển thị toast: “Đăng nhập Google thành công.”
+  - Mock redirect đến `/dashboard/profile-builder`.
+- “Tạo tài khoản mới” link đến `/register`.
+- “Quên mật khẩu?” có thể là mock link hoặc button. Khi click, hiển thị toast:
   “Tính năng đặt lại mật khẩu sẽ được bổ sung sau.”
 
 Register page:
@@ -195,40 +196,40 @@ Links:
 - “Đã có tài khoản? Đăng nhập”
 
 Behavior:
-- Validate email required and valid format.
-- Validate password required.
-- Password must be at least 8 characters.
-- Confirm password must match password.
-- Terms checkbox must be checked.
-- On submit, call mock `registerWithEmail(email, password)`.
-- Show loading state:
+- Validate email bắt buộc và đúng định dạng.
+- Validate password bắt buộc.
+- Password phải có ít nhất 8 ký tự.
+- Confirm password phải trùng với password.
+- Terms checkbox phải được tick.
+- Khi submit, gọi mock `registerWithEmail(email, password)`.
+- Hiển thị loading state:
   “Đang tạo tài khoản...”
-- On success:
-  - Show toast: “Tạo tài khoản thành công.”
-  - Mock redirect to `/dashboard/profile-builder`.
-- On error:
-  - Show inline error or toast: “Không thể tạo tài khoản. Vui lòng thử lại.”
-- “Đã có tài khoản? Đăng nhập” links to `/login`.
+- Khi success:
+  - Hiển thị toast: “Tạo tài khoản thành công.”
+  - Mock redirect đến `/dashboard/profile-builder`.
+- Khi error:
+  - Hiển thị inline error hoặc toast: “Không thể tạo tài khoản. Vui lòng thử lại.”
+- “Đã có tài khoản? Đăng nhập” link đến `/login`.
 
 Mock API:
-Create:
+Tạo:
 `lib/mock-auth-api.ts`
 
-Export Promise-based functions:
+Export các Promise-based functions:
 - loginWithEmail(email, password)
 - loginWithGoogle()
 - registerWithEmail(email, password)
 - requestPasswordReset(email)
 
 Rules:
-- Use artificial delay.
-- Mock login success for any valid email/password.
-- Mock register success for valid fields.
-- Return structured success/error responses.
-- Keep this easy to replace later with NextAuth, Supabase Auth, Firebase Auth, or backend API calls.
+- Sử dụng artificial delay.
+- Mock login success với bất kỳ email/password hợp lệ nào.
+- Mock register success với các field hợp lệ.
+- Trả về structured success/error responses.
+- Giữ phần này dễ thay thế sau này bằng NextAuth, Supabase Auth, Firebase Auth hoặc backend API calls.
 
 Types:
-Create:
+Tạo:
 `types/auth.ts`
 
 Types:
@@ -239,60 +240,60 @@ Types:
 
 Component structure:
 AuthLayout:
-- Receives children.
-- Renders the two-column layout.
-- Contains the left hero area.
-- Contains right auth card area.
+- Nhận children.
+- Render layout 2 cột.
+- Chứa khu vực hero bên trái.
+- Chứa khu vực auth card bên phải.
 
 AuthHero:
-- Renders the headline, subtitle, and AI image.
-- Use `/login/ai.jpg`.
+- Render headline, subtitle và ảnh AI.
+- Sử dụng `/login/ai.jpg`.
 
 LoginForm:
-- Handles login form UI and validation.
-- Calls mock auth API through props or directly from page.
+- Xử lý UI và validation của login form.
+- Gọi mock auth API thông qua props hoặc gọi trực tiếp từ page.
 
 RegisterForm:
-- Handles register form UI and validation.
-- Calls mock auth API through props or directly from page.
+- Xử lý UI và validation của register form.
+- Gọi mock auth API thông qua props hoặc gọi trực tiếp từ page.
 
 GoogleButton:
-- Reusable Google-style button.
-- Include a simple Google “G” mark using text or lucide/icon approximation if no asset exists.
-- Do not import external Google assets.
+- Button Google-style tái sử dụng được.
+- Thêm ký hiệu Google “G” đơn giản bằng text hoặc lucide/icon approximation nếu không có asset.
+- Không import asset Google bên ngoài.
 
 UX requirements:
-- Use accessible labels.
-- Inputs must have visible focus states.
-- Errors must appear near the related field.
-- Buttons must show disabled/loading states.
-- Pressing Enter should submit the form.
-- Do not show raw technical errors.
-- Keep animations subtle.
-- Do not over-engineer with external form libraries unless necessary.
-- React state is acceptable.
+- Sử dụng accessible labels.
+- Inputs phải có focus states dễ thấy.
+- Errors phải hiển thị gần field liên quan.
+- Buttons phải có disabled/loading states.
+- Nhấn Enter phải submit form.
+- Không hiển thị raw technical errors.
+- Animation nhẹ nhàng, không quá lố.
+- Không over-engineer bằng external form libraries nếu không cần thiết.
+- Có thể dùng React state.
 
 Important:
-This is frontend-only.
-Do not implement real authentication.
-Do not store real tokens.
-Do not connect real Google OAuth.
-Do not add protected route middleware yet.
-Do not break existing dashboard or public profile pages.
+Đây là frontend-only.
+Không implement authentication thật.
+Không lưu token thật.
+Không kết nối Google OAuth thật.
+Không thêm protected route middleware ở giai đoạn này.
+Không làm hỏng dashboard hoặc public profile pages hiện có.
 
 Manual verification checklist:
-After implementation, I should be able to:
-1. Run the dev server.
-2. Open `/login`.
-3. See the dark two-column login page with Vietnamese text.
-4. See the AI image from `/login/ai.jpg`.
-5. Submit an empty login form and see validation errors.
-6. Enter valid mock login data and see success toast.
-7. Click “Tiếp tục với Google” and see mock success behavior.
-8. Click “Tạo tài khoản mới” and go to `/register`.
-9. Open `/register`.
-10. Submit empty register form and see validation errors.
-11. Test password mismatch error.
-12. Test unchecked terms error.
-13. Submit valid mock register data and see success toast.
-14. Confirm mobile layout works well.
+Sau khi implementation, tôi phải có thể:
+1. Chạy dev server.
+2. Mở `/login`.
+3. Thấy trang login dark layout 2 cột với text tiếng Việt.
+4. Thấy ảnh AI từ `/login/ai.jpg`.
+5. Submit login form rỗng và thấy validation errors.
+6. Nhập mock login data hợp lệ và thấy success toast.
+7. Click “Tiếp tục với Google” và thấy mock success behavior.
+8. Click “Tạo tài khoản mới” và chuyển đến `/register`.
+9. Mở `/register`.
+10. Submit register form rỗng và thấy validation errors.
+11. Test lỗi password mismatch.
+12. Test lỗi chưa tick terms.
+13. Submit mock register data hợp lệ và thấy success toast.
+14. Xác nhận mobile layout hoạt động tốt.
