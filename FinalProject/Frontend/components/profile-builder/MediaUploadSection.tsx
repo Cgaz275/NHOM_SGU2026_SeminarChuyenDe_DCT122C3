@@ -30,8 +30,9 @@ export function MediaUploadSection({
 			// The mock function validates 5MB limit and image type
 			const url = await mockUploadAvatar(file);
 			onChange({ ...data, avatarUrl: url });
-		} catch (err: any) {
-			setError(err.message || "Tải ảnh lên thất bại.");
+		} catch (error) {
+			const message = error instanceof Error ? error.message : "Tải ảnh lên thất bại.";
+			setError(message);
 		} finally {
 			setIsUploading(false);
 			if (fileInputRef.current) {
