@@ -21,12 +21,17 @@ import { SaveContactCard } from '../../../components/public-profile/SaveContactC
 import { AITwinChatWidget } from '../../../components/public-profile/AITwinChatWidget';
 import { LeadFallbackModal } from '../../../components/public-profile/LeadFallbackModal';
 import { ReportAIModal } from '../../../components/public-profile/ReportAIModal';
-import { StateSwitcher } from '../../../components/public-profile/StateSwitcher';
 import { LoadingSkeleton } from '../../../components/public-profile/LoadingSkeleton';
 import { EmptyState } from '../../../components/public-profile/EmptyState';
 import { Toast } from '../../../components/ui/Toast';
 import { GuestIntroModal } from '../../../components/public-profile/GuestIntroModal';
-import { collection, query, orderBy, onSnapshot, doc } from 'firebase/firestore';
+import {
+  collection,
+  query,
+  orderBy,
+  onSnapshot,
+  doc,
+} from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
 
 export default function PublicProfilePage() {
@@ -42,7 +47,10 @@ export default function PublicProfilePage() {
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
-  const [guestInfo, setGuestInfo] = useState<{ name: string; contact: string } | null>(null);
+  const [guestInfo, setGuestInfo] = useState<{
+    name: string;
+    contact: string;
+  } | null>(null);
   const [isHumanTakeover, setIsHumanTakeover] = useState(false);
   const [pendingOpenLead, setPendingOpenLead] = useState(false);
 
@@ -58,7 +66,7 @@ export default function PublicProfilePage() {
 
   const showToast = (
     message: string,
-    type: 'success' | 'error' = 'success'
+    type: 'success' | 'error' = 'success',
   ) => {
     setToast({ message, type, visible: true });
 
@@ -80,7 +88,7 @@ export default function PublicProfilePage() {
           return;
         }
         const card = res.data;
-        
+
         const data: PublicProfile = {
           id: card.id,
           username: card.slug || username,
@@ -88,32 +96,44 @@ export default function PublicProfilePage() {
           role: card.jobTitle || 'No Title',
           slogan: card.slogan || '',
           bio: card.bio || '',
-          skills: card.aiConfig?.knowledgeBase?.skills?.map((s: any) => s.name) || [],
+          skills:
+            card.aiConfig?.knowledgeBase?.skills?.map((s: any) => s.name) || [],
           socialLinks: Object.entries(card.socialLinks || {})
             .filter(([_, url]) => url && (url as string).trim() !== '')
             .map(([platform, url]) => ({
               id: platform,
               platform,
               url: url as string,
-              iconName: platform
+              iconName: platform,
             })),
-          featuredProjects: card.aiConfig?.knowledgeBase?.projects?.map((p: any) => ({
-            id: p.id,
-            title: p.projectName || p.title || 'Dự án',
-            dateRange: (p.startDate && p.endDate) ? `${p.startDate} - ${p.endDate}` : (p.startDate || ''),
-            description: p.description || '',
-            tags: p.tags || []
-          })) || [],
-          experience: card.aiConfig?.knowledgeBase?.experiences?.map((e: any) => ({
-            id: e.id,
-            company: e.companyName || '',
-            dateRange: (e.startDate && e.endDate) ? `${e.startDate} - ${e.endDate}` : (e.startDate || ''),
-            description: e.description || ''
-          })) || [],
+          featuredProjects:
+            card.aiConfig?.knowledgeBase?.projects?.map((p: any) => ({
+              id: p.id,
+              title: p.projectName || p.title || 'Dự án',
+              dateRange:
+                p.startDate && p.endDate
+                  ? `${p.startDate} - ${p.endDate}`
+                  : p.startDate || '',
+              description: p.description || '',
+              tags: p.tags || [],
+            })) || [],
+          experience:
+            card.aiConfig?.knowledgeBase?.experiences?.map((e: any) => ({
+              id: e.id,
+              company: e.companyName || '',
+              dateRange:
+                e.startDate && e.endDate
+                  ? `${e.startDate} - ${e.endDate}`
+                  : e.startDate || '',
+              description: e.description || '',
+            })) || [],
           avatarUrl: card.avatarUrl,
-          aiStatus: (card.aiStatus === 'AI Ready' && card.aiConfig?.isAiPaused !== true) ? 'ai_ready' : 'ai_disabled',
+          aiStatus:
+            card.aiStatus === 'AI Ready' && card.aiConfig?.isAiPaused !== true
+              ? 'ai_ready'
+              : 'ai_disabled',
           aiDisplayName: card.aiConfig?.aiDisplayName,
-          greetingMessage: card.aiConfig?.greetingMessage
+          greetingMessage: card.aiConfig?.greetingMessage,
         };
 
         setProfile(data);
@@ -129,7 +149,9 @@ export default function PublicProfilePage() {
           } catch {}
         }
 
-        const greeting = card.aiConfig?.greetingMessage || `Hi, I'm ${data.name}'s AI Twin. You can ask me about his skills, projects, experience, or collaboration availability.`;
+        const greeting =
+          card.aiConfig?.greetingMessage ||
+          `Hi, I'm ${data.name}'s AI Twin. You can ask me about his skills, projects, experience, or collaboration availability.`;
         const greetingMsg: ChatMessage = {
           id: 'init-1',
           role: 'assistant',
@@ -140,11 +162,23 @@ export default function PublicProfilePage() {
         // Nếu có thông tin khách cũ → gọi API lấy lịch sử chat và khôi phục
         if (restoredGuest?.contact) {
           try {
-            const histRes = await apiClient<{ conversationId: string; messages: any[]; mode?: string }>(
-              `/chat/cards/${card.id}/history?guestContact=${encodeURIComponent(restoredGuest.contact)}`
+            const histRes = await apiClient<{
+              conversationId: string;
+              messages: any[];
+              mode?: string;
+            }>(
+              `/chat/cards/${card.id}/history?guestContact=${encodeURIComponent(restoredGuest.contact)}`,
             );
-            if (histRes.success && histRes.data && histRes.data.messages?.length > 0) {
-              const { conversationId: oldId, messages: oldMsgs, mode: oldMode } = histRes.data;
+            if (
+              histRes.success &&
+              histRes.data &&
+              histRes.data.messages?.length > 0
+            ) {
+              const {
+                conversationId: oldId,
+                messages: oldMsgs,
+                mode: oldMode,
+              } = histRes.data;
               setConversationId(oldId);
               setIsHumanTakeover(oldMode === 'human_takeover');
               const restoredMsgs: ChatMessage[] = oldMsgs.map((m: any) => ({
@@ -172,7 +206,12 @@ export default function PublicProfilePage() {
   useEffect(() => {
     if (!conversationId || !db) return;
 
-    const messagesRef = collection(db, 'conversations', conversationId, 'messages');
+    const messagesRef = collection(
+      db,
+      'conversations',
+      conversationId,
+      'messages',
+    );
     const q = query(messagesRef, orderBy('createdAt', 'asc'));
 
     const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -236,16 +275,20 @@ export default function PublicProfilePage() {
     setIsTyping(true);
 
     try {
-      const res = await apiClient<{ reply: string; conversationId?: string }>(`/chat/cards/${profile.id}/chat`, {
-        method: 'POST',
-        body: JSON.stringify({
-          message: msgContent,
-          conversationId,
-          guestName: guestInfo?.name,
-          guestContact: guestInfo?.contact,
-          forceHumanTakeover: isHumanTakeover || currentAiStatus !== 'ai_ready',
-        }),
-      });
+      const res = await apiClient<{ reply: string; conversationId?: string }>(
+        `/chat/cards/${profile.id}/chat`,
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            message: msgContent,
+            conversationId,
+            guestName: guestInfo?.name,
+            guestContact: guestInfo?.contact,
+            forceHumanTakeover:
+              isHumanTakeover || currentAiStatus !== 'ai_ready',
+          }),
+        },
+      );
 
       if (res.success && res.data) {
         if (res.data.conversationId) {
@@ -291,12 +334,24 @@ export default function PublicProfilePage() {
 
     // Tìm lịch sử chat cũ theo email/zalo
     try {
-      const histRes = await apiClient<{ conversationId: string; messages: any[]; mode?: string }>(
-        `/chat/cards/${profile.id}/history?guestContact=${encodeURIComponent(info.contact)}`
+      const histRes = await apiClient<{
+        conversationId: string;
+        messages: any[];
+        mode?: string;
+      }>(
+        `/chat/cards/${profile.id}/history?guestContact=${encodeURIComponent(info.contact)}`,
       );
 
-      if (histRes.success && histRes.data && histRes.data.messages?.length > 0) {
-        const { conversationId: oldConvId, messages: oldMessages, mode: oldMode } = histRes.data;
+      if (
+        histRes.success &&
+        histRes.data &&
+        histRes.data.messages?.length > 0
+      ) {
+        const {
+          conversationId: oldConvId,
+          messages: oldMessages,
+          mode: oldMode,
+        } = histRes.data;
         setConversationId(oldConvId);
         setIsHumanTakeover(oldMode === 'human_takeover');
 
@@ -314,7 +369,9 @@ export default function PublicProfilePage() {
           return greeting ? [greeting, ...restoredMsgs] : restoredMsgs;
         });
 
-        showToast(`✨ Đã khôi phục ${oldMessages.length} tin nhắn từ lần trước!`);
+        showToast(
+          `✨ Đã khôi phục ${oldMessages.length} tin nhắn từ lần trước!`,
+        );
       }
     } catch {
       // Không tìm thấy lịch sử cũ → bắt đầu chat mới, không cần báo lỗi
@@ -341,22 +398,25 @@ export default function PublicProfilePage() {
     }
 
     try {
-      const res = await apiClient<{ reply: string; conversationId?: string }>(`/chat/cards/${profile.id}/chat`, {
-        method: 'POST',
-        body: JSON.stringify({
-          message,
-          conversationId,
-          guestName: guestInfo.name,
-          guestContact: guestInfo.contact,
-          forceHumanTakeover: true,
-        }),
-      });
+      const res = await apiClient<{ reply: string; conversationId?: string }>(
+        `/chat/cards/${profile.id}/chat`,
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            message,
+            conversationId,
+            guestName: guestInfo.name,
+            guestContact: guestInfo.contact,
+            forceHumanTakeover: true,
+          }),
+        },
+      );
 
       if (res.success) {
         if (res.data?.conversationId) {
           setConversationId(res.data.conversationId);
         }
-        
+
         // Thêm tin nhắn của khách vào UI
         const userMsg: ChatMessage = {
           id: Date.now().toString(),
@@ -367,7 +427,9 @@ export default function PublicProfilePage() {
         setMessages((prev) => [...prev, userMsg]);
         setIsHumanTakeover(true);
 
-        showToast('Tin nhắn đã được gửi! AI đã tạm dừng để chờ phản hồi từ chủ thẻ.');
+        showToast(
+          'Tin nhắn đã được gửi! AI đã tạm dừng để chờ phản hồi từ chủ thẻ.',
+        );
         setIsLeadModalOpen(false);
       } else {
         showToast(res.message || 'Không thể gửi tin nhắn.', 'error');
@@ -386,11 +448,13 @@ export default function PublicProfilePage() {
         body: JSON.stringify({
           cardId: profile.id,
           reason: `${data.reason}${data.details ? `: ${data.details}` : ''}`,
-        })
+        }),
       });
 
       if (res.success) {
-        showToast('Cảm ơn bạn. Báo cáo vi phạm đã được gửi lên hệ thống quản trị để xem xét.');
+        showToast(
+          'Cảm ơn bạn. Báo cáo vi phạm đã được gửi lên hệ thống quản trị để xem xét.',
+        );
         setIsReportModalOpen(false);
       } else {
         showToast(res.message || 'Không thể gửi báo cáo vi phạm.', 'error');
@@ -404,14 +468,13 @@ export default function PublicProfilePage() {
     pageState === 'ai_disabled'
       ? 'ai_disabled'
       : pageState === 'ai_error'
-      ? 'ai_error'
-      : profile?.aiStatus || 'ai_ready';
+        ? 'ai_error'
+        : profile?.aiStatus || 'ai_ready';
 
   if (['updating', 'locked', 'not_found'].includes(pageState)) {
     return (
       <div className="min-h-screen bg-background text-foreground flex flex-col relative font-sans">
         <EmptyState state={pageState} />
-        <StateSwitcher currentState={pageState} onStateChange={setPageState} />
       </div>
     );
   }
@@ -434,7 +497,10 @@ export default function PublicProfilePage() {
                 <SocialLinks links={profile.socialLinks} />
               </div>
 
-              <SaveContactCard profile={profile} onOpenReport={() => setIsReportModalOpen(true)} />
+              <SaveContactCard
+                profile={profile}
+                onOpenReport={() => setIsReportModalOpen(true)}
+              />
             </div>
 
             <div className="lg:col-span-7 flex flex-col gap-6">
@@ -492,8 +558,6 @@ export default function PublicProfilePage() {
         type={toast.type}
         isVisible={toast.visible}
       />
-
-      <StateSwitcher currentState={pageState} onStateChange={setPageState} />
     </div>
   );
 }
