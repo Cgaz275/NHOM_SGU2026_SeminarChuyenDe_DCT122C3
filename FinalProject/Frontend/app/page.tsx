@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { SeminarLanding } from "@/components/seminar-landing";
 
 export default function Home() {
-	redirect("/about");
+  return <SeminarLanding />;
 }
