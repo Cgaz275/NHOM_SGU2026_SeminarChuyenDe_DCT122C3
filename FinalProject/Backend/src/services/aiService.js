@@ -33,7 +33,19 @@ async function processChat(cardId, userMessage) {
 	const globalRules = globalRulesSnapshot.exists ? globalRulesSnapshot.data() : null;
 	const toneInstruction = getToneInstruction(aiConfig.toneOfVoice);
 
+	const knowledgeBase = aiConfig.knowledgeBase || {};
+	const skills = knowledgeBase.skills?.map(s => s.name).join(", ") || "Chưa cập nhật";
+	const projects = JSON.stringify(knowledgeBase.projects || []);
+	const experiences = JSON.stringify(knowledgeBase.experiences || []);
+
 	const systemPrompt = `Bạn là trợ lý AI ảo đại diện cho ${cardData.fullName}.
+Vai trò: ${cardData.jobTitle || 'Chưa cập nhật'}.
+Tiểu sử: ${cardData.bio || 'Chưa cập nhật'}.
+
+[KIẾN THỨC VỀ CHỦ THẺ]
+Kỹ năng: ${skills}
+Dự án: ${projects}
+Kinh nghiệm: ${experiences}
 
 [LUẬT CHUNG]
 Guardrails: ${JSON.stringify(globalRules ? globalRules.Guardrails : [])}

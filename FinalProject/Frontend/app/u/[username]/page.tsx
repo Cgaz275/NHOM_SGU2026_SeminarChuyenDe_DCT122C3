@@ -11,7 +11,6 @@ import {
   ReportData,
 } from '../../../types/public-profile';
 import {
-  sendChatMessage,
   submitLeadForm,
   submitAIReport,
 } from '../../../lib/mock-public-profile-api';
@@ -87,12 +86,14 @@ export default function PublicProfilePage() {
           slogan: card.slogan || '',
           bio: card.bio || '',
           skills: card.aiConfig?.knowledgeBase?.skills?.map((s: any) => s.name) || [],
-          socialLinks: Object.entries(card.socialLinks || {}).map(([platform, url]) => ({
-            id: platform,
-            platform,
-            url: url as string,
-            iconName: platform
-          })),
+          socialLinks: Object.entries(card.socialLinks || {})
+            .filter(([_, url]) => url && (url as string).trim() !== '')
+            .map(([platform, url]) => ({
+              id: platform,
+              platform,
+              url: url as string,
+              iconName: platform
+            })),
           featuredProjects: card.aiConfig?.knowledgeBase?.projects?.map((p: any) => ({
             id: p.id,
             title: p.projectName,
@@ -107,17 +108,21 @@ export default function PublicProfilePage() {
             description: e.description
           })) || [],
           avatarUrl: card.avatarUrl,
-          aiStatus: card.aiStatus === 'AI Ready' ? 'ai_ready' : 'ai_disabled'
+          aiStatus: card.aiStatus === 'AI Ready' ? 'ai_ready' : 'ai_disabled',
+          aiDisplayName: card.aiConfig?.aiDisplayName,
+          greetingMessage: card.aiConfig?.greetingMessage
         };
 
         setProfile(data);
         setPageState('published');
 
+        const greeting = card.aiConfig?.greetingMessage || `Hi, I'm ${data.name}'s AI Twin. You can ask me about his skills, projects, experience, or collaboration availability.`;
+
         setMessages([
           {
             id: 'init-1',
             role: 'assistant',
-            content: `Hi, I'm ${data.name}'s AI Twin. You can ask me about his skills, projects, experience, or collaboration availability.`,
+            content: greeting,
             timestamp: new Date(),
           },
         ]);
@@ -143,8 +148,23 @@ export default function PublicProfilePage() {
     setIsTyping(true);
 
     try {
-      const aiResponse = await sendChatMessage(profile.id, msgContent);
-      setMessages((prev) => [...prev, aiResponse]);
+      const res = await apiClient<{ reply: string }>(`/chat/cards/${profile.id}/chat`, {
+        method: 'POST',
+        body: JSON.stringify({ message: msgContent }),
+      });
+
+      if (res.success && res.data) {
+        const aiResponse: ChatMessage = {
+          id: Date.now().toString(),
+          role: 'assistant',
+          content: res.data.reply,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, aiResponse]);
+      } else {
+        showToast(res.message || 'Failed to connect to AI', 'error');
+        setIsLeadModalOpen(true);
+      }
     } catch (error) {
       showToast('Failed to connect to AI', 'error');
       setIsLeadModalOpen(true);
@@ -228,6 +248,7 @@ export default function PublicProfilePage() {
               <div id="ai-chat">
                 <AITwinChatWidget
                   profileName={profile.name}
+                  aiDisplayName={profile.aiDisplayName}
                   aiStatus={currentAiStatus}
                   messages={messages}
                   isTyping={isTyping}

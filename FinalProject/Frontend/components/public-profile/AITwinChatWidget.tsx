@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface AITwinChatWidgetProps {
   profileName: string;
+  aiDisplayName?: string;
   aiStatus: AIStatus;
   onSendMessage: (msg: string) => Promise<void>;
   onOpenLeadForm: () => void;
@@ -15,6 +16,7 @@ interface AITwinChatWidgetProps {
 
 export function AITwinChatWidget({
   profileName,
+  aiDisplayName,
   aiStatus,
   onSendMessage,
   onOpenLeadForm,
@@ -54,7 +56,7 @@ export function AITwinChatWidget({
           </div>
           <div>
             <h2 className="text-white font-semibold flex items-center gap-2">
-              AI Twin của {profileName}
+              {aiDisplayName || `AI Twin của ${profileName}`}
               <Sparkles className="w-4 h-4 text-electric-blue" />
             </h2>
             <p className="text-xs text-text-muted">

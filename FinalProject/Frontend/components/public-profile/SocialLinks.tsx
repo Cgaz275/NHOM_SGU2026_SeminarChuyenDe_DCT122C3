@@ -1,14 +1,20 @@
 import { SocialLink } from '../../types/public-profile';
 import { Globe, Mail } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaTwitter, FaGithub, FaDribbble, FaBehance, FaLinkedin } from 'react-icons/fa';
 
 interface SocialLinksProps {
   links: SocialLink[];
 }
 
 const iconMap: Record<string, React.ReactNode> = {
-  // linkedin: <Linkedin className="w-5 h-5" />,
-  // github: <Github className="w-5 h-5" />,
-  // twitter: <Twitter className="w-5 h-5" />,
+  linkedin: <FaLinkedin className="w-5 h-5" />,
+  github: <FaGithub className="w-5 h-5" />,
+  twitter: <FaTwitter className="w-5 h-5" />,
+  x: <FaTwitter className="w-5 h-5" />,
+  facebook: <FaFacebook className="w-5 h-5" />,
+  instagram: <FaInstagram className="w-5 h-5" />,
+  dribbble: <FaDribbble className="w-5 h-5" />,
+  behance: <FaBehance className="w-5 h-5" />,
   globe: <Globe className="w-5 h-5" />,
   mail: <Mail className="w-5 h-5" />,
 };

@@ -44,6 +44,8 @@ export interface PublicProfile {
   experience: Experience[];
   avatarUrl?: string; // Using a placeholder if missing
   aiStatus: AIStatus;
+  aiDisplayName?: string;
+  greetingMessage?: string;
 }
 
 export interface ChatMessage {
