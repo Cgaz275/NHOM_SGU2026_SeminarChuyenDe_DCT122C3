@@ -37,7 +37,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
     }
   };
 
-  const currentLength = JSON.stringify(knowledgeBase).length;
+  const currentLength = JSON.stringify(knowledgeBase || {}).length;
   const isWarning = currentLength > 13500;
   const isError = currentLength > 15000;
 
@@ -56,7 +56,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
             <Plus size={16} /> Thêm kỹ năng
           </button>
         </div>
-        <SkillList items={knowledgeBase.skills} onEdit={(item) => handleEditClick('skill', item)} onDelete={(id) => onDelete('skill', id)} />
+        <SkillList items={knowledgeBase.skills || []} onEdit={(item) => handleEditClick('skill', item)} onDelete={(id) => onDelete('skill', id)} />
       </div>
 
       {/* Experiences */}
@@ -70,7 +70,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
             <Plus size={16} /> Thêm kinh nghiệm
           </button>
         </div>
-        <ExperienceList items={knowledgeBase.experiences} onEdit={(item) => handleEditClick('experience', item)} onDelete={(id) => onDelete('experience', id)} />
+        <ExperienceList items={knowledgeBase.experiences || []} onEdit={(item) => handleEditClick('experience', item)} onDelete={(id) => onDelete('experience', id)} />
       </div>
 
       {/* Projects */}
@@ -84,7 +84,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
             <Plus size={16} /> Thêm dự án
           </button>
         </div>
-        <ProjectList items={knowledgeBase.projects} onEdit={(item) => handleEditClick('project', item)} onDelete={(id) => onDelete('project', id)} />
+        <ProjectList items={knowledgeBase.projects || []} onEdit={(item) => handleEditClick('project', item)} onDelete={(id) => onDelete('project', id)} />
       </div>
 
       {/* Services */}
@@ -98,7 +98,7 @@ export function KnowledgeBaseSection({ knowledgeBase, onAdd, onUpdate, onDelete 
             <Plus size={16} /> Thêm dịch vụ
           </button>
         </div>
-        <ServiceList items={knowledgeBase.services} onEdit={(item) => handleEditClick('service', item)} onDelete={(id) => onDelete('service', id)} />
+        <ServiceList items={knowledgeBase.services || []} onEdit={(item) => handleEditClick('service', item)} onDelete={(id) => onDelete('service', id)} />
       </div>
 
       {/* FAQs */}

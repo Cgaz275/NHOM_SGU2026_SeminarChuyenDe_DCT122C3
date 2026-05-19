@@ -31,19 +31,23 @@ async function getCard() {
 
 export async function getAITwinConfig(): Promise<AITwinConfig> {
   const card = await getCard();
-  if (card && card.aiConfig) {
-    // Đảm bảo tất cả các skill đều có ID để React không báo lỗi key
-    const skills = card.aiConfig.knowledgeBase?.skills?.map((s: any, index: number) => ({
-      id: s.id || `skill-${index}`,
-      ...s
-    })) || [];
+  if (card) {
+    const aiConfig = card.aiConfig || {};
+    const kb = aiConfig.knowledgeBase || {};
+
+    // Đảm bảo tất cả các mục đều có ID để React không báo lỗi key
+    const ensureIds = (arr: any[], prefix: string) =>
+      (arr || []).map((s: any, index: number) => ({ id: s.id || `${prefix}-${index}`, ...s }));
 
     return {
       ...defaultAITwinConfig,
-      ...card.aiConfig,
+      ...aiConfig,
       knowledgeBase: {
-        ...card.aiConfig.knowledgeBase,
-        skills: skills
+        skills:      ensureIds(kb.skills,      'skill'),
+        experiences: ensureIds(kb.experiences, 'exp'),
+        projects:    ensureIds(kb.projects,    'proj'),
+        services:    ensureIds(kb.services,    'svc'),
+        faqs:        ensureIds(kb.faqs,        'faq'),
       },
       id: card.id,
       status: card.aiStatus || 'AI Draft',
@@ -127,33 +131,55 @@ export async function resetTestConversation(): Promise<void> {
 
 export async function addKnowledgeItem(type: KnowledgeItemType, item: any): Promise<AITwinConfig> {
   const config = await getAITwinConfig();
+  const kb = config.knowledgeBase;
+  // Đảm bảo các mảng tồn tại trước khi push
+  if (!kb.skills) kb.skills = [];
+  if (!kb.experiences) kb.experiences = [];
+  if (!kb.projects) kb.projects = [];
+  if (!kb.services) kb.services = [];
+  if (!kb.faqs) kb.faqs = [];
+
   const newItem = { ...item, id: Date.now().toString() };
-  if (type === 'skill') config.knowledgeBase.skills.push(newItem);
-  if (type === 'experience') config.knowledgeBase.experiences.push(newItem);
-  if (type === 'project') config.knowledgeBase.projects.push(newItem);
-  if (type === 'service') config.knowledgeBase.services.push(newItem);
-  if (type === 'faq') config.knowledgeBase.faqs.push(newItem);
+  if (type === 'skill') kb.skills.push(newItem);
+  if (type === 'experience') kb.experiences.push(newItem);
+  if (type === 'project') kb.projects.push(newItem);
+  if (type === 'service') kb.services.push(newItem);
+  if (type === 'faq') kb.faqs.push(newItem);
   return saveAITwinConfig(config);
 }
 
 export async function updateKnowledgeItem(type: KnowledgeItemType, itemId: string, item: any): Promise<AITwinConfig> {
   const config = await getAITwinConfig();
+  const kb = config.knowledgeBase;
+  if (!kb.skills) kb.skills = [];
+  if (!kb.experiences) kb.experiences = [];
+  if (!kb.projects) kb.projects = [];
+  if (!kb.services) kb.services = [];
+  if (!kb.faqs) kb.faqs = [];
+
   const updateArr = (arr: any[]) => arr.map(x => x.id === itemId ? { ...x, ...item } : x);
-  if (type === 'skill') config.knowledgeBase.skills = updateArr(config.knowledgeBase.skills);
-  if (type === 'experience') config.knowledgeBase.experiences = updateArr(config.knowledgeBase.experiences);
-  if (type === 'project') config.knowledgeBase.projects = updateArr(config.knowledgeBase.projects);
-  if (type === 'service') config.knowledgeBase.services = updateArr(config.knowledgeBase.services);
-  if (type === 'faq') config.knowledgeBase.faqs = updateArr(config.knowledgeBase.faqs);
+  if (type === 'skill') kb.skills = updateArr(kb.skills);
+  if (type === 'experience') kb.experiences = updateArr(kb.experiences);
+  if (type === 'project') kb.projects = updateArr(kb.projects);
+  if (type === 'service') kb.services = updateArr(kb.services);
+  if (type === 'faq') kb.faqs = updateArr(kb.faqs);
   return saveAITwinConfig(config);
 }
 
 export async function deleteKnowledgeItem(type: KnowledgeItemType, itemId: string): Promise<AITwinConfig> {
   const config = await getAITwinConfig();
+  const kb = config.knowledgeBase;
+  if (!kb.skills) kb.skills = [];
+  if (!kb.experiences) kb.experiences = [];
+  if (!kb.projects) kb.projects = [];
+  if (!kb.services) kb.services = [];
+  if (!kb.faqs) kb.faqs = [];
+
   const filterArr = (arr: any[]) => arr.filter(x => x.id !== itemId);
-  if (type === 'skill') config.knowledgeBase.skills = filterArr(config.knowledgeBase.skills);
-  if (type === 'experience') config.knowledgeBase.experiences = filterArr(config.knowledgeBase.experiences);
-  if (type === 'project') config.knowledgeBase.projects = filterArr(config.knowledgeBase.projects);
-  if (type === 'service') config.knowledgeBase.services = filterArr(config.knowledgeBase.services);
-  if (type === 'faq') config.knowledgeBase.faqs = filterArr(config.knowledgeBase.faqs);
+  if (type === 'skill') kb.skills = filterArr(kb.skills);
+  if (type === 'experience') kb.experiences = filterArr(kb.experiences);
+  if (type === 'project') kb.projects = filterArr(kb.projects);
+  if (type === 'service') kb.services = filterArr(kb.services);
+  if (type === 'faq') kb.faqs = filterArr(kb.faqs);
   return saveAITwinConfig(config);
 }

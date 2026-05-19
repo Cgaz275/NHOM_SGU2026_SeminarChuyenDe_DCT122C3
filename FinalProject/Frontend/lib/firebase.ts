@@ -19,7 +19,8 @@ console.log("Firebase API Key đang đọc được là:", process.env.NEXT_PUBL
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 export const auth = getAuth(app);
 export const storage = getStorage(app);
-export const db = getFirestore(app, 'seminar');
+// Firestore chỉ khởi tạo phía client để tránh lỗi SSR 500
+export const db = typeof window !== 'undefined' ? getFirestore(app, 'seminar') : (null as any);
 export let analytics: any = null;
 if (typeof window !== "undefined") {
   isSupported().then((supported) => {

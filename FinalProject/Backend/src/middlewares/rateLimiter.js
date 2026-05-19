@@ -2,7 +2,7 @@ const rateLimit = require("express-rate-limit");
 
 const globalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 100,
+  max: 1500, // Tăng lên để tránh block khi demo/test
   standardHeaders: true,
   legacyHeaders: false,
   validate: false,

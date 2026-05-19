@@ -68,8 +68,9 @@ export function AITwinConfigPage() {
       const updatedConfig = await addKnowledgeItem(type, item);
       setConfig(updatedConfig);
       showToast(`Đã thêm ${type} thành công.`);
-    } catch (error) {
-      showToast(`Thêm ${type} thất bại.`, 'error');
+    } catch (error: any) {
+      console.error('[AITwin] Lỗi thêm:', error);
+      showToast(`Thêm ${type} thất bại: ${error?.message || 'Lỗi không xác định'}`, 'error');
     }
   };
 
