@@ -14,7 +14,7 @@ Tài liệu này định nghĩa Kế hoạch Kiểm thử Tổng thể (Master T
 | 4 | **Quản lý Tin nhắn & Inbox (Conversations)**<br>- Khách gửi Form tĩnh (`POST /messages`)<br>- Chủ thẻ can thiệp chat tay (`POST /conversations/:id/messages`)<br>- Cờ Takeover (`PUT /:id/takeover`) | UI / API | Cypress, Jest | **Medium** | Xung đột luồng chat: AI tự động chen ngang khi chủ thẻ đang chat tay trực tiếp (Takeover bị lỗi). |
 | 5 | **Admin - Quản lý Báo cáo (Reports)**<br>- Khách gửi báo cáo vi phạm (`POST /reports`)<br>- Admin lắng nghe qua `onSnapshot` | API / UI | Cypress, Jest | **Medium** | Dữ liệu báo cáo không đồng bộ ngay lập tức (phải F5 mới thấy). Lỗi rò rỉ bộ nhớ do Firebase Listener. |
 | 6 | **Admin - Khóa tài khoản (Real-time Kick-out)**<br>- Admin đổi trạng thái User (`PUT /users/:id/status`)<br>- Frontend tự động đá người dùng | E2E / UI | Cypress | **High** | Khóa tài khoản nhưng Session không bị hủy ngay lập tức (vẫn gọi API được). Popup báo lỗi không xuất hiện. |
-| 7 | **Admin - Thống kê (Analytics)**<br>- Số liệu thẻ cá nhân (`GET /analytics/cards/:cardId`)<br>- Thống kê tổng (`GET /analytics/global`) | API | Jest | **Low** | Tính sai số liệu lượt tải VCF hoặc tương tác chat, dẫn đến sai lệch báo cáo. |
+
 
 ## 2. CÁC RỦI RO ĐẶC BIỆT CẦN CHÚ Ý KHI TEST (CORE RISKS)
 
