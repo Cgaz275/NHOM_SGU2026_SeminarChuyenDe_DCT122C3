@@ -46,10 +46,10 @@ export async function getAdminReports(): Promise<AdminReport[]> {
   if (res.success && res.data) {
     return res.data.map((r: any) => ({
       id: r.id,
-      accountId: r.cardId ? r.cardId.substring(0, 8) : 'N/A',
+      accountId: r.userId || r.cardId || 'N/A', // Sử dụng userId thật để Admin thực hiện khóa/mở khóa!
       fullName: r.fullName || 'Ẩn danh',
       email: r.email || 'N/A',
-      accountStatus: 'verified',
+      accountStatus: r.userStatus === 'banned' ? 'locked' : 'verified', // Đồng bộ trạng thái khóa/mở khóa real-time từ DB!
       reason: r.reason,
       createdAt: r.createdAt?._seconds ? new Date(r.createdAt._seconds * 1000).toISOString() : new Date().toISOString(),
       reportStatus: r.status || 'pending',

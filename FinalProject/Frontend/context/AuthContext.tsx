@@ -4,6 +4,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { apiClient } from '@/lib/apiClient';
+import { doc, onSnapshot } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 interface UserProfile {
   id: string;
@@ -36,8 +38,17 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (fUser) => {
+    let unsubscribeDoc: (() => void) | null = null;
+
+    const unsubscribeAuth = onAuthStateChanged(auth, async (fUser) => {
       setLoading(true);
+      
+      // Hủy lắng nghe tài liệu cũ nếu có
+      if (unsubscribeDoc) {
+        unsubscribeDoc();
+        unsubscribeDoc = null;
+      }
+
       if (fUser) {
         setFirebaseUser(fUser);
         try {
@@ -49,15 +60,46 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           const res = await apiClient<UserProfile>('/users/me');
           if (res.success && res.data) {
             setUser(res.data);
+
+            // BẮT ĐẦU LẮNG NGHE REAL-TIME KHÓA TÀI KHOẢN:
+            if (db) {
+              unsubscribeDoc = onSnapshot(doc(db, 'users', fUser.uid), async (snapshot) => {
+                if (snapshot.exists()) {
+                  const userData = snapshot.data();
+                  if (userData.status === 'banned') {
+                    // Khi tài khoản bị khóa trong DB, lập tức cảnh báo và kickout!
+                    alert('Tài khoản của bạn đã bị khóa do vi phạm điều khoản dịch vụ.');
+                    if (unsubscribeDoc) {
+                      unsubscribeDoc();
+                      unsubscribeDoc = null;
+                    }
+                    await auth.signOut();
+                    localStorage.removeItem('token');
+                    setFirebaseUser(null);
+                    setUser(null);
+                    window.location.href = '/login';
+                  }
+                }
+              });
+            }
           } else {
             console.error('Không thể lấy thông tin user từ Backend:', res.message);
-            // Có thể fallback dùng thông tin từ Firebase
-            setUser({
-              id: fUser.uid,
-              email: fUser.email || '',
-              displayName: fUser.displayName || '',
-              photoURL: fUser.photoURL || '',
-            });
+            if (res.message && (res.message.includes('khóa') || res.message.includes('bị khóa') || res.message.includes('vi phạm'))) {
+              alert(res.message || 'Tài khoản của bạn đã bị khóa.');
+              await auth.signOut();
+              localStorage.removeItem('token');
+              setFirebaseUser(null);
+              setUser(null);
+              window.location.href = '/login';
+            } else {
+              // Có thể fallback dùng thông tin từ Firebase
+              setUser({
+                id: fUser.uid,
+                email: fUser.email || '',
+                displayName: fUser.displayName || '',
+                photoURL: fUser.photoURL || '',
+              });
+            }
           }
         } catch (error) {
           console.error('Lỗi khi xử lý auth state changed:', error);
@@ -70,7 +112,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return () => {
+      unsubscribeAuth();
+      if (unsubscribeDoc) unsubscribeDoc();
+    };
   }, []);
 
   const logout = async () => {

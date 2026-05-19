@@ -35,6 +35,8 @@ async function getAllReports() {
             const userData = userSnapshot.data();
             return {
               ...reportData,
+              userId: cardData.userId,
+              userStatus: userData.status || "active",
               fullName: cardData.fullName || cardData.title || userData.fullName || "No Name",
               email: userData.email || "N/A"
             };

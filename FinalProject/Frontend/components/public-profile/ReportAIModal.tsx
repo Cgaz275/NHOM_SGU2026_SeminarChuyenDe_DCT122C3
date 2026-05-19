@@ -10,10 +10,10 @@ interface ReportAIModalProps {
 }
 
 const QUICK_REASONS = [
-  'Phản hồi thô lỗ',
-  'Thông tin sai lệch',
-  'Spam',
-  'Vấn đề riêng tư',
+  'Nội dung lừa đảo',
+  'Giả mạo danh tính',
+  'Thông tin phản cảm',
+  'Spam/Quấy rối',
   'Khác',
 ];
 
@@ -63,9 +63,9 @@ export function ReportAIModal({ isOpen, onClose, onSubmit }: ReportAIModalProps)
                     <AlertTriangle className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">Báo cáo AI</h3>
+                    <h3 className="text-xl font-bold text-white">Báo cáo vi phạm</h3>
                     <p className="text-sm text-text-muted mt-1">
-                      Hãy cho chúng tôi biết điều gì đã xảy ra.
+                      Hãy cho chúng tôi biết về hành vi vi phạm của chủ thẻ này.
                     </p>
                   </div>
                 </div>

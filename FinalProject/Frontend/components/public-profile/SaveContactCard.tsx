@@ -5,18 +5,22 @@ import { useRef } from 'react';
 import { toPng } from 'html-to-image';
 import { QRCodeSVG } from 'qrcode.react';
 import { PublicProfile } from '../../types/public-profile';
-import { Download, FileBox } from 'lucide-react';
+import { Download, FileBox, AlertTriangle } from 'lucide-react';
 
 interface SaveContactCardProps {
   profile: PublicProfile;
   onExportVCard?: () => void;
+  onOpenReport?: () => void;
 }
 
-export function SaveContactCard({ profile, onExportVCard }: SaveContactCardProps) {
+export function SaveContactCard({ profile, onExportVCard, onOpenReport }: SaveContactCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   // Lấy link hiện tại để gen QR
-  const profileUrl = typeof window !== 'undefined' ? window.location.href : `https://digitalcard.app/u/${profile.username}`;
+  const profileUrl = typeof window !== 'undefined' ? window.location.href : `https://shorty-lazily-dainty.ngrok-free.dev/u/${profile.username}`;
+  
+  const backendIp = 'latticed-willetta-subovarian.ngrok-free.dev';
+  const qrRedirectUrl = `https://${backendIp}/api/v1/cards/qr/${profile.id}`;
 
   const handleDownloadCard = async () => {
     if (!cardRef.current) return;
@@ -115,7 +119,7 @@ END:VCARD`;
         {/* Real QR Code */}
         <div className="relative z-10 flex-shrink-0 w-24 h-24 bg-white rounded-xl flex items-center justify-center p-2">
           <QRCodeSVG
-            value={profileUrl}
+            value={qrRedirectUrl}
             size={80}
             bgColor="#FFFFFF"
             fgColor="#000000"
@@ -141,6 +145,16 @@ END:VCARD`;
           <FileBox className="w-5 h-5" />
           Xuất file vCard
         </button>
+
+        {onOpenReport && (
+          <button
+            onClick={onOpenReport}
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-danger/10 hover:bg-danger/20 border border-danger/20 hover:border-danger/30 text-danger font-medium transition-all duration-300 mt-2"
+          >
+            <AlertTriangle className="w-4 h-4" />
+            Báo cáo vi phạm
+          </button>
+        )}
       </div>
     </div>
   );

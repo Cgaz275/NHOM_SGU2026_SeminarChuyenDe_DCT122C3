@@ -134,12 +134,7 @@ async function updateCard(cardId, userId, updateData = {}) {
 
   for (const field of allowedFields) {
     if (updateData[field] !== undefined) {
-      if (field === "aiConfig" && updateData.aiConfig?.knowledgeBase?.skills) {
-        // Dùng dot notation để chỉ cập nhật skills, giữ lại projects, experiences...
-        updates["aiConfig.knowledgeBase.skills"] = updateData.aiConfig.knowledgeBase.skills;
-      } else {
-        updates[field] = updateData[field];
-      }
+      updates[field] = updateData[field];
     }
   }
 

@@ -66,20 +66,13 @@ export function AITwinChatWidget({
             </p>
           </div>
         </div>
-        <button
-          onClick={onOpenReport}
-          className="p-2 text-text-muted hover:text-danger transition-colors rounded-full hover:bg-danger/10"
-          title="Báo cáo AI"
-        >
-          <AlertTriangle className="w-5 h-5" />
-        </button>
       </div>
 
       {/* Disclaimer */}
       <div className="bg-brand-blue/10 border-b border-brand-blue/20 px-6 py-2 flex items-center gap-2">
         <AlertCircle className="w-4 h-4 text-brand-blue flex-shrink-0" />
         <p className="text-xs text-brand-blue/90">
-          Đây là trợ lý AI đại diện cho {profileName}. Nó có thể không phải là người thật.
+          Đây là trợ lý AI đại diện cho {profileName}.
         </p>
       </div>
 

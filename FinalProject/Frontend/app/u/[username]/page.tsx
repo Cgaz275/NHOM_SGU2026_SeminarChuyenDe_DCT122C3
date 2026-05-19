@@ -9,9 +9,6 @@ import {
   ChatMessage,
   ReportData,
 } from '../../../types/public-profile';
-import {
-  submitAIReport,
-} from '../../../lib/mock-public-profile-api';
 import { apiClient } from '../../../lib/apiClient';
 
 import { ProfileHeroCard } from '../../../components/public-profile/ProfileHeroCard';
@@ -102,16 +99,16 @@ export default function PublicProfilePage() {
             })),
           featuredProjects: card.aiConfig?.knowledgeBase?.projects?.map((p: any) => ({
             id: p.id,
-            title: p.projectName,
-            dateRange: '',
-            description: p.description,
-            tags: []
+            title: p.projectName || p.title || 'Dự án',
+            dateRange: (p.startDate && p.endDate) ? `${p.startDate} - ${p.endDate}` : (p.startDate || ''),
+            description: p.description || '',
+            tags: p.tags || []
           })) || [],
           experience: card.aiConfig?.knowledgeBase?.experiences?.map((e: any) => ({
             id: e.id,
-            company: e.companyName,
-            dateRange: '',
-            description: e.description
+            company: e.companyName || '',
+            dateRange: (e.startDate && e.endDate) ? `${e.startDate} - ${e.endDate}` : (e.startDate || ''),
+            description: e.description || ''
           })) || [],
           avatarUrl: card.avatarUrl,
           aiStatus: (card.aiStatus === 'AI Ready' && card.aiConfig?.isAiPaused !== true) ? 'ai_ready' : 'ai_disabled',
@@ -384,12 +381,22 @@ export default function PublicProfilePage() {
     if (!profile) return;
 
     try {
-      await submitAIReport(profile.id, data);
+      const res = await apiClient<any>('/reports', {
+        method: 'POST',
+        body: JSON.stringify({
+          cardId: profile.id,
+          reason: `${data.reason}${data.details ? `: ${data.details}` : ''}`,
+        })
+      });
 
-      showToast('Thanks. This report has been submitted for review.');
-      setIsReportModalOpen(false);
+      if (res.success) {
+        showToast('Cảm ơn bạn. Báo cáo vi phạm đã được gửi lên hệ thống quản trị để xem xét.');
+        setIsReportModalOpen(false);
+      } else {
+        showToast(res.message || 'Không thể gửi báo cáo vi phạm.', 'error');
+      }
     } catch (error) {
-      showToast('Failed to submit report. Please try again.', 'error');
+      showToast('Không thể gửi báo cáo vi phạm. Vui lòng thử lại.', 'error');
     }
   };
 
@@ -427,7 +434,7 @@ export default function PublicProfilePage() {
                 <SocialLinks links={profile.socialLinks} />
               </div>
 
-              <SaveContactCard profile={profile} />
+              <SaveContactCard profile={profile} onOpenReport={() => setIsReportModalOpen(true)} />
             </div>
 
             <div className="lg:col-span-7 flex flex-col gap-6">

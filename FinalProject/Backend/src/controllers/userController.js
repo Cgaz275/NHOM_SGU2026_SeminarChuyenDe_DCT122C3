@@ -6,6 +6,14 @@ async function getMe(req, res) {
     // Tự động tạo user nếu chưa tồn tại trong database
     const profile = await authService.registerUser(req.user);
 
+    if (profile.status === "banned") {
+      return res.status(403).json({
+        status: false,
+        data: null,
+        message: "Tài khoản của bạn đã bị khóa do vi phạm điều khoản dịch vụ. Vui lòng liên hệ email: admin@gmail.com để được hỗ trợ",
+      });
+    }
+
     return res.status(200).json({
       status: true,
       data: profile,

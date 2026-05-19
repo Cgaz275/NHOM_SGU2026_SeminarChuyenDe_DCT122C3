@@ -14,6 +14,8 @@ import { AdminLoadingState } from './AdminLoadingState';
 import { ConfirmAdminActionModal } from './ConfirmAdminActionModal';
 import { ReportDetailModal } from './ReportDetailModal';
 import { Toast } from '@/components/ui/Toast';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 const PAGE_SIZE = 7;
 
@@ -37,18 +39,28 @@ export function ReportManagementPage() {
   const [isToastVisible, setIsToastVisible] = useState(false);
 
   useEffect(() => {
-    fetchReports();
+    // Tải dữ liệu lần đầu tiên có loading skeleton
+    fetchReports(true);
+
+    // Lắng nghe real-time từ Firestore
+    if (!db) return;
+    const unsub = onSnapshot(collection(db, 'reports'), () => {
+      // Khi có thay đổi từ Firestore, cập nhật ngầm (showLoading = false)
+      fetchReports(false);
+    });
+
+    return () => unsub();
   }, []);
 
-  const fetchReports = async () => {
-    setIsLoading(true);
+  const fetchReports = async (showLoading = true) => {
+    if (showLoading) setIsLoading(true);
     try {
       const data = await getAdminReports();
       setReports(data);
     } catch (error) {
       console.error(error);
     } finally {
-      setIsLoading(false);
+      if (showLoading) setIsLoading(false);
     }
   };
 
@@ -196,7 +208,9 @@ export function ReportManagementPage() {
               {paginatedReports.map((report, index) => (
                 <tr key={report.id} className="hover:bg-white/5 transition-colors group">
                   <td className="px-4 py-3 text-white/50">{(currentPage - 1) * PAGE_SIZE + index + 1}</td>
-                  <td className="px-4 py-3 font-medium text-white/90">{report.accountId}</td>
+                  <td className="px-4 py-3 font-medium text-white/90" title={report.accountId}>
+                    {report.accountId && report.accountId.length > 8 ? `${report.accountId.substring(0, 8)}...` : report.accountId}
+                  </td>
                   <td className="px-4 py-3 text-white">{report.fullName}</td>
                   <td className="px-4 py-3 text-white/70">{report.email}</td>
                   <td className="px-4 py-3"><UserStatusBadge status={report.accountStatus} /></td>
