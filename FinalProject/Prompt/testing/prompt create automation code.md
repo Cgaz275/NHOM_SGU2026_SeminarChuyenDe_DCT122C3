@@ -1,4 +1,4 @@
-# 🤖 PROMPT: VIẾT CODE AUTOMATION TEST (DÀNH CHO @Test_Agent)
+# PROMPT: VIẾT CODE AUTOMATION TEST
 
 **Mục đích:** Yêu cầu AI Test_Agent dựa vào danh sách Test Cases (Markdown) đã có để sinh ra mã nguồn Automation Test hoàn chỉnh (Cypress cho Frontend hoặc Jest/Supertest cho Backend).
 

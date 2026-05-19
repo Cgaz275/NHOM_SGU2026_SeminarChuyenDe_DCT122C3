@@ -78,42 +78,46 @@ Khác biệt với name card truyền thống, hệ thống tích hợp **AI Dig
 ## 6. CÔNG NGHỆ (TECH STACK)
 | Tầng | Công nghệ | Lý do chọn |
 | :--- | :--- | :--- |
-| **Frontend** | Next.js 15 (App Router), Tailwind CSS, Framer Motion | SSR/SSG, SEO, Animation, Mobile-first |
-| **Backend / API** | Next.js API Routes / Node.js Express | Tích hợp nhanh, dễ deploy |
-| **Database** | Firebase Firestore / Supabase (PostgreSQL) | Realtime, dễ scale |
-| **Auth** | Firebase Auth / NextAuth.js | Hỗ trợ OAuth dễ dàng |
-| **Storage** | Firebase Storage / Cloudinary | Lưu ảnh, QR |
-| **AI LLM** | OpenAI / Gemini / Claude via OpenRouter | Trí tuệ nhân tạo linh hoạt |
+| **Frontend** | Next.js 16.2 (App Router), React 19, Tailwind CSS v4, Framer Motion | SSR/SSG, SEO, Animation, Mobile-first |
+| **Giao diện & UI**| `lucide-react`, `react-icons`, `qrcode.react`, `html-to-image` | Icon đa dạng, render QR động, tải ảnh danh thiếp |
+| **Backend / API** | Node.js, Express v5 | Tốc độ cao, linh hoạt tích hợp Middleware |
+| **API Docs** | Swagger (`swagger-jsdoc`, `swagger-ui-express`) | Tự động hóa tài liệu API cho Frontend/Mobile |
+| **Database** | Firebase Firestore (NoSQL) | Realtime sync (`onSnapshot`), cấu trúc linh hoạt |
+| **Auth & Sec** | Firebase Auth (JWT ID Token), `express-rate-limit` | Hỗ trợ OAuth, tự động refresh token ngầm (Silent Renewal), chống Spam API |
+| **Storage** | Firebase Storage | Lưu ảnh đại diện, avatar |
+| **AI LLM** | OpenAI SDK (`openai` node package) | Giao tiếp mạnh mẽ, sinh phản hồi từ Knowledge Base JSON |
 
 ---
 
-## 7. PHẠM VI DỰ ÁN (SCOPE)
-- **In Scope:** Auth cơ bản, Profile Builder, Public Card, QR Generator, AI Chatbot (RAG JSON), Inbox, Fallback Form.
-- **Out of Scope:** Upload file PDF/DOCX cho RAG, Thanh toán, Booking, Voice Chat, eKYC nâng cao.
+## 7. PHẠM VI DỰ ÁN (SCOPE & MODULES COMPLETED)
+- **Hệ thống Chủ thẻ (Card Owner Dashboard):** Đăng nhập Firebase Auth, Profile Builder, Cấu hình AI Knowledge Base, Quản lý QR Code sinh động, Quản lý Inbox (Tin nhắn Lead), Tùy chỉnh bật/tắt AI.
+- **Hệ thống Khách hàng (Public Card & Digital Twin):** Xem giao diện hồ sơ, Chatbot nổi với AI Twin (RAG JSON), Điền Form tĩnh (Fallback Form) khi AI tắt, Xuất file Danh bạ `.vcf`, Tương tác mạng xã hội.
+- **Hệ thống Quản trị (Admin Panel):** Dashboard giám sát, Quản lý Báo cáo vi phạm (Real-time), Khóa/Mở khóa tài khoản (Real-time kick-out), Cấu hình phân quyền Admin.
+- **Hệ thống Giới thiệu Seminar (Seminar Landing):** Các trang giới thiệu Đội ngũ (`/about`), Trưng bày Dự án (`/teamproject`), và Thử nghiệm AI chung (`/digital-twin`).
+- **Hệ thống Bảo mật & Đồng bộ:** Cơ chế Auto-Refresh Token, Rate Limiting, Giám sát phiên làm việc thời gian thực qua Firestore Listener.
 
 ---
 
 ## 8. RỦI RO & GIẢ ĐỊNH
 ### 8.1. Các giả định
-- **Tài nguyên:** Hạ tầng miễn phí đủ dùng (Vercel, Firebase/Supabase) và một khoản chi phí nhỏ nạp vào OpenRouter là đủ lưu lượng cho MVP.
-- **Nguồn dữ liệu:** Chủ thẻ cung cấp thông tin nghiêm túc vào form chuyên môn để tạo ra `persona_data.json` chất lượng, giúp AI trả lời chính xác.
+- **Tài nguyên:** Hạ tầng miễn phí đủ dùng (Vercel, Firebase) và một khoản chi phí nhỏ nạp vào OpenAI là đủ lưu lượng cho Demo.
+- **Nguồn dữ liệu:** Chủ thẻ cung cấp thông tin nghiêm túc vào form chuyên môn để tạo ra `aiConfig` chất lượng, giúp AI trả lời chính xác.
 
 ### 8.2. Rủi ro & Biện pháp
-- **AI Hallucination & Prompt Injection:** Rủi ro AI bịa đặt hoặc bị thao túng. => **Giải pháp:** Guardrails chặt chẽ trong System Prompt, validate input.
-- **API Exhaustion (Cháy Token):** => **Giải pháp:** Rate limiting (20 câu/ngày/IP), dùng model rẻ/nhanh cho Demo.
-- **Spam Form/Inbox:** => **Giải pháp:** CAPTCHA, chặn submit > 3 lần/phút/IP.
-- **Rò rỉ thông tin riêng tư:** => **Giải pháp:** Chỉ cho phép AI đọc SĐT/Email nếu user chủ động bật "Cho phép AI cung cấp thông tin liên lạc".
+- **AI Hallucination & Prompt Injection:** Rủi ro AI bịa đặt hoặc bị thao túng. => **Giải pháp:** Guardrails chặt chẽ trong System Prompt (`promptBuilder.js`), validate input.
+- **Spam Form/Inbox & Cạn kiệt API:** => **Giải pháp:** Chặn submit spam bằng Middleware `express-rate-limit` (60 requests/15 phút).
+- **Mất phiên đăng nhập:** Token hết hạn sau 1 tiếng. => **Giải pháp:** Áp dụng Silent Token Renewal (Firebase `getIdToken`) trước mỗi request.
 
 ---
 
-## 9. CÁC LUỒNG SỰ KIỆN CHÍNH (USE CASES)
-1. **Cấu hình Thẻ:** Dashboard -> Tạo thẻ -> Nhập Profile -> Xuất bản (Tạo URL & QR).
-2. **Cấu hình AI:** Dashboard -> Cấu hình AI -> Nhập Prompt & Form dữ liệu -> Lưu & Huấn luyện (Sinh `persona_data.json`).
-3. **Trò chuyện (Chat):** Khách quét QR -> Chatbot chào -> Khách hỏi -> AI đọc JSON trả lời -> Xin SĐT (Lead).
-4. **Human Takeover:** Khách đang chat AI -> Chủ thẻ xem Inbox realtime -> Nhấn "Tiếp quản" -> AI ngưng -> Chủ thẻ chat tay.
-5. **Fallback:** AI lỗi hoặc chủ thẻ tắt AI -> Hiện Form liên hệ tĩnh -> Khách nhập Form -> Gửi email báo chủ thẻ.
-6. **Lưu Danh Bạ:** Khách xem thẻ -> Nhấn "Lưu liên lạc" -> Tải file `.vcf`.
-7. **Quản lý Người dùng (Admin):** Admin xem danh sách toàn bộ User -> Tìm kiếm/Lọc theo tên hoặc email -> Kích hoạt hoặc Khóa tài khoản -> Xem chi tiết các Digital Card của User.
-8. **Quản lý Báo cáo & Xử lý vi phạm (Admin):** Admin xem danh sách Report -> Xem chi tiết lý do -> Ra quyết định Khóa thẻ (chọn thời hạn) hoặc bỏ qua báo cáo -> Vô hiệu hóa URL vi phạm.
+## 9. CÁC LUỒNG SỰ KIỆN CHÍNH (USE CASES & FLOWS)
+1. **Cấu hình Thẻ & AI:** Dashboard -> Nhập Profile & Cấu hình AI -> Lưu dữ liệu Firestore -> Tự động sinh QR Code động dẫn đến URL `/u/[username]`.
+2. **Trò chuyện (AI Chat):** Khách quét QR -> Chatbot chào -> Khách hỏi -> API check Rate Limit -> Gọi OpenAI kèm ngữ cảnh `aiConfig` -> AI trả lời JSON -> Hiển thị UI.
+3. **Thu thập Lead (Human Fallback):** Chủ thẻ tắt AI hoặc AI lỗi -> Khách hàng thấy Form tĩnh -> Nhập Tên, Email, Tin nhắn -> Lưu vào Firestore Inbox -> Chủ thẻ xem trong Dashboard.
+4. **Human Takeover (Chủ thẻ tiếp quản):** Khách đang chat với AI -> Khách để lại thông tin -> Hệ thống khóa AI (Takeover = true) -> Chủ thẻ và Khách hàng chat tay trực tiếp (Real-time).
+5. **Đồng bộ mã QR động:** Admin/Chủ thẻ đổi tên miền hệ thống -> API tự động nhận diện Domain hiện tại -> Trả về URL QR mới khớp 100% với môi trường.
+6. **Báo cáo vi phạm (Real-time Sync):** Khách nhấn Report thẻ -> API tạo Report trong Firestore -> Admin Panel lắng nghe `onSnapshot` -> Hiển thị Report mới tinh trên bảng điều khiển ngay lập tức (không cần tải lại trang).
+7. **Bảo mật & Cấm tài khoản (Real-time Kick-out):** Admin bấm "Khóa tài khoản" -> Cập nhật `status = banned` -> Frontend AuthContext bắt sự kiện `onSnapshot` lập tức (< 0.5s) -> Hiển thị Modal Cảnh báo Đỏ -> Tự động thu hồi Token, xóa Session -> Đẩy chủ thẻ về trang Đăng nhập.
+8. **Tự động làm mới phiên làm việc (Silent Refresh):** Chủ thẻ treo máy > 1 tiếng -> Gửi request API -> Frontend Firebase SDK tự động gia hạn Token ngầm -> API thành công không bị gián đoạn.
 
 *(Lưu ý: PRD này được tổng hợp để Agent nắm bắt nhanh Context, Rules và Workflows của hệ thống, hỗ trợ chính xác trong quá trình code, test và review).*

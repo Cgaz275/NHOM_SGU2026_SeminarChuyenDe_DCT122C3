@@ -1,4 +1,4 @@
-# 🤖 PROMPT: TẠO TEST CASES CHO MODULE (DÀNH CHO @Test_Agent)
+# PROMPT: TẠO TEST CASES CHO MODULE 
 
 **Mục đích:** Sử dụng prompt này để yêu cầu AI Test_Agent phân tích yêu cầu từ PRD và thiết kế danh sách Test Cases (Kịch bản kiểm thử) chi tiết cho bất kỳ Module nào trong dự án Persona-Based Digital Card.
 
