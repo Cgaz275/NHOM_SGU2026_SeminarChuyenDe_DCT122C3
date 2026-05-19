@@ -111,10 +111,13 @@ async function updateCard(cardId, userId, updateData = {}) {
     "jobTitle",
     "slogan",
     "bio",
+    "slug",
     "status",
     "aiStatus",
     "isPhonePublic",
     "isEmailPublic",
+    "isSocialLinksPublic", 
+    "allowAiContactMention",
     "nfcEnabled",
     "autoReplyEnabled",
     "autoReplyMessage",
@@ -125,6 +128,8 @@ async function updateCard(cardId, userId, updateData = {}) {
     "aiConfig",
   ];
 
+
+
   const updates = {};
 
   for (const field of allowedFields) {
@@ -132,6 +137,7 @@ async function updateCard(cardId, userId, updateData = {}) {
       updates[field] = updateData[field];
     }
   }
+
 
   if (Object.keys(updates).length === 0) {
     return { id: snapshot.id, ...card };
@@ -230,6 +236,26 @@ async function deleteCard(cardId, userId) {
   return { id: updatedSnapshot.id, ...updatedSnapshot.data() };
 }
 
+
+async function checkSlugAvailability(slug, userId) {
+  const snapshot = await db.collection("cards").where("slug", "==", slug).get();
+  
+  const duplicate = snapshot.docs.some(doc => {
+    const data = doc.data();
+    return data.userId !== userId && data.status !== "deleted";
+  });
+
+  return duplicate; // Trả về true nếu trùng với người khác
+}
+
+async function getCardById(cardId) {
+  const snapshot = await db.collection("cards").doc(cardId).get();
+  if (!snapshot.exists) {
+    return null;
+  }
+  return { id: snapshot.id, ...snapshot.data() };
+}
+
 module.exports = {
   createCard,
   getCardBySlug,
@@ -238,4 +264,7 @@ module.exports = {
   updateAiConfig,
   toggleTakeover,
   deleteCard,
+  checkSlugAvailability,
+  getCardById,
 };
+

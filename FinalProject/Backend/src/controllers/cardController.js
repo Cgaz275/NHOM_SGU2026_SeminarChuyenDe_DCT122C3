@@ -245,6 +245,55 @@ async function deleteCard(req, res) {
   }
 }
 
+async function deleteCard(req, res) {
+}
+
+async function redirectQr(req, res) {
+  try {
+    const card = await cardService.getCardById(req.params.cardId);
+
+    if (!card || card.status === "deleted") {
+      return res.status(404).send("Thẻ không tồn tại hoặc đã bị xóa.");
+    }
+
+    const frontendBaseUrl = "https://shorty-lazily-dainty.ngrok-free.dev"; // Đổi thành IP để test trên điện thoại
+
+    return res.redirect(`${frontendBaseUrl}/u/${card.slug}`);
+  } catch (error) {
+
+    console.error("Lỗi trong redirectQr controller:", error);
+    return res.status(500).send("Lỗi hệ thống khi xử lý điều hướng QR.");
+  }
+}
+
+async function checkSlug(req, res) {
+  try {
+    const { slug } = req.query;
+    if (!slug) {
+      return res.status(400).json({
+        status: false,
+        data: null,
+        message: "Vui lòng cung cấp slug cần kiểm tra",
+      });
+    }
+
+    const isDuplicate = await cardService.checkSlugAvailability(slug, req.user.uid);
+
+    return res.status(200).json({
+      status: true,
+      data: isDuplicate, // true nếu trùng, false nếu không trùng
+      message: "Kiểm tra slug hoàn tất",
+    });
+  } catch (error) {
+    console.error("Lỗi trong checkSlug:", error);
+    return res.status(500).json({
+      status: false,
+      data: null,
+      message: "Kiểm tra slug thất bại",
+    });
+  }
+}
+
 module.exports = {
   createCard,
   getCardBySlug,
@@ -253,4 +302,7 @@ module.exports = {
   deleteCard,
   updateAiConfig,
   toggleTakeover,
+  redirectQr,
+  checkSlug,
 };
+

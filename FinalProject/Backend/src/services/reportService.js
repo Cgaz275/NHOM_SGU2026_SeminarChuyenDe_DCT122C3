@@ -21,8 +21,37 @@ async function getAllReports() {
     .orderBy("createdAt", "desc")
     .get();
 
-  return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  const reports = await Promise.all(snapshot.docs.map(async (doc) => {
+    const reportData = { id: doc.id, ...doc.data() };
+    
+    if (reportData.cardId) {
+      const cardSnapshot = await db.collection("cards").doc(reportData.cardId).get();
+      if (cardSnapshot.exists) {
+        const cardData = cardSnapshot.data();
+        
+        if (cardData.userId) {
+          const userSnapshot = await db.collection("users").doc(cardData.userId).get();
+          if (userSnapshot.exists) {
+            const userData = userSnapshot.data();
+            return {
+              ...reportData,
+              userId: cardData.userId,
+              userStatus: userData.status || "active",
+              fullName: cardData.fullName || cardData.title || userData.fullName || "No Name",
+              email: userData.email || "N/A"
+            };
+
+          }
+        }
+      }
+    }
+    
+    return reportData;
+  }));
+
+  return reports;
 }
+
 
 async function resolveReport(reportId) {
   const reportRef = db.collection("reports").doc(reportId);

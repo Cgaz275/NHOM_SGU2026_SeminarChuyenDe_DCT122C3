@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./config/swagger");
 
 dotenv.config();
 
@@ -14,14 +16,20 @@ const messageRoutes = require("./routes/messageRoutes");
 const messageApiRoutes = require("./routes/messageApiRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
 const reportRoutes = require("./routes/reportRoutes");
+const conversationRoutes = require("./routes/conversationRoutes");
+
 const { globalLimiter } = require("./middlewares/rateLimiter");
 const { errorHandler } = require("./middlewares/errorHandler");
 
 const app = express();
 
+app.set('trust proxy', 1);
 app.use(cors());
 app.use(express.json());
 app.use(globalLimiter);
+
+// Cấu hình Swagger UI
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/users", userRoutes);
@@ -31,6 +39,8 @@ app.use("/api/v1/messages", messageApiRoutes);
 app.use("/api/v1/chat", chatRoutes);
 app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/reports", reportRoutes);
+app.use("/api/v1/conversations", conversationRoutes);
+
 
 app.get("/api/v1/health", (req, res) => {
   res.status(200).json({

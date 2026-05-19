@@ -1,14 +1,16 @@
 const userService = require("../services/userService");
+const authService = require("../services/authService");
 
 async function getMe(req, res) {
   try {
-    const profile = await userService.getProfile(req.user.uid);
+    // Tự động tạo user nếu chưa tồn tại trong database
+    const profile = await authService.registerUser(req.user);
 
-    if (!profile) {
-      return res.status(404).json({
+    if (profile.status === "banned") {
+      return res.status(403).json({
         status: false,
         data: null,
-        message: "Không tìm thấy người dùng",
+        message: "Tài khoản của bạn đã bị khóa do vi phạm điều khoản dịch vụ. Vui lòng liên hệ email: admin@gmail.com để được hỗ trợ",
       });
     }
 
@@ -18,6 +20,7 @@ async function getMe(req, res) {
       message: "Lấy hồ sơ thành công",
     });
   } catch (error) {
+    console.error("Lỗi trong getMe:", error);
     return res.status(500).json({
       status: false,
       data: null,
@@ -25,6 +28,7 @@ async function getMe(req, res) {
     });
   }
 }
+
 
 async function updateMe(req, res) {
   try {
