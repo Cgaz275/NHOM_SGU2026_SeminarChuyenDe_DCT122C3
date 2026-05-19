@@ -1,8 +1,10 @@
+import { auth } from './firebase';
+
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://latticed-willetta-subovarian.ngrok-free.dev/api/v1';
 
 /**
  * HTTP Client đóng gói Fetch API.
- * Tự động đính kèm Token vào Header nếu có trong localStorage.
+ * Tự động đính kèm Token vào Header và tự động Refresh Token nếu hết hạn.
  */
 export async function apiClient<T>(
   endpoint: string,
@@ -18,9 +20,20 @@ export async function apiClient<T>(
     headers.set('Content-Type', 'application/json');
   }
 
-  // Tự động đính kèm Token nếu tồn tại (đối với môi trường Client-side)
+  // Tự động đính kèm Token (đối với môi trường Client-side)
   if (typeof window !== 'undefined') {
-    const token = localStorage.getItem('token');
+    let token = localStorage.getItem('token');
+    
+    // Nếu Firebase đã đăng nhập, tự động lấy token mới nhất (Firebase sẽ tự làm mới ngầm nếu đã quá 1 tiếng!)
+    if (auth && auth.currentUser) {
+      try {
+        token = await auth.currentUser.getIdToken();
+        localStorage.setItem('token', token);
+      } catch (err) {
+        console.error('Không thể tự động refresh Firebase Token:', err);
+      }
+    }
+
     if (token) {
       headers.set('Authorization', `Bearer ${token}`);
     }
