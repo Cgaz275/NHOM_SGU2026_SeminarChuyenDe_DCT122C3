@@ -13,7 +13,9 @@ async function chatWithCard(req, res) {
     const { reply, conversationId } = await aiService.processChat(
       req.params.cardId,
       req.body.message,
-      req.body.conversationId
+      req.body.conversationId,
+      req.body.guestName,
+      req.body.guestContact
     );
 
     return res.status(200).json({

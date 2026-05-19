@@ -30,6 +30,9 @@ import { StateSwitcher } from '../../../components/public-profile/StateSwitcher'
 import { LoadingSkeleton } from '../../../components/public-profile/LoadingSkeleton';
 import { EmptyState } from '../../../components/public-profile/EmptyState';
 import { Toast } from '../../../components/ui/Toast';
+import { GuestIntroModal } from '../../../components/public-profile/GuestIntroModal';
+import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { db } from '../../../lib/firebase';
 
 export default function PublicProfilePage() {
   const params = useParams();
@@ -43,6 +46,9 @@ export default function PublicProfilePage() {
 
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
+  const [guestInfo, setGuestInfo] = useState<{ name: string; contact: string } | null>(null);
+  const [isHumanTakeover, setIsHumanTakeover] = useState(false);
 
   const [toast, setToast] = useState<{
     message: string;
@@ -117,6 +123,14 @@ export default function PublicProfilePage() {
         setProfile(data);
         setPageState('published');
 
+        // Khôi phục thông tin khách từ lần trước (nếu có)
+        const savedGuest = localStorage.getItem(`guest_info_${card.id}`);
+        if (savedGuest) {
+          try {
+            setGuestInfo(JSON.parse(savedGuest));
+          } catch {}
+        }
+
         const greeting = card.aiConfig?.greetingMessage || `Hi, I'm ${data.name}'s AI Twin. You can ask me about his skills, projects, experience, or collaboration availability.`;
 
         setMessages([
@@ -135,8 +149,51 @@ export default function PublicProfilePage() {
     fetchProfile();
   }, [username]);
 
+  // Lắng nghe tin nhắn thời gian thực (bao gồm tin từ chủ thẻ khi tiếp quản)
+  useEffect(() => {
+    if (!conversationId || !db) return;
+
+    const messagesRef = collection(db, 'conversations', conversationId, 'messages');
+    const q = query(messagesRef, orderBy('createdAt', 'asc'));
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      // Chỉ xử lý khi có tin mới được thêm
+      snapshot.docChanges().forEach((change) => {
+        if (change.type === 'added') {
+          const data = change.doc.data();
+          // Chỉ hiển thị tin của chủ thẻ (owner) — tin visitor/AI đã được thêm qua API
+          if (data.sender === 'owner') {
+            const ownerMsg: ChatMessage = {
+              id: change.doc.id,
+              role: 'assistant', // hiển giống AI nhưng có dấu hiệu riêng
+              content: `👤 ${data.content}`, // prefix để phân biệt với AI
+              timestamp: new Date(),
+            };
+            setMessages((prev) => {
+              // Tránh duplicate
+              if (prev.some((m) => m.id === change.doc.id)) return prev;
+              return [...prev, ownerMsg];
+            });
+          }
+          // Theo dõi mode thay đổi
+          if (data.sender === 'system' && data.content?.includes('Tiếp quản')) {
+            setIsHumanTakeover(true);
+          }
+        }
+      });
+    });
+
+    return () => unsubscribe();
+  }, [conversationId]);
+
   const handleSendMessage = async (msgContent: string) => {
     if (!profile) return;
+
+    // Nếu chưa có thông tin khách → hiển thị modal trước
+    if (!guestInfo) {
+      setIsGuestModalOpen(true);
+      return;
+    }
 
     const userMsg: ChatMessage = {
       id: Date.now().toString(),
@@ -151,20 +208,32 @@ export default function PublicProfilePage() {
     try {
       const res = await apiClient<{ reply: string; conversationId?: string }>(`/chat/cards/${profile.id}/chat`, {
         method: 'POST',
-        body: JSON.stringify({ message: msgContent, conversationId }),
+        body: JSON.stringify({
+          message: msgContent,
+          conversationId,
+          guestName: guestInfo?.name,
+          guestContact: guestInfo?.contact,
+        }),
       });
 
       if (res.success && res.data) {
         if (res.data.conversationId) {
           setConversationId(res.data.conversationId);
         }
-        const aiResponse: ChatMessage = {
-          id: Date.now().toString(),
-          role: 'assistant',
-          content: res.data.reply,
-          timestamp: new Date(),
-        };
-        setMessages((prev) => [...prev, aiResponse]);
+        // Nếu mode là human_takeover, reply là null → không thêm tin AI
+        // Chủ thẻ sẽ trả lời qua Firestore onSnapshot
+        if (res.data.reply !== null && res.data.reply !== undefined) {
+          const aiResponse: ChatMessage = {
+            id: Date.now().toString(),
+            role: 'assistant',
+            content: res.data.reply,
+            timestamp: new Date(),
+          };
+          setMessages((prev) => [...prev, aiResponse]);
+        } else {
+          // Human takeover — hiển thị banner "chủ thẻ đang trả lời"
+          setIsHumanTakeover(true);
+        }
       } else {
         showToast(res.message || 'Failed to connect to AI', 'error');
         setIsLeadModalOpen(true);
@@ -175,6 +244,13 @@ export default function PublicProfilePage() {
     } finally {
       setIsTyping(false);
     }
+  };
+
+  const handleGuestSubmit = (info: { name: string; contact: string }) => {
+    setGuestInfo(info);
+    // Lưu vào localStorage để khách không cần nhập lại khi quay lại
+    localStorage.setItem(`guest_info_${profile?.id}`, JSON.stringify(info));
+    setIsGuestModalOpen(false);
   };
 
   const handleLeadSubmit = async (data: LeadFormData) => {
@@ -259,6 +335,7 @@ export default function PublicProfilePage() {
                   onSendMessage={handleSendMessage}
                   onOpenLeadForm={() => setIsLeadModalOpen(true)}
                   onOpenReport={() => setIsReportModalOpen(true)}
+                  isHumanTakeover={isHumanTakeover}
                 />
               </div>
             </div>
@@ -279,6 +356,14 @@ export default function PublicProfilePage() {
             isOpen={isReportModalOpen}
             onClose={() => setIsReportModalOpen(false)}
             onSubmit={handleReportSubmit}
+          />
+
+          <GuestIntroModal
+            isOpen={isGuestModalOpen}
+            aiDisplayName={profile.aiDisplayName || ''}
+            profileName={profile.name}
+            onSubmit={handleGuestSubmit}
+            onClose={() => setIsGuestModalOpen(false)}
           />
         </>
       )}

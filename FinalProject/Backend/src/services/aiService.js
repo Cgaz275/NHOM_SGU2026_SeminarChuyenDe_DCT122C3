@@ -6,7 +6,7 @@ const openai = new OpenAI({
 	apiKey: process.env.OPENAI_API_KEY,
 });
 
-async function processChat(cardId, userMessage, conversationId = null) {
+async function processChat(cardId, userMessage, conversationId = null, guestName = null, guestContact = null) {
 	const cardRef = db.collection("cards").doc(cardId);
 	const snapshot = await cardRef.get();
 
@@ -87,10 +87,10 @@ ${toneInstruction}`;
 			status: "unread",
 			isArchived: false,
 			mode: "ai_active",
-			visitorName: "Khách truy cập",
-			visitorEmail: "",
+			visitorName: guestName || "Khách truy cập",
+			visitorEmail: guestContact || "",
 			visitorPhone: "",
-			leadTag: "none"
+			leadTag: guestName ? "new_lead" : "none"
 		});
 		activeConversationId = newConv.id;
 		convRef = newConv;
@@ -109,6 +109,19 @@ ${toneInstruction}`;
 		type: "text",
 		createdAt: now
 	});
+
+	// Kiểm tra mode của cuộc trò chuyện
+	const currentConvSnap = await convRef.get();
+	const convMode = currentConvSnap.exists ? currentConvSnap.data().mode : "ai_active";
+
+	if (convMode === "human_takeover") {
+		// Chủ thẻ đang tiếp quản → AI tạm dừng, không gọi OpenAI
+		return {
+			reply: null, // null báo hiệu cho FE biết AI đang tắt
+			conversationId: activeConversationId,
+			mode: "human_takeover"
+		};
+	}
 
 	try {
 		const response = await openai.chat.completions.create({

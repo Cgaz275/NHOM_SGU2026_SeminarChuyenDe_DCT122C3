@@ -12,6 +12,7 @@ interface AITwinChatWidgetProps {
   onOpenReport: () => void;
   messages: ChatMessage[];
   isTyping: boolean;
+  isHumanTakeover?: boolean;
 }
 
 export function AITwinChatWidget({
@@ -23,6 +24,7 @@ export function AITwinChatWidget({
   onOpenReport,
   messages,
   isTyping,
+  isHumanTakeover = false,
 }: AITwinChatWidgetProps) {
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -80,6 +82,16 @@ export function AITwinChatWidget({
           Đây là trợ lý AI đại diện cho {profileName}. Nó có thể không phải là người thật.
         </p>
       </div>
+
+      {/* Human Takeover Banner */}
+      {isHumanTakeover && (
+        <div className="bg-green-500/10 border-b border-green-500/20 px-6 py-2 flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
+          <p className="text-xs text-green-400 font-medium">
+            👤 {profileName} đang trực tiếp trò chuyện với bạn
+          </p>
+        </div>
+      )}
 
       {/* Message Area */}
       <div className="flex-1 overflow-y-auto p-6 space-y-4">
