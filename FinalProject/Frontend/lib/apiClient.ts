@@ -1,7 +1,7 @@
 import { auth } from './firebase';
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL
-  ? `${process.env.NEXT_PUBLIC_API_URL}/api/v1`
+  ? process.env.NEXT_PUBLIC_API_URL
   : 'http://latticed-willetta-subovarian.ngrok-free.dev/api/v1';
 
 /**
@@ -52,6 +52,19 @@ export async function apiClient<T>(
   try {
     console.log("📡 FE đang cố gọi API tới địa chỉ:", url);
     const response = await fetch(url, config);
+    
+    // Kiểm tra xem phản hồi có phải là JSON không
+    const contentType = response.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      const text = await response.text();
+      console.error(`API trả về HTML thay vì JSON. URL: ${url}`, text.substring(0, 200));
+      return {
+        success: false,
+        data: null,
+        message: 'Lỗi máy chủ: API trả về định dạng không hợp lệ (có thể sai đường dẫn hoặc server lỗi)',
+      };
+    }
+
     const result = await response.json();
     
     // Xử lý status >= 400
