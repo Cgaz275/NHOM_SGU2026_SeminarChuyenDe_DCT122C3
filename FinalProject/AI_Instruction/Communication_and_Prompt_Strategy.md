@@ -149,7 +149,7 @@ Nhóm sử dụng **mô hình Multi-Agent** để tối ưu hiệu quả:
 | Agent | Mô Hình | Vai Trò | Trách Nhiệm Chính |
 |-------|---------|---------|------------------|
 | **System Agent** | BuilderIO | Điều phối tổng thể | Phân tích yêu cầu, thiết kế giải pháp, review, hỗ trợ conflict |
-| **Frontend Agent** | Gemini 5.1 High | Chuyên gia Frontend | Next.js 15, React, TailwindCSS, UI/UX, Responsive, Cypress E2E |
+| **Frontend Agent** | Gemini 3.1 High | Chuyên gia Frontend | Next.js 15, React, TailwindCSS, UI/UX, Responsive, Cypress E2E |
 | **Backend Agent** | GPT-5.2-Codex | Chuyên gia Backend | Node.js, Express, Firebase, API, Auth, Business Logic, Database |
 | **Testing Agent** | BuilderIO / Gemini | Chuyên gia Kiểm thử | Test Plan, Test Cases, Automation, AI Testing, Bug Analysis |
 
@@ -163,7 +163,7 @@ Nhóm sử dụng **mô hình Multi-Agent** để tối ưu hiệu quả:
 - ✅ Điều phối workflow giữa các Agent khác
 - **Được ưu tiên dùng khi:** Cần góc nhìn tổng quan hoặc giải quyết conflict
 
-#### Frontend Agent (Gemini 5.1 High)
+#### Frontend Agent (Gemini 3.1 High)
 - ✅ Chuyên trách giao diện và trải nghiệm người dùng
 - ✅ Tuân thủ nghiêm ngặt GUI Design Document
 - ✅ Tối ưu performance, accessibility, responsive
@@ -569,7 +569,7 @@ theo phong cách trang trọng, học thuật nhưng dễ hiểu.
 - Dễ tracking, quản lý output
 
 #### 4. ✅ Kết Hợp Sức Mạnh Nhiều Agent
-- 🎨 **Gemini 5.1 High** cho Frontend/UI
+- 🎨 **Gemini 3.1 High** cho Frontend/UI
 - ⚙️ **GPT-5.2-Codex** cho Backend/Logic
 - 🏗️ **BuilderIO** để review tổng thể hoặc giải quyết vấn đề khó
 
@@ -610,7 +610,7 @@ theo phong cách trang trọng, học thuật nhưng dễ hiểu.
 | Công Cụ | Mục Đích | Vai Trò |
 |---------|----------|---------|
 | **BuilderIO** | System Agent, IDE support | Điều phối, review tổng thể |
-| **Gemini 5.1 High** | Frontend Agent | Next.js, React, TailwindCSS |
+| **Gemini 3.1 High** | Frontend Agent | Next.js, React, TailwindCSS |
 | **GPT-5.2-Codex** | Backend Agent | Node.js, Express, Firebase |
 | **Cursor.sh** | IDE integration | Viết & chỉnh sửa code trực tiếp |
 

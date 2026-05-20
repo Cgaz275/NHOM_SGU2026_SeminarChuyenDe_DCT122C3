@@ -1392,7 +1392,7 @@
                                                 362
                                             ],
                                             "type": "text",
-                                            "content": "3.3.2. Frontend Agent (Gemini 5.1 High).",
+                                            "content": "3.3.2. Frontend Agent (Gemini 3.1 High).",
                                             "score": 1.0
                                         },
                                         {
@@ -3148,7 +3148,7 @@
                                                 362
                                             ],
                                             "type": "text",
-                                            "content": "3.3.2. Frontend Agent (Gemini 5.1 High).",
+                                            "content": "3.3.2. Frontend Agent (Gemini 3.1 High).",
                                             "score": 1.0
                                         },
                                         {
@@ -9965,7 +9965,7 @@
                                                 527
                                             ],
                                             "type": "table",
-                                            "html": "<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 5.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>",
+                                            "html": "<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 3.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>",
                                             "image_path": "32cefc258eb787903c9a44f318dc2317ef058c76d8cde8b698e9f7935cb1c126.jpg"
                                         }
                                     ]
@@ -10267,7 +10267,7 @@
                                         728
                                     ],
                                     "type": "text",
-                                    "content": "3.3.2. Frontend Agent (Gemini 5.1 High)",
+                                    "content": "3.3.2. Frontend Agent (Gemini 3.1 High)",
                                     "score": 1.0
                                 }
                             ]
@@ -10622,7 +10622,7 @@
                                                 527
                                             ],
                                             "type": "table",
-                                            "html": "<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 5.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>",
+                                            "html": "<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 3.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>",
                                             "image_path": "32cefc258eb787903c9a44f318dc2317ef058c76d8cde8b698e9f7935cb1c126.jpg"
                                         }
                                     ]
@@ -10924,7 +10924,7 @@
                                         728
                                     ],
                                     "type": "text",
-                                    "content": "3.3.2. Frontend Agent (Gemini 5.1 High)",
+                                    "content": "3.3.2. Frontend Agent (Gemini 3.1 High)",
                                     "score": 1.0
                                 }
                             ]
@@ -25610,7 +25610,7 @@
                                                 284
                                             ],
                                             "type": "text",
-                                            "content": "○ Dùng Gemini 5.1 High cho Frontend/UI",
+                                            "content": "○ Dùng Gemini 3.1 High cho Frontend/UI",
                                             "score": 1.0
                                         }
                                     ]
@@ -26651,7 +26651,7 @@
                                                 284
                                             ],
                                             "type": "text",
-                                            "content": "○ Dùng Gemini 5.1 High cho Frontend/UI",
+                                            "content": "○ Dùng Gemini 3.1 High cho Frontend/UI",
                                             "score": 1.0
                                         }
                                     ]
@@ -27450,7 +27450,7 @@
                                                 165
                                             ],
                                             "type": "text",
-                                            "content": "● Gemini 5.1 High — Frontend Agent",
+                                            "content": "● Gemini 3.1 High — Frontend Agent",
                                             "score": 1.0
                                         }
                                     ]
@@ -28587,7 +28587,7 @@
                                                 165
                                             ],
                                             "type": "text",
-                                            "content": "● Gemini 5.1 High — Frontend Agent",
+                                            "content": "● Gemini 3.1 High — Frontend Agent",
                                             "score": 1.0
                                         }
                                     ]

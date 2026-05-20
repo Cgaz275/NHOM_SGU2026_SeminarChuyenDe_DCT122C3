@@ -433,7 +433,7 @@
                 0.428
             ],
             "angle": 0,
-            "content": "3.3.2. Frontend Agent (Gemini 5.1 High)....6",
+            "content": "3.3.2. Frontend Agent (Gemini 3.1 High)....6",
             "merge_prev": false
         },
         {
@@ -3359,7 +3359,7 @@
                 0.626
             ],
             "angle": 0,
-            "content": "<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 5.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>"
+            "content": "<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 3.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>"
         },
         {
             "type": "title",
@@ -9127,7 +9127,7 @@
                 0.193
             ],
             "angle": 0,
-            "content": "• Gemini 5.1 High — Frontend Agent",
+            "content": "• Gemini 3.1 High — Frontend Agent",
             "merge_prev": false
         },
         {

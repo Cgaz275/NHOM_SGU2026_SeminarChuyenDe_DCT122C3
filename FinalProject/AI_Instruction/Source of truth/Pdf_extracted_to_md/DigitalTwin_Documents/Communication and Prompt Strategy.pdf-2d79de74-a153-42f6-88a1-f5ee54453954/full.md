@@ -36,7 +36,7 @@ THÀNH PHỐ HỒ CHÍ MINH
 3.2. Phân vai trò chi tiết.. 6   
 3.3. Mô tả chi tiết vai trò. 6   
 3.3.1. System Agent (BuilderIO)... 6   
-3.3.2. Frontend Agent (Gemini 5.1 High). 6   
+3.3.2. Frontend Agent (Gemini 3.1 High). 6   
 3.3.3. Backend Agent (GPT-5.2-Codex)..   
 3.3.4. Testing Agent..   
 3.4. Quy tắc sử dụng Agent..
@@ -158,7 +158,7 @@ BuilderIO được định nghĩa là System Agent – Agent đa năng, có mặ
 
 # 3.2. Phân vai trò chi tiết
 
-<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 5.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>
+<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 3.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>
 
 # 3.3. Mô tả chi tiết vai trò
 
@@ -169,7 +169,7 @@ BuilderIO được định nghĩa là System Agent – Agent đa năng, có mặ
 ● Hỗ trợ viết tài liệu, Prompt Strategy, và điều phối workflow giữa các Agent khác.   
 ● Được ưu tiên sử dụng khi cần góc nhìn tổng quan hoặc giải quyết conflict giữa Frontend và Backend.
 
-# 3.3.2. Frontend Agent (Gemini 5.1 High)
+# 3.3.2. Frontend Agent (Gemini 3.1 High)
 
 ● Chuyên trách toàn bộ phần giao diện và trải nghiệm người dùng.
 
@@ -460,7 +460,7 @@ Viết chương [số chương] cho tài liệu [tên tài liệu] với phong c
 3. Sử dụng phiên bản (Versioning) Khi refine prompt, hãy đánh số rõ ràng (v1, v2, v3…) và tóm tắt những thay đổi đã yêu cầu.   
 4. Kết hợp sức mạnh nhiều Agent
 
-○ Dùng Gemini 5.1 High cho Frontend/UI   
+○ Dùng Gemini 3.1 High cho Frontend/UI   
 ○ Dùng GPT-5.2-Codex cho Backend/Logic   
 ○ Dùng BuilderIO để review tổng thể hoặc giải quyết vấn đề khó.
 
@@ -484,7 +484,7 @@ Không tiếp tục refine vô thời hạn với cùng một prompt kém. Hãy 
 # 8.1. Công cụ chính được sử dụng
 
 ● BuilderIO — System Agent (Agent đa năng, điều phối tổng thể)   
-● Gemini 5.1 High — Frontend Agent   
+● Gemini 3.1 High — Frontend Agent   
 ● GPT-5.2-Codex — Backend Agent   
 ● Cursor.sh — Hỗ trợ viết và chỉnh sửa code trực tiếp trong IDE
 
