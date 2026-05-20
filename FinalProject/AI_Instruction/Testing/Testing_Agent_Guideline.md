@@ -980,15 +980,15 @@ npm run test:coverage -- --coverage-reporters=html
   "testUsers": [
     {
       "id": "user_test_1",
-      "email": "test@mail.com",
-      "password": "TestPass123!",
-      "name": "Test User",
+      "email": "pikachu@gmail.com",
+      "password": "12345678",
+      "name": "Pikachu User",
       "role": "user"
     },
     {
       "id": "admin_test_1",
-      "email": "admin@mail.com",
-      "password": "AdminPass123!",
+      "email": "admin@gmail.com",
+      "password": "12345678",
       "name": "Admin User",
       "role": "admin"
     }
