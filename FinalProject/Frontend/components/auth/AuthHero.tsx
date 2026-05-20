@@ -14,7 +14,7 @@ export function AuthHero() {
       
       <div className="relative w-full aspect-square max-h-[500px] rounded-[32px] overflow-hidden shadow-[0_0_40px_rgba(35,103,162,0.15)] border border-white/5">
         <Image
-          src="/login/ai.jpg"
+          src="/login/ai_Nero_AI_Image_Upscaler_Photo_Face.png"
           alt="AI Digital Twin"
           fill
           className="object-cover"
