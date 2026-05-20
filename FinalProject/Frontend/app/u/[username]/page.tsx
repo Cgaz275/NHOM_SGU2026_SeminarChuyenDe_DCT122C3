@@ -34,6 +34,55 @@ import {
 } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
 
+const mapCardToProfile = (card: any, username: string): PublicProfile => {
+  return {
+    id: card.id,
+    username: card.slug || username,
+    name: card.fullName || 'No Name',
+    role: card.jobTitle || 'No Title',
+    slogan: card.slogan || '',
+    bio: card.bio || '',
+    skills:
+      card.aiConfig?.knowledgeBase?.skills?.map((s: any) => s.name) || [],
+    socialLinks: Object.entries(card.socialLinks || {})
+      .filter(([_, url]) => url && (url as string).trim() !== '')
+      .map(([platform, url]) => ({
+        id: platform,
+        platform,
+        url: url as string,
+        iconName: platform,
+      })),
+    featuredProjects:
+      card.aiConfig?.knowledgeBase?.projects?.map((p: any) => ({
+        id: p.id,
+        title: p.projectName || p.title || 'Dự án',
+        dateRange:
+          p.startDate && p.endDate
+            ? `${p.startDate} - ${p.endDate}`
+            : p.startDate || '',
+        description: p.description || '',
+        tags: p.tags || [],
+      })) || [],
+    experience:
+      card.aiConfig?.knowledgeBase?.experiences?.map((e: any) => ({
+        id: e.id,
+        company: e.companyName || '',
+        dateRange:
+          e.startDate && e.endDate
+            ? `${e.startDate} - ${e.endDate}`
+            : e.startDate || '',
+        description: e.description || '',
+      })) || [],
+    avatarUrl: card.avatarUrl,
+    aiStatus:
+      card.aiStatus === 'AI Ready' && card.aiConfig?.isAiPaused !== true
+        ? 'ai_ready'
+        : 'ai_disabled',
+    aiDisplayName: card.aiConfig?.aiDisplayName,
+    greetingMessage: card.aiConfig?.greetingMessage,
+  };
+};
+
 export default function PublicProfilePage() {
   const params = useParams();
   const username = params?.username as string;
@@ -89,52 +138,7 @@ export default function PublicProfilePage() {
         }
         const card = res.data;
 
-        const data: PublicProfile = {
-          id: card.id,
-          username: card.slug || username,
-          name: card.fullName || 'No Name',
-          role: card.jobTitle || 'No Title',
-          slogan: card.slogan || '',
-          bio: card.bio || '',
-          skills:
-            card.aiConfig?.knowledgeBase?.skills?.map((s: any) => s.name) || [],
-          socialLinks: Object.entries(card.socialLinks || {})
-            .filter(([_, url]) => url && (url as string).trim() !== '')
-            .map(([platform, url]) => ({
-              id: platform,
-              platform,
-              url: url as string,
-              iconName: platform,
-            })),
-          featuredProjects:
-            card.aiConfig?.knowledgeBase?.projects?.map((p: any) => ({
-              id: p.id,
-              title: p.projectName || p.title || 'Dự án',
-              dateRange:
-                p.startDate && p.endDate
-                  ? `${p.startDate} - ${p.endDate}`
-                  : p.startDate || '',
-              description: p.description || '',
-              tags: p.tags || [],
-            })) || [],
-          experience:
-            card.aiConfig?.knowledgeBase?.experiences?.map((e: any) => ({
-              id: e.id,
-              company: e.companyName || '',
-              dateRange:
-                e.startDate && e.endDate
-                  ? `${e.startDate} - ${e.endDate}`
-                  : e.startDate || '',
-              description: e.description || '',
-            })) || [],
-          avatarUrl: card.avatarUrl,
-          aiStatus:
-            card.aiStatus === 'AI Ready' && card.aiConfig?.isAiPaused !== true
-              ? 'ai_ready'
-              : 'ai_disabled',
-          aiDisplayName: card.aiConfig?.aiDisplayName,
-          greetingMessage: card.aiConfig?.greetingMessage,
-        };
+        const data = mapCardToProfile(card, username);
 
         setProfile(data);
         setPageState('published');
@@ -201,6 +205,21 @@ export default function PublicProfilePage() {
 
     fetchProfile();
   }, [username]);
+
+  // Lắng nghe thay đổi hồ sơ thời gian thực
+  useEffect(() => {
+    if (!profile?.id || !db) return;
+
+    const cardRef = doc(db, 'cards', profile.id);
+    const unsubscribe = onSnapshot(cardRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const updatedCard = { id: snapshot.id, ...snapshot.data() };
+        setProfile(mapCardToProfile(updatedCard, username));
+      }
+    });
+
+    return () => unsubscribe();
+  }, [profile?.id, username]);
 
   // Lắng nghe tin nhắn thời gian thực (bao gồm tin từ chủ thẻ khi tiếp quản)
   useEffect(() => {

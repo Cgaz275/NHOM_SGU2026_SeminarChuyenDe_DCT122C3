@@ -42,6 +42,7 @@ export async function apiClient<T>(
   headers.set('ngrok-skip-browser-warning', 'true');
 
   const config: RequestInit = {
+    cache: 'no-store', // Ngăn chặn trình duyệt và Next.js cache dữ liệu cũ
     ...options,
     headers,
   };
