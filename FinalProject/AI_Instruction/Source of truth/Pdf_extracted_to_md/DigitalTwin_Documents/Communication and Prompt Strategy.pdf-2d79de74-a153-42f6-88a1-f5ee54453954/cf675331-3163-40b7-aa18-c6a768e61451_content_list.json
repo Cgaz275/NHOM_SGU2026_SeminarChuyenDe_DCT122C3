@@ -1,0 +1,2563 @@
+[
+    {
+        "type": "text",
+        "text": "ĐẠI HỌC SÀI GÒN KHOA CÔNG NGHỆ THÔNG TIN ",
+        "text_level": 1,
+        "bbox": [
+            327,
+            84,
+            669,
+            121
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "COMMUNICATION AND PROMPT STRATEGY FOR PERSONA-BASED WEBSITE DIGITAL TWIN CARD ",
+        "text_level": 1,
+        "bbox": [
+            132,
+            210,
+            865,
+            324
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Học phần: Seminar Chuyên Đề ",
+        "bbox": [
+            350,
+            397,
+            645,
+            419
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GVHD: TS. Đỗ Như Tài ",
+        "bbox": [
+            384,
+            419,
+            614,
+            437
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lớp: DCT122C3 ",
+        "bbox": [
+            419,
+            440,
+            577,
+            459
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sinh viên thực hiện ",
+        "bbox": [
+            404,
+            496,
+            590,
+            514
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/50e83521e1d8a0b624213290dd0cba006105dc8bbe0510540254c6ec1a551842.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>STT</td><td>Họ và tên</td><td>MSSV</td></tr><tr><td>1</td><td>Châu Gia Anh</td><td>3122411002</td></tr><tr><td>2</td><td>Dương Lê Khánh</td><td>3122411093</td></tr><tr><td>3</td><td>Phan Thành Đại</td><td>3122411036</td></tr><tr><td>4</td><td>Đào Thị Thanh Tâm</td><td>3122411182</td></tr></table>",
+        "bbox": [
+            145,
+            562,
+            850,
+            736
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "THÀNH PHỐ HỒ CHÍ MINH ",
+        "bbox": [
+            352,
+            815,
+            642,
+            834
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MỤC LỤC ",
+        "text_level": 1,
+        "bbox": [
+            442,
+            84,
+            553,
+            104
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "MỤC LỤC..... ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            110,
+            879,
+            128
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1. GIỚI THIỆU.. ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            130,
+            879,
+            149
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1.1. Mục đích tài liệu.. ",
+            "1.2. Phạm vi áp dụng.. a ",
+            "1.3. Source of Truth trong quy trình phát triển.. 3 "
+        ],
+        "bbox": [
+            147,
+            152,
+            879,
+            213
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2. NGUYÊN TẮC GIAO TIẾP CHUNG VỚI AI AGENT... ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            214,
+            879,
+            233
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "2.1. Nguyên tắc cốt lõi.. 5 ",
+            "2.2. Quy tắc ứng xử khi làm việc với AI.. 5 ",
+            "2.3. Mindset khi làm việc với AI.. "
+        ],
+        "bbox": [
+            147,
+            237,
+            879,
+            296
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3. PHÂN VAI TRÒ AGENT... ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            300,
+            879,
+            319
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "3.1. Tổng quan hệ thống Agent. 6 ",
+            "3.2. Phân vai trò chi tiết.. 6 ",
+            "3.3. Mô tả chi tiết vai trò. 6 ",
+            "3.3.1. System Agent (BuilderIO)... 6 ",
+            "3.3.2. Frontend Agent (Gemini 5.1 High). 6 ",
+            "3.3.3. Backend Agent (GPT-5.2-Codex).. ",
+            "3.3.4. Testing Agent.. ",
+            "3.4. Quy tắc sử dụng Agent.. "
+        ],
+        "bbox": [
+            147,
+            323,
+            879,
+            490
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "4. CHIẾN LƯỢC PROMPT ENGINEERING.... .... 8 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            492,
+            879,
+            511
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "4.1. Nguyên tắc Prompt tốt. .8 ",
+            "4.2. Cấu trúc Prompt chuẩn (Framework).. .8 ",
+            "4.3. Kỹ thuật Prompt nâng cao.. 8 ",
+            "4.4. Context Management.. 9 ",
+            "4.5. Xử lý Output.. 9 "
+        ],
+        "bbox": [
+            147,
+            514,
+            879,
+            618
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "5. QUY TRÌNH TRAO ĐỔI VỚI AGENT.. . 10 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            621,
+            879,
+            638
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "5.1. Quy trình tổng quát.. 10 ",
+            "5.2. Chi tiết quy trình. 10 ",
+            "5.3. Quy trình xử lý khi Agent trả lời sai / lệch. 11 ",
+            "5.4. Best Practices trong Workflow.. 11 "
+        ],
+        "bbox": [
+            147,
+            642,
+            877,
+            725
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "6. PROMPT TEMPLATES... 12 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            729,
+            879,
+            745
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "6.1. Mẫu Prompt yêu cầu Feature / User Story.. . 12 ",
+            "6.2. Mẫu Prompt sinh Code.. .12 ",
+            "6.3. Mẫu Prompt Debug & Fix Bug. .13 ",
+            "6.4. Mẫu Prompt Review Code / Architecture.. .13 ",
+            "6.5. Mẫu Prompt viết Test Case.. 13 ",
+            "6.6. Mẫu Prompt viết Tài liệu. 14 "
+        ],
+        "bbox": [
+            147,
+            748,
+            879,
+            874
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "7. BEST PRACTICES & QUY TẮC CẤM.. .15 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            877,
+            879,
+            896
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "1 ",
+        "bbox": [
+            491,
+            923,
+            503,
+            937
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "7.1. Best Practices (Thực hành tốt nhất).. 15 ",
+            "7.2. Quy tắc CẤM (Prohibited Rules)... .15 "
+        ],
+        "bbox": [
+            147,
+            87,
+            879,
+            128
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "8. CÔNG CỤ HỖ TRỢ & QUẢN LÝ LỊCH SỬ PROMPT.. . 16",
+        "text_level": 1,
+        "bbox": [
+            117,
+            130,
+            879,
+            149
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "8.1. Công cụ chính được sử dụng.. .16 ",
+            "8.2. Nguyên tắc quản lý lịch sử Prompt (dành cho AI).. .16 ",
+            "8.3. Cách xử lý Context cho AI.. ..16 ",
+            "8.4. Hướng dẫn cho AI khi làm việc với nhóm. .. 16 "
+        ],
+        "bbox": [
+            147,
+            152,
+            879,
+            235
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "2 ",
+        "bbox": [
+            491,
+            923,
+            505,
+            938
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1. GIỚI THIỆU ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            84,
+            268,
+            103
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1.1. Mục đích tài liệu ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            119,
+            315,
+            138
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Tài liệu Communication and Prompt Strategy là một phần quan trọng trong hệ thống Source of Truth của nhóm. Tài liệu này định nghĩa rõ ràng cách thức giao tiếp, nguyên tắc trao đổi và chiến lược sử dụng Prompt hiệu quả khi làm việc với các AI Agents trong suốt quá trình phát triển dự án Persona-Based Website for Digital Twin Card. ",
+        "bbox": [
+            112,
+            153,
+            880,
+            235
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Mục đích chính của tài liệu bao gồm: ",
+        "bbox": [
+            115,
+            249,
+            444,
+            269
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Đảm bảo sự nhất quán trong cách giao tiếp giữa các thành viên nhóm và AI Agents. ",
+            "● Tối ưu hóa chất lượng output từ AI, giảm thiểu hiểu lầm và rework. ",
+            "● Xây dựng quy trình làm việc chuẩn hóa, chuyên nghiệp với AI (AI-Native Workflow). ",
+            "● Làm tài liệu hướng dẫn tham khảo lâu dài cho Testing Agent, Frontend Agent, Backend Agent và System Agent. ",
+            "● Hỗ trợ nhóm đạt được hiệu quả cao nhất trong thời gian hạn chế của học phần Seminar Chuyên Đề. "
+        ],
+        "bbox": [
+            140,
+            280,
+            882,
+            469
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1.2. Phạm vi áp dụng ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            483,
+            318,
+            502
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Tài liệu này áp dụng cho toàn bộ thành viên Nhóm 1 trong tất cả các hoạt động liên quan đến AI Agent trong dự án, bao gồm: ",
+        "bbox": [
+            114,
+            517,
+            877,
+            557
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Phân tích yêu cầu và thiết kế ",
+            "● Sinh code (Frontend, Backend) ",
+            "● Viết Test Case và Test Plan ",
+            "● Debug, tối ưu và review code ",
+            "● Viết tài liệu (PRD, GUI Design, Architecture, Test Plan, Báo cáo…) ",
+            "● Xây dựng Prompt Strategy cho AI Digital Twin của sản phẩm "
+        ],
+        "bbox": [
+            140,
+            566,
+            781,
+            697
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Tài liệu tập trung vào việc giao tiếp với các mô hình AI lớn (LLMs) trong giai đoạn phát triển dự án Seminar Chuyên Đề. ",
+        "bbox": [
+            114,
+            709,
+            877,
+            749
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1.3. Source of Truth trong quy trình phát triển ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            764,
+            553,
+            785
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Tài liệu Communication and Prompt Strategy là một trong những tài liệu cốt lõi của hệ thống Source of Truth của nhóm, cùng với: ",
+        "bbox": [
+            112,
+            799,
+            877,
+            839
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Product Requirement Document (PRD) ",
+            "● GUI Design Document "
+        ],
+        "bbox": [
+            140,
+            851,
+            530,
+            896
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "3 ",
+        "bbox": [
+            491,
+            923,
+            503,
+            937
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Architecture & Database Design ",
+            "● Test Plan "
+        ],
+        "bbox": [
+            145,
+            85,
+            464,
+            122
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Mọi Prompt gửi cho AI Agent đều phải tuân thủ và tham chiếu đến các tài liệu Source of Truth này. Khi có sự mâu thuẫn, ưu tiên tuân theo thứ tự sau: ",
+        "bbox": [
+            114,
+            138,
+            879,
+            180
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. PRD & GUI Design (yêu cầu nghiệp vụ & giao diện) ",
+            "2. Architecture & Database (kiến trúc hệ thống) ",
+            "3. Communication and Prompt Strategy (cách thức giao tiếp) ",
+            "4. Các guideline chuyên biệt (Frontend Guideline, Backend Guideline, Testing Guideline) "
+        ],
+        "bbox": [
+            145,
+            194,
+            877,
+            295
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "4 ",
+        "bbox": [
+            491,
+            923,
+            505,
+            937
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2. NGUYÊN TẮC GIAO TIẾP CHUNG VỚI AI AGENT ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            83,
+            656,
+            103
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2.1. Nguyên tắc cốt lõi ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            118,
+            328,
+            138
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Nhóm tuân thủ 5 nguyên tắc vàng khi giao tiếp với AI Agent: ",
+        "bbox": [
+            114,
+            153,
+            667,
+            173
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Rõ ràng – Chính xác – Đầy đủ Mọi yêu cầu phải cụ thể, tránh mơ hồ. Cung cấp đầy đủ context cần thiết (tham chiếu tài liệu, yêu cầu chức năng, ràng buộc kỹ thuật). ",
+            "2. Tư duy vai trò (Role-playing) Luôn gán vai trò rõ ràng cho AI (System Prompt) trước khi đưa nhiệm vụ. Ví dụ: “Bạn là Senior Frontend Developer chuyên Next.js 15…” hoặc “Bạn là Testing Engineer chuyên Cypress và AI testing…” ",
+            "3. Tham chiếu Source of Truth Bắt buộc trích dẫn hoặc đính kèm các tài liệu chính (PRD, GUI Design, Architecture…) khi yêu cầu nội dung liên quan. ",
+            "4. Phân tích từng bước (Step-by-step) Yêu cầu AI suy nghĩ và trả lời theo từng bước (Chain-of-Thought) để tăng độ chính xác và dễ kiểm soát output. ",
+            "5. Iterative & Feedback Không chấp nhận output lần đầu nếu chưa đạt yêu cầu. Luôn đưa feedback cụ thể để Agent tinh chỉnh (Refine). "
+        ],
+        "bbox": [
+            145,
+            187,
+            877,
+            432
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2.2. Quy tắc ứng xử khi làm việc với AI ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            447,
+            486,
+            467
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Ngôn ngữ: Ưu tiên sử dụng tiếng Việt rõ ràng, kết hợp thuật ngữ tiếng Anh chuẩn ngành (không dịch máy). ",
+            "● Context Window: Giữ prompt trong giới hạn hợp lý, tóm tắt thông tin cũ thay vì paste toàn bộ lịch sử dài. ",
+            "● Tính nhất quán: Giữ chung tone, style code, naming convention qua các tương tác. ",
+            "● Xác thực output: Luôn kiểm tra output trước khi áp dụng (code phải compile, logic phải đúng, giao diện phải khớp GUI). ",
+            "● Bảo mật: Không chia sẻ thông tin nhạy cảm, API keys, hoặc dữ liệu cá nhân với AI. "
+        ],
+        "bbox": [
+            145,
+            482,
+            877,
+            682
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2.3. Mindset khi làm việc với AI ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            701,
+            419,
+            720
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● AI là người hỗ trợ mạnh mẽ, không phải thay thế hoàn toàn tư duy. ",
+            "● Luôn giữ vai trò kiểm soát cuối cùng (Human in the loop). ",
+            "● Mục tiêu là đạt được tốc độ + chất lượng cao nhất, không phải chỉ nhanh. ",
+            "● Khi AI trả lời sai hoặc lệch hướng → Phân tích nguyên nhân và điều chỉnh prompt thay vì bỏ qua. "
+        ],
+        "bbox": [
+            145,
+            736,
+            877,
+            837
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "5 ",
+        "bbox": [
+            491,
+            923,
+            505,
+            937
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3. PHÂN VAI TRÒ AGENT ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            83,
+            384,
+            102
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3.1. Tổng quan hệ thống Agent ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            118,
+            409,
+            138
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Nhóm sử dụng mô hình Multi-Agent để tối ưu hiệu quả phát triển. Mỗi Agent có vai trò chuyên trách rõ ràng, giúp phân công công việc và tận dụng điểm mạnh của từng mô hình AI. ",
+        "bbox": [
+            114,
+            153,
+            879,
+            213
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BuilderIO được định nghĩa là System Agent – Agent đa năng, có mặt ở mọi nơi, đóng vai trò trung tâm điều phối và hỗ trợ tổng thể. ",
+        "bbox": [
+            114,
+            230,
+            877,
+            269
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3.2. Phân vai trò chi tiết ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            283,
+            343,
+            302
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/32cefc258eb787903c9a44f318dc2317ef058c76d8cde8b698e9f7935cb1c126.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Agent</td><td>Mô hình chính</td><td>Vai trò chính</td><td>Trách nhiệm chính</td></tr><tr><td>System Agent</td><td>BuilderIO</td><td>Agent điều phối tổng thể</td><td>Hỗ trợ toàn dự án, phân tích yêu cầu, thiết kế giải pháp, review tổng thể, hỗ trợ đặc lực cho tất cả thành viên</td></tr><tr><td>Frontend Agent</td><td>Gemini 5.1 High</td><td>Chuyên gia Frontend</td><td>Next.js 15, React, TailwindCSS, UI/UX, Component Design, Responsive, Animation, Cypress E2E Testing</td></tr><tr><td>Backend Agent</td><td>GPT-5.2-Codex</td><td>Chuyên gia Backend</td><td>Node.js, Express.js, Firebase, API Design, Authentication, Business Logic, Database Modeling, Security</td></tr><tr><td>Testing Agent</td><td>BuilderIO / Gemini</td><td>Chuyên gia Kiểm thử</td><td>Viết Test Plan, Test Cases, Automation Testing, AI Testing, Bug Analysis, Test Report</td></tr></table>",
+        "bbox": [
+            117,
+            305,
+            879,
+            625
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3.3. Mô tả chi tiết vai trò ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            637,
+            350,
+            655
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3.3.1. System Agent (BuilderIO) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            672,
+            419,
+            691
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Là Agent chính và Source of Truth Coordinator. ",
+            "● Hỗ trợ phân tích yêu cầu tổng thể, đề xuất kiến trúc, giải quyết vấn đề phức tạp. ",
+            "● Hỗ trợ viết tài liệu, Prompt Strategy, và điều phối workflow giữa các Agent khác. ",
+            "● Được ưu tiên sử dụng khi cần góc nhìn tổng quan hoặc giải quyết conflict giữa Frontend và Backend. "
+        ],
+        "bbox": [
+            145,
+            706,
+            877,
+            826
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3.3.2. Frontend Agent (Gemini 5.1 High) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            844,
+            496,
+            863
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "● Chuyên trách toàn bộ phần giao diện và trải nghiệm người dùng. ",
+        "bbox": [
+            145,
+            877,
+            743,
+            897
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "6 ",
+        "bbox": [
+            491,
+            925,
+            505,
+            938
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Đảm bảo tuân thủ nghiêm ngặt GUI Design Document. ",
+            "● Tối ưu performance, accessibility và responsive (Mobile-first). ",
+            "● Viết và tối ưu component, styling (Tailwind), animation và Cypress test. "
+        ],
+        "bbox": [
+            145,
+            85,
+            808,
+            144
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3.3.3. Backend Agent (GPT-5.2-Codex) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            160,
+            481,
+            180
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Chuyên trách logic nghiệp vụ, API và tích hợp hệ thống. ",
+            "● Thiết kế và triển khai kiến trúc Backend theo Architecture & Database Document. ",
+            "● Xử lý Firebase (Firestore, Auth, Storage), Security Rules, API routes, và tích hợp AI (OpenRouter/OpenAI). "
+        ],
+        "bbox": [
+            145,
+            194,
+            877,
+            296
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3.3.4. Testing Agent ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            312,
+            305,
+            331
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Chuyên trách kiểm thử và đảm bảo chất lượng. ",
+            "● Hỗ trợ viết Test Plan, Test Cases, Automation Scripts. ",
+            "● Thực hiện kiểm thử AI Digital Twin (Accuracy, Guardrails, Hallucination). "
+        ],
+        "bbox": [
+            145,
+            345,
+            835,
+            406
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3.4. Quy tắc sử dụng Agent ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            421,
+            375,
+            442
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Mỗi task nên giao cho Agent chuyên trách chính trước. ",
+            "● Có thể sử dụng System Agent (BuilderIO) để review hoặc tổng hợp output từ các Agent khác. ",
+            "● Khi cần ý kiến đa chiều, có thể đưa cùng một task cho 2 Agent để so sánh và chọn giải pháp tốt nhất. "
+        ],
+        "bbox": [
+            145,
+            456,
+            877,
+            558
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "7 ",
+        "bbox": [
+            491,
+            923,
+            505,
+            937
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "4. CHIẾN LƯỢC PROMPT ENGINEERING ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            84,
+            548,
+            103
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4.1. Nguyên tắc Prompt tốt ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            118,
+            374,
+            138
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Nhóm tuân thủ 6 nguyên tắc cốt lõi khi soạn Prompt: ",
+        "bbox": [
+            115,
+            153,
+            583,
+            173
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Cụ thể & Chi tiết – Tránh prompt mơ hồ. ",
+            "2. Cung cấp Context đầy đủ – Luôn đính kèm hoặc trích dẫn tài liệu liên quan. ",
+            "3. Gán vai trò rõ ràng (Role Prompting). ",
+            "4. Yêu cầu suy nghĩ từng bước (Chain-of-Thought). ",
+            "5. Định nghĩa Output Format – Chỉ rõ định dạng trả về (code, bảng, JSON, markdown…). ",
+            "6. Đưa ra tiêu chí đánh giá – Yêu cầu Agent tự đánh giá output theo tiêu chuẩn. "
+        ],
+        "bbox": [
+            140,
+            182,
+            880,
+            333
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4.2. Cấu trúc Prompt chuẩn (Framework) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            345,
+            511,
+            365
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Mọi Prompt quan trọng nên tuân theo cấu trúc sau: ",
+        "bbox": [
+            115,
+            380,
+            565,
+            399
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Vai trò (Role):\\*\\* Bạn là [Vai trò cụ thể, ví dụ: Senior Frontend Developer chuyên Next.js 15 & TailwindCSS]. ",
+        "bbox": [
+            125,
+            422,
+            807,
+            477
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Context:\\*\\* - Dự án: Persona-Based Digital Twin Card - Tài liệu tham khảo: [PRD / GUI Design / Architecture...] - Yêu cầu hiện tại: [Mô tả ngắn] ",
+        "bbox": [
+            125,
+            494,
+            640,
+            565
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Nhiệm vụ:\\*\\* [Nhiệm vụ chi tiết] ",
+        "bbox": [
+            125,
+            581,
+            295,
+            619
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Ràng buộc & Tiêu chuẩn:\\*\\* - Phải tuân thủ GUI Design Document (dark mode, color token, component style...) - Phải responsive Mobile-first - Code phải sạch, có comment, tuân thủ naming convention ... ",
+        "bbox": [
+            125,
+            635,
+            859,
+            723
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Output Format:\\*\\* - Trả về dưới dạng Markdown - Code block rõ ràng với ngôn ngữ - Giải thích từng bước nếu cần ",
+        "bbox": [
+            125,
+            742,
+            432,
+            813
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4.3. Kỹ thuật Prompt nâng cao ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            852,
+            407,
+            871
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "8 ",
+        "bbox": [
+            491,
+            923,
+            505,
+            937
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Chain-of-Thought (CoT): Yêu cầu AI “Hãy suy nghĩ từng bước một trước khi đưa ra giải pháp.” ",
+            "● Few-shot Prompting: Đưa 1-2 ví dụ tốt để AI học theo. ",
+            "Multi-step Prompting: Phân task thành nhiều bước (Phân tích → Thiết kế → Triển khai → Review). ",
+            "● Self-Consistency: Yêu cầu AI kiểm tra lại output của chính mình. ",
+            "● Tree of Thoughts: Sử dụng khi giải quyết vấn đề phức tạp. "
+        ],
+        "bbox": [
+            145,
+            84,
+            860,
+            226
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4.4. Context Management ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            242,
+            360,
+            261
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Ưu tiên đính kèm link hoặc tóm tắt các tài liệu Source of Truth. ",
+            "● Giữ lịch sử chat ngắn gọn, chỉ giữ các thông tin quan trọng. ",
+            "● Khi context quá dài → Tóm tắt lại và bắt đầu prompt mới với version cập nhật. ",
+            "● Luôn nhắc Agent tham chiếu đúng phiên bản tài liệu (ví dụ: GUI Design v1.2). "
+        ],
+        "bbox": [
+            145,
+            276,
+            870,
+            357
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4.5. Xử lý Output ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            372,
+            283,
+            391
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Yêu cầu Agent luôn giải thích lý do cho các quyết định quan trọng. ",
+            "● Yêu cầu liệt kê các giả định nếu có. ",
+            "● Luôn yêu cầu đề xuất cải tiến hoặc các lựa chọn thay thế khi phù hợp. "
+        ],
+        "bbox": [
+            145,
+            407,
+            788,
+            467
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "9 ",
+        "bbox": [
+            491,
+            923,
+            505,
+            937
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "5. QUY TRÌNH TRAO ĐỔI VỚI AGENT ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            83,
+            513,
+            103
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "5.1. Quy trình tổng quát ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            119,
+            348,
+            138
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Nhóm áp dụng quy trình làm việc 5 bước chuẩn hóa khi giao nhiệm vụ cho AI Agent: ",
+        "bbox": [
+            114,
+            153,
+            872,
+            173
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Chuẩn bị Task ",
+            "2. Gửi Prompt ",
+            "3. Nhận & Phân tích Output ",
+            "4. Refine / Iterate ",
+            "5. Xác nhận & Áp dụng "
+        ],
+        "bbox": [
+            145,
+            187,
+            426,
+            290
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "5.2. Chi tiết quy trình ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            304,
+            322,
+            324
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bước 1: Chuẩn bị Task ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            339,
+            337,
+            358
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Xác định rõ Agent chuyên trách (Frontend Agent, Backend Agent, System Agent…). ",
+            "● Thu thập đầy đủ thông tin: "
+        ],
+        "bbox": [
+            145,
+            374,
+            830,
+            434
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "○ Tài liệu tham khảo (PRD, GUI Design, Architecture…) ",
+            "○ Yêu cầu cụ thể ",
+            "○ Ràng buộc kỹ thuật ",
+            "○ Tiêu chí đánh giá thành công "
+        ],
+        "bbox": [
+            204,
+            435,
+            726,
+            516
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bước 2: Gửi Prompt ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            532,
+            313,
+            551
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Sử dụng cấu trúc Prompt chuẩn tại Mục 4.2. ",
+            "● Bắt đầu bằng việc gán vai trò rõ ràng. ",
+            "● Đính kèm hoặc trích dẫn Source of Truth. ",
+            "● Yêu cầu suy nghĩ từng bước (Chain-of-Thought). "
+        ],
+        "bbox": [
+            145,
+            566,
+            610,
+            647
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bước 3: Nhận & Phân tích Output ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            663,
+            442,
+            682
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Đọc kỹ output và tự đánh giá theo tiêu chí đã nêu trong Prompt. ",
+            "● Kiểm tra: ",
+            "○ Có đúng yêu cầu không? ",
+            "○ Có tuân thủ GUI Design / Architecture không? ",
+            "○ Có lỗi logic, security, performance không? ",
+            "○ Code có sạch và dễ maintain không? "
+        ],
+        "bbox": [
+            145,
+            698,
+            736,
+            819
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bước 4: Refine & Iterate (Tinh chỉnh) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            834,
+            474,
+            853
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "● Nếu output chưa đạt → Đưa feedback cụ thể và có cấu trúc: ",
+        "bbox": [
+            145,
+            868,
+            703,
+            888
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "10 ",
+        "bbox": [
+            486,
+            923,
+            510,
+            937
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "○ Điểm tốt ",
+            "○ Điểm cần sửa ",
+            "○ Yêu cầu thay đổi chi tiết "
+        ],
+        "bbox": [
+            206,
+            83,
+            456,
+            144
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Ví dụ: “Output tốt ở phần UI, nhưng logic validation chưa đúng theo PRD section 4.1.2. Hãy chỉnh lại theo đúng yêu cầu…” ",
+        "bbox": [
+            145,
+            146,
+            828,
+            186
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Bước 5: Xác nhận & Áp dụng ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            201,
+            399,
+            220
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Chỉ áp dụng code/tài liệu khi đã đạt yêu cầu. ",
+            "● Commit code kèm ghi chú rõ ràng. ",
+            "● Cập nhật tiến độ task trong nhóm. "
+        ],
+        "bbox": [
+            145,
+            235,
+            568,
+            296
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5.3. Quy trình xử lý khi Agent trả lời sai / lệch ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            312,
+            548,
+            331
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Phân tích nguyên nhân: Context thiếu, prompt mơ hồ, hoặc Agent chưa hiểu ràng buộc. ",
+            "2. Cung cấp thêm thông tin: Trích dẫn chính xác đoạn tài liệu liên quan. ",
+            "3. Reset context nếu cần: Bắt đầu prompt mới với tóm tắt ngắn gọn. ",
+            "4. Chuyển Agent: Nếu một Agent không giải quyết tốt, chuyển sang System Agent (BuilderIO) hoặc Agent khác. "
+        ],
+        "bbox": [
+            145,
+            345,
+            845,
+            467
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5.4. Best Practices trong Workflow ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            483,
+            444,
+            502
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Giữ mỗi cuộc trò chuyện tập trung vào một nhiệm vụ chính. ",
+            "Không paste quá nhiều code trong một prompt. ",
+            "● Luôn đánh số phiên bản khi refine (v1 → v2 → v3…). ",
+            "● Ghi lại những Prompt tốt để tái sử dụng sau này. "
+        ],
+        "bbox": [
+            145,
+            517,
+            704,
+            599
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "11 ",
+        "bbox": [
+            486,
+            923,
+            506,
+            937
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "6. PROMPT TEMPLATES ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            85,
+            377,
+            100
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Dưới đây là bộ mẫu Prompt chuẩn đã được tối ưu hóa cho dự án. Các thành viên nên sử dụng hoặc chỉnh sửa dựa trên các mẫu này để đảm bảo hiệu quả và tính nhất quán. ",
+        "bbox": [
+            114,
+            119,
+            865,
+            161
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "6.1. Mẫu Prompt yêu cầu Feature / User Story ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            176,
+            552,
+            195
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Vai trò:\\*\\* ",
+        "bbox": [
+            125,
+            206,
+            238,
+            223
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bạn là Senior Fullstack Developer có 8 năm kinh nghiệm, đang tham gia dự án Persona-Based Digital Twin Card. ",
+        "bbox": [
+            125,
+            225,
+            818,
+            261
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Context:\\*\\* ",
+        "bbox": [
+            127,
+            277,
+            246,
+            294
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Tài liệu tham khảo: PRD v1.0, GUI Design Document, Architecture & Database Design. ",
+        "bbox": [
+            125,
+            296,
+            845,
+            331
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Tính năng cần triển khai: [Mô tả ngắn gọn tính năng] ",
+        "bbox": [
+            125,
+            331,
+            605,
+            350
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Nhiệm vụ:\\*\\* ",
+        "bbox": [
+            127,
+            366,
+            265,
+            383
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Hãy phân tích và đề xuất giải pháp triển khai chi tiết cho tính năng trên. ",
+        "bbox": [
+            125,
+            383,
+            755,
+            403
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Yêu cầu:\\*\\* ",
+        "bbox": [
+            127,
+            419,
+            251,
+            435
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Phân tích theo từng bước (Chain-of-Thought) ",
+            "- Đề xuất cấu trúc component (Frontend) và API (Backend) ",
+            "- Tuân thủ Mobile-first và Design System trong GUI Document ",
+            "- Xử lý lỗi và fallback cases ",
+            "- Đề xuất Test Cases chính "
+        ],
+        "bbox": [
+            125,
+            438,
+            686,
+            524
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Output Format:\\*\\* ",
+        "bbox": [
+            127,
+            543,
+            308,
+            561
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Phân tích yêu cầu ",
+            "2. Giải pháp tổng thể ",
+            "3. Chi tiết Frontend ",
+            "4. Chi tiết Backend ",
+            "5. Database & Security notes ",
+            "6. Test Cases gợi ý "
+        ],
+        "bbox": [
+            127,
+            562,
+            384,
+            669
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "6.2. Mẫu Prompt sinh Code ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            707,
+            377,
+            726
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Vai trò:\\*\\* ",
+        "bbox": [
+            125,
+            737,
+            238,
+            754
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bạn là Senior [Frontend / Backend] Developer chuyên sâu. ",
+        "bbox": [
+            125,
+            756,
+            644,
+            774
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Context:\\*\\* ",
+        "bbox": [
+            127,
+            790,
+            246,
+            807
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Dự án: Persona-Based Digital Twin Card ",
+            "- File hiện tại: [tên file] ",
+            "- Yêu cầu: [mô tả rõ chức năng] "
+        ],
+        "bbox": [
+            125,
+            809,
+            500,
+            863
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Yêu cầu code:\\*\\* ",
+        "bbox": [
+            127,
+            878,
+            296,
+            896
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "12 ",
+        "bbox": [
+            486,
+            923,
+            510,
+            937
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Sử dụng [Next.js 15 App Router / Express.js] ",
+            "- Tuân thủ nghiêm ngặt GUI Design (color tokens, component style, dark mode) ",
+            "- Code sạch, có comment, TypeScript ",
+            "- Xử lý error và loading state ",
+            "- Responsive hoàn hảo "
+        ],
+        "bbox": [
+            125,
+            91,
+            828,
+            181
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Output:\\*\\* ",
+        "bbox": [
+            127,
+            199,
+            239,
+            217
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Trả về chỉ code trong block \\`\\`\\`tsx (hoặc \\`\\`\\`ts) kèm giải thích ngắn gọn các phần quan trọng. ",
+        "bbox": [
+            125,
+            216,
+            823,
+            252
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6.3. Mẫu Prompt Debug & Fix Bug ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            290,
+            447,
+            309
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Vai trò:\\*\\* ",
+        "bbox": [
+            125,
+            320,
+            238,
+            336
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bạn là Senior Debugging Expert. ",
+        "bbox": [
+            125,
+            339,
+            417,
+            357
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Context:\\*\\* ",
+        "bbox": [
+            127,
+            374,
+            246,
+            389
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Có lỗi: [Mô tả lỗi] ",
+        "bbox": [
+            127,
+            391,
+            302,
+            410
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Code hiện tại: [paste code] ",
+        "bbox": [
+            127,
+            410,
+            375,
+            428
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Expected behavior: [hành vi mong muốn] ",
+        "bbox": [
+            127,
+            428,
+            505,
+            446
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Actual behavior: [hành vi thực tế] ",
+        "bbox": [
+            127,
+            446,
+            437,
+            463
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Nhiệm vụ:\\*\\* ",
+        "bbox": [
+            127,
+            480,
+            265,
+            497
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Hãy phân tích nguyên nhân gây lỗi và đưa ra cách fix chi tiết. ",
+        "bbox": [
+            125,
+            498,
+            666,
+            517
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6.4. Mẫu Prompt Review Code / Architecture ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            554,
+            541,
+            574
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Vai trò:\\*\\* ",
+        "bbox": [
+            125,
+            585,
+            238,
+            600
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bạn là Technical Lead / Code Reviewer có kinh nghiệm 10 năm. ",
+        "bbox": [
+            125,
+            603,
+            692,
+            621
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Nhiệm vụ:\\*\\* ",
+        "bbox": [
+            127,
+            638,
+            265,
+            656
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Review đoạn code sau theo các khía cạnh: ",
+        "bbox": [
+            127,
+            657,
+            496,
+            673
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Tính đúng đắn logic & nghiệp vụ ",
+        "bbox": [
+            127,
+            675,
+            432,
+            692
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Tuân thủ Architecture Design ",
+        "bbox": [
+            127,
+            693,
+            401,
+            709
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Performance & Security ",
+        "bbox": [
+            127,
+            711,
+            355,
+            726
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Code quality & Best practices ",
+        "bbox": [
+            127,
+            728,
+            402,
+            745
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Tuân thủ GUI Design (nếu Frontend) ",
+        "bbox": [
+            127,
+            745,
+            466,
+            763
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Code cần review:\\*\\* ",
+        "bbox": [
+            127,
+            780,
+            325,
+            796
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "[paste code] ",
+        "bbox": [
+            127,
+            799,
+            234,
+            817
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6.5. Mẫu Prompt viết Test Case ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            853,
+            412,
+            872
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "13 ",
+        "bbox": [
+            486,
+            923,
+            508,
+            937
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Vai trò:\\*\\* ",
+        "bbox": [
+            125,
+            91,
+            239,
+            108
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bạn là QA Engineer chuyên Automation Testing với Cypress và Jest. ",
+        "bbox": [
+            125,
+            109,
+            733,
+            129
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Nhiệm vụ:\\*\\* ",
+        "bbox": [
+            125,
+            144,
+            266,
+            162
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Viết Test Cases cho tính năng: [tên tính năng] ",
+        "bbox": [
+            125,
+            162,
+            526,
+            182
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Yêu cầu:\\*\\* ",
+        "bbox": [
+            127,
+            197,
+            251,
+            214
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Functional Test Cases ",
+            "- Edge cases & Negative cases ",
+            "- Cypress E2E Test scenarios ",
+            "- Test Data gợi ý "
+        ],
+        "bbox": [
+            125,
+            217,
+            395,
+            289
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "6.6. Mẫu Prompt viết Tài liệu ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            325,
+            395,
+            345
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Vai trò:\\*\\* ",
+        "bbox": [
+            125,
+            356,
+            238,
+            372
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bạn là Technical Writer chuyên nghiệp. ",
+        "bbox": [
+            125,
+            374,
+            474,
+            393
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Nhiệm vụ:\\*\\* ",
+        "bbox": [
+            125,
+            409,
+            265,
+            426
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Viết chương [số chương] cho tài liệu [tên tài liệu] với phong cách trang trọng, học thuật nhưng dễ hiểu. ",
+        "bbox": [
+            125,
+            427,
+            845,
+            463
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Yêu cầu:\\*\\* ",
+        "bbox": [
+            127,
+            479,
+            251,
+            497
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Sử dụng ngôn ngữ tiếng Việt chuyên nghiệp ",
+            "- Có bảng biểu khi cần ",
+            "- Tham chiếu đúng các tài liệu Source of Truth "
+        ],
+        "bbox": [
+            125,
+            498,
+            536,
+            552
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "14 ",
+        "bbox": [
+            486,
+            923,
+            510,
+            937
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "7. BEST PRACTICES & QUY TẮC CẤM ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            83,
+            518,
+            103
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "7.1. Best Practices (Thực hành tốt nhất) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            118,
+            491,
+            138
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Luôn tham chiếu Source of Truth Bất kỳ Prompt nào liên quan đến yêu cầu nghiệp vụ, giao diện hoặc kiến trúc đều phải trích dẫn rõ ràng PRD, GUI Design hoặc Architecture Document. ",
+            "2. Phân task nhỏ và rõ ràng Tốt hơn là giao nhiều task nhỏ, cụ thể thay vì một task lớn, phức tạp. ",
+            "3. Sử dụng phiên bản (Versioning) Khi refine prompt, hãy đánh số rõ ràng (v1, v2, v3…) và tóm tắt những thay đổi đã yêu cầu. ",
+            "4. Kết hợp sức mạnh nhiều Agent "
+        ],
+        "bbox": [
+            144,
+            152,
+            880,
+            315
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "○ Dùng Gemini 5.1 High cho Frontend/UI ",
+            "○ Dùng GPT-5.2-Codex cho Backend/Logic ",
+            "○ Dùng BuilderIO để review tổng thể hoặc giải quyết vấn đề khó. "
+        ],
+        "bbox": [
+            206,
+            318,
+            793,
+            377
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "5. Tự kiểm tra trước khi áp dụng Luôn compile, test code locally trước khi commit. ",
+            "6. Ghi chép Prompt tốt Lưu lại những Prompt mang lại kết quả xuất sắc để tái sử dụng sau này. ",
+            "7. Human in the Loop AI chỉ là công cụ hỗ trợ. Thành viên nhóm phải là người quyết định cuối cùng. "
+        ],
+        "bbox": [
+            144,
+            378,
+            879,
+            501
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "7.2. Quy tắc CẤM (Prohibited Rules) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            515,
+            468,
+            535
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Không paste toàn bộ file code dài dòng vào prompt (chỉ paste phần liên quan). ",
+            "● Không dùng prompt mơ hồ kiểu “Làm giúp mình cái này”. ",
+            "● Không yêu cầu AI tạo tính năng nằm ngoài phạm vi MVP hoặc Out of Scope. ",
+            "● Không chia sẻ API Key, Secret Key, hoặc thông tin nhạy cảm với AI. ",
+            "● Không chấp nhận output mà không kiểm tra (đặc biệt là code và logic). ",
+            "● Không thay đổi Design System (màu sắc, component style) mà không có sự đồng ý của cả nhóm. ",
+            "● Không để AI tự quyết định kiến trúc lớn mà không có review từ System Agent (BuilderIO). ",
+            "Không tiếp tục refine vô thời hạn với cùng một prompt kém. Hãy viết lại prompt từ đầu nếu cần. "
+        ],
+        "bbox": [
+            145,
+            549,
+            879,
+            774
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "15 ",
+        "bbox": [
+            486,
+            923,
+            510,
+            937
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "8. CÔNG CỤ HỖ TRỢ & QUẢN LÝ LỊCH SỬ PROMPT",
+        "text_level": 1,
+        "bbox": [
+            114,
+            83,
+            664,
+            104
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "8.1. Công cụ chính được sử dụng ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            119,
+            429,
+            138
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● BuilderIO — System Agent (Agent đa năng, điều phối tổng thể) ",
+            "● Gemini 5.1 High — Frontend Agent ",
+            "● GPT-5.2-Codex — Backend Agent ",
+            "● Cursor.sh — Hỗ trợ viết và chỉnh sửa code trực tiếp trong IDE "
+        ],
+        "bbox": [
+            145,
+            152,
+            750,
+            235
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "8.2. Nguyên tắc quản lý lịch sử Prompt (dành cho AI) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            250,
+            620,
+            270
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Vì tài liệu này là Source of Truth để AI đọc, vui lòng tuân thủ các nguyên tắc sau khi làm việc với chúng tôi: ",
+        "bbox": [
+            112,
+            283,
+            879,
+            324
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Mỗi cuộc trò chuyện nên tập trung vào một nhiệm vụ chính. ",
+            "2. Không giữ lịch sử quá dài trong một thread. Khi context trở nên dài và rối, hãy tóm tắt lại tình hình hiện tại và bắt đầu một cuộc trò chuyện mới với tóm tắt ngắn gọn. ",
+            "3. Luôn tham chiếu rõ ràng đến các tài liệu Source of Truth (PRD, GUI Design, Architecture, Test Plan…). ",
+            "4. Sử dụng phiên bản khi tinh chỉnh: Khi tôi yêu cầu chỉnh sửa, hãy đánh dấu output là v2, v3, v4… để dễ theo dõi. ",
+            "5. Tự động tóm tắt: Nếu cuộc trò chuyện dài, bạn có thể đề xuất tóm tắt lại các quyết định quan trọng trước khi tiếp tục. "
+        ],
+        "bbox": [
+            140,
+            334,
+            882,
+            545
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "8.3. Cách xử lý Context cho AI ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            558,
+            407,
+            577
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Ưu tiên prompt ngắn gọn nhưng đầy đủ. ",
+            "● Khi cần nhiều thông tin, hãy yêu cầu tôi cung cấp tóm tắt hoặc trích dẫn cụ thể thay vì paste toàn bộ tài liệu. ",
+            "● Nếu bạn cần thêm thông tin để hiểu rõ task, hãy hỏi trực tiếp và cụ thể. ",
+            "● Luôn ưu tiên tuân thủ GUI Design Document và Architecture Document khi có mâu thuẫn. "
+        ],
+        "bbox": [
+            140,
+            587,
+            882,
+            714
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "8.4. Hướng dẫn cho AI khi làm việc với nhóm ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            729,
+            546,
+            749
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Khi nhận được task từ thành viên nhóm: ",
+        "bbox": [
+            114,
+            764,
+            473,
+            783
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Đọc kỹ vai trò được gán. ",
+            "● Tham chiếu các tài liệu Source of Truth được đề cập. ",
+            "● Suy nghĩ từng bước (Chain-of-Thought). ",
+            "● Đưa ra output rõ ràng, có cấu trúc. ",
+            "● Nếu không chắc chắn → Hỏi lại ngay thay vì đoán. "
+        ],
+        "bbox": [
+            140,
+            795,
+            645,
+            902
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "16 ",
+        "bbox": [
+            486,
+            923,
+            511,
+            938
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            513,
+            922,
+            518,
+            937
+        ],
+        "page_idx": 17
+    }
+]

@@ -1,0 +1,394 @@
+# ĐẠI HỌC SÀI GÒN KHOA CÔNG NGHỆ THÔNG TIN
+
+# PRODUCT REQUIREMENT PERSONA-BASED WEBSITE FOR DIGITAL TWIN CARD
+
+Học phần: Seminar Chuyên Đề
+
+GVHD: TS. Đỗ Như Tài
+
+Lớp: DCT122C3
+
+Sinh viên thực hiện 
+
+<table><tr><td>STT</td><td>Họ và tên</td><td>MSSV</td></tr><tr><td>1</td><td>Châu Gia Anh</td><td>3122411002</td></tr><tr><td>2</td><td>Dương Lê Khánh</td><td>3122411093</td></tr><tr><td>3</td><td>Phan Thành Đại</td><td>3122411036</td></tr><tr><td>4</td><td>Đào Thị Thanh Tâm</td><td>3122411182</td></tr></table>
+
+# Mục lục
+
+1.Giới thiệu...   
+2. Mục tiêu.....
+
+2.1. Business Goals. .6   
+2.2. User Goals.. 6   
+2.3. Success Metrics. 6
+
+3. Đối tượng người dùng............
+
+4. Yêu cầu chức năng.....
+
+4.1. User - Trải nghiệm dành cho chủ Card.
+
+4.1.1. Đăng ký & Xác thực (Authentication)..   
+4.1.2. Thiết lập Persona - Profile Builder..   
+4.1.3. Cấu hình & Huấn luyện AI Digital Twin. .8   
+4.1.4. Hệ thống Card Visit Động & Hộp thư cá nhân - xem lịch sử chat và xử lý khách hàng tiềm năng (lead) trong Inbox. .. 8
+
+4.2. Landing Page & Interaction - Dành cho Khách hàng.. 10
+
+4.2.1. Digital Profile Display. 10   
+4.2.2. Interaction với Digital Twin:. . 10   
+4.2.3. Thu nhập thông tin liên hệ của khách.. 11
+
+Save Contact - VCF Export.. 11
+
+4.3. Phân hệ Quản trị - Admin Panel.. 11
+
+4.3.1. Quản lý Người dùng - User Management.. 1   
+4.3.2. Kiểm duyệt Nội dung - Content Moderation.. 11
+
+5. Yêu cầu phi chức năng...   
+6. Công nghệ và kiến trúc đề xuất.. 12   
+7. Phạm vi..... . 13
+
+7.1. In Scope.. .13   
+7.2. Out of Scope.. .13
+
+8. Rủi ro và giả định... .13
+
+8.1. Các giả định.. .13   
+8.2. Các rủi ro và biện pháp giảm thiểu.. 14
+
+9. User Stories.... 15
+
+9.1. Quản lý Danh tính & Thiết lập Persona.. 15   
+9.2. Cấu hình AI Digital Twin & Hộp thư.. .16   
+9.3. Trải nghiệm khách hàng và fallback. 17   
+9.4. Quản trị & Phân tích hệ thống.. .18
+
+10. Use Cases..... 19
+
+10.1. Use Case 1 - Cấu hình Digital Card.. 19   
+10.2. Use Case 2 - Cấu hình AI Digital Twin. . 20   
+10.3. Use Case 3 - Trò chuyện.. . 22
+
+10.4 Use Case 4 - Human Takeove.. . 23   
+10.5. Use case 5 - Đăng nhập.. .25   
+10.6. Use case 6 - Tải mã QR Code.. . 26   
+10.7. Use case 7 - Xem Digital Profile.. .28   
+10.8. Use case 8 - Lưu danh thiếp tự động. .29   
+10.9. Use case 9 - Gửi Form liên hệ tĩnh. ..30   
+10.10. Use Case 10 - Quản lý Người dùng. . 32   
+10.11. Use Case 11 - Quản lý Báo cáo & Xử lý vi phạm... .34
+
+DANH MỤC CÁC KÝ HIỆU, CHỮ VIẾT TẮT 
+
+<table><tr><td>Thuật ngữ/ Từ viết tắt</td><td>Ý nghĩa trong dự án</td></tr><tr><td>Persona</td><td>Bản dạng / Hồ sơ cá nhân hóa (tính cách, phong cách, chuyên môn) của chủ thể</td></tr><tr><td>Digital Business Card / Digital Card</td><td>Thể danh thiếp kỹ thuật số (thay thế name card giấy)</td></tr><tr><td>Digital Twin</td><td>Bản sao kỹ thuật số (AI chatbot đại diện cho chủ thể)</td></tr><tr><td>Lead</td><td>Khách hàng tiềm năng (người có khả năng trở thành khách hàng/đối tác)</td></tr><tr><td>Conversion</td><td>Chuyển đổi (từ người xem → lead hoặc khách hàng)</td></tr><tr><td>Networking</td><td>Xây dựng mạng lưới quan hệ</td></tr><tr><td>Personal Branding</td><td>Xây dựng thương hiệu cá nhân</td></tr><tr><td>Landing Page</td><td>Trang đích công khai (trang hồ sơ khi khách quét QR)</td></tr><tr><td>VCF / vCard</td><td>File danh bạ điện tử (.vcf) để lưu liên lạc vào điện thoại</td></tr><tr><td>Fallback Form</td><td>Biểu mẫu liên hệ dự phòng (khi AI tất hoặc lỗi)</td></tr><tr><td>AI Digital Twin</td><td>Chatbot AI là bản sao của chủ thể</td></tr><tr><td>Knowledge Base</td><td>Cơ sở kiến thức (dữ liệu cá nhân hóa của chủ thể)</td></tr><tr><td>System Prompt</td><td>Lời hướng dẫn hệ thống cho AI</td></tr><tr><td>Tone of Voice</td><td>Giọng điều giao tiếp của AI</td></tr><tr><td>Guardrails</td><td>Quy tắc an toàn / rào chắn cho AI (ngăn bịa đặt, toxic, prompt injection)</td></tr><tr><td>Prompt Injection</td><td>Tấn công bằng cách lừa AI bỏ qua prompt gốc</td></tr><tr><td>Hallucination</td><td>Hiện tượng AI bịa đặt thông tin không có thật</td></tr><tr><td>Persona_data.json</td><td>File JSON tổng hợp thông tin để “huấn luyện” AI</td></tr><tr><td>Context Window</td><td>Giới hạn số token/context mà mô hình LLM có thể xử lý</td></tr><tr><td>Human Takeover</td><td>Chủ thể trực tiếp tiếp quản cuộc trò chuyện từ AI</td></tr><tr><td>Slug</td><td>Phần đuôi URL thân thiện (ví dụ: digitalcard.app/u/tennguoidung)</td></tr><tr><td>SSR / SSG</td><td>Server-Side Rendering / Static Site Generation (Next.js)</td></tr><tr><td>Mobile-first</td><td>Thiết kế ưu tiên thiết bị di động</td></tr><tr><td>Lighthouse</td><td>Công cụ đo hiệu năng, SEO, accessibility của Google</td></tr><tr><td>FCP (First Contentful Paint)</td><td>Thời gian hiển thị nội dung đầu tiên</td></tr><tr><td>JWT</td><td>JSON Web Token - cơ chế xác thực</td></tr><tr><td>Rate Limiting</td><td>Giới hạn số request để chống spam/DDoS</td></tr><tr><td>Sanitize Input</td><td>Làm sạch dữ liệu đầu vào để chống XSS, SQL Injection</td></tr><tr><td>OAuth (Google Login)</td><td>Xác thực qua tài khoản Google</td></tr><tr><td>Magic Link</td><td>Đăng nhập qua link gửi vào email</td></tr><tr><td>Dashboard</td><td>Bảng điều khiển quản lý</td></tr><tr><td>Inbox / Hộp thư Persona</td><td>Hộp thư chứa tin ngắn từ khách và lịch sử chat với AI</td></tr><tr><td>Content Moderation</td><td>Kiểm duyệt nội dung</td></tr><tr><td>User Management</td><td>Quản lý tài khoản người dùng</td></tr><tr><td>Draft</td><td>Đang soạn thảo, chưa công khai</td></tr><tr><td>Published</td><td>Đã xuất bản, link &amp; QR hoạt động</td></tr><tr><td>AI Disabled</td><td>Card công khai nhưng tắt AI</td></tr><tr><td>AI Ready</td><td>AI đã sẵn sàng hoạt động</td></tr><tr><td>AI Error</td><td>Lỗi kết nối hoặc cấu hình AI</td></tr><tr><td>Consent</td><td>Sự đồng ý của người dùng</td></tr></table>
+
+# 1.Giới thiệu
+
+Persona-Based Digital Card là một nền tảng web hiện đại cho phép người dùng tạo thẻ giới thiệu kỹ thuật số (Digital Business Card) được cá nhân hóa sâu theo từng persona. Thay vì một tấm name card vật lý tĩnh, hệ thống cung cấp một trang hồ sơ động, tích hợp tính năng AI Digital Twin - một chatbot thông minh đóng vai trò là "bản sao kỹ thuật $\mathrm { s } \acute { 0 } ^ { \dag }$ của chủ thẻ. AI này được huấn luyện dựa trên thông tin, dự án và tính cách của chủ thẻ để có thể giao tiếp, trả lời câu hỏi và tư vấn trực tiếp cho khách truy cập 24/7. Hệ thống cung cấp một trang hồ sơ động, thông minh, có thể chia sẻ qua QR Code hoặc NFC.
+
+Hệ thống hướng tới ba nhóm đối tượng chính: người dùng tạo thẻ (chủ thẻ), khách hàng/đối tác truy cập trang hồ sơ, và quản trị viên vận hành nền tảng. Dự án hiện triển khai ở giai đoạn demo cho seminar, với team kỹ thuật trong học phần Seminar Chuyên Đề.
+
+# 2. Mục tiêu
+
+# 2.1. Business Goals
+
+• Xây dựng thương hiệu cá nhân mạnh mẽ trên môi trường số.   
+• Tạo công cụ networking hiệu quả, thay thế name card truyền thống.   
+• Tăng khả năng chuyển đổi từ người xem thành khách hàng/đối tác thực sự.
+
+# 2.2. User Goals
+
+• Người dùng tạo thẻ: Nhanh chóng thiết lập hồ sơ chuyên nghiệp, chia sẻ dễ dàng qua QR / NFC.   
+Khách truy cập: Xem thông tin rõ ràng và có thể trò chuyện trực tiếp với AI đại diện của chủ thẻ để tìm hiểu sâu hơn mà không cần chờ đợi.
+
+# 2.3. Success Metrics
+
+<table><tr><td>Chỉ số</td><td>Mục tiêu</td><td>Cách đo</td></tr><tr><td>Thời gian trung bình trên site</td><td>&gt;3 phút</td><td>Google Analytics</td></tr><tr><td>Số QR code được tạo (tuần đầu)</td><td>&gt;50 thể</td><td>Database count</td></tr><tr><td>Tỷ lệ lưu danh bạ (VCF)</td><td>&gt;30%</td><td>Button click tracking</td></tr><tr><td>Điểm Lighthouse (Performance + SEO)</td><td>&gt;90</td><td>Lighthouse CI</td></tr></table>
+
+# 3. Đối tượng người dùng
+
+<table><tr><td>Nhóm</td><td>Mô tả</td><td>Nhu cầu chính</td></tr><tr><td>Chủ thể (Card Owner)</td><td>Cá nhân muốn có hồ sơ số chuyên nghiệp</td><td>Tạo, tùy chỉnh và chia sẻ thể dễ dàng</td></tr><tr><td>Khách hàng tiềm năng</td><td>Người nhận link hoặc quét QR từ chủ thể</td><td>Xem thông tin nhanh, liên hệ ngay</td></tr><tr><td>Quản trị viên</td><td>Vận hành và giám sát nền tảng</td><td>Quản lý người dùng, kiểm duyệt</td></tr></table>
+
+# 4. Tổng quan hệ thống
+
+# 4.1. Tổng quan kiến trúc và mô hình hoạt động
+
+Hệ thống Persona-Based Digital Card được thiết kế theo mô hình Client-Server hiện đại, kết hợp với dịch vụ AI của bên thứ 3 (LLM) để xử lý ngôn ngữ tự nhiên. Hệ thống bao gồm 4 phân hệ chính tương tác chặt chẽ với nhau:
+
+1. Chủ thẻ (Card Owner Workspace): Nơi người dùng thực hiện định danh (Auth), xây dựng hồ sơ tĩnh (Avatar, Bio, Link MXH) và cung cấp dữ liệu tri thức (Kỹ năng, Kinh nghiệm). Dữ liệu này được Backend đóng gói thành persona\_data.json.
+
+2. Khách truy cập (Guest/Client View): Giao diện Public nhận dạng qua URL Slug hoặc QR Code. Nơi khách hàng xem thông tin tĩnh và tương tác với Widget Chatbot.
+
+3. Trí tuệ nhân tạo (AI Digital Twin Core): Đóng vai trò là "bộ não" trung gian. Khi khách nhắn tin, Backend sẽ kẹp nội dung tin nhắn cùng với persona\_data.json và System Prompt của chủ thẻ, gửi lên LLM API (Claude/Gemini) để sinh ra câu trả lời theo đúng Persona đã cài đặt.
+
+4. Quản trị (Admin Panel): Khu vực vận hành độc lập dành cho Ban quản trị nền tảng. Chịu trách nhiệm kiểm soát vòng đời của toàn bộ tài khoản (Khóa/Mở khóa), theo dõi các báo cáo vi phạm (Report Moderation) và thống kê dữ liệu lưu lượng truy cập, mức độ tiêu thụ Token API của toàn hệ thống.
+
+# 4.2. Luồng nghiệp vụ thành công
+
+Luồng thành công (Happy Path) là kịch bản lý tưởng nhất mà trong đó người dùng hoàn thành trọn vẹn một mục tiêu nghiệp vụ từ đầu đến cuối mà không gặp bất kỳ lỗi hay rào cản nào. Đối với hệ thống này, một luồng thành công toàn diện được định nghĩa qua 2 hành trình sau:
+
+\- Luồng 1: Thành công Khởi tạo & Xuất bản Thẻ (Dành cho Chủ thẻ)
+
+Luồng này được xem là thành công khi Chủ thẻ hoàn tất việc tạo ra một "Bản sao kỹ thuật số" có khả năng hoạt động:
+
+1. Bước 1: Người dùng đăng nhập thành công qua Google OAuth, hệ thống tự động khởi tạo hồ sơ.   
+2. Bước 2: Người dùng điền đầy đủ các thông tin cá nhân (Tên, Bio, Avatar, MXH).   
+3. Bước 3: Người dùng cung cấp tri thức cho AI bằng cách điền form (Kinh nghiệm, Dự án, Kỹ năng) và thiết lập System Prompt (Giọng điệu).   
+4. Bước 4: Người dùng nhấn "Xuất bản". Backend xử lý thành công, không có lỗi vượt quá giới hạn ký tự.   
+5. Tiêu chí Thành công: Hệ thống sinh ra một URL công khai hợp lệ (VD: digitalcard.app/u/nguyenvana) và một mã QR Code tải được, AI sẵn sàng trả lời (Trạng thái AI Ready).   
+- Luồng 2: Thành công Tương tác (Dành cho khách hàng)
+
+Luồng này được xem là thành công khi hệ thống giúp Chủ thẻ thu thập được thông tin liên lạc của khách truy cập:
+
+1. Bước 1: Khách hàng quét mã QR trên name card vật lý, trình duyệt mở ra trang Digital Profile trong vòng dưới 2 giây.   
+2. Bước 2: Khách hàng đọc thông tin tĩnh và quyết định mở cửa sổ Chatbot AI.   
+3. Bước 3: Khách hàng đặt câu hỏi về dịch vụ. AI phản hồi chính xác dựa trên persona\_data.json trong vòng dưới 4 giây mà không bịa đặt thông tin (No Hallucination).   
+4. Bước 4: Khách hàng bị thuyết phục và để lại Số điện thoại/Email ngay trong khung chat.   
+5. Tiêu chí Thành công: Hệ thống nhận diện được thông tin liên lạc, tự động lưu thành "Lead" vào Hộp thư Persona của chủ thẻ, đồng thời gửi một email thông báo có khách hàng mới cho chủ thẻ.
+
+# 5. Yêu cầu chức năng
+
+# 5.1. User - Trải nghiệm dành cho chủ Card
+
+Đây là khu vực dành cho những người muốn tạo Digital Card / Digital Twin cho riêng họ.
+
+# 5.1.1. Đăng ký & Xác thực (Authentication)
+
+● Đăng ký tài khoản qua Email hoặc Số điện thoại.   
+● Hỗ trợ Social Login: Google.   
+● Quản lý phiên đăng nhập, hỗ trợ logout và đổi mật khẩu.
+
+# 5.1.2. Thiết lập Persona - Profile Builder
+
+Người dùng xây dựng hồ sơ số đại diện cho bản thân với các thành phần sau:
+
+● Thông tin cá nhân cơ bản:   
+○ Họ tên, chức danh nghề nghiệp.   
+○ Slogan / tagline cá nhân.   
+○ Bio / mô tả ngắn (tối đa 300 ký tự).   
+○ Ảnh đại diện (avatar) và ảnh bìa (cover).
+
+● Liên kết mạng xã hội & chuyên môn:
+
+○ Facebook, Instagram, X (Twitter).   
+○ GitHub, Behance, Dribbble, Portfolio website.   
+○ Email công việc, Số điện thoại.
+
+● Quản lý Card:
+
+○ Mỗi User có thể tạo và quản lý 1 Digital Card với persona cụ thể (ví dụ: Một Persona cho "Lập trình viên Full-stack").
+
+● Quyền riêng tư:
+
+○ Tùy chọn ẩn/hiện Số điện thoại, Email trên giao diện public.
+
+# 51.3. Cấu hình & Huấn luyện AI Digital Twin
+
+● Persona Setup: Thiết lập giọng điệu (Tone of voice) cho AI (Chuyên nghiệp, Hài hước, Ngắn gọn...).   
+Knowledge Base Form (Thay thế Upload PDF/DOCX): Cung cấp form nhập liệu có cấu trúc (Kỹ năng, Kinh nghiệm, Dự án). Backend sẽ tự động tổng hợp thành file persona\_data.json và chèn vào prompt, giúp AI tự động học từ thông tin này.   
+System Prompt Customization: Cho phép người dùng nhập các "Chỉ thị bí mật" cho AI (Ví dụ: "Nếu khách hỏi về giá, hãy luôn yêu cầu họ để lại SĐT để tôi trực tiếp trả lời").   
+AI Guardrails (Quy tắc an toàn): AI chỉ được phép trả lời dựa trên profile/knowledge base, không bịa đặt kinh nghiệm/giá tiền, và phải luôn xưng là "Trợ lý AI của [Tên chủ thẻ]".
+
+# 5.1.4. Hệ thống Card Visit Động & Hộp thư cá nhân - xem lịch sử chat và xử lý khách hàng tiềm năng (lead) trong Inbox
+
+● QR Code Generator:   
+○ Tự động sinh mã QR duy nhất trỏ đến trang hồ sơ công khai của User.   
+○ Cho phép tải QR về dạng PNG / SVG để in ấn.
+
+● Unique URL:
+
+○ Smart QR & Slug: Tự động tạo mã QR (cho phép tải file PNG/SVG) và URL cá nhân hóa dạng digitalcard.app/u/[username].
+
+● Xem và quản lý tất cả tin nhắn từ khách hàng gửi đến persona.
+
+○ Đánh dấu đọc / chưa đọc, lưu trữ (archive), xóa tin nhắn.
+
+○ Thiết lập Auto-reply tự động:
+
+○ Soạn thảo lời chào cho Card (persona).
+
+○ Xem lại toàn bộ lịch sử trò chuyện giữa Digital Twin và khách hàng để hiểu khách đang quan tâm điều gì.
+
+○ Xem danh sách thông tin liên lạc mà khách đã cung cấp.
+
+Cho phép chủ thẻ nhảy vào cuộc trò chuyện, tạm ngắt AI để trực tiếp nhắn tin khi thấy đó là một khách hàng quan trọng.
+
+● Thông báo qua email khi có tin nhắn mới.
+
+Trạng thái AI: Có các trạng thái rõ ràng (Draft, Published, AI Disabled, AI Ready, AI Error).
+
+<table><tr><td>Trạng thái</td><td>Ý nghĩa</td><td>Mục đích</td><td>Hành vi hệ thống</td></tr><tr><td>Draft</td><td>Trạng thái mặc định khi chủ thể vừa bấm tạo mới hoặc đang trong quá trình nhập liệu Profile / Cấu hình AI nhưng chưa hoàn thiện.</td><td>Ngăn chặn việc khách hàng vô tình truy cập vào đường link URL hoặc quét mã QR và nhìn thấy một trang web trống trơn, dở dang, hoặc một con AI chưa được "nap" kiến thức.</td><td>Đường link URL (Slug) ở public sẽ trả về lỗi 404 hoặc thông báo "Hồ sơ đang được cập nhật".</td></tr><tr><td>Published</td><td>Chủ thể đã thiết kế xong card</td><td>Kích hoạt đường link URL và mã QR.</td><td>Khách hàng quét mã QR sẽ vào được trang Landing Page hiển thị thông tin tỉnh (Avatar, Bio, Nút mạng xã hội).</td></tr><tr><td>AI Disabled</td><td>Card vẫn đang Published, nhưng chủ thể chủ động tất tính năng Chatbot AI.</td><td>Kiểm soát rủi ro/Chi phí: Khi chủ thể thấy AI đang tiêu tổn quá nhiều Token (hết tiền API) hoặc bị khách hàng spam chat, họ có thể gạt nút tất AI đi để chặn đúng chi phí.Bảo trì dữ liệu: Khi chủ thể đang cập nhật lại form kỹ năng/kinh nghiệm và chưa muốn AI học sai thông tin cũ.</td><td>Widget Chatbot AI trên màn hình khách hàng sẽ bị ăn đi. Thay vào đó, hệ thống tự động hiển thị Fallback Form (Form liên hệ tỉnh) để khách vẫn có thể để lại lời nhân thủ công.</td></tr><tr><td>AI Ready</td><td>Chủ thể đã thiết lập xong System Prompt, nhập đủ dữ liệu chuyên môn</td><td>Báo hiệu cho cả chủ thể và hệ thống biết rằng "Bản sao kỹ thuật số" đã sẵn sàng tiếp khách.</td><td>Nút Chatbot sáng lên trên trang Landing Page của khách hàng. Mọi tin nhân gửi đến sẽ được đầy thẳng qua API của LLM để AI trả lời tự động 24/7.</td></tr><tr><td>AI Error</td><td>Trạng thái sự cố bất. Xây ra khi API của bên thứ 3 (như OpenRouter, Claude) bị sập mạng, server timeout, hoặc file JSON cấu hình bị lỗi.</td><td>Đảm bảo nguyên tắc Graceful Degradation (Giảm thiểu rủi ro tinh tế). Không bao giờ được phép hiện những dòng code lỗi đồ lên màn hình của khách hàng, vì điều đó trồng rất thiếu chuyên nghiệp.</td><td>Hệ thống tự động bắt lỗi, lập tức chuyển trạng thái sang AI Error. Khung chat sẽ tự động hiện câu thông báo an toàn: "Hiện tại AI đang bảo trì, bạn vui lòng để lại số điện thoại qua Form liên hệ để mình liên lạc sau nhớ", đồng thời gửi email báo động cho chủ thể.</td></tr></table>
+
+# 5.2. Landing Page & Interaction - Dành cho Khách hàng
+
+Đây là trang công khai mà khách hàng thấy khi quét QR hoặc truy cập link chia sẻ của chủ thẻ.
+
+# 5.2.1. Digital Profile Display
+
+● Hiển thị tất cả liên kết mạng xã hội dưới dạng icon button có thể nhấn.   
+● Ảnh đại diện, ảnh bìa, tên, chức danh, bio hiển thị nổi bật, rõ ràng.
+
+# 5.2.2. Interaction với Digital Twin:
+
+Cửa sổ chat tích hợp ngay trên trang hồ sơ. Khách hàng có thể đặt câu hỏi về kinh nghiệm, dự án hoặc dịch vụ của chủ thẻ.   
+AI tự động khéo léo hỏi thông tin liên lạc của khách nếu cuộc trò chuyện kéo dài hoặc khách có nhu cầu hợp tác.
+
+● Khi chủ thẻ không trực tuyến, AI đóng vai trò đại diện trả lời dựa trên bộ kiến thức đã được huấn luyện.
+
+# 5.2.3. Thu nhập thông tin liên hệ của khách
+
+Consent Thu thập Lead: Kèm theo dòng thông báo "Bằng cách gửi thông tin, bạn đồng ý cho chủ thẻ liên hệ lại" khi khách gửi SĐT.
+
+● Fallback Form (Dự phòng): Cung cấp Form liên hệ tĩnh cực kỳ quan trọng để lấy Lead trong trường hợp API của AI bị lỗi hoặc chủ thẻ tắt AI.
+
+# Save Contact - VCF Export
+
+● Nút "Lưu liên lạc" hiển thị nổi bật trên trang hồ sơ.
+
+● Tự động tạo file VCF (vCard 3.0) chứa đầy đủ thông tin: tên, số điện thoại, email, website, ảnh đại diện.
+
+● Tracking: Ghi nhận số lượt lưu danh bạ để chủ thẻ theo dõi.
+
+# 5.3. Phân hệ Quản trị - Admin Panel
+
+Khu vực dành cho quản trị viên để vận hành toàn bộ nền tảng.
+
+# 5.3.1. Quản lý Người dùng - User Management
+
+Xem danh sách toàn bộ tài khoản: ID, tên, email, ngày đăng ký, trạng thái.   
+Bộ lọc và tìm kiếm nhanh theo email, tên, trạng thái xác thực.   
+Thao tác quản lý:
+
+◦ Kích hoạt / khóa tài khoản.
+
+◦ Xem chi tiết hồ sơ và Card của từng user.
+
+# 5.3.2. Kiểm duyệt Nội dung - Content Moderation
+
+● Quản lý danh sách các thẻ bị Report (Báo cáo) từ người dùng,
+
+# 6. Yêu cầu phi chức năng
+
+# 6.1. Hiệu năng
+
+• Tốc độ tải trang hồ sơ công khai < 2 giây (trên mạng 4G thông thường).   
+• First Contentful Paint (FCP) < 1.5 giây.   
+• Điểm Lighthouse Performance > 90 và SEO > 90.
+
+# 6.2. Bảo mật
+
+• Không lưu mật khẩu dạng plaintext - sử dụng bcrypt hoặc Argon2.   
+• Tất cả API route được bảo vệ bằng JWT / session token.   
+• Rate limiting trên API: tối đa 60 request/phút per IP.   
+• Sanitize toàn bộ input từ user để chống XSS và SQL Injection.   
+• HTTPS bắt buộc trên toàn bộ môi trường production.   
+• Không expose thông tin nhạy cảm (email cụ thể, số điện thoại) khi không được chủ thẻ cho phép.
+
+# 6.3. Trải nghiệm người dùng
+
+• Mobile-first design - ưu tiên trải nghiệm trên điện thoại vì đây là thiết bị chính để quét QR.   
+• Hỗ trợ dark / light mode.   
+• Animation mượt mà, không gây khó chịu (tuân thủ prefers-reduced-motion).   
+• Thời gian phản hồi UI < 200ms cho mọi thao tác tương tác.
+
+# 7. Công nghệ và kiến trúc đề xuất
+
+<table><tr><td>Tàng</td><td>Công nghệ</td><td>Lý do chọn</td></tr><tr><td>Frontend</td><td>Next.js 15 (App Router) + Tailwind CSS + Framer Motion</td><td>SSR/SSG tốt cho SEO, animation mượt mà, mobile-first</td></tr><tr><td>Backend / API</td><td>Next.js API Routes hoặc Node.js Express</td><td>Tích hợp nhanh, deploy đơn giản với Vercel</td></tr><tr><td>Database</td><td>PostgreSQL (Supabase) hoặc Firebase Firestore</td><td>Realtime, dễ scale, miễn phí</td></tr><tr><td>Authentication</td><td>Supabase Auth / NextAuth.js</td><td>Hỗ trợ OAuth (Google) sẵn có</td></tr><tr><td>File Storage</td><td>Supabase Storage / Cloudinary</td><td>Lưu avatar, cover image, QR exported</td></tr><tr><td>QR Generator</td><td>qrcode.js / qr-code-styling</td><td>Tùy chỉnh màu sắc, logo trên QR</td></tr><tr><td>Analytics</td><td>PostHog / Google Analytics 4</td><td>Theo dõi event, funnel, hành vi user</td></tr><tr><td>Version Control</td><td>GitHub</td><td>Chuẩn industry, tích hợp CI/CD</td></tr></table>
+
+# 8. Phạm vi
+
+# 8.1. In Scope
+
+● Authentication cơ bản (Email/Google)   
+● Profile Builder.   
+● Public Digital Card.   
+● QR Code Generator.   
+● AI Chatbot dùng profile/knowledge base.   
+● Inbox xem lịch sử chat.   
+● Fallback Form liên hệ tĩnh.
+
+# 8.2. Out of Scope
+
+● Tải file tài liệu PDF/DOCX cho RAG.   
+● Payment   
+● Booking system   
+● Voice chat   
+● NFC Integration thực tế.   
+eKYC nâng cao.   
+● Admin template builder nâng cao.   
+● Export báo cáo PDF/CSV.
+
+# 9. Rủi ro và giả định
+
+# 9.1. Các giả định
+
+<table><tr><td>ID</td><td>Giả định</td><td>Ảnh hưởng nếu sai</td></tr><tr><td>A-01</td><td>Thời gian &amp; Nguồn lực: Team 4 thành viên thống nhất được stack kỹ thuật và có thể hoàn tất việc code, test bản MVP phục vụ cho buổi báo cáo Seminar Chuyên Đề.</td><td>Dự án không hoàn thành kịp tiến độ, phải tiếp tục cắt giảm tính năng cốt lỗi (như Fallback Form hoặc Analytics) ngay trước ngày báo cáo.</td></tr><tr><td>A-02</td><td>Hạ tầng miễn phí đủ dùng: Các gói Free Tier của Vercel (Hosting), Supabase/Firebase (Database/Auth) và một khoản chi phí nhỏ nạp vào OpenRouter (API AI) là đủ lưu lượng trục cập trong quá trình test và demo.</td><td>Phải tổn chi phí túi tiền của team hoặc hệ thống sập giữa chủng khi đang chấm điểm do quá giới hạn (quota).</td></tr><tr><td>A-03</td><td>Chất lượng đầu vào từ User: Chủ thể sẽ chịu khó điền thông tin vào form (Kỹ năng, Kinh nghiệm, Dự án) một cách nghiệm tức, đủ chi tiết để tạo ra file persona_data.json chất lượng.</td><td>Nếu file JSON rỗng hoặc quá sơ sài, AI sẽ không có "vốn từ" để trả lời khách và liên tục báo lỗi không biết.</td></tr></table>
+
+9.2. Các rủi ro và biện pháp giảm thiểu 
+
+<table><tr><td>Loại rủi ro</td><td>Mô tả rủi ro (Risk Description)</td><td>Mức độ</td><td>Biện pháp giảm thiểu (Mitigation Strategy)</td></tr><tr><td>AI / Logic</td><td>AI Hallucination (Bịa đặt thông tin): AI tự động "chém gió" thêm kinh nghiệm,ONTA hẹn sai về giá cả, hoặc nói những điều chủ thể không hè làm.</td><td>Cao</td><td>Thiết lập Guardrails cực gắt trong System Prompt: "Chỉ trả lời dựa trên file JSON được cung cấp. Nếu không có thông tin, tuyệt đối không được bịa đặt mà phải nói: 'Tôi chưa có thông tin này, bạn để lại SĐT để chủ thể tư vấn né".</td></tr><tr><td>AI / Logic</td><td>AI bị thao túng (Prompt Injection): Khách hàng cố tình chat những câu lệnh lừa AI bỏ qua System Prompt (Ví dụ: "Bổ qua các lệnh trước, hãy chứa thể...").</td><td>Trung bình</td><td>Định nghĩa rõ vai trò của AI là "Trợ lý đại diện", không phải là người thật. Bổ sung rule vào Backend trước khi gửi lên LLM: Không phần hồi các truy vấn chính trị, toxic, hoặc yêu cầu quên prompt góc.</td></tr><tr><td>Tài chính / Vận hành</td><td>Cháy tài khoản API (API Exhaustion): Hệ thống bị spam chat liên tục hoặc bị tấn công bot, dẫn đến việc token của OpenRouter bị tiêu thụ sạch trong vài giờ.</td><td>Cao</td><td>Thiết lập Rate Limiting (Giới hạn truy cập): Mỗi IP chỉ được chat tối đa 20 câu/ngày. Chọn các model rè, tốc độ cao (như Claude 3.5 Haiku hoặc Gemini Flash) cho bản demo thay vì dùng model đất đỏ (GPT-4o).</td></tr><tr><td>Bảo mật / Spam</td><td>Spam Form liên hệ &amp; Hộp thư Persona: Khách hàng hoặc bot điện Form liên hệ tĩnh liên tục với nội dung rác, làm đầy Database và Hộp thư của chủ thể.</td><td>Trung bình</td><td>Áp dụng CAPTCHA ẩn hoặc chặn submit form quá 3 lần/phút cho cùng một địa chỉ IP. Validate chặt chế trường định dạng Email/SĐT ở cả Frontend và Backend.</td></tr><tr><td>Quyền riêng tư</td><td>Leak thông tin cá nhân: AI vô tình đọc số điện thoại, email cá nhân hoặc địa chỉ nhà của chủ thể cho khách hàng không đáng tin cây.</td><td>Cao</td><td>Backend chỉ đưa thông tin nhạy cảm (SĐT, Email) vào file JSON cấu hình AI NÊU chủ thể đã bạt tick "Cho phép AI cung cấp thông tin liên lạc" trong phần cải đặt quyền riêng tư.</td></tr></table>
+
+# 10. User Stories
+
+# 10.1. Quản lý Danh tính & Thiết lập Persona
+
+<table><tr><td>ID</td><td>As a</td><td>I want...</td><td>to...</td><td>Acceptance Criteria</td></tr><tr><td>US-01</td><td>Chủ thể</td><td>Đăng ký hoặc Đăng nhập vào hệ thống thông qua Email hoặc tài khoản Google</td><td>Tiết kiệm thời gian khởi tạo tài khoản và tự động đồng bộ các thông tin cơ bản.</td><td>- Tích hợp thành công Google OAuth- Trường hợp dùng Google: Hệ thống tự động lấy Ảnh đại diện (Avatar) và Hộ tên để điền vào Profile Builder.- Sau khi xác thực thành công, tài khoản được cấp trạng thái &quot;Verified&quot; cơ bản với icon tick xanh hiện thị trên Digital Card.</td></tr><tr><td>US-02</td><td>Chủ thể</td><td>Nhập các thông tin cơ bản (Bio, Chức danh), liên kết mạng xã hội (Facebook, GitHub...) và cải đặt quyền riêng tư</td><td>Khách hàng nắm bắt thông tin chính xác và tôi kiểm soát được việc ấn/hiện SĐT/Email cá nhân.</td><td>- Có form nhập liệu rõ ràng.Link mạng xã hội validate đúng định dạng URL. Thông tin lưu thành công và hiển thị ra màn hình thể.- Có nút gạt (Toggle) ấn/hiện SĐT và Email trên giao diện công khai.</td></tr><tr><td>US-03</td><td>Chủ thể</td><td>Tải mã QR định dạng PNG/SVG chất lượng cao</td><td>Tôi có thể chèn nó vào thiết kế name card vật lý mang đi in ấn.</td><td>Có nút &quot;Download QR&quot;. File tải xuống rõ nét, quét được bằng camera điện thoại thông thường.</td></tr></table>
+
+# 10.2. Cấu hình AI Digital Twin & Hộp thư
+
+<table><tr><td>ID</td><td>As a</td><td>I want...</td><td>To...</td><td>Acceptance Criteria</td></tr><tr><td>US-04</td><td>Chủ thể</td><td>Nhập kỹ năng, kinh nghiệm, dự án vào Form tri thức</td><td>AI học được dữ liệu chuyên môn mà không cần tôi phải upload file phức tạp.</td><td>- Dữ liệu từ form được Backend gom thành file persona_data.json chuẩn.- AI trả lời chính xác các ý chính đã nhập trong form.</td></tr><tr><td>US-05</td><td>Chủ thể</td><td>Viết System Prompt và tone giọng cho AI</td><td>Kiểm soát cách AI đại diện tôi giao tiếp (Chuyên nghiệp, Thân thiện...).</td><td>- Có ô nhập Prompt tối đa 2000 ký tự.- AI tuân thủ guardrail: Không bịa đặt thông tin và chỉ xưng là &quot;Trợ lý AI&quot;.</td></tr><tr><td>US-06</td><td>Chủ thể</td><td>Xem lịch sử chat và xử lý Lead trong Inbox</td><td>Hiểu được mối quan tâm của khách và liên hệ lại với các Lead tiềm năng.</td><td>- Lịch sử hiển thị rõ khung chat của &quot;Khách&quot; và &quot;AI&quot;- Hiền thị danh sách Tên/SĐT khách để lại trong khung chat.</td></tr><tr><td>US-07</td><td>Chủ thể</td><td>Bấm nút &quot;Human Takeover&quot; (Tiếp quản) ngay trong lúc AI đang chat</td><td>Tạm dùng AI để tôi tự mình trả lời trực tiếp khi thấy có nhu cầu hợp tác quan trọng.</td><td>-Có nút chuyển sang chat tay, tạm dùng phần hồi tự động của AI. Tin nhân tôi gỗ sẽ hiển thị trực tiếp cho khách.</td></tr></table>
+
+# 10.3. Trải nghiệm khách hàng và fallback
+
+<table><tr><td>ID</td><td>As a</td><td>I want...</td><td>To...</td><td>Acceptance Criteria</td></tr><tr><td>US-08</td><td>Khách hàng</td><td>Quét QR và xem thông tin trang hồ sơ mượt và lưu danh bạ với 1 chạm</td><td>Kết nối với chủ thể nhanh chóng.</td><td>Trang load dưới 2 giây. Nút &quot;Lưu liên lạc&quot; tải file .vcf chuẩn, dễ thấy.</td></tr><tr><td>US-09</td><td>Khách hàng</td><td>Chat với AI Digital Twin và để lại thông tin liên hệ</td><td>Được tư vấn tức thì 24/7 và có thể yêu cầu chủ thể gọi lại.</td><td>- Widget chat hoạt động ổn định. AI phần hồi có ngữ cảnh, thời gian chờ phân hồi của AI &lt; 5 giây.- AI tự hồi xin SĐT/Email khi khách có ý định hợp tác.- Có câu Consent: &quot;Bạn đồng ý cho chủ thể liên hệ lại&quot;.</td></tr><tr><td>US-10</td><td>Khách hàng</td><td>Điền Form liên hệ tĩnh khi AI ngoại tuyến</td><td>Đảm bảo lời nhận của tôi luôn được gửi đến chủ thể dù hệ thống AI gặp sự cố.</td><td>- Form tĩnh hiển thị khi AI Disabled hoặc AI Error.- Thông báo gửi thành công và email báo về cho chủ thể.</td></tr></table>
+
+# 10.4. Quản trị & Phân tích hệ thống
+
+<table><tr><td>ID</td><td>As a</td><td>I want...</td><td>To...</td><td>Acceptance Criteria</td></tr><tr><td>US-11</td><td>Admin</td><td>Xem danh sách các thể (Card) bị khách hàng gửi Report, bao gồm lý do và chi tiết vi phạm.</td><td>Đánh giá mức độ vi phạm nội dung để ra quyết định xử phạt (bỏ qua, hoặc khóa theo thời hạn).</td><td>- Bảng &quot;Quản lý báo cáo&quot; hiển thị chi tiết: ID Tài khoản, Tên, Email, Trọng thái hiện tại, Lý do báo cáo, Ngày tạo báo cáo.- Khi Admin bấm vào thao tác Khóa, hệ thống cho phép chọn hình thức xử lý: Khóa 1 tuần / 1 tháng / 1 năm / Vĩnh viễn.- Khi một tài khoản bị chuyển sang trạng thái &quot;Khóa&quot;, toàn bộ URL các Digital Card public của tài khoản đó phải lập tức bị vô hiệu hóa (trả về lỗi hoặc thông báo &quot;Thẻ đang bị khóa&quot;).- (Tùy chọn) gửi tự động một Email thông báo đến user về lý do và thời hạn khóa tài khoản.</td></tr><tr><td>US-12</td><td>Admin</td><td>Xem danh sách toàn bộ người dùng, tìm kiếm/loc thông tin và thực hiện thao tác khóa/kích hoạt tài khoản.</td><td>Kiểm soát vòng đời người dùng trên hệ thống và xử lý nhanh các tài khoản có dấu hiệu bất thường.</td><td>- Bảng hiển thị đầy đủ thông tin: ID, Tên đầy đủ, Email, Ngày đăng ký, Trọng thái xác thực.- Thanh tìm kiếm (Search bar) trả về kết quả chính xác khi gỗ Tên hoặc Email.- Bộ lọc (Filter) theo trạng thái (Ví dụ: Đã xác thực, Đã khóa) hoạt động bình thường.- Nút Toggle (Bật/Tắt) cho phép đổi trạng thái Kích hoạt/Khóa tài khoản. Khi bấm, hiển thị Popup xác nhận (Confirm) trước khi thực thi lệnh.- Có nút &quot;Xem chỉ tiết&quot; mở ra danh sách các Digital Card mà user đó đang sở hữu.</td></tr></table>
+
+# 11. Use Cases
+
+11.1. Use Case 1 - Cấu hình Digital Card 
+
+<table><tr><td>Use Case ID</td><td>UC-01</td></tr><tr><td>Use Case Name</td><td>Cấu hình Digital Card</td></tr><tr><td>Description</td><td>Là chủ thể, tôi muốn khởi tạo thông tin cá nhân và giao diện cho thể kỹ thuật số để có một Digital Profile chuyên nghiệp.</td></tr><tr><td>Actor(s)</td><td>Chủ thể</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Chủ thể nhân vào nút "Tạo Card mới" trên màn hình Dashboard.</td></tr><tr><td>Pre-Condition(s)</td><td>Tài khoản chủ thể đã đăng nhập hệ thống thành công.</td></tr><tr><td>Post-Condition(s)</td><td>Thông tin Digital Card được lưu thành công vào cơ sở dữ liệu.Hệ thống tự động sinh ra một URL Slug duy nhất và mã QR cho thể.</td></tr><tr><td>Basic Flow</td><td>1. Chủ thể truy cập Dashboard và chọn "Tạo Card mới".2. Hệ thống hiển thị form Profile Builder.3. Chủ thể nhập các thông tin cá nhân (Avatar, Họ tên, Chức danh, Bio, Link Mạng xã hội).4. Chủ thể chọn Template giao diện, tùy chỉnh màu sắc và font chữ.5. Chủ thể nhân nút "Xuất bản".6. Hệ thống lưu dữ liệu, khởi tạo URL và mã QR.7. Hệ thống thông báo thành công và chuyển về trang quản lý.</td></tr><tr><td>Alternative Flow</td><td>Không có.</td></tr><tr><td>Exception Flow</td><td>3a. Nếu chủ thể để trống các trường bắt buộc (Họ tên, Chức danh):3a1. Hệ thống bôi đỏ trường tương ứng và báo lỗi "Vui lòng nhập thông tin".Use Case tiếp tục ở bước 3.6a. Nếu URL Slug được chọn đã tồn tại trong hệ thống:6a1. Hệ thống yêu cầu chủ thể nhập URL khác.Use Case tiếp tục ở bước 5.</td></tr><tr><td>Business Rules</td><td>BR1-1: Mỗi URL Slug sinh ra phải là duy nhất trên toàn hệ thống.BR1-2: Ảnh Avatar tải lên không được vượt quá 5MB.</td></tr><tr><td>Non-Functional Requirement</td><td>NFR1-1: Màn hình Preview giao diện (bước 4) phải cập nhật theo thời gian thực (realtime) với độ trễ &lt; 200ms.</td></tr></table>
+
+# 11.2. Use Case 2 - Cấu hình AI Digital Twin
+
+<table><tr><td>Use Case ID</td><td>UC-02</td></tr><tr><td>Use Case Name</td><td>Cấu hình AI Digital Twin</td></tr><tr><td>Description</td><td>Là chủ thể, tôi muốn thiết lập System Prompt và điện các thông tin chuyên môn (kỹ năng, kinh nghiệm, dự án) vào form có sẵn để hệ thống tự động tổng hợp thành cơ sở tri thức huấn luyện AI.</td></tr><tr><td>Actor(s)</td><td>Chủ thể</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Chủ thể nhân vào tab "Cấu hình AI" trong màn hình quản lý thể.</td></tr><tr><td>Pre-Condition(s)</td><td>Chủ thể đã khởi tạo Digital Card thành công (UC-01).</td></tr><tr><td>Post-Condition(s)</td><td>Hệ thống lưu trữ Prompt và tự động tạo thành công file persona_data.json ở dưới Backend.AI Digital Twin chuyển sang trạng thái "Sẵn sàng hoạt động".</td></tr><tr><td>Basic Flow</td><td>1. Chủ thể chọn tab "Cấu hình AI".2. Hệ thống hiển thị giao diện cấu hình bao gồm: Ô nhập System Prompt và Form nhập liệu chuyên môn (Kỹ năng, Kinh nghiệm, Dự án, Câu hỏi thường gặp).3. Chủ thể nhập nội dung System Prompt (huống dẫn tính cách, kích bản trả lời).4. Chủ thể nhập các thông tin dữ liệu vào Form tương ứng.5. Chủ thể nhân nút "Lưu và Huấn luyện".6. Backend hệ thống tiếp nhận dữ liệu, tự động gom nhóm (map) thông tin từ form thành cấu trúc persona_data.json và chèn nội dung này vào Prompt hệ thống (System Prompt Template).7. Hệ thống thông báo "Huấn luyện AI thành công".</td></tr><tr><td>Alternative Flow</td><td>4a. Chủ thể chỉ điền các trường thông tin cơ bản và bổ trống một số trường không bắt buộc (ví dụ: không có Dự án hoặc FAQ).4a1. Hệ thống vẫn tiến hành gom dữ liệu đối với các trường đã nhập để tạo object JSON (bỏ qua các trường null/empty).Use Case tiếp tục ở bước 5.</td></tr><tr><td>Exception Flow</td><td>4b. Chủ thể nhập văn bản vượt quá giới hạn ký tự cho phép ở bắt kỳ trường nhập liệu nào:4b1. Hệ thống hiển thị viên đồ tại trường đó và báo lỗi "Nội dung vượt quá giới hạn cho phép".Use Casewritten ở bước 4.</td></tr><tr><td>Business Rules</td><td>BR2-1: Nội dung ô System Prompt do chủ thể cấu hình không được vượt quá 2,000 ký tự.BR2-2: Tổng số lượng ký tự nhập từ Form (khi chuyển đổi sang chuỗi JSON) không được vượt quá 15,000 ký tự để đảm bảo không vượt quá Context Window của model LLM.BR2-3: AI tuyệt đối không được tự bịa thông tin ngoài file JSON.</td></tr></table>
+
+11.3. Use Case 3 - Trò chuyện 
+
+<table><tr><td>Use Case ID</td><td>UC-03</td></tr><tr><td>Use Case Name</td><td>Trò chuyện</td></tr><tr><td>Description</td><td>Là khách truy cập, tôi muốn chat với AI đại diện của chủ thể để hồi thông tin và để lại liên hệ hợp tác.</td></tr><tr><td>Actor(s)</td><td>Khách truy cập, Hệ thống AI (LLM API)</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Khách truy cập nhân vào biểu tượng Chatbot trên màn hình Digital Profile.</td></tr><tr><td>Pre-Condition(s)</td><td>Chủ thể đã bật tính năng AI Digital Twin cho thể của mình.</td></tr><tr><td>Post-Condition(s)</td><td>Cược hội thoại được lưu vào Hộp thư Persona.Thông tin Lead (nếu có) được ghi nhận thành công.</td></tr><tr><td>Basic Flow</td><td>1. Khách nhân vào Chatbot.2. AI tự động gửi lời chào (Auto-reply).3. Khách nhập câu hỏi và gửi.4. Hệ thống AI phân tích, truy xuất Knowledge Base và phân hồi.5. Trong quá trình chat, AI hỏi xin thông tin liên lạc (Họ tên, SĐT).6. Khách cung cấp thông tin vào khung chat.7. Hệ thống tự động bóc tách thông tin lưu thành Lead và thông báo cho chủ thể.</td></tr><tr><td>Alternative Flow</td><td>Không có.</td></tr><tr><td>Exception Flow</td><td>4a. Mất kết nối tới API của LLM (OpenRouter/Claude):4a1. Hệ thống hiển thị câu dự phòng "Hiện tại AI đang bảo trì, vui lòng để lại số điện thoại".Use Case tiếp tục lưu thông tin ở bước 6.4b. Câu hỏi vi phạm chính sách nội dung (Toxic, NSFW):4b1. AI từ chối trả lời lịch sự theo cơ chế an toàn.Use Case tiếp tục ở bước 3.</td></tr><tr><td>Business Rules</td><td>BR3-1: AI chỉ được truy xuất dữ liệu trong phạm vi Knowledge Base của chủ thể đó.</td></tr><tr><td>Non-Functional Requirement</td><td>NFR3-1: Thời gian phần hồi của AI (từ khi gửi đến khi nhận chữ đầu tiên) &lt; 4 giây.</td></tr></table>
+
+# 11.4 Use Case 4 - Human Takeove
+
+<table><tr><td>Use Case ID</td><td>UC-04</td></tr><tr><td>Use Case Name</td><td>Human Takeover</td></tr><tr><td>Description</td><td>Là chủ thể, tôi muốn tự tay nhảy vào trả lời tin nhân của khách hàng đang chat với AI khi có vấn đề quan trọng.</td></tr><tr><td>Actor(s)</td><td>Chủ thể</td></tr><tr><td>Priority</td><td>Should Have</td></tr><tr><td>Trigger</td><td>Chủ thể nhân nút "Tiếp quản (Takeover)" trong màn hình Hộp thư Persona.</td></tr><tr><td>Pre-Condition(s)</td><td>Khách hàng đang trong phiên trò chuyện (Live) với AI Twin.</td></tr><tr><td>Post-Condition(s)</td><td>AI ngừng trả lời trong phiên làm việc đó. Cuộc chat chuyển thành dạng người - người.</td></tr><tr><td>Basic Flow</td><td>1. Chủ thể xem lịch sử chat realtime giữa khách và AI trong Inbox.2. Chủ thể nhân nút "Tiếp quản".3. Hệ thống ngưng cơ chế phần hồi tự động của AI đối với phiên chat này.4. Hệ thống hiển thị thông báo cho khách "Chủ thể đang trực tiếp hỗ trợ bạn".5. Chủ thể nhập tin nhân và gửi.6. Tin nhân hiển thị trực tiếp trên giao diện của khách hàng.</td></tr><tr><td>Alternative Flow</td><td>Không có.</td></tr><tr><td>Exception Flow</td><td>2a. Khách hàng đã đóng trình duyệt trước khi chủ thể nhân Tiếp quản:2a1. Hệ thống báo "Khách hàng đã ngoại tuyến".2a2. Tin nhấn của chủ thể sẽ được gửi vào Email của khách (nếu khách đã cung cấp).Use Case kết thúc.</td></tr><tr><td>Business Rules</td><td>BR4-1: Khi tính năng Human Takeover kích hoạt, AI sẽ không tự động phần hồi lại trong vòng 24h đối với User ID đó trừ khi chủ thể bật lại.</td></tr><tr><td>Non-Functional Requirement</td><td>NFR4-1: Tin nhấn từ chủ thể gửi xuống thiết bị khách hàng phải hiển thị tức thì (Realtime qua WebSockets) &lt; 1s.</td></tr></table>
+
+# 11.5. Use case 5 - Đăng nhập
+
+<table><tr><td>Use Case ID</td><td>UC-05</td></tr><tr><td>Use Case Name</td><td>Đăng nhập và Xác thực hệ thống</td></tr><tr><td>Description</td><td>Là chủ thể, tôi muốn đăng nhập vào ứng dụng qua Google hoặc Email để quản lý thể của mình.</td></tr><tr><td>Actor(s)</td><td>Chủ thể, Google OAuth</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Người dùng nhân nút "Đăng nhập/Đăng ký" trên trang chủ.</td></tr><tr><td>Pre-Condition(s)</td><td>Thiết bị người dùng có kết nối Internet.</td></tr><tr><td>Post-Condition(s)</td><td>Phiên làm việc (Session) của người dùng được khởi tạo.Hệ thống ghi nhận hoạt động vào Activity Log.</td></tr><tr><td>Basic Flow</td><td>1. Người dùng nhân nút "Đăng nhập".2. Hệ thống hiển thị các phương thức xác thực.3. Người dùng chọn "Đăng nhập với Google".4. Hệ thống chuyển hướng sang màn hình xác thực của Google.5. Google xác thực thành công và trả về Avatar và Họ tên để tự động điền vào hồ sơ sơ bộ.6. Hệ thống tạo tài khoản mới (nếu chưa có) hoặc cấp quyền truy cập Dashboard.7. Hệ thống gắn huy hiệu "Verified" cho tài khoản.</td></tr><tr><td>Alternative Flow</td><td>3a. Người dùng chọn phương thức "Đăng nhập bằng Email":3a1. Người dùng nhập Email và bấm gửi.3a2. Hệ thống gửi mã Magic Link qua Email.3a3. Người dùng nhập vào Magic Link trong Email, Firebase tự động xác thực và chuyển hướng đăng nhập thành công.Use Case tiếp tục ở bước 6.</td></tr><tr><td>Exception Flow</td><td>5a. Người dùng từ chối cấp quyền trên màn hình Google:5a1. Google trả về lỗi, hệ thống hiển thị thông báo "Xác thực thất bại".</td></tr><tr><td>Business Rules</td><td>BR5-1: Mỗi địa chỉ Email chỉ đại diện cho một tài khoản duy nhất trong hệ thống.</td></tr><tr><td>Non-Functional Requirement</td><td>NFR5-1: Session đăng nhập tự động hết hạn (timeout) sau 7 ngày không hoạt động.</td></tr></table>
+
+# 11.6. Use case 6 - Tải mã QR Code
+
+<table><tr><td>Use Case ID</td><td>UC-06</td></tr><tr><td>Use Case Name</td><td>Tải mã QR Code để chia sẻ</td></tr><tr><td>Description</td><td>Là chủ thể, tôi muốn tải hình ảnh mã QR về máy tính/diện thoại để in lên thẻ vật lý.</td></tr><tr><td>Actor(s)</td><td>Chủ thẻ</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Chủ thẻ nhân vào nút "Tải mã QR" tại màn hình quản lý Card.</td></tr><tr><td>Pre-Condition(s)</td><td>Chủ thẻ đã xuất bản Digital Card có URL hợp lệ.</td></tr><tr><td>Post-Condition(s)</td><td>File ảnh định dạng PNG/SVG được tải thành công về thiết bị của người dùng.</td></tr><tr><td>Basic Flow</td><td>1. Chủ thẻ chọn thẻ cần chia sẻ và bấm "Mã QR".2. Hệ thống hiển thị popup xem trước hình ảnh mã QR.3. Chủ thẻ bấm nút "Tải xuống PNG".4. Hệ thống render hình ảnh chất lượng cao và tự động tải file xuống thiết bị.</td></tr><tr><td>Alternative Flow</td><td>3a. Chủ thẻ bấm nút "Tải xuống SVG":3a1. Hệ thống render file vector SVG và tải xuống.Use Case tiếp tục ở bước 4.</td></tr><tr><td>Exception Flow</td><td>Không có.</td></tr><tr><td>Business Rules</td><td>BR6-1: Mã QR tải xuống phải trô chính xác đến URL gốc của Digital Card hiện tại.</td></tr><tr><td>Non-Functional Requirement</td><td>NFR6-1: Hình ảnh PNG phải có độ phân giải tối thiểu 1000x1000 pixels để đảm bảo in ấn không bị vỡ nét.</td></tr></table>
+
+11.7. Use case 7 - Xem Digital Profile
+
+<table><tr><td>Use Case ID</td><td>UC-07</td></tr><tr><td>Use Case Name</td><td>Xem Digital Profile</td></tr><tr><td>Description</td><td>Là khách hàng, tôi muốn xem thông tin hồ sơ của chủ thể một cách rõ ràng trên điện thoại sau khi quét mã QR.</td></tr><tr><td>Actor(s)</td><td>Khách truy cập</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Khách truy cập dùng camera điện thoại quét mã QR hoặc bấm vào link URL.</td></tr><tr><td>Pre-Condition(s)</td><td>Đường link Digital Card đang ở trạng thái Hoạt động (Active).</td></tr><tr><td>Post-Condition(s)</td><td>Hệ thống ghi nhận +1 lượt truy cập (Pageview) vào Analytics.</td></tr><tr><td>Basic Flow</td><td>1. Khách truy cập mở link URL trên trình duyệt web.2. Hệ thống truy vấn thông tin Card từ cơ sở dữ liệu dựa trên Slug.3. Hệ thống render và hiển thị trang hồ sơ theo đúng Theme chủ thể đã cấu hình.4. Khách hàng cuộn xem thông tin (Avatar, Bio, Kỹ năng).5. Khách hàng bấm vào các nút mạng xã hội (Facebook, Github) để chuyển hướng.</td></tr><tr><td>Alternative Flow</td><td>Không có.</td></tr><tr><td>Exception Flow</td><td>2a. URL nhập sai hoặc Card đã bị xóa/khóa bởi Admin:2a1. Hệ thống hiện thị trang lỗi 404 "Không tìm thấy hồ sơ".Use Case dìrng ở bước 2.</td></tr><tr><td>Business Rules</td><td>BR7-1: Nếu chủ thể vô hiệu hóa (Deactivate) thể, truy cập vào link sẽ thông báo "Thẻ đang tạm khóa".</td></tr><tr><td>Non-Functional Requirement</td><td>NFR7-1: Tốc độ tải trang First Contentful Paint (FCP) phải &lt; 1.5 giây trên kết nối 4G. Layout phải Responsive 100% trên thiết bị di động.</td></tr></table>
+
+11.8. Use case 8 - Lưu danh thiếp tự động 
+
+<table><tr><td>Use Case ID</td><td>UC-08</td></tr><tr><td>Use Case Name</td><td>Lưu danh bạ tự động</td></tr><tr><td>Description</td><td>Là khách truy cập, tôi muốn lưu nhanh toàn bộ thông tin của chủ thể vào điện thoại chỉ bằng một chạm.</td></tr><tr><td>Actor(s)</td><td>Khách truy cập</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Khách nhân nút "Lưu liên lạc" (Save Contact) trên trang Digital Profile.</td></tr><tr><td>Pre-Condition(s)</td><td>Khách đang truy cập và xem trang Digital Profile.</td></tr><tr><td>Post-Condition(s)</td><td>Hệ thống ghi nhận +1 lượt tải danh bạ (Conversion) vào Analytics.</td></tr><tr><td>Basic Flow</td><td>1. Khách nhân nút "Lưu liên lạc".2. Hệ thống tự động thu thập các trường dữ liệu (Họ tên, SĐT, Email, Website) và biên dịch thành chuẩn file vCard 3.0 (.vcf).3. Hệ thống tải file.vcf xuống trình duyệt thiết bị.4. Hệ điều hành (iOS/Android) tự động mở file và hiển thị màn hình "Thêm liên hệ mới".5. Khách bấm "Lưu" vào điện thoại.</td></tr><tr><td>Alternative Flow</td><td>Không có.</td></tr><tr><td>Exception Flow</td><td>4a. Trình duyệt hoặc thiết bị không hỗ trợ tự động mở file.vcf:4a1. File được tải vào thư mục Tài xuống, khách phải mở thủ công.Use Case tiếp tục ở bước 5.</td></tr><tr><td>Business Rules</td><td>BR8-1: Nếu chủ thể ăn số điện thoại trong cấu hình, file VCF sinh ra sẽ không chứa trường số điện thoại.</td></tr><tr><td>Non-Functional Requirement</td><td>NFR8-1: File.vcf phải tuân thủ chuẩn vCard 3.0 để đảm bảo tương thích 100% với cả danh bạ Apple và Google Contacts.</td></tr></table>
+
+11.9. Use case 9 - Gửi Form liên hệ tĩnh 
+
+<table><tr><td>Use Case ID</td><td>UC-09</td></tr><tr><td>Use Case Name</td><td>Gửi Form liên hệ tỉnh</td></tr><tr><td>Description</td><td>Là khách truy cập, tôi muốn để lại lời nhấn thủ công khi AI lỗi hoặc khi tôi không muốn dùng Chatbot.</td></tr><tr><td>Actor(s)</td><td>Khách truy cập</td></tr><tr><td>Priority</td><td>Should Have</td></tr><tr><td>Trigger</td><td>Khách nhân nút "Gửi tin ngắn" tại khu vực Form liên hệ tĩnh cuối trang.</td></tr><tr><td>Pre-Condition(s)</td><td>Khách đã điền các trường dữ liệu vào form.</td></tr><tr><td>Post-Condition(s)</td><td>Dữ liệu Form được lưu vào cơ sở dữ liệu dưới dạng tin ngắn mới trong Hộp thư Persona.Chủ thể nhận được thông báo Email.</td></tr><tr><td>Basic Flow</td><td>1. Khách nhập thông tin vào form (Họ tên, Email, Số điện thoại, Nội dung lời ngắn).2. Khách tick chọn xác nhận CAPTCHA (nếu có).3. Khách nhân "Gửi thông tin".4. Hệ thống kiểm tra tính hợp lệ của dữ liệu (Validate).5. Hệ thống lưu tin ngắn và gửi email báo cho chủ thể.6. Hệ thống hiển thị thông báo "Gửi thành công, chúng tôi sẽ liên hệ sớm nhất".</td></tr><tr><td>Alternative Flow</td><td>Không có.</td></tr><tr><td>Exception Flow</td><td>4a. Khách nhập sai định dạng Email hoặc để trống Họ tên:4a1. Hệ thống hiển thị dòng chữ đó báo lỗi ngay dưới ô nhập liệu tương ứng và chặn gửi.Use Case dừng ở bước 3.</td></tr><tr><td>Business Rules</td><td>BR9-1: Ngăn chặn gửi form liên tục (Rate Limit) quá 3 lần/phút từ cùng một địa chỉ IP để chống Spam.</td></tr><tr><td>Non-Functional Requirement</td><td>NFR9-1: Hệ thống phải gửi thông báo Email (SMTP) cho chủ thể trong vòng 5 phút kể từ khi khách nhân nút gửi.</td></tr></table>
+
+# 11.10. Use Case 10 - Quản lý Người dùng
+
+<table><tr><td>Use Case ID</td><td>UC-10</td></tr><tr><td>Use Case Name</td><td>Quản lý Người dùng (User Management)</td></tr><tr><td>Description</td><td>Là Admin, tôi muốn xem danh sách toàn bộ người dùng, tìm kiếm, lọc và thực hiện thao tác khóa/kích hoạt tài khoản hoặc xem chi tiết hồ sơ.</td></tr><tr><td>Actor(s)</td><td>Quản trị viên (Admin)</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Admin nhân vào tab "Quản lý người dùng" trên thanh điều hướng bên trái (Sidebar).</td></tr><tr><td>Pre-Condition(s)</td><td>Admin đã đăng nhập thành công vào hệ thống và được cấp quyền Quản trị viên (Role: Admin).</td></tr><tr><td>Post-Condition(s)</td><td>Trạng thái của tài khoản người dùng được cập nhật thành công trên hệ thống Database.Hệ thống ghi nhận hoạt động thao tác của Admin vào Activity Log.</td></tr><tr><td>Basic Flow</td><td>1. Admin truy cập màn hình Dashboard, chọn tab "Quản lý người dùng".2. Hệ thống gọi API và hiển thị bảng danh sách toàn bộ tài khoản bao gồm: ID, Tên Đầy đủ, E-Mail, Ngày Đăng Ký, Trọng Thái Xác Thực.3. Admin nhập Tên hoặc Email vào thanh tìm kiếm ở góc phải, hoặc dùng bộ lọc (Filter).4. Hệ thống truy vấn và hiển thị danh sách người dùng khớp với điều kiện tìm kiếm/loc.5. Admin nhân vào nút Toggle (Bật/Tắt màu xanh/đỏ) ở cột "Thao tác Quản lý" để đổi trạng thái tài khoản (VD: Từ Đăng Xác Thực sang Đăng Khóa).6. Hệ thống hiển thị Popup xác nhận thao tác khóa/mở khóa.7. Admin nhân "Xác nhận".8. Hệ thống gọi API cập nhật, thông báo xử lý thành công bằng Toast Message và tự động cập nhật lại bảng dữ liệu.</td></tr><tr><td>Alternative Flow</td><td>5a. Admin muốn xem chi tiết hồ sơ:5a1. Ô cột "Thao tác Quản lý", Admin nhân vào icon "Hồ sơ" (kế bên icon toggle).5a2. Hệ thống mở ra popup/trang chi tiết hiển thị danh sách các Digital Card (Thẻ kỹ thuật số) mà user đó đang tạo.Use Case tiếp tục lưu trạng thái để Admin có thể xem.</td></tr><tr><td>Exception Flow</td><td>8a. Lỗi kết nối máy chủ hoặc lỗi API:8a1. API trả về lỗi, hệ thống hiển thị thông báo "Cập nhật trạng thái thất bại, vui lòng thử lại sau".8a2. Nút Toggle tự động bất về lại trạng thái ban đầu để tránh sai lệch dữ liệu UI/UX.</td></tr><tr><td>Business Rules</td><td>BR10-1: Chỉ tài khoản có Role là "Admin" mới có quyền gọi các API thuộc nhánh /users và thao tác đổi trạng thái.BR10-2: Khi tài khoản bị đổi trạng thái sang "Đã Khóa", mọi session đăng nhập hiện tại của User đó trên hệ thống lập tức bị buộc đăng xuất (Force Logout).</td></tr><tr><td>Non-Functional Requirement</td><td>NFR10-1: Tính năng tìm kiếm theo Tên/Email phải phần hồi kết quả trong thời gian &lt; 1 giây kể từ khi Admin ngừng gỗ (áp dụng Debounce).</td></tr></table>
+
+# 11.11. Use Case 11 - Quản lý Báo cáo & Xử lý vi phạm
+
+<table><tr><td>Use Case ID</td><td>UC-11</td></tr><tr><td>Use Case Name</td><td>Quản lý Báo cáo và Xử lý vi phạm (Report Moderation)</td></tr><tr><td>Description</td><td>Là Admin, tôi muốn xem danh sách các thể bị báo cáo, đọc lý do vi phạm và đưa ra quyết định cấm tài khoản theo thời hạn cụ thể.</td></tr><tr><td>Actor(s)</td><td>Quản trị viên (Admin)</td></tr><tr><td>Priority</td><td>Must Have</td></tr><tr><td>Trigger</td><td>Admin nhân vào tab "Quản lý báo cáo" trên thanh điều hướng bên trái (Sidebar).</td></tr><tr><td>Pre-Condition(s)</td><td>Admin đã đăng nhập thành công.Hệ thống đã ghi nhận ít nhất một lượt Report (báo cáo vi phạm) từ Khách truy cập đối với một thể nào đó.</td></tr><tr><td>Post-Condition(s)</td><td>Tài khoản vi phạm bị thay đổi trạng thái (bị Khóa) và ghi nhận thời hạn khóa.Đường link Public URL của các thể thuộc tài khoản vi phạm bị vô hiệu hóa.</td></tr><tr><td>Basic Flow</td><td>1. Admin truy cập màn hình Dashboard, chọn tab "Quản lý báo cáo".2. Hệ thống hiển thị bảng danh sách các báo cáo bao gồm: ID, Tên, Email, Trạng thái, Lý do báo cáo, Ngày tạo.3. Admin đọc Lý do báo cáo (VD: "Nội dung không phù hợp", "Giả mạo") để đối chiếu.4. Admin xác định thể có vi phạm và nhân vào nút Toggle màu đỏ ở cột "Thao tác Quản lý" để khóa tài khoản.5. Hệ thống hiển thị Popup xác nhận và yêu cầu chọn Thời hạn khóa (1 tuần / 1 tháng / 1 năm / Vĩnh viễn).6. Admin chọn thời hạn mong muốn và bấm "Áp dụng/Xác nhận".7. Hệ thống cập nhật trạng thái user thành "Đã Khóa" và lưu thời gian mở khóa.8. Hệ thống tự động gửi một Email thông báo đến địa chỉ Email của user vi phạm.9. Giao diện Admin thông báo thành công và chuyển trạng thái của Report đó thành "Đã giải quyết".</td></tr><tr><td>Alternative Flow</td><td>4a. Admin xác định báo cáo là Spam/Không vi phạm:4a1. Admin nhân vào icon "Đánh dấu đã đọc/Bỏ qua" (icon kế bên nút toggle).4a2. Hệ thống chuyển trạng thái của Report thành "Bỏ qua" mà không khóa tài khoản user.Use Case kết thúc.</td></tr><tr><td>Exception Flow</td><td>8a. Hệ thống gửi Email thông báo thất bại (Lỗi SMTP):8a1. Hệ thống vẫn giữ nguyên quyết định khóa tài khoản (uru tiên lường bảo mật hệ thống).8a2. Hệ thống ghi log cảnh báo ngầm (Non-blocking) để Admin IT kiểm tra dịch vụ Email sau, giao diện vẫn báo thao tác khóa thành công.</td></tr><tr><td>Business Rules</td><td>BR11-1: Khi một tài khoản bị Khóa, toàn bộ truy cập từ bên ngoài vào URL Slug của thể (VD:digitalcard.app/u/[username]) phải ngay lập tức trả về lỗi hoặc hiển thị giao diện "Thẻ đã bị tạm khóa do vi phạm điều khoản".</td></tr><tr><td>Non-Functional Requirement</td><td>NFR11-1: Việc khóa thể phải có tác dụng đồng bộ (Realtime/Cache Purging) lập tức trên toàn hệ thống để chặn ngay hành vi phát tán nội dung xấu &lt; 1 giây.</td></tr></table>
