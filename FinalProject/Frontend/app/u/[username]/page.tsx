@@ -389,7 +389,7 @@ export default function PublicProfilePage() {
         });
 
         showToast(
-          `✨ Đã khôi phục ${oldMessages.length} tin nhắn từ lần trước!`,
+          ` Đã khôi phục ${oldMessages.length} tin nhắn từ lần trước!`,
         );
       }
     } catch {

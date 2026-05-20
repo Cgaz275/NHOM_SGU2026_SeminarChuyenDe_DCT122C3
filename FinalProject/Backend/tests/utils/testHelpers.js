@@ -24,14 +24,18 @@ async function createTestUser(app, userData = {}) {
   };
 
   const response = await request(app)
-    .post('/api/v1/auth/register')
+    .post('/api/auth/register')
     .send(defaultData);
 
+  const user = response.body.data?.user || response.body.user;
+  const token = response.body.data?.token || response.body.token;
+
   return {
-    user: response.body.data,
-    token: response.body.data?.token,
+    user,
+    token,
     email: defaultData.email,
     password: defaultData.password,
+    status: response.status,
   };
 }
 
@@ -44,12 +48,16 @@ async function createTestUser(app, userData = {}) {
  */
 async function loginTestUser(app, email, password) {
   const response = await request(app)
-    .post('/api/v1/auth/login')
+    .post('/api/auth/login')
     .send({ email, password });
 
+  const user = response.body.data?.user || response.body.user;
+  const token = response.body.data?.token || response.body.token;
+
   return {
-    user: response.body.data,
-    token: response.body.data?.token,
+    user,
+    token,
+    status: response.status,
   };
 }
 
@@ -91,8 +99,8 @@ async function createTestCard(app, token, cardData = {}) {
       email: `john-${Date.now()}@example.com`,
       phone: '+1234567890',
       bio: 'Full-stack developer',
-      location: 'San Francisco, CA',
-      avatar: 'https://via.placeholder.com/150',
+      jobTitle: 'Senior Developer',
+      fullName: 'John Doe',
     },
     sections: {
       experience: [
@@ -107,28 +115,22 @@ async function createTestCard(app, token, cardData = {}) {
       skills: ['JavaScript', 'React', 'Node.js', 'Firebase'],
       projects: [
         {
-          title: 'Project 1',
+          name: 'Project 1',
           description: 'Description',
           link: 'https://example.com',
         },
       ],
     },
-    socialLinks: [
-      {
-        platform: 'github',
-        url: 'https://github.com/user',
-      },
-      {
-        platform: 'linkedin',
-        url: 'https://linkedin.com/in/user',
-      },
-    ],
     ...cardData,
   };
 
-  const response = await makeAuthRequest(app, 'post', '/api/v1/cards', token, defaultData);
+  const response = await request(app)
+    .post('/api/cards')
+    .set('Authorization', `Bearer ${token}`)
+    .send(defaultData);
 
-  return response.body.data;
+  const cardId = response.body.data?.id || response.body.id;
+  return { ...response.body.data, id: cardId, status: response.status };
 }
 
 /**
@@ -139,8 +141,11 @@ async function createTestCard(app, token, cardData = {}) {
  * @returns {Promise<Object>}
  */
 async function publishTestCard(app, cardId, token) {
-  const response = await makeAuthRequest(app, 'post', `/api/v1/cards/${cardId}/publish`, token);
-  return response.body.data;
+  const response = await request(app)
+    .post(`/api/cards/${cardId}/publish`)
+    .set('Authorization', `Bearer ${token}`);
+
+  return { ...response.body.data, status: response.status };
 }
 
 /**
@@ -154,43 +159,48 @@ async function publishTestCard(app, cardId, token) {
 async function configureAI(app, cardId, token, aiConfig = {}) {
   const defaultConfig = {
     systemPrompt: 'You are a helpful assistant.',
-    tone: 'professional',
+    toneOfVoice: 'professional',
     knowledgeBase: {
       experiences: 'Full-stack developer with 5+ years experience',
       skills: 'JavaScript, React, Node.js, Firebase',
       availability: 'Available for projects',
     },
-    guardrails: {
-      onlyAnswerFromKB: true,
-      preventHallucination: true,
-    },
     temperature: 0.7,
+    isEnabled: true,
     ...aiConfig,
   };
 
-  const response = await makeAuthRequest(app, 'post', `/api/v1/cards/${cardId}/ai-config`, token, defaultConfig);
+  const response = await request(app)
+    .post(`/api/cards/${cardId}/ai-config`)
+    .set('Authorization', `Bearer ${token}`)
+    .send(defaultConfig);
 
-  return response.body.data;
+  return { ...response.body.data, status: response.status };
 }
 
 /**
  * Send test chat message
  * @param {Object} app - Express app
  * @param {string} cardId - Card ID
- * @param {string} visitorId - Visitor ID
  * @param {string} message - Message text
+ * @param {string} visitorEmail - Visitor email (optional)
  * @returns {Promise<Object>}
  */
-async function sendTestMessage(app, cardId, visitorId, message) {
-  const response = await request(app)
-    .post(`/api/v1/chat/${cardId}/send`)
-    .send({
-      visitorId,
-      message,
-      timestamp: new Date().toISOString(),
-    });
+async function sendTestMessage(app, cardId, message, visitorEmail = null) {
+  const payload = {
+    message,
+  };
 
-  return response.body.data;
+  if (visitorEmail) {
+    payload.visitorEmail = visitorEmail;
+    payload.visitorName = 'Test Visitor';
+  }
+
+  const response = await request(app)
+    .post(`/api/cards/${cardId}/chat`)
+    .send(payload);
+
+  return { ...response.body.data, status: response.status };
 }
 
 /**
@@ -207,13 +217,17 @@ async function createAdminTestUser(app) {
   };
 
   const response = await request(app)
-    .post('/api/v1/auth/register')
+    .post('/api/auth/register')
     .send(adminData);
 
+  const user = response.body.data?.user || response.body.user;
+  const token = response.body.data?.token || response.body.token;
+
   return {
-    user: response.body.data,
-    token: response.body.data?.token,
+    user,
+    token,
     email: adminData.email,
+    status: response.status,
   };
 }
 
