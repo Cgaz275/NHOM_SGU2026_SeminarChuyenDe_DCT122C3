@@ -341,7 +341,7 @@ COMT WITH DIGITAL TWINS
 WE'D LOVE TO HEAR FROM YOU!
 Let's Stay Connected
 SEMINAR
-© 2024 Seminar © 2024 Seminar
+© 2026 Seminar © 2026 Seminar
 </details>
 
 ![](images/1123e4f13d3f815c7c38df247f70d8157924eb2f524670c4a8242798dfd6f12c.jpg)
