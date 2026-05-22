@@ -84,7 +84,6 @@ NHOM_SGU2026_SeminarChuyenDe_DCT122C3/
 │
 ├── 📄 README.md                              # File này
 ├── 📄 CommitLog.md                           # Nhật ký commit chung
-└── 📄 CommitLogBE.md                         # Nhật ký commit Backend
 ```
 
 ### Hướng dẫn sử dụng:
