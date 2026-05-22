@@ -8,9 +8,7 @@ export function ContactCTA() {
       <div className="section-shell relative z-10">
         <div className="mx-auto max-w-6xl">
           <h2 className="mx-auto max-w-4xl text-center text-[clamp(2.6rem,10vw,5.6rem)] font-light leading-[0.95] tracking-[-0.06em] text-white uppercase">
-            We&apos;d love to
-            <br />
-            hear from you!
+           Nhận tin mới từ dự án
           </h2>
 
           <div className="mt-12 grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
@@ -24,15 +22,10 @@ export function ContactCTA() {
 
             <div className="text-white">
               <h3 className="text-3xl font-medium leading-tight sm:text-4xl">
-                Let&apos;s Stay
-                <br />
-                Connected
+                Hãy Giữ Kết Nối
               </h3>
               <p className="mt-4 max-w-xl text-sm leading-7 text-white/85 sm:text-base">
-                We&apos;re always looking for new opportunities to collaborate and
-                innovate. Whether you have a specific project in mind or just want
-                to talk about the future of tech and design, we&apos;d love to hear
-                from you.
+                Chúng tôi luôn tìm kiếm những cơ hội mới để hợp tác và đổi mới. Cho dù bạn có một dự án cụ thể hay chỉ muốn nói về tương lai của công nghệ và thiết kế, chúng tôi rất muốn lắng nghe từ bạn.
               </p>
 
               <form className="mt-6 max-w-xl" action="#">
@@ -43,11 +36,11 @@ export function ContactCTA() {
                   <input
                     id="email-address"
                     type="email"
-                    placeholder="Type your E-mail here..."
+                    placeholder="Nhập email của bạn tại đây..."
                     className="input-field"
                   />
                   <button type="submit" className="input-button">
-                    Send
+                    Gửi
                   </button>
                 </div>
               </form>

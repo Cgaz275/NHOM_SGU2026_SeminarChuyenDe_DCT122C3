@@ -1,0 +1,2493 @@
+[
+    {
+        "type": "text",
+        "text": "ĐẠI HỌC SÀI GÒN ",
+        "text_level": 1,
+        "bbox": [
+            415,
+            70,
+            607,
+            90
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "KHOA CÔNG NGHỆ THÔNG TIN ",
+        "text_level": 1,
+        "bbox": [
+            343,
+            90,
+            676,
+            109
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GUI DESIGN DOCUMENT PERSONA-BASED WEBSITE FOR DIGITAL TWIN CARD ",
+        "text_level": 1,
+        "bbox": [
+            189,
+            282,
+            833,
+            385
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Học phần: Seminar Chuyên Đề ",
+        "bbox": [
+            375,
+            443,
+            645,
+            464
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GVHD: TS. Đỗ Như Tài ",
+        "bbox": [
+            403,
+            464,
+            617,
+            482
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lớp: DCT122C3 ",
+        "bbox": [
+            436,
+            484,
+            584,
+            503
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nhóm sinh viên thực hiện - Nhóm 1: ",
+        "bbox": [
+            349,
+            521,
+            668,
+            540
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/c09be0b7d633eaf09d12042571d85fb02242191dd12971eb8101c3e4c5ec86d5.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>STT</td><td>Họ và tên</td><td>MSSV</td></tr><tr><td>1</td><td>Châu Gia Anh</td><td>3122411002</td></tr><tr><td>2</td><td>Dương Lê Khánh</td><td>3122411093</td></tr><tr><td>3</td><td>Phan Thành Đại</td><td>3122411036</td></tr><tr><td>4</td><td>Đào Thị Thanh Tâm</td><td>3122411182</td></tr></table>",
+        "bbox": [
+            189,
+            549,
+            831,
+            700
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "THÀNH PHỐ HỒ CHÍ MINH ",
+        "bbox": [
+            367,
+            867,
+            653,
+            887
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MỤC LỤC ",
+        "text_level": 1,
+        "bbox": [
+            455,
+            90,
+            563,
+            111
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Tổng quan thiết kế... ",
+            "2. Design system.............. "
+        ],
+        "bbox": [
+            114,
+            112,
+            906,
+            156
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "2.1. Màu sắc chủ đạo.. 5 ",
+            "2.2. Typography.. 5 ",
+            "2.3. Component style.. 6 "
+        ],
+        "bbox": [
+            142,
+            159,
+            906,
+            224
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3. Information Architecture... ",
+        "bbox": [
+            114,
+            227,
+            906,
+            244
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "4. Landing page giới thiệu demo................ ",
+        "bbox": [
+            114,
+            250,
+            906,
+            268
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "4.1. Bố cục đề xuất.. ",
+            "4.2. Thành phần giao diện.. ",
+            "4.3. Tương tác và trạng thái. . 8 "
+        ],
+        "bbox": [
+            142,
+            271,
+            906,
+            337
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "5. Public Digital Profile............... 12 ",
+        "bbox": [
+            114,
+            340,
+            906,
+            359
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "5.1. Bố cục đề xuất.. .12 ",
+            "5.2. Thành phần giao diện. .12 ",
+            "5.3. Tương tác và trạng thái. . 12 "
+        ],
+        "bbox": [
+            143,
+            362,
+            906,
+            428
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "6. Dashboard dành cho chủ thẻ... 14 ",
+        "bbox": [
+            114,
+            431,
+            906,
+            449
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "6.1. Profile Builder / Card Editor.. .14 ",
+            "6.2. AI Digital Twin Configuration.. 15 ",
+            "6.3. QR Code Manager.. . 17 ",
+            "6.4. Persona Inbox & Human Takeover.. .18 "
+        ],
+        "bbox": [
+            143,
+            453,
+            906,
+            541
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "7. Admin Panel... 19 ",
+        "bbox": [
+            114,
+            545,
+            906,
+            561
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "7.1. Quản lý người dùng.. ..20 ",
+            "7.2. Quản lý báo cáo.. . 20 ",
+            "7.3. Trạng thái và quy tắc hiển thị.. ..21 ",
+            "7.4. Nguyên tắc thiết kế.. .21 "
+        ],
+        "bbox": [
+            173,
+            566,
+            906,
+            643
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "8. Trạng thái hệ thống và fallback.. 22 ",
+            "9. Responsive Design................ . 24 ",
+            "10. Accessibility & UX Rules................ .24 ",
+            "11. Microcopy............. .24 ",
+            "12. Bàn giao cho Frontend Developer.. .25 ",
+            "13. Kết luận... . 25 "
+        ],
+        "bbox": [
+            114,
+            646,
+            906,
+            777
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "DANH MỤC HÌNH ẢNH/ BẢNG BIỂU ",
+        "text_level": 1,
+        "bbox": [
+            326,
+            69,
+            694,
+            92
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Hình 1 Giao diện landing page giới thiệu demo 10 ",
+        "bbox": [
+            114,
+            103,
+            906,
+            123
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Hình 2 Giao diện Public Profile , chat preview, report form, lead form và contact save 11 ",
+        "bbox": [
+            114,
+            125,
+            905,
+            143
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Hình 3 Hình tham chiếu Profile Builder / Card Editor. 13 ",
+        "bbox": [
+            114,
+            146,
+            905,
+            165
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Hình 4 Hình tham chiếu AI Digital Twin Configuration. 14 ",
+        "bbox": [
+            114,
+            167,
+            905,
+            186
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Hình 5 Hình tham chiếu ví lưu trữ QR 15 ",
+        "bbox": [
+            114,
+            189,
+            905,
+            209
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Hình 6 Hình tham chiếu Persona Inbox / quản lý tin nhắn. 16 ",
+        "bbox": [
+            114,
+            210,
+            905,
+            231
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Hình 7 Hình tham chiếu admin quản lý user / report card 18 ",
+        "bbox": [
+            114,
+            233,
+            905,
+            253
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 1. Bảng mục tiêu GUI 4 ",
+        "bbox": [
+            114,
+            273,
+            906,
+            292
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 2. Bảng phạm vi thiết kế 4 ",
+        "bbox": [
+            114,
+            295,
+            905,
+            315
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 3 Bảng màu sắc chủ đạo 4 ",
+        "bbox": [
+            114,
+            316,
+            905,
+            337
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 4 Bảng typography 5 ",
+        "bbox": [
+            114,
+            340,
+            905,
+            359
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 5 Bảng Component style 5 ",
+        "bbox": [
+            114,
+            361,
+            905,
+            381
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 6 Bảng kiến trúc màn hình 6 ",
+        "bbox": [
+            114,
+            383,
+            905,
+            402
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 7 Bảng thành phần giao diện landing page 7 ",
+        "bbox": [
+            114,
+            404,
+            905,
+            424
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 8 Bảng thành phần giao diện Public Digital Profile 10 ",
+        "bbox": [
+            114,
+            426,
+            905,
+            446
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 9 Bảng thành phần Profile Builder / Card Editor 12 ",
+        "bbox": [
+            114,
+            448,
+            905,
+            467
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 10 Bảng thành phần AI Digital Twin Configuration 13 ",
+        "bbox": [
+            114,
+            469,
+            905,
+            489
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 11 Bảng thành phần Persona Inbox & Human Takeover 15 ",
+        "bbox": [
+            114,
+            491,
+            905,
+            511
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 12 Bảng thành phần Admin Panel 17 ",
+        "bbox": [
+            114,
+            513,
+            905,
+            532
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 13. Bảng giao diện trạng thái AI 18 ",
+        "bbox": [
+            114,
+            535,
+            905,
+            554
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 14. Bảng Microcopy của AI 19 ",
+        "bbox": [
+            114,
+            556,
+            905,
+            575
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Bảng 15. Bảng các hạng mục cần bàn giao 19 ",
+        "bbox": [
+            114,
+            578,
+            905,
+            598
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1. Tổng quan thiết kế ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            69,
+            312,
+            92
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Tài liệu này mô tả định hướng giao diện cho nền tảng Persona-Based Digital Card theo PRD. Hệ thống cho phép người dùng tạo thẻ giới thiệu kỹ thuật số, chia sẻ qua QR/URL, hiển thị hồ sơ công khai và tích hợp AI Digital Twin để hỗ trợ khách truy cập hỏi thông tin 24/7. ",
+        "bbox": [
+            109,
+            103,
+            906,
+            179
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/1e2a9da7d6d490033e93a0df49763bd8f24f7e11d82769892733f78b6c2575e8.jpg",
+        "table_caption": [
+            "Bảng 1. Bảng mục tiêu GUI "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Mục tiêu GUI</td><td>Diễn giải</td></tr><tr><td>Rõ nghiệp vụ</td><td>Người xem phải hiểu đây là nền tầng Digital Card có AI đại diện, không chỉ là portfolio tỉnh.</td></tr><tr><td>Dễ demo</td><td>Các luồng tạo card, cấu hình persona, quét QR, chat AI, lưu VCF, fallback form và inbox phải nhìn được ngay trong buổi seminar.</td></tr><tr><td>Mobile-first</td><td>Khách truy cập chủ yếu mở link sau khi quét QR bằng điện thoại, nên public profile và chat phải ưu tiên mobile.</td></tr><tr><td>Đồng bộ nhận diện</td><td>Landing page và app chính dùng chung tỉnh thần dark-tech: nền đen, chữ trắng, xanh dương điện tử, button pill, card bo góc.</td></tr><tr><td>An toàn AI</td><td>AI phải thể hiện rõ là trợ lý đại diện, trả lời theo dữ liệu đã nhập, không bịa kinh nghiệm/giá tiền và luôn có phương án fallback.</td></tr></table>",
+        "bbox": [
+            135,
+            220,
+            885,
+            494
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Phạm vi thiết kế ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            505,
+            267,
+            527
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/cce2268e77f54c0b36075d62a6f9962976a159cad5b038eb04134e4a6e250bba.jpg",
+        "table_caption": [
+            "Bảng 2. Bảng phạm vi thiết kế "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>In Scope</td><td>Out of Scope / Không thiết kế ở bản MVP</td></tr><tr><td>Authentication cơ bản, Profile Builder, Public Digital Card, QR Code Generator, AI Chatbot dùng profile/knowledge base, Lead capture, Inbox, Fallback Form, Basic Analytics.</td><td>Upload PDF/DOCX cho RAG, Payment, Booking system, Voice chat, tích hợp NFC thực tế, eKYC nâng cao, Admin template builder nâng cao, Export báo cáo PDF/CSV.</td></tr></table>",
+        "bbox": [
+            130,
+            570,
+            890,
+            705
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. Design system ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            71,
+            267,
+            92
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2.1. Màu sắc chủ đạo ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            102,
+            307,
+            123
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/9b6e5ff04c85086e4feb9abe7806a93a8ef42dd2c8c77802361682f5410d271f.jpg",
+        "table_caption": [
+            "Bảng 3 Bảng màu sắc chủ đạo "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Token</td><td>Mã màu</td><td>Vai trò sù dung</td></tr><tr><td>--color-bg</td><td>#0B0B0B</td><td>Nèn chính cúa landing page, public profile và Digital Twin chat.</td></tr><tr><td>--color-surface</td><td>#101010</td><td>Nèn card tói, project item, panel dashboard, block nói dung phu.</td></tr><tr><td>--color-brand-blue</td><td>#2367A2</td><td>Màu brand chính cho CTA, active nav, chart, footer/gradient.</td></tr><tr><td>--color-electric-blue</td><td>#008FEA</td><td>Nhân manh AI/tech, hover, link, badge quan trong, trang thai dang hoat dong.</td></tr><tr><td>--color-chat-user</td><td>#EAF3FC</td><td>Bubble chat cúa khách và một sô input nèn sáng.</td></tr><tr><td>--color-text-primary</td><td>#FFFFFF</td><td>Chǔ chính trên nèn tói.</td></tr><tr><td>--color-text-muted</td><td>#B7B7B7</td><td>Mô tá phu, caption, ngay tháng, helper text.</td></tr><tr><td>--color-danger</td><td>#E5484D</td><td>Validation error, AI Error, spam/rate-limit warning.</td></tr><tr><td>--color-success</td><td>#2ECC71</td><td>Published, AI Ready, gúi form thanh cóng.</td></tr></table>",
+        "bbox": [
+            124,
+            164,
+            893,
+            494
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Nguyên tắc phối màu: app chính dùng dark mode làm nhận diện mặc định. Riêng các form dài và chat transcript có thể dùng nền sáng bên trong card để tăng khả năng đọc, giống khung chat trắng trong màn Digital Twin demo. ",
+        "bbox": [
+            114,
+            512,
+            905,
+            570
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2.2. Typography ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            582,
+            264,
+            603
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/b4d07484371bd92ecdc79bcae4cdbed68644151a038610003e8dab8ddcc67005.jpg",
+        "table_caption": [
+            "Bảng 4 Bảng typography "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Loại chữ</td><td>Desktop</td><td>Mobile</td><td>Ứng dụng</td></tr><tr><td>Display / Hero</td><td>72-120px</td><td>44-64px</td><td>Tiêu đề landing page: PROJECT SEMINAR, DIGITAL TWIN, OUR WORK.</td></tr><tr><td>H1</td><td>48-64px</td><td>32-40px</td><td>Tiêu đề trang: Dashboard, Public Profile, Admin Overview.</td></tr><tr><td>H2</td><td>32-40px</td><td>24-30px</td><td>Tên section, block lớn.</td></tr><tr><td>Body</td><td>16-18px</td><td>15-16px</td><td>Mô tả, nội dung profile, form label, chat content.</td></tr><tr><td>Caption</td><td>12-14px</td><td>11-12px</td><td>Hint, trạng thái phụ, timestamp, consent text.</td></tr></table>",
+        "bbox": [
+            129,
+            642,
+            893,
+            883
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Ưu tiên font sans-serif hiện đại như Inter, Satoshi hoặc Space Grotesk. ",
+            "● Headline landing page nên uppercase, tracking nhẹ và tương phản mạnh với nền. ",
+            "● Form và dashboard cần line-height 1.5, label rõ, error message đặt gần input. "
+        ],
+        "bbox": [
+            112,
+            71,
+            833,
+            136
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2.3. Component style ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            150,
+            308,
+            170
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/ae87acce605a6f8d4eebbb9785ee5cef69adcbf9d4f3311416f0fa3a6c60a1a0.jpg",
+        "table_caption": [
+            "Bảng 5 Bảng Component style "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Component</td><td>Style đề xuất</td></tr><tr><td>Button Primary</td><td>Nền xanh #2367A2 hoặc gradient xanh, chữ trắng, bo pill 999px, hover sáng hơn.</td></tr><tr><td>Button Secondary</td><td>Nền trong suốt, viên trắng/xám, chữ trắng; dùng trên landing page.</td></tr><tr><td>Card</td><td>Nền #101010 hoặc trắng trong chat/form; bo 20-24px; border 1px rgba(255,255,255,.18).</td></tr><tr><td>Input</td><td>Nền sáng #EAF3FC hoặc tối #151515; bo 16px; focus border xanh điện tử; có counter khi giới hạn ký tự.</td></tr><tr><td>Badge</td><td>Pill nhỏ, viên mảnh, chữ uppercase; dùng cho tag công nghệ, trạng thái AI, role.</td></tr><tr><td>Modal</td><td>Backdrop đen mờ, card trung tâm bo 24px, CTA rõ, trap focus.</td></tr><tr><td>Toast</td><td>Góc phải dưới desktop / dưới cùng mobile; success xanh, error đỏ.</td></tr></table>",
+        "bbox": [
+            130,
+            210,
+            890,
+            500
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3. Information Architecture ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            547,
+            372,
+            565
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/95db51fd327fa257218ab6a4b738f642e1c23771fd7d4b7e8479a99bb0ba81e3.jpg",
+        "table_caption": [
+            "Bảng 6 Bảng kiến trúc màn hình "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Khu vực</td><td>Trang / màn hình</td><td>Người dùng chính</td></tr><tr><td>Marketing / Landing</td><td>Home, About Us, Team Projects, Digital Twin Demo, Contact</td><td>Khách xem seminar, giảng viên, khách truy cập</td></tr><tr><td>Auth</td><td>Login, Register, Google OAuth callback, Forgot/Change Password</td><td>Chủ thể, Admin</td></tr><tr><td>Owner App</td><td>Dashboard, Card List, Profile Builder, AI Config, QR Manager, Persona Inbox, Basic Analytics, Settings</td><td>Chủ thể</td></tr><tr><td>Public Card</td><td>Digital Profile, Chat Widget, Save Contact, Contact Form, 404/Inactive Card</td><td>Khách truy cập</td></tr><tr><td>Admin Panel</td><td>Overview, User Management, Reported Cards, AI Usage, Platform Analytics</td><td>Admin</td></tr></table>",
+        "bbox": [
+            130,
+            607,
+            890,
+            883
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Menu gợi ý cho app chính: Dashboard | Cards | AI Twin | Inbox | Analytics | Settings. Với landing page public giữ menu theo ảnh: About | Team Projects | Digital Twin | Contact. ",
+        "bbox": [
+            111,
+            71,
+            883,
+            113
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/9f01bced5181106930e3cc5d0698dba3944bc3e4fc533acdec22b183e1cd5f3c.jpg",
+        "image_caption": [
+            "Sơ đồ cây trang của hệ thống "
+        ],
+        "image_footnote": [],
+        "content": "```mermaid\ngraph TD\n    A[\"Persona-Based Digital Card\"] --> B[\"Marketing / Landing\"]\n    A --> C[\"Authentication\"]\n    A --> D[\"Owner App\"]\n    A --> E[\"Admin Panel\"]\n    A --> F[\"Public Digital Card\"]\n    \n    B --> G[\"Team Projects\"]\n    B --> H[\"Digital Twin Demo\"]\n    B --> I[\"About Us\"]\n    B --> J[\"Home\"]\n    \n    C --> K[\"Login\"]\n    C --> L[\"Register\"]\n    \n    D --> M[\"Persona Inbox\"]\n    D --> N[\"QR Code Manager\"]\n    D --> O[\"AI Digital Twin Configuration\"]\n    D --> P[\"Profile Builder / Card Editor\"]\n    \n    E --> Q[\"User Management\"]\n    E --> R[\"Reported Cards\"]\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            116,
+            126,
+            913,
+            402
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Hình trên thể hiện sơ đồ cây điều hướng của hệ thống Persona-Based Digital Card. Các màn hình được chia thành các nhóm chính gồm Marketing / Landing, Authentication, Owner App, Admin Panel và Public Digital Card. Phần lớn các trang trong hệ thống được đặt ở cùng một cấp điều hướng vì phạm vi MVP chưa có nhiều luồng con phức tạp hoặc trang chi tiết sâu hơn. Cách tổ chức này giúp người dùng dễ nhận biết các khu vực chức năng chính và hỗ trợ quá trình demo hệ thống rõ ràng hơn. ",
+        "bbox": [
+            109,
+            424,
+            905,
+            537
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4. Landing page giới thiệu demo ",
+        "text_level": 1,
+        "bbox": [
+            111,
+            549,
+            410,
+            569
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Mục tiêu: giới thiệu nhóm, mô tả nền tảng công nghệ, show project seminar và dẫn người dùng tới phần demo Digital Twin. Đây là lớp marketing/trình bày đồ án, không phải dashboard quản trị. ",
+        "bbox": [
+            109,
+            580,
+            880,
+            638
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4.1. Bố cục đề xuất ",
+        "text_level": 1,
+        "bbox": [
+            111,
+            648,
+            290,
+            669
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Header sticky: logo SEMINAR bên trái, menu About/Team Projects/Digital Twin/Contact bên phải. ",
+            "● Hero section dùng headline lớn, ảnh/team card chồng lớp, thông tin “Since 2026”. ",
+            "● Section công nghệ dùng card xanh bo góc, tag như AI Agent, Firebase/Supabase, Motion Graphic, Digital Twin AI Chat. ",
+            "● Section team dùng grid ảnh chân dung bo góc; click vào thành viên mở Digital Twin demo tương ứng. ",
+            "● Footer/contact dùng nền xanh brand, headline lớn, form email đơn giản và icon social. "
+        ],
+        "bbox": [
+            112,
+            681,
+            906,
+            853
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4.2. Thành phần giao diện ",
+        "text_level": 1,
+        "bbox": [
+            111,
+            867,
+            354,
+            888
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Bảng 7 Bảng thành phần giao diện landing page ",
+        "bbox": [
+            111,
+            898,
+            532,
+            919
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/65b2e00aa6b88ed641da9d6553e951bdfd0155555b7c34cd35efcc044d40ba03.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Component</td><td>Mô tả / Quy tắc hiển thị</td></tr><tr><td>Header</td><td>Logo SEMINAR, navigation, active pill. Trên mobile chuyển thành menu icon.</td></tr><tr><td>Hero</td><td>Headline lớn, ảnh dạng polaroid/card, mô tả project ngắn.</td></tr><tr><td>Tech Stack Card</td><td>Nền xanh, text trắng, tag pill trắng/xanh; trình bày nền tầng công nghệ của team.</td></tr><tr><td>Team Gallery</td><td>Ảnh thành viên và nhân vật AI demo; click dẫn đến Digital Twin tương ứng.</td></tr><tr><td>Contact Form</td><td>Input email/nội dung, nút Send, validate email trước khi gửi.</td></tr></table>",
+        "bbox": [
+            130,
+            69,
+            890,
+            275
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "4.3. Tương tác và trạng thái ",
+        "text_level": 1,
+        "bbox": [
+            111,
+            287,
+            372,
+            306
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Click nav cuộn đến section tương ứng hoặc chuyển page. ",
+            "● Click “Chat with Digital Twin” mở trang /digital-twin hoặc modal chọn thành viên để chat. ",
+            "● Hover project/team card: nâng nhẹ, hiện overlay/tên/role. ",
+            "● Submit contact: toast thành công hoặc lỗi email không hợp lệ. ",
+            "● Cần thiết kế loading skeleton cho ảnh team, empty/error project list và layout mobile một cột. "
+        ],
+        "bbox": [
+            112,
+            318,
+            905,
+            468
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "OUR WORK ",
+        "text_level": 1,
+        "bbox": [
+            316,
+            127,
+            447,
+            146
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/d6655968f54cb1648f92448a6c3b48101f39a45792fbb3d0742fc32e01d71e25.jpg",
+        "image_caption": [
+            "Workshop Copilot "
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            325,
+            166,
+            387,
+            215
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "01.2026 - 02.2026 ",
+        "bbox": [
+            393,
+            179,
+            447,
+            184
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "pnatibusagisis paurontesascturuusus.Donecquaisriciesnepesqueuptiumuis,sem. ulla consequat messa quis enm ",
+        "bbox": [
+            393,
+            186,
+            679,
+            202
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "PYTHON ",
+        "bbox": [
+            393,
+            207,
+            413,
+            212
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/3bb41d556e5506be0151f917ab8be296e219813be90bddb50140823da8c49d82.jpg",
+        "image_caption": [
+            ""
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            325,
+            231,
+            387,
+            279
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "01.2026 - 02.2026 ",
+        "bbox": [
+            393,
+            241,
+            446,
+            246
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "ulla consequat massa quis enm ",
+        "bbox": [
+            393,
+            251,
+            679,
+            265
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "PYTHONNENDIEYA ",
+        "bbox": [
+            393,
+            270,
+            450,
+            275
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/f832cfa1cfa387411abb3d16523d797ea8c103fe349ff29f10096b31a338afd5.jpg",
+        "image_caption": [
+            "Cơ s lp trình vi GenAI "
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            325,
+            292,
+            387,
+            340
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            393,
+            314,
+            679,
+            329
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "PYTHONGENA",
+        "bbox": [
+            393,
+            334,
+            436,
+            339
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/f23100685047a6c2af5daebc65e907af68635035a4a89d55f7557e3a242e8ea5.jpg",
+        "image_caption": [
+            "Nâng cao lp trình vói GenAl "
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            325,
+            356,
+            387,
+            404
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "01.2026 - 02.2026 ",
+        "bbox": [
+            393,
+            368,
+            446,
+            372
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "pentibusaotscurussDonecquaesn pequeptumu. Nulla consequat massa quis enim ",
+        "bbox": [
+            393,
+            377,
+            679,
+            392
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "(PYTHON)(GENA) ",
+        "bbox": [
+            393,
+            397,
+            436,
+            402
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/28f94bac9627d54a85553d5e10f34b4000b611e55f7a9aa74962ff27c92b6afd.jpg",
+        "image_caption": [
+            "Xây dng sn phm phn mm dùng GenAl "
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            325,
+            419,
+            387,
+            468
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "01.2026 - 02.2026 ",
+        "bbox": [
+            393,
+            431,
+            446,
+            436
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "patibusai psasrs quaciesnesque. lor sit amet, consectetuer adipiscing elit. Aenean Na bus et mat mis d quis enim ",
+        "bbox": [
+            393,
+            441,
+            679,
+            454
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "PYTHONGENA",
+        "bbox": [
+            393,
+            459,
+            436,
+            464
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/9ba6267ef0bce37f5e4f72217a47e49f8fb6a6ad63a66ac09f269bb16260ff10.jpg",
+        "image_caption": [
+            "PERSONAL WEBSITE WITH AN AI DIGITAL TWIN "
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            325,
+            482,
+            387,
+            530
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "paus a sseques qu ",
+        "bbox": [
+            393,
+            502,
+            679,
+            517
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "PYTHONGENA",
+        "bbox": [
+            393,
+            522,
+            436,
+            527
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/57064259eff8dc5950ef1cf6627e59efdc21e043d5d58213d38ca2c747834d07.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            686,
+            165,
+            697,
+            172
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/3e6903e5ec4cdd6973b63d6d0b7a22fd5506f79cd885180f348fb78a64e56fc2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            686,
+            228,
+            697,
+            236
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/848211b136da13f4056f54ab72a9a6738ce087d9dfdd1e8e9b7c29a637d0cdc4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            686,
+            291,
+            697,
+            299
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/ed1b4b66ceda207520059c9d24d494cc5d237aa163e90b7be1be8643836a106c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            686,
+            354,
+            697,
+            362
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/6935cf51bcd18e433621a26eef1992e8bfebd38f40aa0d411b5f5787c56a4289.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            686,
+            416,
+            697,
+            425
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/930b602e02cf8c5dfad1c27019bb96b073f60f8f26a0ef7f340838d50ddbf0c9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            686,
+            479,
+            697,
+            488
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "SEMINAR ",
+        "bbox": [
+            297,
+            75,
+            334,
+            83
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "ABOUT ",
+        "bbox": [
+            517,
+            82,
+            534,
+            87
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "TEAM PROJECTS ",
+        "bbox": [
+            565,
+            82,
+            601,
+            88
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "DIGITALTIVIN",
+        "bbox": [
+            625,
+            82,
+            655,
+            87
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "CONTACT ",
+        "bbox": [
+            679,
+            82,
+            702,
+            87
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/bd2096c45cb71259ab815de58016262b5ba714afa83252b9cb4a6f1fffc045e4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "SEMINAR\nABOUT\nTEAM PROJECTS\nDIGITAL TWN\nCONTACT\nABOUT US\nOur Most\nExperienced Developer\nTeam Member\nOur team is a powerhouse of highly skilled experts, each a master of their craft. While we maintain a lean and compact size, our strengths lies in our agility and precision. You provide ourselves on a multicultural approach to every detail, ensuring that being 'unself' never means compromising on quality or speed.\nChâu Gia Anh\nLeader - Fullstack / Designer\nAs the driving force behind the team, Gia Anh serves as our primary straight and head circumference. Beyond her husbandhood rule, she believes that they between vision and execution by handling both fullstack development and AI/IO design, en matching every technical solution to an functional as it is vitrally competing.\nMaree: Kim\nĐào Thị Thanh Tâm\nMember - Business Analyst / Tester\nThe heart of our workflow, Tâm wears two hate as our Business Analyst and Tester. She's the friendly face who ensures our tech team stays later focused on practical events. By revealing everything from what people know is final delivery, she guarantees that when we huddle is exactly what is needed—all who bring it lovely, positive energy to the team.\nVazz: Khanh\nDương Lê Khánh\nMember - Fullstack\nKhuk is a dynamic and highly versatile Fullstack Developer who serves as the team's unique all \"chuanh\" with an eight member and tenor for More capital, he successfully covers any task across the stack, ensuring the team’s remite resilient and capable of tackling any challenge that comes our way.\nLee Li\nPhan Thành Đại\nMember - AI Engineer\nĐai is the technical powerhouses of the team, specializing in AI-driven solutions, he is responsible for tailoring our most complex, heavy-any tasks and developing custom. It looks that improves the rest of the team. It experiences ensures that we stay at the cutting edge of technology while maintaining peak operational efficiency.",
+        "sub_type": "text_image",
+        "bbox": [
+            334,
+            73,
+            687,
+            834
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/793a119a2619c30fc4b7a07ffb192c8d6b1a596c6ab8daf2c3fc7e1d35e7c80e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "SEMINAR\nABOUT\nCOMPRECISES\nDECIMAL TRAIN\nCONTACT\nPROJECT SEMINAR\nCREATIVE\nWe can use a digital twin without writing a line of code\nCOMMITMENT\nOn the project's ability to create a new AI tool in creating a new AI tool. We will be able to create a new AI tool in creating a new AI tool. We will also create a new AI tool in creating a new AI tool. We will also create a new AI tool in creating a new AI tool. We will also create a new AI tool in creating a new AI tool. We will also create a new AI tool in creating a new AI tool. We will also create a new AI tool in creating a new AI tool. We will also create a new AI tool in creating a new AI tool. We will also create a new AI tool in creating a newAI Tool. \nSINCE 2026\nWe leverage a diverse and modern technological foundation\nOur expertise spans across cutting-edge web development, which is used to create a diverse and modern technological foundation. We build a multi-level AI tool with a single step.\nHellen Graphics\nFirebase\nnbn\n3D modeling\nVisual Effect\nGraphic Design\nDigital Twin AI Chat\nEvery masterpiece begins with a single step\nOne step at a time, our team approaches every task with meticulous planning. We ensure a seamless workflow to deliver comprehensive results with absolute precision\nGet to know more about us\nLet's chat together with AI Digital Twin models.\nX Grok\nGems\nCOMT WITH DIGITAL TWINS\nWE'D LOVE TO HEAR FROM YOU!\nLet's Stay Connected\nSEMINAR\n© 2026 Seminar © 2026 Seminar",
+        "sub_type": "text_image",
+        "bbox": [
+            163,
+            71,
+            390,
+            851
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/1123e4f13d3f815c7c38df247f70d8157924eb2f524670c4a8242798dfd6f12c.jpg",
+        "image_caption": [
+            "Hình 1 Giao diện landing page giới thiệu demo "
+        ],
+        "image_footnote": [],
+        "content": "SEMINAR\nABOUT\nTEAM PROJECTS\nDIGITAL TWIN\nCONTACT\nDIGITAL TWIN\nLet's chat ? → Khánh\nDương Lê Khánh\nChào bạn nha, bạn muốn hỏi mình cái gì nè hôi di trả lời cho !\nchào bạn, bạn học ngành giá ?\nDương Lê Khánh\nMinh học ngành công nghệ thông tin nha ! Bạn muốn hỏi gì khác không ?\nTechstack của bạn là gì ?\nDương Lê Khánh\nMain techstack hiện tại của mình là C# .NET backend nha, nhưng ở trong nhóm seminar chuyên đề mình đóng vai trò Fullstack\nask anything...\nSEND\nSEMINAR\n© 2026 Seminar: All rights reserved.",
+        "sub_type": "text_image",
+        "bbox": [
+            395,
+            391,
+            859,
+            851
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "5. Public Digital Profile ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            71,
+            330,
+            90
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Trang hồ sơ công khai là nơi khách mở sau khi quét QR hoặc bấm URL cá nhân hóa dạng digitalcard.app/u/[username]. Mục tiêu là xem nhanh chủ thẻ là ai, có kỹ năng/dự án gì, liên hệ ra sao, lưu danh bạ và bắt đầu chat với AI đại diện. Ngoài ra cũng có Khung chat cho phép khách hỏi AI đại diện của chủ thẻ về kinh nghiệm, dự án hoặc dịch vụ. UI phải tạo cảm giác đang nói chuyện với trợ lý AI của chủ thẻ, không gây hiểu nhầm AI là người thật. ",
+        "bbox": [
+            109,
+            103,
+            906,
+            199
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5.1. Bố cục đề xuất ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            208,
+            290,
+            229
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Mobile-first: cover, avatar, tên, role, slogan, CTA nằm trong màn đầu. ",
+            "● Desktop: layout 2 cột; trái là profile summary, phải là chat entry/project preview. ",
+            "● Section chính: Hero Profile, Social Links, About/Bio, Skills, Featured Projects, Save Contact, Contact Form. ",
+            "● Nếu card đang Draft hoặc bị khóa, public route không hiển thị hồ sơ dở dang mà chuyển sang 404/thông báo đang cập nhật. "
+        ],
+        "bbox": [
+            112,
+            241,
+            905,
+            369
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5.2. Thành phần giao diện ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            383,
+            354,
+            405
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Bảng 8 Bảng thành phần giao diện Public Digital Profile ",
+        "bbox": [
+            112,
+            416,
+            604,
+            436
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/53d0e7d68ac1cd059589b1dfe4a9984e4ad050dcdc2cfabbfb468bfef07d1352.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Component</td><td>Mô tả / Quy tắc hiển thị</td></tr><tr><td>Cover + Avatar</td><td>Ảnh bìa 16:9/21:9, avatar tròn hoặc bo góc; nếu thiếu ảnh dùng gradient placeholder.</td></tr><tr><td>Name + Verified Badge</td><td>Tên lớn, chức danh, tick verified nếu đăng nhập Google/dã xác thực.</td></tr><tr><td>Social Icon Buttons</td><td>Facebook, Instagram, X, GitHub, Behance, Dribbble, Portfolio, Email; ăn nếu user không khai báo.</td></tr><tr><td>Save Contact CTA</td><td>Nút “Lưu liên lạc” tạo file .vcf; chỉ đưa email/SĐT vào VCF nếu quyền riêng tư cho phép.</td></tr><tr><td>AI Chat Entry</td><td>Nút/widget “Ask my AI Twin” với trạng thái AI Ready/Disabled/Error.</td></tr><tr><td>Static Contact Form</td><td>Form dự phòng khi AI lỗi/tắt hoặc khách muốn gửi tin nhân thủ công; bắt buộc có consent.</td></tr></table>",
+        "bbox": [
+            130,
+            445,
+            890,
+            729
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5.3. Tương tác và trạng thái ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            741,
+            372,
+            761
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Bấm social icon mở link ở tab mới. ",
+            "● Bấm Save Contact tải file VCF chuẩn vCard 3.0 và ghi nhận event tracking. ",
+            "● Bấm Chat mở khung Digital Twin chat trong cùng trang. ",
+            "● Submit form hiển thị consent “Bằng cách gửi thông tin, bạn đồng ý cho chủ thẻ liên hệ lại”. ",
+            "Trạng thái cần có: 404, hồ sơ đang cập nhật, card bị khóa, AI Disabled, AI Error, skeleton khi tải profile. "
+        ],
+        "bbox": [
+            112,
+            771,
+            905,
+            922
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/00be9df74dfed1acc8a704f277c22e454036b3f070921a16da977842d4b764bd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "Anthony Simon\nProduct Designer & AI Strategist\nCrafting digital twins for seamless\nprofessional connection\nin\nAsk my AI Twin\n\nDudong Lê Khánh\nChào ban nha, ban muốn hói\ncái gì thi minh trả lời cho\n\nDudong Lê Khánh\nMinh học công nghệ thông tin á\n\nTechstack của bạn?\n\nDudong Lê Khánh\nTừ từ minh trả lời nha\n\nask anything...\nSEND\n\nMô tả\nKhánh is a dynamic and highly versatile Fullstack Developer who serves as the team's\nultimate 'all-rounder: With an agile mindset and broad technical expertise, he seamlessly\ncovers any task across the stack, ensuring the team remains resilient and capable of\ntackling any challenge that comes our way\nKỹ năng\n(PITCH)\n(PITCH)\n(PITCH)\n(PITCH)\n(PITCH)\n(PITCH)\n\nDự án của tối\n\nPERSONAL WEBSITE WITH AN AI DIGITAL TWIN\n01.2026 - 02.2026\n\nLorem ipsum-sizeir sit amet, connectebular adipiscing síti. Aenean commodo liguta eget daker. Aenean massa. Cum sociol natoque\npensitius et magnita dis parturiant montes, nasceitar léticulus mus. Donec quam felis, ultricies nec, pentaertisque eu, pretium quis, sem.\nNulta consequat massa quis smàn\n\nPERSONAL WEBSITE WITH AN AI DIGITAL TWIN\n01.2026 - 02.2026\n\nLorem ipsum-sizeir sit amet, connectebular adipiscing síti. Aenean commodo liguta eget daker. Aenean massa. Cum sociol natoque\npensitius et magnita dis parturiant montes, nasceitar léticulus mus. Donec quam felis, ultricies nec. pentaertisque eu, pretium quis, sem.\nNulta consequat massa quis smàn\n\nKinh nghiệm\n\nCOMPANY A\n01.2026 - 02.2026\n\nÓ công ty A, lôi có có có them gia vivot qua trình phát triển và hỗ trợ văn hành các chức Scandin trong dự án thực tế. Trong thế given làm\nvoc, từ được đản Scandinทาง facilities you處, và cơe, kiểm<|vision_start|> co rủ la và photodi fog et cản Scandin trong Prague đểほin thanh\ncong việc dụng tiêu diu. Trai nghiệm máy giúp/tá hídú rõ hơn và quy trình làm việc trong môi trường doanh nghiệp, Scandin cao khả năng tự\nhọc, giáo tiếp và xử lý và đi-kil them gia mMỊ vụ an phân mềm thực tế.\n\nCOMPANY A\n01.2026 - 02.2026\n\nÓ công ty A, lôi có có có them gia vivot qua trình phát triển và hỗ trợ văn hành các chức Scandin trong dự án thực tế. Trong thế given làm\nvoc, từ được đản Scandinทาง facilities you處, và cơe, kiểm có rủ la và quy trình hợp et cản Scandin trong Prague đểほin thanh\ncong việc ScandinOLID Diu. Trai nghiệm máy giúp/tá hídú rõ hơn và quy trình làm việc trong môi trường doanh nghiệp, Scandin cao khả năng tự\nhọc, giáo tiếp và xử lý và đi-kil them gia mMỊ vụ an phân mềm thực tế.\n\nBảo cáo trang cá nhân",
+        "sub_type": "text_image",
+        "bbox": [
+            143,
+            71,
+            627,
+            428
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/1e1d2f0687e92cb07841350b20d6fd00fad583ff5fde0f8177b21c740b916525.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "Báo cáo trang cá nhân\nDã lâm gì dấu đã chàm vào dấu...\nLý do báo cáo\nValue\nGùi",
+        "sub_type": "text_image",
+        "bbox": [
+            633,
+            90,
+            854,
+            229
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/5c8e4ccda7979181d651e2fff9527b13c28ca8eae96f9f65963c587efa851cb8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "Cung cấp thông tin của bạn\nDéi lại số thông tin của bạn để chứng tối có thể liên lực\nTên\nValue\nEmail\nValue\nSố điện thoại\nValue\nBình phần provides information, bus zhòng y无需 chất<|vision_start|> Lesin trị!",
+        "sub_type": "text_image",
+        "bbox": [
+            630,
+            268,
+            877,
+            407
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/8f35df0b77a346e8aa71177664991da762c3391fbc5041e76aed57c0668d11be.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "Anthony Simon\nProduct Designer & AI Strategist\nCrafting digital twins for seamless\nprofessional connection",
+        "sub_type": "text_image",
+        "bbox": [
+            397,
+            446,
+            620,
+            699
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Hình 2 Giao diện Public Profile , chat preview, report form, lead form và contact save ",
+        "bbox": [
+            140,
+            727,
+            880,
+            747
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "6. Dashboard dành cho chủ thẻ ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            71,
+            401,
+            90
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6.1. Profile Builder / Card Editor ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            104,
+            418,
+            122
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Màn hình để chủ thẻ nhập thông tin cá nhân, social links, quyền riêng tư, template và preview realtime trước khi xuất bản. ",
+        "bbox": [
+            109,
+            133,
+            906,
+            176
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Desktop: form bên trái, live preview bên phải. ",
+            "● Mobile: form theo từng step; preview mở bằng nút “Xem trước”. ",
+            "● Nhóm form: Basic Info, Media, Social Links, Privacy, Theme, Publish. ",
+            "● Preview realtime cập nhật dưới 200ms theo yêu cầu NFR. "
+        ],
+        "bbox": [
+            112,
+            179,
+            751,
+            263
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/c91d9562c332a694a1c69c3d916adc9428f76c60813d049d6a9a2386cacb57f2.jpg",
+        "table_caption": [
+            "Bảng 9 Bảng thành phần Profile Builder / Card Editor "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Component</td><td>Mô tả / Quy tắc hiễn thị</td></tr><tr><td>Basic Info Form</td><td>Họ tên, chức danh, slogan, bio tối đa 300 ký tự, slug.</td></tr><tr><td>Media Upload</td><td>Avatar, cover; avatar tối đa 5MB; crop/preview trước khi lưu.</td></tr><tr><td>Social Links</td><td>URL input có validate định dạng; icon tự động hiện nếu có dữ liệu.</td></tr><tr><td>Privacy Toggles</td><td>Ăn/hiện email, số điện thoại; ảnh hưởng cả public UI, VCF và dữ liệu AI được phép biết.</td></tr><tr><td>Theme Selector</td><td>Chọn dark/blue template, font, accent color nhưng vẫn trong hệ màu brand.</td></tr><tr><td>Live Preview</td><td>Mô phỏng public profile theo kích thước mobile/desktop.</td></tr></table>",
+        "bbox": [
+            130,
+            306,
+            890,
+            517
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Auto-save draft hoặc Save Draft. ",
+            "● Publish kiểm tra trường bắt buộc. ",
+            "● Slug trùng báo lỗi ngay. ",
+            "Trạng thái: validation error, upload failed, slug unavailable, draft saved, published successfully. "
+        ],
+        "bbox": [
+            112,
+            536,
+            846,
+            642
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/ef01ad161ebc60672257eda970e77067aaeed125c7bc85fae2edf1ad48a9c715.jpg",
+        "image_caption": [
+            "Hình 3 Hình tham chiếu Profile Builder / Card Editor. "
+        ],
+        "image_footnote": [],
+        "content": "SEMINAR\nQuản lý thông tin\nQuản lý Persona\nQuản lý QR\nQuản lý tin nhân\nBasic Info\nFull Name\nValue\nRole/Title\nValue\nSlogan\nValue\nBio\nValue\nMedia\nAvatar upload\nSocial Link\nFacebook\nValue\nInstagram\nValue\nInstagram\nValue\nPortfolio\nValue\nEmail\nValue\nPhone\nValue\nPrivacy\nShow Email\nShow Phone\nShow Social Links",
+        "sub_type": "text_image",
+        "bbox": [
+            143,
+            75,
+            877,
+            545
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "6.2. AI Digital Twin Configuration ",
+        "text_level": 1,
+        "bbox": [
+            111,
+            580,
+            429,
+            599
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Màn hình cấu hình tone, system prompt, Knowledge Base Form và guardrails để AI trả lời đúng persona của chủ thẻ. Theo PRD, không thiết kế upload PDF/DOCX; mọi tri thức đều nhập bằng form có cấu trúc và backend tổng hợp thành persona\\_data.json. ",
+        "bbox": [
+            109,
+            611,
+            906,
+            669
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Dùng tab/accordion: Persona, Knowledge Base, Prompt Rules, Test Chat, Publish AI. ",
+            "● Hiển thị thanh trạng thái AI: Draft, AI Ready, AI Disabled, AI Error. ",
+            "● Có khung Test Chat nội bộ để owner thử câu hỏi trước khi public. ",
+            "● Có cảnh báo: AI chỉ trả lời dựa trên dữ liệu đã nhập và không tự bịa thông tin. "
+        ],
+        "bbox": [
+            112,
+            670,
+            875,
+            755
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/0dc1922686f907970fd7eeb997d2d2dce16afa3d730a4695b1cbaea43913a443.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Component</td><td>Mô tả / Quy tắc hiển thị</td></tr><tr><td>Tone Selector</td><td>Chuyên nghiệp, thân thiện, hài hướng, ngắn gọn; có mô tả từng tone.</td></tr><tr><td>System Prompt Box</td><td>Textarea tối đa 2.000 ký tự; counter; cảnh báo không nhập thông tin nhạy cảm.</td></tr><tr><td>Knowledge Base Form</td><td>Kỹ năng, kinh nghiệm, dự án, dịch vụ, FAQ; backend gom thành persona data.json.</td></tr><tr><td>Guardrail Checklist</td><td>Không bịa thông tin, không báo giá nếu chưa có, luôn xưng “Trợ lý AI của [Tên]”.</td></tr><tr><td>Test Chat</td><td>Chat thử nội bộ với nút regenerate/reset conversation.</td></tr><tr><td>AI Toggle</td><td>Bật/tắt AI public; nếu tắt thì public card hiển thị fallback form.</td></tr></table>",
+        "bbox": [
+            130,
+            104,
+            890,
+            323
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Lưu và huấn luyện AI. ",
+            "● Test prompt trước khi publish. ",
+            "● Bật/tắt AI với confirm modal. ",
+            "● Hiển thị lỗi nếu System Prompt vượt 2.000 ký tự hoặc tổng dữ liệu JSON vượt 15.000 ký tự. ",
+            "● Trạng thái cần thiết kế: AI Draft, AI Training, AI Ready, AI Error, AI Disabled, Prompt too long. "
+        ],
+        "bbox": [
+            112,
+            339,
+            893,
+            491
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/17fefaa46e24e78175b101052ce43c0ba9ed389a7142db170e5631441f5ebadb.jpg",
+        "image_caption": [
+            "Hình 4 Hình tham chiếu AI Digital Twin Configuration. "
+        ],
+        "image_footnote": [],
+        "content": "SEMINAR\nQuản lý thông tin\nQuản lý Persona\nQuản lý QR\nQuản lý tin nhân\nPersona\nTổng giống\nNgot ngale, ciki thương, Hồng háchi...\nThoại mặc định\nVD: Cháo ban nha, ban thích gi thể thích di nha\nCancel Save\nKnowledge Base\nKỹ năng\n(m/m²)\nExperience\nCOMPANY A\n01.2026 - 02.2026\nÓ công ty, B, t&I do cơ sở them gia viào quì them phát triển và hồ trợ viàn hành các choic năng trong dự án thực tế. Trong thôi glan làm việc, mì diuòc rén kuyén kỹ năng phần t&I provides, Cork cada, kitiang cói fiscal hợp và cai dhihine vigo trong omni diu, hǎo thôi cong Cape, Dàmmíyú. T&I amélien ng粒 g让 Náu cói huàn cói qay trich lam vigo trong môi bùtung doanh ngájón, răng cαo khí năng tuýt, gao lifig và uǐ yīn diu kiti them gia môi duý an phân mònm thy sě.\nCOMPANY B\n01.2026 - 02.2026\nÓ công ty B, t&I do cơ sở them gia viào quì them phát triển và hồ trợ viàn hành các choic năng trong dự án thực tế. Trong thôi glan làm việc, t&I ducó rén kuyén kỹ năng phần t&I provides, Cork cada, kitiang cói fiscal hợp và cai dhihine vigo trong omni diu, hǎo thôi cong Cape, Dàmmíyú. T&I amélien ng粒 g让 Náu cói huàn cói qay trich lam vigo trong môi bùtung doanh ngájón, răng c αo khí năng tuýt, gao lifig và uǐ yīn diu kiti them gia môi duý an phân mònm thy sě.\nProject\nPERSONAL WEBSITE WITH AN AI DIGITAL TWIN\n01.2026 - 02.2026\nLorem ipsum dolor at smet, connecteur adjusting eifi, Annuen comodo ligale esgt color, Annuen massa, Cum socié natique janniticus et magnés de parturant monter, nasceitur didiscus mud. Hence quam felis, atrifices nec, pententesque du, pretium quis, sem. Nulle consequat massa què enm\nPERSONAL WEBSITE WITH AN AI DIGITAL TWIN\n01.2026 - 02.2026\nLorem ipsum dolor at smet, connecteur adjusting eifi, Annuen comodo ligale esgt color, Annuen massa, Cum socié natique janniticus et magnés de parturant monter, nasceitur didiscus mud. Hence quam felis, atrifices nec, pententesque ou, pretium quis, sem. Nulle consequat massa què enm\nThêm kỹ năng mới\nTên kỹ năng\nValue\nHủy Thêm\nThêm Kinh nghiệm mới\nKinh nghiệm hay ho ngai gi không thêm\nTên Cống ty/Công việc/Startup...\nValue\nThời gian bất dibu - kết thúc\ndàmmíyú  dàmmíyú\nMô tả\nNhập mô tả của kinh nghiệm của ban\nHủy Thêm\nThêm Dự án mới\nDự án hay ho ngai gi không thêm...\nTên dự án\nValue\nThời gian bất dibu - kết thúc\ndàmmíyú  dàmmíyú\nMô tả\nNhập mô tả của kinh nghiệm của ban\nDương link đến dự án của ban\nValue\nHủy Thêm",
+        "sub_type": "text_image",
+        "bbox": [
+            184,
+            505,
+            836,
+            875
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Bảng 10 Bảng thành phần AI Digital Twin Configuration ",
+        "bbox": [
+            112,
+            71,
+            604,
+            92
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "6.3. QR Code Manager ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            71,
+            328,
+            90
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Màn hình quản lý QR giúp chủ thẻ lấy mã QR duy nhất trỏ đến public Digital Profile. QR dùng cho demo, in danh thiếp hoặc dán vào poster/slide. ",
+        "bbox": [
+            111,
+            90,
+            880,
+            128
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Card trung tâm hiển thị QR lớn, URL slug và nút copy link. ",
+            "● Nút tải PNG/SVG rõ ràng; PNG tối thiểu 1000x1000px. ",
+            "● Preview màu QR có thể đồng bộ brand xanh/đen nhưng phải đủ contrast để camera quét. ",
+            "● Nếu slug đổi, hệ thống cảnh báo QR cũ có thể không còn đúng. "
+        ],
+        "bbox": [
+            112,
+            128,
+            898,
+            214
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/329dd280c3396d00f4b165664352affcbcf33d0dc71301f1328f0a9fc2affb7a.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Component</td><td>Mô tả / Quy tắc hiển thị</td></tr><tr><td>QR Preview</td><td>Mã QR lớn, có padding/quiet zone đủ rộng.</td></tr><tr><td>Copy URL</td><td>Copy slug cá nhân hóa dạng digitalcard.app/u/[username].</td></tr><tr><td>Download PNG/SVG</td><td>Tải file phục vụ in ấn và demo.</td></tr><tr><td>Tracking Hint</td><td>Gọi ý ràng lượt scan/click sẽ được ghi nhận vào Basic Analytics.</td></tr></table>",
+        "bbox": [
+            130,
+            226,
+            890,
+            366
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/f55ecabe16bd3daaf9d5a63fd630ebbc56c820a4423021d44fa39d37e995fba7.jpg",
+        "image_caption": [
+            "Hình 5 Hình tham chiếu ví lưu trữ QR "
+        ],
+        "image_footnote": [],
+        "content": "SEMINAR\nQUẢN LÝ thông tin\nQUẢN LÝ Persona\nQUẢN LÝ QR\nQUẢN LÝ tin nhẫn\nQR Code Manager\nShare your Digital Profile instantly\nPublished\ndigitalcard.app/u/alex\nCopy URL\nDownload PNG\nDownload SVG\nCopy Link",
+        "sub_type": "text_image",
+        "bbox": [
+            116,
+            377,
+            849,
+            829
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "6.4. Persona Inbox & Human Takeover ",
+        "text_level": 1,
+        "bbox": [
+            111,
+            71,
+            473,
+            90
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Persona Inbox là nơi chủ thẻ xem lịch sử chat, lead đã thu thập và xử lý hội thoại quan trọng. Human Takeover cho phép chủ thẻ tạm dừng AI để trực tiếp nhắn với khách. ",
+        "bbox": [
+            111,
+            90,
+            852,
+            128
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Desktop: layout 3 cột gồm danh sách hội thoại, nội dung chat, panel thông tin lead. ",
+            "● Mobile: danh sách hội thoại -> detail chat -> lead drawer. ",
+            "● Mỗi hội thoại hiển thị tên khách nếu có, thời gian, nguồn, trạng thái AI/Human, tag lead. ",
+            "● Nút Human Takeover đặt rõ nhưng cần confirm để tránh bấm nhầm. "
+        ],
+        "bbox": [
+            112,
+            128,
+            898,
+            213
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/8e6db01f63069f4f37cde786d92b1cd3373346288ec9e44e58e02789074e368c.jpg",
+        "table_caption": [
+            "Bảng 11 Bảng thành phần Persona Inbox & Human Takeover "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Component</td><td>Mô tả / Quy tắc hiễn thị</td></tr><tr><td>Conversation List</td><td>Tên khách/ẩn danh, thời gian, trạng thái unread, nguồn QR/link/form.</td></tr><tr><td>Transcript Viewer</td><td>Tin nhấn khách, AI và owner được phân màu rõ.</td></tr><tr><td>Lead Panel</td><td>Tên, email, SĐT, nhu cầu hợp tác, consent status.</td></tr><tr><td>Human Takeover Toggle</td><td>Bật takeover thì AI tạm ngừng cho phiên đó; có banner thông báo cho khách.</td></tr><tr><td>Actions</td><td>Mark read/unread, archive, delete, email notification.</td></tr></table>",
+        "bbox": [
+            130,
+            257,
+            890,
+            419
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Click hội thoại mở transcript. ",
+            "● Takeover tắt AI cho phiên đó. ",
+            "Gửi tin owner realtime. ",
+            "● Archive/xóa có confirm. ",
+            "● Trạng thái cần thiết kế: live conversation, guest offline, AI paused, unread, archived, lead captured. "
+        ],
+        "bbox": [
+            112,
+            436,
+            866,
+            565
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/38562e7580ec61de6ec7d61fb99ebb353fa7efad7aa90d0ad2a8ed35e54ee61b.jpg",
+        "image_caption": [
+            "Hình 6 Hình tham chiếu Persona Inbox / quản lý tin nhắn. "
+        ],
+        "image_footnote": [],
+        "content": "SEMINAR\nQuản lý thông tin\nQuản lý Persona\nQuản lý QR\nQuản lý tin nhân\n\nValue\nUnread Archived\nTên: Labubu\nGmail: labubu@gmail.com\nSố điện thoại: 0700700707\nSo in the last message, I was about...\n\nLabubu\nHello, bạn là Al há\n\nMình là Digital Twin của Anthony\n\nLabubu\nWow, kể cho túi nghe về Anthony đi\n\nThôi bạn đi, bạn đọc là biết rủi\n\nLabubu\nTrời đất, vậy mà cũng làm Al\n\nEnter your message SEND",
+        "sub_type": "text_image",
+        "bbox": [
+            116,
+            75,
+            911,
+            565
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "7. Admin Panel ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            618,
+            259,
+            636
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Admin Panel là khu vực dành cho quản trị viên dùng để quản lý tài khoản người dùng và xử lý các trường hợp người dùng bị báo cáo. Giao diện được thiết kế theo phong cách tối, đồng bộ với hệ thống chính, sử dụng bố cục sidebar bên trái và vùng nội dung quản lý ở bên phải. ",
+        "bbox": [
+            111,
+            651,
+            905,
+            715
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Admin Panel hiện gồm 2 chức năng chính: ",
+        "bbox": [
+            112,
+            731,
+            482,
+            752
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Quản lý người dùng ",
+            "Quản lý báo cáo "
+        ],
+        "bbox": [
+            142,
+            768,
+            359,
+            811
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Sidebar chỉ hiển thị các mục quản trị cần thiết, tránh đưa vào các chức năng không nằm trong phạm vi đồ án như analytics nâng cao, AI usage chart, settings hệ thống hoặc quản lý template. ",
+        "bbox": [
+            111,
+            825,
+            893,
+            891
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "7.1. Quản lý người dùng ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            71,
+            338,
+            92
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Trang Quản lý người dùng cho phép admin xem danh sách tài khoản đã đăng ký trong hệ thống. Dữ liệu được trình bày dưới dạng bảng để dễ theo dõi, tìm kiếm và thao tác quản trị. ",
+        "bbox": [
+            116,
+            109,
+            893,
+            151
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bảng quản lý người dùng bao gồm các thông tin chính: ",
+        "bbox": [
+            116,
+            167,
+            584,
+            188
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/bf118c3b0102e41bf705cf689f9db857ed1de27fd9e5f999bcbd74b97bb9087b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Thành phần</td><td>Mô tả / Quy tắc hiển thị</td></tr><tr><td>ID tài khoản</td><td>Mã định danh của người dùng trong hệ thống.</td></tr><tr><td>Tên đầy đủ</td><td>Hiển thị họ tên người dùng.</td></tr><tr><td>Email</td><td>Email đăng ký tài khoản.</td></tr><tr><td>Ngày đăng ký</td><td>Ngày người dùng tạo tài khoản.</td></tr><tr><td>Trạng thái xác thực</td><td>Hiển thị trạng thái như “Đã xác thực” hoặc “Đã khóa”.</td></tr><tr><td>Thao tác quản lý</td><td>Cho phép admin xem thông tin, khóa/mở khóa tài khoản hoặc truy cập thao tác liên quan.</td></tr></table>",
+        "bbox": [
+            114,
+            203,
+            874,
+            588
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Trang có ô tìm kiếm nhanh để admin có thể tìm người dùng theo email, tên hoặc trạng thái tài khoản. Bảng dữ liệu hỗ trợ phân trang để phù hợp khi số lượng người dùng lớn. ",
+        "bbox": [
+            116,
+            603,
+            903,
+            645
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Các thao tác quan trọng như khóa hoặc mở khóa tài khoản cần có xác nhận trước khi thực hiện để tránh thao tác nhầm. ",
+        "bbox": [
+            116,
+            662,
+            880,
+            702
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "7.2. Quản lý báo cáo ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            723,
+            300,
+            742
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Trang Quản lý báo cáo dùng để admin theo dõi danh sách người dùng bị báo cáo bởi người khác. Mục tiêu của trang này là giúp admin kiểm tra lý do báo cáo và đưa ra hướng xử lý phù hợp. ",
+        "bbox": [
+            116,
+            760,
+            890,
+            824
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bảng quản lý báo cáo bao gồm các thông tin chính: ",
+        "bbox": [
+            116,
+            840,
+            553,
+            859
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/bd003bfa6fb1c27bdfca8737eba486521cb0b00b759fb27a4839941ce711742c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Thành phần</td><td>Mô tả / Quy tắc hiện thị</td></tr><tr><td>ID tài khoản</td><td>Mã tài khoản của người dùng bị báo cáo.</td></tr><tr><td>Tên đầy đủ</td><td>Tên người dùng bị báo cáo.</td></tr><tr><td>Email</td><td>Email của tài khoản bị báo cáo.</td></tr><tr><td>Trạng thái xác thực</td><td>Cho biết tài khoản hiện đang hoạt động, đã xác thực hoặc đã bị khóa.</td></tr><tr><td>Lý do bị báo cáo</td><td>Hiển thị nguyên nhân người dùng bị report, ví dụ: quấy rối, nội dung không phù hợp, tài khoản giả mạo, vi phạm điều khoản.</td></tr><tr><td>Ngày tạo</td><td>Thời điểm báo cáo được tạo.</td></tr><tr><td>Thao tác quản lý</td><td>Cho phép admin xem chi tiết, xử lý báo cáo hoặc khóa/mở khóa tài khoản liên quan.</td></tr></table>",
+        "bbox": [
+            114,
+            68,
+            877,
+            527
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Trang có thanh tìm kiếm nhanh để lọc báo cáo theo email, tên, trạng thái hoặc lý do báo cáo. Các báo cáo được hiển thị theo dạng bảng nhằm giúp admin dễ so sánh và xử lý nhiều trường hợp cùng lúc. ",
+        "bbox": [
+            109,
+            541,
+            893,
+            607
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "7.3. Trạng thái và quy tắc hiển thị ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            623,
+            426,
+            645
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Admin Panel cần thiết kế các trạng thái giao diện cơ bản để hỗ trợ quá trình sử dụng: ",
+        "bbox": [
+            111,
+            660,
+            841,
+            683
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Loading: hiển thị khi bảng đang tải dữ liệu. ",
+            "● No data: hiển thị khi chưa có người dùng hoặc chưa có báo cáo nào. ",
+            "● Permission denied: hiển thị khi tài khoản không có quyền truy cập Admin Panel. ",
+            "● Confirm action: hiển thị hộp xác nhận khi admin khóa hoặc mở khóa tài khoản. ",
+            "● Report resolved: hiển thị trạng thái báo cáo đã được xử lý. "
+        ],
+        "bbox": [
+            142,
+            698,
+            872,
+            806
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "7.4. Nguyên tắc thiết kế ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            823,
+            333,
+            845
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Admin Panel sử dụng giao diện tối để đồng bộ với phong cách tổng thể của hệ thống. Sidebar đặt bên trái, nội dung chính hiển thị trong khung lớn bên phải. Các bảng dữ liệu cần rõ ràng, dễ đọc, có khoảng cách hợp lý giữa các cột và dùng màu trạng thái để phân biệt tài khoản đang hoạt động, đã xác thực hoặc đã bị khóa. ",
+        "bbox": [
+            111,
+            859,
+            901,
+            904
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            109,
+            71,
+            890,
+            113
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Các chức năng ngoài phạm vi như thống kê nền tảng, biểu đồ AI usage, quản lý card nâng cao hoặc settings hệ thống không được đưa vào giao diện admin trong phiên bản hiện tại. ",
+        "bbox": [
+            109,
+            128,
+            883,
+            172
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/8ca03a5c5be22a0a9c3ebde3f3d77ac035aa9f9a85e0d3c609c926ef04819760.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "ADMIN\nQuản lý người dùng\n+ THÊM TÀI KHỒN MỐI\nQuản lý người dùng\nQuản lý báo cáo\n# ID Tài Khoản    Tên Dếy Đù    E-Mail    Ngày Đăng Kỳ    Trạng Thái Xác Thực    Thao Tác Quản Lý\n1 1001    Alyvia Kelley    a.kelley@gmail.com    06/18/2021    Đã Xác Thực\n2 1002    Jaiden Nixon    jaiden.n@gmail.com    09/30/2020    Đã Xác Thực\n3 1003    Ace Foley    ace.fo@yahoo.com    12/09/2022    Đã Khóa\n4 1004    Nikolai Schmidt    nikolai.schmidt1964@outlook.com    03/22/2019    Đã Khóa\n5 1005    Clayton Charles    me@clayton.com    10/14/2021    Đã Xác Thực\n6 1006    Prince Chen    prince.chen1997@gmail.com    07/05/1992    Đã Xác Thực\n7 1007    Ace Foley    sample.user@gmail.com    Recent Date    Đã Xác Thực\n← Previous  1  2  3 ...  67  68  Next →",
+        "sub_type": "text_image",
+        "bbox": [
+            116,
+            191,
+            908,
+            467
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/f7fac3d4092c830a5b349fed6588de14b4e1f80c9fc813b5fe25a470d1dd1769.jpg",
+        "image_caption": [
+            "Hình 7 Hình tham chiếu admin quản lý user / report card "
+        ],
+        "image_footnote": [],
+        "content": "ADMIN\nQuản lý người dùng\nQuản lý báo cáo\n# ID Tài Khoản\nTên Đầy Dù\nE-Mail\nTrạng Thái Xác Thực\nLý do bị báo cáo\nNgày tạo\nThao Tác Quản Lý\n1 1001\nAlyvia Kelley\na.kelley@gmail.com\nĐã Xác Thực\nQuá tải thứ rác\n06/20/2021\n2 1002\nJaiden Nixon\njaiden.n@gmail.com\nĐã Xác Thực\nNội dung không phù hợp\n10/01/2020\n3 1003\nAce Foley\nace.fo@yahoo.com\nĐã Khóa\nTạo tài khoản giả mạo\n12/11/2022\n4 1004\nNikolai Schmidt\nnikolai.schmidt1964@outbook.com\nĐã Khóa\nVị phạm điều khoản\n03/24/2019\n5 1005\nClayton Charles\nme@clayton.com\nĐã Xác Thực\nTài khoản không hoạt động\n10/16/2021\n6 1006\nPrince Chen\nprince.chen1997@gmail.com\nĐã Xác Thực\nTên tài khoản không hợp lệ\n07/07/1992\n7 1007\nAce Foley\nsample.user@gmail.com\nRecent Date\nNội dung bạo lực\nRecently",
+        "sub_type": "text_image",
+        "bbox": [
+            116,
+            473,
+            908,
+            744
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "8. Trạng thái hệ thống và fallback ",
+        "text_level": 1,
+        "bbox": [
+            111,
+            797,
+            426,
+            818
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Phần này được bổ sung để tài liệu GUI khớp với PRD. Mỗi trạng thái cần có biểu hiện UI rõ ràng, tránh để khách nhìn thấy trang trống hoặc lỗi kỹ thuật. ",
+        "bbox": [
+            109,
+            828,
+            906,
+            871
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Bảng 13. Bảng giao diện trạng thái AI ",
+        "bbox": [
+            111,
+            885,
+            446,
+            905
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "table",
+        "img_path": "images/09d30ed1bfbb0cb7deb6bcc7405f1d5e13b166fe3d9a103b70bafe708ccd5716.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Trạng thái</td><td>Ý nghĩa</td><td>Hành vi giao diện</td></tr><tr><td>Draft</td><td>Card/Profile hoặc AI đang nhập liệu, chưa hoàn thiện.</td><td>Public URL trả về 404 hoặc thông báo “Hồ sơ đang được cập nhật”. QR chưa nên public.</td></tr><tr><td>Published</td><td>Card đã xuất bản và hiển thị thông tin tỉnh.</td><td>Khách quét QR xem được avatar, bio, social, Save Contact và form/contact.</td></tr><tr><td>AI Disabled</td><td>Card vẫn Published nhưng chủ thể tắt chatbot.</td><td>Ăn chat widget, hiển thị Fallback Form để khách để lại lời nhân.</td></tr><tr><td>AI Ready</td><td>AI đã có prompt và dữ liệu persona data.json hợp lệ.</td><td>Nút Chatbot sáng lên, tin nhân được gửi qua LLM, có typing state.</td></tr><tr><td>AI Error</td><td>Lỗi API/model/server hoặc JSON cấu hình.</td><td>Không hiện lỗi kỹ thuật. Chuyển sang thông báo bảo trì + fallback form, đồng thời báo owner/admin.</td></tr></table>",
+        "bbox": [
+            125,
+            69,
+            893,
+            325
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Luồng fallback bắt buộc ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            70,
+            339,
+            92
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Nếu AI Disabled hoặc AI Error: public card hiển thị fallback form thay cho chat. ",
+            "● Nếu khách gửi form: validate email/SĐT, lưu lead vào Inbox và gửi email thông báo cho chủ thẻ. ",
+            "● Nếu AI bị hỏi ngoài knowledge base: trả lời chưa có thông tin, không bịa, gợi ý để lại liên hệ. ",
+            "● Nếu khách spam: áp dụng rate limit và thông báo nhẹ nhàng, không làm hỏng trải nghiệm người dùng bình thường. "
+        ],
+        "bbox": [
+            112,
+            102,
+            906,
+            253
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "9. Responsive Design ",
+        "text_level": 1,
+        "bbox": [
+            111,
+            268,
+            307,
+            289
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Không dùng headline quá rộng khiến tràn màn hình mobile; clamp font-size bằng CSS clamp(). ",
+            "● Public Profile, Save Contact và Chat phải dùng tốt trên màn hình điện thoại trước desktop. ",
+            "● Dashboard desktop có thể dùng sidebar, nhưng mobile phải chuyển thành bottom nav/menu drawer. ",
+            "● Form dài nên chia step/accordion để tránh cảm giác quá tải. ",
+            "● Chat input phải không bị bàn phím mobile che mất. ",
+            "● Ảnh/avatar cần lazy-load, skeleton và placeholder để đảm bảo public profile tải nhanh. "
+        ],
+        "bbox": [
+            112,
+            301,
+            906,
+            496
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "10. Accessibility & UX Rules ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            511,
+            377,
+            531
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● Tương phản chữ/nền đủ cao, đặc biệt ở text xám trên nền đen. ",
+            "● Button/Link có label rõ, không chỉ dựa vào icon. ",
+            "● Form có label, helper text, error message gần trường nhập. ",
+            "● Modal cần focus trap, đóng bằng ESC, nút confirm/cancel rõ. ",
+            "● Animation tuân thủ prefers-reduced-motion. ",
+            "● Chat phải cho biết AI là trợ lý đại diện, không phải người thật. ",
+            "● Consent thu thập lead phải hiển thị gần input tên/SĐT/email. "
+        ],
+        "bbox": [
+            112,
+            541,
+            676,
+            693
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "11. Microcopy ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            709,
+            246,
+            728
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/88fe7afc63d5ae00b65e941a908dbd7567343d4f71843dfef97e8d7e1c2a90f8.jpg",
+        "table_caption": [
+            "Bảng 14. Bảng Microcopy của AI "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Tình huống</td><td>Microcopy đề xuất</td></tr><tr><td>AI ngoài knowledge base</td><td>Mình chưa có thông tin này trong hồ sơ của chủ thể. Bạn có thể để lại liên hệ để chủ thể phần hồi trực tiếp néhe.</td></tr><tr><td>AI Disabled</td><td>Chủ thể đang tạm tất AI. Bạn vẫn có thể để lại lời nhấn qua form bên dưới.</td></tr><tr><td>AI Error</td><td>Hiện tại AI đang bảo trì. Vui lòng để lại thông tin, chủ thể sẽ liên hệ lại sau.</td></tr><tr><td>Consent lead</td><td>Bằng cách gửi thông tin, bạn đồng ý cho chủ thể liên hệ lại về nội dung trao đổi này.</td></tr><tr><td>Save VCF success</td><td>Đã tải danh bạ. Bạn có thể mở file để lưu vào điện thoại.</td></tr><tr><td>Slug unavailable</td><td>Slug này đã được sử dụng. Vui lòng chọn một đường dẫn khác.</td></tr><tr><td>Prompt too long</td><td>Nội dung vượt quá giới hạn cho phép. Hãy rút gọn để AI xử lý ổn định hơn.</td></tr></table>",
+        "bbox": [
+            130,
+            771,
+            890,
+            926
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "bbox": [
+            130,
+            69,
+            890,
+            244
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "12. Bàn giao cho Frontend Developer ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            273,
+            455,
+            292
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Bảng 15. Bảng các hạng mục cần bàn giao ",
+        "bbox": [
+            112,
+            304,
+            485,
+            325
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/4e4734fd47bc4fad5f9af9527090d0280107ec73e0d174c213de18ad73da0a4c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Hạng mục</td><td>Yêu cầu bàn giao</td></tr><tr><td>Breakpoints</td><td>Mobile &lt; 768px, tablet 768-1024px, desktop &gt; 1024px.</td></tr><tr><td>Design tokens</td><td>Màu sắc, font size, spacing, radius, shadow, z-index cho modal/toast.</td></tr><tr><td>Component states</td><td>Default, hover, focus, disabled, loading, error, success.</td></tr><tr><td>Form validation</td><td>Required, URL invalid, email invalid, phone invalid, max length, slug duplicate.</td></tr><tr><td>AI states</td><td>Draft, Published, AI Disabled, AI Ready, AI Error, Training, Rate limited.</td></tr><tr><td>Analytics events</td><td>qr_scan, vcf_download, chat_started, message_sent, lead_captured, fallback_form_submitted.</td></tr><tr><td>Privacy logic</td><td>Email/SĐT chỉ hiện ở public UI, VCF và AI context khi owner cho phép.</td></tr></table>",
+        "bbox": [
+            130,
+            333,
+            890,
+            619
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "13. Kết luận ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            628,
+            230,
+            648
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Bản GUI Design hiệu chỉnh đã căn lại nội dung theo PRD mới: tập trung vào Digital Card + AI Digital Twin, Knowledge Base Form thay cho upload tài liệu, trạng thái AI/Card rõ ràng, fallback form bắt buộc, Persona Inbox + Human Takeover và basic analytics. Về hình ảnh, hướng dark-tech hiện tại vẫn phù hợp với landing page demo; phần cần sửa chủ yếu là wording, phạm vi tính năng và hành vi UI để không mâu thuẫn với PRD. ",
+        "bbox": [
+            109,
+            661,
+            906,
+            758
+        ],
+        "page_idx": 24
+    }
+]

@@ -8,11 +8,11 @@ export default function TeamIntro() {
       </div>
       <div className="about-split-panel-right">
         <div className="about-intro-text">
-          <h2 className="intro-kicker">Our Most</h2>
-          <h3 className="intro-highlight">Experienced Developer</h3>
-          <h2 className="intro-secondary">Team Member</h2>
+          <h2 className="intro-kicker">Những Nhân Viên</h2>
+          <h3 className="intro-highlight">Có Kinh Nghiệm Nhất</h3>
+          <h2 className="intro-secondary">Của Nhóm</h2>
           <p className="intro-description">
-            Our team is a powerhouse of highly skilled experts, each a master of their craft. While we maintain a lean and compact size, our strength lies in our agility and precision. We pride ourselves on a meticulous approach to every detail, ensuring that being 'small' never means compromising on quality or speed.
+            Nhóm của chúng tôi là một động lực của những chuyên gia có kỹ năng cao, mỗi người là thạo nhân trong lĩnh vực của họ. Mặc dù chúng tôi duy trì quy mô nhỏ gọn, sức mạnh của chúng tôi nằm ở sự nhanh nhẹn và độ chính xác. Chúng tôi tự hào về cách tiếp cận tỉ mỉ với mọi chi tiết, đảm bảo rằng 'nhỏ' không bao giờ có nghĩa là thỏa hiệp về chất lượng hoặc tốc độ.
           </p>
         </div>
       </div>

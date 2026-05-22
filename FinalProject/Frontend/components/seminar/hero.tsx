@@ -39,8 +39,8 @@ export function Hero() {
           aria-hidden="true"
         >
           <FloatingCard
-            title="CREATIVE"
-            description="We don't just follow trends; we create them. We transform abstract ideas into vibrant, high-impact digital experiences"
+            title="SÁNG TẠO"
+            description="Chúng tôi không chỉ theo dõi xu hướng mà còn tạo ra chúng. Chúng tôi biến những ý tưởng trừu tượng thành những trải nghiệm kỹ thuật số sôi động và có tác động cao"
             imageSrc="/team_members/D.jpeg"
             imageAlt="Creative portrait"
             className="rotate-[12deg]"
@@ -53,8 +53,8 @@ export function Hero() {
           aria-hidden="true"
         >
           <FloatingCard
-            title="COMMITMENT"
-            description="Our commitment is rooted in precision and long-term reliability, ensuring that every solution we build is not only functional today but resilient."
+            title="CAM KẾT"
+            description="Cam kết của chúng tôi nằm ở độ chính xác và độ tin cậy lâu dài, đảm bảo rằng mọi giải pháp chúng tôi xây dựng không chỉ hoạt động hiệu quả ngày hôm nay mà còn bền vững"
             imageSrc="/team_members/mun.jpeg"
             imageAlt="Commitment portrait"
             className="rotate-[-19deg]"
@@ -70,24 +70,23 @@ export function Hero() {
       {/* Footer info row */}
       <div className="section-shell hero-footer-row">
         <p className="hero-footer-desc">
-          Project 1: A feature-rich personal website with an AI digital twin
-          without writing a line of code
+          Nhóm Dự án 1: Nền tảng cung cấp dịch vụ Digital Twin Card được cá nhân hóa theo persona
         </p>
-        <p className="hero-footer-since">Since 2026</p>
+        <p className="hero-footer-since">Kể từ 2026</p>
       </div>
 
       {/* Mobile cards — shown below text on small screens */}
       <div className="hero-mobile-cards">
         <FloatingCard
-          title="CREATIVE"
-          description="We don't just follow trends; we create them. We transform abstract ideas into vibrant, high-impact digital experiences"
+          title="SÁNG TẠO"
+          description="Chúng tôi không chỉ theo dõi xu hướng mà còn tạo ra chúng. Chúng tôi biến những ý tưởng trừu tượng thành những trải nghiệm kỹ thuật số sôi động và có tác động cao"
           imageSrc="/team_members/D.jpeg"
           imageAlt="Creative portrait"
           className="-rotate-3"
         />
         <FloatingCard
-          title="COMMITMENT"
-          description="Our commitment is rooted in precision and long-term reliability, ensuring that every solution we build is not only functional today but resilient."
+          title="CAM KẾT"
+          description="Cam kết của chúng tôi nằm ở độ chính xác và độ tin cậy lâu dài, đảm bảo rằng mọi giải pháp chúng tôi xây dựng không chỉ hoạt động hiệu quả ngày hôm nay mà còn bền vững"
           imageSrc="/team_members/mun.jpeg"
           imageAlt="Commitment portrait"
           className="rotate-3"

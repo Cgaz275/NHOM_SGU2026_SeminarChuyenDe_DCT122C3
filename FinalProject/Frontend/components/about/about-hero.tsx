@@ -5,7 +5,7 @@ export default function AboutHero() {
         <div className="about-hero-left" />
         <div className="about-hero-right" />
         <div className="about-hero-title">
-          <h1>ABOUT US</h1>
+          <h1>Đội ngũ phát triển</h1>
         </div>
       </div>
     </section>

@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --config jest.config.js",
+    "test:watch": "jest --watch --config jest.config.js",
+    "test:coverage": "jest --coverage --config jest.config.js",
+    "test:module1": "jest tests/Module_1_Auth.test.js --config jest.config.js",
+    "test:module2": "jest tests/Module_2_Card_Profile.test.js --config jest.config.js",
+    "test:module3": "jest tests/Module_3_AI_Chat.test.js --config jest.config.js",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "firebase": "^12.13.0",
+    "firebase-admin": "^13.10.0",
+    "openai": "^6.37.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "@testing-library/jest-dom": "^6.1.5"
+  }
+}

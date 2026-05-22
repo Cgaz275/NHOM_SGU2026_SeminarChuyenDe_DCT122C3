@@ -1,0 +1,4990 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ĐẠI HỌC SÀI GÒN KHOA CÔNG NGHỆ THÔNG TIN "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                327,
+                83,
+                669,
+                121
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "TEST PLAN "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                375,
+                211,
+                620,
+                239
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PERSONA-BASED WEBSITE FOR DIGITAL TWIN CARD "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                156,
+                266,
+                843,
+                330
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Học phần: Seminar Chuyên Đề "
+                    }
+                ]
+            },
+            "bbox": [
+                350,
+                401,
+                645,
+                421
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GVHD: TS. Đỗ Như Tài "
+                    }
+                ]
+            },
+            "bbox": [
+                384,
+                423,
+                612,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Lớp: DCT122C3 "
+                    }
+                ]
+            },
+            "bbox": [
+                419,
+                444,
+                577,
+                461
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sinh viên thực hiện "
+                    }
+                ]
+            },
+            "bbox": [
+                404,
+                500,
+                590,
+                517
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/308886f88b0d0e426bd44df8d7e495d3e716ae33cad06bcf6fc2ba14fc8ad0e7.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>STT</td><td>Họ và tên</td><td>MSSV</td></tr><tr><td>1</td><td>Châu Gia Anh</td><td>3122411002</td></tr><tr><td>2</td><td>Dương Lê Khánh</td><td>3122411093</td></tr><tr><td>3</td><td>Phan Thành Đại</td><td>3122411036</td></tr><tr><td>4</td><td>Đào Thị Thanh Tâm</td><td>3122411182</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                145,
+                565,
+                850,
+                739
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "THÀNH PHỐ HỒ CHÍ MINH "
+                    }
+                ]
+            },
+            "bbox": [
+                352,
+                853,
+                642,
+                872
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MỤC LỤC "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                442,
+                84,
+                553,
+                104
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MỤC LỤC..... "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                117,
+                110,
+                879,
+                128
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 1: GIỚI THIỆU.. "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                117,
+                130,
+                879,
+                149
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1.1. Mục đích của tài liệu Test Plan.. 3 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1.2. Phạm vi áp dụng.. a "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1.3. Tài liệu tham khảo. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1.4. Tổng quan về hệ thống.. 4 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                152,
+                879,
+                235
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 2: MỤC TIÊU KIỂM THỬ.. "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                117,
+                237,
+                879,
+                256
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2.1. Mục tiêu tổng quát.. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2.2. Mục tiêu cụ thể.. 5 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2.2.1. Mục tiêu theo chức năng.. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2.2.2. Mục tiêu phi chức năng.. 5 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2.2.3. Mục tiêu đặc thù cho AI Digital Twin. 6 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2.3. Tiêu chí thành công của kiểm thử.. 6 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                258,
+                879,
+                384
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 3: PHẠM VI KIỂM THỬ.. "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                117,
+                387,
+                879,
+                404
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.1. Phạm vi tổng quát.. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.2. In Scope (Các chức năng nằm trong phạm vi kiểm thử).. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.2.1. Phân hệ Chủ thẻ (Owner Dashboard).. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.2.2. Phân hệ Khách truy cập (Public).. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.2.3. Phân hệ Landing Page.. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.2.4. Phân hệ Admin Panel. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.2.5. Tính năng chung. 8 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                408,
+                879,
+                554
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.3. Out of Scope (Ngoài phạm vi kiểm thử).. 8 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3.4. Tiêu chí chấp nhận (Acceptance Criteria).. 8 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                558,
+                877,
+                597
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 4: CÁC ĐỐI TƯỢNG KIỂM THỬ.. "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                117,
+                599,
+                879,
+                618
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4.1. Phân hệ Authentication & Authorization. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4.2. Phân hệ Profile Builder / Card Editor. 9 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4.3. Phân hệ AI Digital Twin Configuration. 9 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4.4. Phân hệ Public Digital Profile.. 9 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4.5. Phân hệ QR Code Manager.. .10 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4.6. Phân hệ Persona Inbox & Human Takeover.. 10 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4.7. Phân hệ Admin Panel.. 10 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4.8. Tính năng chung & Hệ thống.. . 10 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                622,
+                879,
+                789
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 5: CHIẾN LƯỢC KIỂM THỬ (Test Strategy).... 11 "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                117,
+                790,
+                877,
+                809
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5.1. Tổng quan chiến lược kiểm thử.. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5.2. Các loại kiểm thử sẽ thực hiện.. 11 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5.3. Kỹ thuật kiểm thử.. 11 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5.4. Tiêu chí dừng kiểm thử (Test Exit Criteria).. . 12 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                813,
+                877,
+                895
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1 "
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                923,
+                503,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5.5. Tiêu chí tạm dừng kiểm thử (Suspension Criteria).. 12 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5.6. Cách tiếp cận kiểm thử AI Digital Twin. 12 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                87,
+                880,
+                128
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 6: MÔI TRƯỜNG KIỂM THỬ. 13 "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                117,
+                130,
+                879,
+                148
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.1. Tổng quan môi trường kiểm thử.. 13 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.2. Môi trường Phần cứng & Phần mềm.. 13 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.3. Công cụ hỗ trợ kiểm thử.. .13 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.4. Chi tiết sử dụng các công cụ chính.. . 13 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                152,
+                879,
+                235
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.4.1. Cypress.. 14 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.4.2. Jest.. . 14 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.4.3. Postman.. .14 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.4.4. Lighthouse.. . 14 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                177,
+                238,
+                879,
+                320
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.5. Môi trường Dữ liệu Kiểm thử (Test Data).. . 14 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6.6. Cấu hình môi trường.. . 14 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                323,
+                879,
+                362
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 7: CÁC TÀI LIỆU ĐẦU RA...... .15 "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                117,
+                364,
+                879,
+                383
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "7.1. Danh sách tài liệu cần bàn giao. .. 15 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "7.2. Định dạng và lưu trữ tài liệu.. . 15 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "7.3. Tiêu chuẩn chất lượng tài liệu.. 15 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "7.4. Phê duyệt tài liệu. . 16 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                387,
+                879,
+                469
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2 "
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                923,
+                505,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 1: GIỚI THIỆU "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                365,
+                83,
+                627,
+                104
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.1. Mục đích của tài liệu Test Plan "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                119,
+                447,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tài liệu Test Plan này được lập ra nhằm định hướng toàn bộ hoạt động kiểm thử cho hệ thống Persona-Based Website for Digital Twin Card. "
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                153,
+                877,
+                193
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mục đích chính của tài liệu bao gồm: "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                207,
+                447,
+                228
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Xác định rõ mục tiêu, phạm vi, chiến lược và phương pháp kiểm thử cho hệ thống. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Đảm bảo hệ thống đáp ứng đầy đủ các yêu cầu chức năng và phi chức năng đã nêu trong PRD và GUI Design Document. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Xác định các rủi ro tiềm ẩn, đặc biệt là các vấn đề liên quan đến AI Digital Twin (hallucination, guardrails, tính chính xác của persona). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Làm cơ sở để theo dõi, đánh giá chất lượng và báo cáo kết quả kiểm thử trong quá trình phát triển và trước khi demo seminar. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Hỗ trợ nhóm phát triển khắc phục lỗi kịp thời, đảm bảo hệ thống hoạt động ổn định, an toàn và thân thiện với người dùng. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                243,
+                877,
+                447
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.2. Phạm vi áp dụng "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                463,
+                318,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tài liệu này áp dụng cho toàn bộ quá trình kiểm thử của dự án Persona-Based Digital Twin Card trong khuôn khổ học phần Seminar Chuyên Đề – Lớp DCT122C3. "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                497,
+                877,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Phạm vi kiểm thử bao gồm: "
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                551,
+                364,
+                572
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tất cả các module chính đã hoàn thành trong giai đoạn MVP. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Các luồng người dùng chính: Chủ thẻ (Card Owner), Khách truy cập (Public User) và Quản trị viên (Admin). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tập trung mạnh vào tính năng cốt lõi: AI Digital Twin, Public Digital Profile, Profile Builder, và Realtime Inbox. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                586,
+                877,
+                687
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tài liệu này không bao gồm kiểm thử cho các tính năng Out of Scope đã nêu trong PRD (Payment, Voice Chat, NFC tích hợp, Advanced RAG với PDF, v.v.). "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                703,
+                877,
+                743
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.3. Tài liệu tham khảo "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                758,
+                335,
+                777
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1. Product Requirement Document (PRD) - Persona-Based Website for Digital Twin Card. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2. GUI Design Document - Persona-Based Website for Digital Twin Card. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3. Architecture & Database Design Document. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4. Báo cáo Đồ án Tổng hợp (BÁO CÁO TỔNG). "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                793,
+                877,
+                894
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3 "
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                923,
+                503,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. IEEE Standard 829-2008 – Standard for Software and System Test Documentation. "
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                84,
+                877,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "6. Firebase Documentation (Firestore, Authentication, Cloud Storage). "
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                125,
+                773,
+                144
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "7. OpenAI / OpenRouter API Documentation. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                146,
+                558,
+                165
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.4. Tổng quan về hệ thống "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                179,
+                374,
+                201
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Persona-Based Digital Twin Card là nền tảng web cho phép người dùng tạo Thẻ Danh thiếp Kỹ thuật số (Digital Business Card) được cá nhân hóa sâu. Hệ thống không chỉ hiển thị thông tin tĩnh mà còn tích hợp AI Digital Twin – một chatbot thông minh đóng vai trò là bản sao kỹ thuật số của chủ thẻ. "
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                214,
+                880,
+                296
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Các phân hệ chính của hệ thống gồm: "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                309,
+                451,
+                331
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Landing Page: Giới thiệu dự án và demo. ● Public Digital Profile: Trang hồ sơ công khai, chia sẻ qua QR Code hoặc URL. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                346,
+                875,
+                384
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Owner Dashboard: Profile Builder, AI Configuration, QR Manager, Persona Inbox. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                387,
+                875,
+                423
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● AI Digital Twin: Chatbot sử dụng RAG và Multi-layer Prompt để trả lời theo persona. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                427,
+                875,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Admin Panel: Quản lý người dùng và báo cáo. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                469,
+                587,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Tính năng hỗ trợ: Save vCard, Fallback Form, Human Takeover, Realtime messaging. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                489,
+                875,
+                528
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hệ thống được xây dựng theo mô hình Mobile-first, sử dụng công nghệ Next.js 15 (Frontend), Node.js + Express (Backend), Firebase (Auth, Firestore, Storage) và OpenAI (AI Digital Twin). "
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                543,
+                880,
+                604
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4 "
+                    }
+                ]
+            },
+            "bbox": [
+                489,
+                923,
+                506,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 2: MỤC TIÊU KIỂM THỬ "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                313,
+                83,
+                684,
+                104
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.1. Mục tiêu tổng quát "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                118,
+                340,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mục tiêu chính của công tác kiểm thử hệ thống Persona-Based Website for Digital Twin Card là đảm bảo chất lượng tổng thể của sản phẩm, giúp hệ thống đạt được độ tin cậy, ổn định và trải nghiệm người dùng tốt trước khi trình bày tại buổi Seminar Chuyên Đề. "
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                153,
+                880,
+                236
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cụ thể, kiểm thử nhằm: "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                248,
+                328,
+                269
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Xác nhận rằng hệ thống hoạt động đúng theo các yêu cầu đã nêu trong PRD và GUI Design Document. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đảm bảo tính chính xác, an toàn và hiệu suất của AI Digital Twin – tính năng cốt lõi của dự án. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Phát hiện sớm các lỗi, lỗ hổng bảo mật và vấn đề trải nghiệm người dùng (UX). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Xây dựng niềm tin cho người dùng cuối (chủ thẻ và khách truy cập). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đáp ứng các tiêu chí chất lượng để hệ thống có thể demo mượt mà và chuyên nghiệp. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                280,
+                882,
+                448
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2. Mục tiêu cụ thể "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                461,
+                305,
+                482
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2.1. Mục tiêu theo chức năng "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                496,
+                407,
+                516
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Kiểm tra đầy đủ các luồng chức năng chính của Chủ thẻ (Card Owner), Khách truy cập (Public User) và Admin. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đảm bảo Profile Builder cho phép tạo và chỉnh sửa thẻ một cách chính xác và mượt mà. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Xác nhận AI Digital Twin trả lời đúng persona, tuân thủ guardrails và giảm thiểu hallucination. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Kiểm tra khả năng lưu trữ, quản lý và realtime của Persona Inbox & Human Takeover. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đảm bảo chức năng QR Code hoạt động ổn định và vCard export đúng chuẩn. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Xác nhận Public Digital Profile hiển thị đẹp, responsive và thân thiện trên thiết bị di động. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                526,
+                882,
+                757
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2.2. Mục tiêu phi chức năng "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                770,
+                397,
+                790
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Hiệu năng: Thời gian tải trang dưới 2 giây, chat AI phản hồi dưới 3 giây (trung bình). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tính tương thích: Hoạt động tốt trên các trình duyệt phổ biến và các thiết bị di động (Mobile-first). "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                801,
+                882,
+                887
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5 "
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                923,
+                505,
+                938
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Bảo mật: Đảm bảo xác thực an toàn, bảo vệ dữ liệu cá nhân và chống các tấn công cơ bản (XSS, Prompt Injection). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Trải nghiệm người dùng (Usability): Giao diện trực quan, dễ sử dụng, tuân thủ thiết kế đã phê duyệt trong GUI Document. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Độ tin cậy: Hệ thống xử lý lỗi tốt (fallback khi AI lỗi, realtime đồng bộ). "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                84,
+                877,
+                185
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2.3. Mục tiêu đặc thù cho AI Digital Twin "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                201,
+                521,
+                220
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Độ chính xác của câu trả lời theo persona ≥ 90%. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● AI không bịa đặt thông tin (hallucination) và luôn tuân thủ guardrails. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Hỗ trợ Human Takeover hoạt động mượt mà. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Xử lý tốt các trường hợp input lạ, toxic hoặc prompt injection. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                237,
+                788,
+                315
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.3. Tiêu chí thành công của kiểm thử "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                332,
+                471,
+                350
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/06c34979783e0d46456585d512f07031adf2fa63e07f710ff9c7fc80626d3866.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Tiêu chí</td><td>Mục tiêu</td></tr><tr><td>Tỷ lệ Test Case Pass</td><td> $\\geq 95\\%$ </td></tr><tr><td>Critical &amp; High bugs</td><td>0 bug còn tồn tại</td></tr><tr><td>AI Response Accuracy</td><td> $\\geq 90\\%$ </td></tr><tr><td>Thời gian phần hồi chat AI</td><td> $\\leq 3$  giây (trung bình)</td></tr><tr><td>Lighthouse Score (Performance + SEO + Accessibility)</td><td> $\\geq 90$ </td></tr><tr><td>Tỷ lệ bao phủ chức năng</td><td>100% các lường chính</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                352,
+                937,
+                593
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6 "
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                923,
+                505,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 3: PHẠM VI KIỂM THỬ "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                320,
+                83,
+                674,
+                104
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1. Phạm vi tổng quát "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                118,
+                333,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Phạm vi kiểm thử của tài liệu này tập trung vào việc xác nhận chất lượng của tất cả các tính năng đã được triển khai trong phiên bản MVP (Minimum Viable Product) của hệ thống Persona-Based Website for Digital Twin Card. "
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                153,
+                880,
+                214
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Kiểm thử sẽ bao quát đầy đủ ba nhóm người dùng chính: "
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                229,
+                617,
+                249
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Chủ thẻ (Card Owner) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Khách truy cập (Public User) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Quản trị viên (Admin) "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                264,
+                437,
+                324
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2. In Scope (Các chức năng nằm trong phạm vi kiểm thử) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                339,
+                672,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dưới đây là các module và tính năng sẽ được kiểm thử chi tiết: "
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                374,
+                671,
+                393
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2.1. Phân hệ Chủ thẻ (Owner Dashboard) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                409,
+                525,
+                429
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Authentication & Authorization (Login, Register, Google OAuth) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Profile Builder / Card Editor (tạo, chỉnh sửa, preview thẻ) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● AI Digital Twin Configuration (cài đặt persona, knowledge base, system prompt) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● QR Code Manager (tạo, tải, quản lý QR code) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Persona Inbox & Human Takeover (xem lịch sử chat, tiếp quản hội thoại) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Basic Analytics (số lượt xem, tương tác) "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                444,
+                822,
+                586
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2.2. Phân hệ Khách truy cập (Public) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                602,
+                483,
+                622
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Public Digital Profile (hiển thị thông tin cá nhân hóa) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tương tác với AI Digital Twin (chat realtime) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Save Contact (xuất VCF / vCard) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Fallback Form (biểu mẫu liên hệ khi AI tắt hoặc lỗi) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Report Card / Feedback "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                636,
+                645,
+                737
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2.3. Phân hệ Landing Page "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                752,
+                387,
+                771
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Giao diện giới thiệu dự án, demo Digital Twin "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Điều hướng và trải nghiệm người dùng "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                787,
+                585,
+                827
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2.4. Phân hệ Admin Panel "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                843,
+                380,
+                862
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Quản lý người dùng (User Management) "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                877,
+                536,
+                897
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7 "
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                923,
+                505,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Quản lý báo cáo vi phạm (Reported Cards) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tổng quan hệ thống (Platform Overview) "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                85,
+                555,
+                124
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2.5. Tính năng chung "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                140,
+                335,
+                159
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Realtime messaging (Firestore) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Responsive Design (Mobile-first) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Dark mode & Design System "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Error Handling & Fallback mechanisms "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                175,
+                530,
+                254
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.3. Out of Scope (Ngoài phạm vi kiểm thử) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                270,
+                523,
+                290
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Các tính năng sau không nằm trong phạm vi kiểm thử của phiên bản MVP này: "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                305,
+                835,
+                324
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tích hợp Payment / Subscription "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Voice Chat với AI "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Upload PDF/DOCX để huấn luyện RAG nâng cao "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tích hợp NFC thực tế "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Advanced eKYC "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Export báo cáo chi tiết (PDF/CSV) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Multi-language support "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Admin Template Builder nâng cao "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Load testing quy mô lớn (hàng nghìn người dùng đồng thời) "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                340,
+                706,
+                523
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.4. Tiêu chí chấp nhận (Acceptance Criteria) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                538,
+                543,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Một tính năng được coi là đạt khi: "
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                573,
+                417,
+                591
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Hoàn thành ≥ 95% các Test Case thuộc tính năng đó. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Không còn bug ở mức Critical hoặc High. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đáp ứng đầy đủ yêu cầu đã ghi trong PRD và GUI Design. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đảm bảo hiệu năng và trải nghiệm người dùng theo tiêu chuẩn đề xuất. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● AI Digital Twin tuân thủ guardrails và có tỷ lệ trả lời chính xác theo persona cao. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                608,
+                847,
+                728
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8 "
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                923,
+                503,
+                935
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 4: CÁC ĐỐI TƯỢNG KIỂM THỬ "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                278,
+                83,
+                716,
+                104
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chương này liệt kê chi tiết tất cả các đối tượng (modules/tính năng) sẽ được kiểm thử trong phạm vi dự án. Mỗi đối tượng được phân loại theo phân hệ và mức độ ưu tiên kiểm thử. "
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                118,
+                880,
+                178
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.1. Phân hệ Authentication & Authorization "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                195,
+                541,
+                214
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đăng ký tài khoản (Email/Password và Google OAuth) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đăng nhập / Đăng xuất "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Quên mật khẩu & Đổi mật khẩu "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Phân quyền người dùng (Card Owner và Admin) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Protected Routes (Dashboard, Admin Panel) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Session management & Token expiration "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                226,
+                669,
+                353
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.2. Phân hệ Profile Builder / Card Editor "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                366,
+                511,
+                385
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tạo mới Digital Card "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Chỉnh sửa thông tin cá nhân (Avatar, Cover, Bio, Thông tin liên hệ) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Thêm/Sửa/Xóa các phần: Kinh nghiệm, Kỹ năng, Dự án, Social Links "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Preview Card thời gian thực "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Lưu nháp (Draft) và Publish Card "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Validation dữ liệu đầu vào "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                397,
+                796,
+                524
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.3. Phân hệ AI Digital Twin Configuration "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                539,
+                523,
+                558
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Cấu hình System Prompt "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Quản lý Knowledge Base (Persona Data) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Thiết lập Tone of Voice & Personality "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Guardrails & Safety Settings "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Test Chat với AI trong môi trường cấu hình "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Bật/Tắt AI Digital Twin "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                568,
+                565,
+                697
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.4. Phân hệ Public Digital Profile "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                711,
+                437,
+                730
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Hiển thị thông tin thẻ công khai theo Slug/URL "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Responsive trên mobile và desktop "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tương tác Chat Widget với AI Digital Twin "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Nút Save Contact (Export VCF) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Fallback Contact Form "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Report / Feedback form "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● 404 Page & Inactive Card handling "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                741,
+                600,
+                890
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9 "
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                923,
+                505,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.5. Phân hệ QR Code Manager "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                85,
+                417,
+                104
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tạo QR Code cho card "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tải QR Code (PNG/SVG) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Quản lý nhiều QR Code (nếu có) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Kiểm tra QR Code quét chuyển hướng đúng "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                116,
+                572,
+                203
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.6. Phân hệ Persona Inbox & Human Takeover "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                216,
+                568,
+                233
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Hiển thị danh sách hội thoại realtime "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Xem chi tiết lịch sử chat "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Chức năng Human Takeover (tiếp quản từ AI) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Gửi tin nhắn từ Inbox "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Đánh dấu Read/Unread "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Lọc và tìm kiếm hội thoại "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Lead capture (khách hàng tiềm năng) "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                245,
+                588,
+                395
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.7. Phân hệ Admin Panel "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                408,
+                362,
+                426
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Dashboard tổng quan "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Quản lý người dùng (View, Suspend, Delete) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Quản lý báo cáo vi phạm "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Xem thống kê hệ thống "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Duyệt / Từ chối card "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                438,
+                577,
+                545
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.8. Tính năng chung & Hệ thống "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                558,
+                432,
+                579
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Realtime synchronization (Firestore) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Error Handling & Fallback mechanisms "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Toast Notification "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Loading States & Skeleton UI "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Dark Mode consistency "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Accessibility (ARIA labels, Keyboard navigation) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Performance & Page Load Speed "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                590,
+                622,
+                739
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10 "
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                923,
+                510,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 5: CHIẾN LƯỢC KIỂM THỬ (Test Strategy) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                226,
+                83,
+                766,
+                104
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.1. Tổng quan chiến lược kiểm thử "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                118,
+                451,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chiến lược kiểm thử cho hệ thống Persona-Based Digital Twin Card được xây dựng theo hướng Risk-Based Testing và Mobile-First, tập trung mạnh vào chất lượng cốt lõi của AI Digital Twin và trải nghiệm người dùng. "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                153,
+                879,
+                214
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chúng tôi kết hợp giữa kiểm thử thủ công và tự động hóa ở mức phù hợp với thời gian của đồ án sinh viên. "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                229,
+                877,
+                268
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.2. Các loại kiểm thử sẽ thực hiện "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                283,
+                441,
+                302
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/0bd19898bda558f70583eaed35dba7d90304c272b417a9671b3d576cc26aabe5.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>STT</td><td>Loại kiểm thử</td><td>Mô tả</td><td>U serve tiên</td></tr><tr><td>1</td><td>Functional Testing</td><td>Kiểm tra chức năng theo yêu cầu PRD</td><td>Cao</td></tr><tr><td>2</td><td>UI/UX Testing</td><td>Kiểm tra giao diện, responsive, tuân thủ GUI Design</td><td>Cao</td></tr><tr><td>3</td><td>AI-Specific Testing</td><td>Kiểm tra độ chính xác persona, guardrails, hallucination, RAG</td><td>Rất cao</td></tr><tr><td>4</td><td>Integration Testing</td><td>Kiểm tra tích hợp giữa Frontend - Backend - Firebase - AI</td><td>Cao</td></tr><tr><td>5</td><td>Realtime Testing</td><td>Kiểm tra đồng bộ chat, inbox, Human Takeover</td><td>Cao</td></tr><tr><td>6</td><td>API Testing</td><td>Kiểm tra các API Backend (Postman)</td><td>Trung bình</td></tr><tr><td>7</td><td>Performance Testing</td><td>Tải trang, thời gian phần hồi AI, Lighthouse</td><td>Trung bình</td></tr><tr><td>8</td><td>Security Testing</td><td>XSS, Prompt Injection, Authentication, Authorization</td><td>Cao</td></tr><tr><td>9</td><td>Compatibility Testing</td><td>Các trình duyệt và thiết bị di động</td><td>Trung bình</td></tr><tr><td>10</td><td>Usability Testing</td><td>Trải nghiệm người dùng thực tế</td><td>Cao</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                305,
+                998,
+                800
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.3. Kỹ thuật kiểm thử "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                813,
+                333,
+                832
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Black-box Testing: Chủ yếu cho Functional và UI/UX. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Grey-box Testing: Kiểm tra tích hợp với Database và AI. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                847,
+                677,
+                887
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11 "
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                923,
+                508,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Exploratory Testing: "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\dot { \\mathrm { A p } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "dụng mạnh cho AI Digital Twin (kiểm tra các trường hợp bất ngờ). "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                84,
+                877,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Regression Testing: Thực hiện sau mỗi lần sửa lỗi lớn. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                125,
+                656,
+                144
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.4. Tiêu chí dừng kiểm thử (Test Exit Criteria) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                160,
+                560,
+                180
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Tất cả Test Case mức Critical và High đều đạt Pass. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                194,
+                632,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Không còn bug Critical hoặc High nào còn tồn đọng. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                214,
+                642,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tỷ lệ Pass của Test Case ≥ 95%. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                237,
+                464,
+                254
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● AI Accuracy ≥ 90% trên tập Test Data. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                257,
+                520,
+                274
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Đáp ứng các tiêu chí hiệu năng (Lighthouse ≥ 90, phản hồi "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathrm { A I } \\le 3"
+                    },
+                    {
+                        "type": "text",
+                        "content": "giây trung bình). "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                277,
+                877,
+                315
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hoàn thành kiểm thử trên ít nhất 3 thiết bị di động khác nhau. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                317,
+                719,
+                336
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.5. Tiêu chí tạm dừng kiểm thử (Suspension Criteria) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                352,
+                624,
+                372
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Hệ thống không thể truy cập được do lỗi môi trường hoặc Firebase. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                385,
+                768,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Có lỗi blocker ảnh hưởng đến luồng chính (ví dụ: không chat được với AI). "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                407,
+                837,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Chi phí gọi AI quá cao (cần tối ưu prompt trước khi tiếp tục test). "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                428,
+                751,
+                448
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5.6. Cách tiếp cận kiểm thử AI Digital Twin "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                461,
+                526,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Sử dụng Test Scenarios đa dạng: Normal case, Edge case, Adversarial case (prompt injection, toxic input). "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                497,
+                877,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● So sánh câu trả lời của AI với kiến thức đã cung cấp trong Knowledge Base. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                538,
+                847,
+                557
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Kiểm tra Guardrails: AI từ chối trả lời thông tin nhạy cảm, không bịa đặt kinh nghiệm. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                559,
+                877,
+                597
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Human Takeover: Kiểm tra chuyển đổi mượt mà giữa AI và chủ thẻ. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                599,
+                776,
+                619
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12 "
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                923,
+                510,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 6: MÔI TRƯỜNG KIỂM THỬ "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                293,
+                83,
+                701,
+                103
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.1. Tổng quan môi trường kiểm thử "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                118,
+                464,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Môi trường kiểm thử được thiết lập nhằm mô phỏng gần nhất với môi trường Production, đồng thời hỗ trợ tối đa cho việc phát triển và kiểm tra tự động. Hệ thống sử dụng Firebase Emulator cho môi trường local và các công cụ chuyên dụng để kiểm thử từng lớp của ứng dụng. "
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                153,
+                882,
+                236
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.2. Môi trường Phần cứng & Phần mềm "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                249,
+                503,
+                269
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Hệ điều hành: Windows 11 / macOS / Linux (Ubuntu) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Trình duyệt: Google Chrome (phiên bản mới nhất), Firefox, Safari "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Thiết bị kiểm thử: "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                283,
+                760,
+                343
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Desktop (1920x1080 và 1366x768) "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Mobile: iPhone 12/13/14, Samsung Galaxy S21/S23 (sử dụng Chrome DevTools) "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                206,
+                346,
+                877,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Mạng: Internet ổn định (có kiểm tra cả trường hợp mạng yếu) "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                407,
+                721,
+                427
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.3. Công cụ hỗ trợ kiểm thử "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                441,
+                390,
+                461
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/163ab719910f82db4dbfbf26489cf090a9faf393fdf4c060ae1a03549a9840c2.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Công cụ</td><td>Mục đích sử dụng</td><td>Phiên bản / Ghi chú</td></tr><tr><td>Cypress</td><td>End-to-End Testing (E2E), UI/UX Testing, Realtime Testing</td><td>v13.x (chính)</td></tr><tr><td>Jest</td><td>Unit Testing, Component Testing (React/Next.js)</td><td>v29.x</td></tr><tr><td>Postman</td><td>API Testing, Collection &amp; Environment Management</td><td>Version mới nhất</td></tr><tr><td>Lighthouse</td><td>Performance, SEO, Accessibility, Best Practices</td><td>Chrome DevTools + Lighthouse CI</td></tr><tr><td>Firebase Emulator Suite</td><td>Local testing (Firestore, Auth, Storage, Functions)</td><td>Official Firebase Tools</td></tr><tr><td>React Testing Library</td><td>Component Testing</td><td>Kết hợp với Jest</td></tr><tr><td>Chrome DevTools</td><td>Debugging, Performance Profiling, Responsive Test</td><td>Built-in</td></tr><tr><td>GitHub</td><td>Version Control &amp; CI/CD (tùy chọn)</td><td>-</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                463,
+                882,
+                872
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.4. Chi tiết sử dụng các công cụ chính "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                114,
+                884,
+                481,
+                904
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13 "
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                923,
+                510,
+                938
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.4.1. Cypress "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                85,
+                250,
+                104
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Dùng để viết và chạy các E2E Test Cases cho toàn bộ luồng người dùng. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Ưu tiên kiểm thử: "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                118,
+                812,
+                157
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Luồng Public Digital Profile + AI Chat "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Profile Builder & Preview "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Human Takeover "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Responsive Design trên nhiều viewport "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                206,
+                160,
+                587,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Tích hợp screenshot và video recording khi test fail. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                243,
+                634,
+                261
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.4.2. Jest "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                277,
+                213,
+                294
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Thực hiện Unit Test và Component Test cho các component quan trọng của Frontend (Next.js). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tập trung kiểm tra logic xử lý form, validation, state management và utility functions. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                312,
+                875,
+                390
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.4.3. Postman "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                409,
+                256,
+                425
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Kiểm thử toàn bộ RESTful API của Backend (Node.js + Express). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tạo Collection riêng cho từng module: Auth, Cards, Chat, Inbox, Admin. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Sử dụng Environment variables (Local, Staging, Production). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Kiểm tra Response Time, Status Code, Schema Validation. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                442,
+                820,
+                523
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.4.4. Lighthouse "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                539,
+                280,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Đánh giá chất lượng tổng thể của các trang chính: "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                573,
+                615,
+                593
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Landing Page "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Public Digital Profile "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "○ Dashboard "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                206,
+                595,
+                427,
+                652
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tiêu chí mục tiêu: Performance + Accessibility + SEO ≥ 90 "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Chạy định kỳ sau mỗi lần deploy lớn. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                656,
+                703,
+                695
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.5. Môi trường Dữ liệu Kiểm thử (Test Data) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                710,
+                543,
+                730
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Dữ liệu giả lập (Test Account, Sample Cards, Sample Knowledge Base). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Dữ liệu nhạy cảm được mock hoặc anonymized. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Dataset riêng để test AI Digital Twin (các bộ câu hỏi chuẩn và adversarial). "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                745,
+                835,
+                805
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6.6. Cấu hình môi trường "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                820,
+                357,
+                840
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Local Development: firebase emulators:start "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Staging: Deploy lên Firebase Hosting + Functions "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Sử dụng .env.local để quản lý API keys và configuration "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                844,
+                674,
+                904
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14 "
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                923,
+                510,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CHƯƠNG 7: CÁC TÀI LIỆU ĐẦU RA "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                310,
+                83,
+                684,
+                104
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "7.1. Danh sách tài liệu cần bàn giao "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                119,
+                449,
+                140
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Trong quá trình và sau khi hoàn thành kiểm thử, nhóm sẽ sản xuất và bàn giao các tài liệu sau: "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                155,
+                879,
+                195
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/6262801e53eaabc0f77d8b2fe37235164d49067eaa923c7d5991de649fc137fc.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>STT</td><td>Tên tài liệu</td><td>Mô tả</td><td>Trạng thái</td></tr><tr><td>1</td><td>Test Plan</td><td>Tài liệu định hướng tổng thể chiến lược kiểm thử (tài liệu này)</td><td>Hoàn thành</td></tr><tr><td>2</td><td>Test Cases</td><td>Bộ test case chi tiết cho tất cả các chức năng</td><td>Đang thực hiện</td></tr><tr><td>3</td><td>Test Execution Report</td><td>Báo cáo kết quả chạy test (Pass/Fail, số lượng bug)</td><td>Sẽ thực hiện</td></tr><tr><td>4</td><td>Bug Report / Defect Log</td><td>Danh sách lỗi phát hiện, mức độ nghiêm trọng và trạng thái xử lý</td><td>Sẽ thực hiện</td></tr><tr><td>5</td><td>AI Testing Report</td><td>Báo cáo chuyên sâu về kiểm thử AI Digital Twin (Accuracy, Hallucination, Guardrails)</td><td>Sẽ thực hiện</td></tr><tr><td>6</td><td>Lighthouse Reports</td><td>Báo cáo hiệu năng, Accessibility và SEO của các trang chính</td><td>Sẽ thực hiện</td></tr><tr><td>7</td><td>Test Summary Report</td><td>Báo cáo tóm tắt cuối cùng cho Seminar</td><td>Sẽ thực hiện</td></tr><tr><td>8</td><td>Test Data</td><td>Bộ dữ liệu kiểm thử (accounts, cards, knowledge base)</td><td>Hoàn thành</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                207,
+                909,
+                667
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "7.2. Định dạng và lưu trữ tài liệu "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                682,
+                426,
+                701
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tất cả tài liệu kiểm thử được quản lý trên Google Drive và GitHub Repository. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Test Cases được viết dưới dạng bảng Excel/Google Sheets và Cypress test scripts. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bug Report sử dụng template chuẩn (Bug ID, Severity, Priority, Steps to Reproduce, Actual Result, Expected Result, Screenshot/Video). "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "● Tất cả báo cáo đều có phiên bản và ngày cập nhật. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                714,
+                865,
+                837
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "7.3. Tiêu chuẩn chất lượng tài liệu "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                852,
+                439,
+                872
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15 "
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                923,
+                510,
+                937
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Test Cases phải bao gồm: Test Case ID, Mô tả, Preconditions, Steps, Expected Result, Actual Result, Status. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                84,
+                864,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Mỗi bug phải có mức độ nghiêm trọng rõ ràng (Critical, High, Medium, Low). "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                125,
+                864,
+                144
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "● Báo cáo cuối cùng phải dễ hiểu, có biểu đồ và screenshot minh họa. "
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                146,
+                770,
+                165
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "7.4. Phê duyệt tài liệu "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                115,
+                181,
+                320,
+                201
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tất cả tài liệu đầu ra sẽ được nhóm xem xét nội bộ và trình giảng viên hướng dẫn (TS. Đỗ Như Tài) phê duyệt trước khi sử dụng trong buổi Seminar. "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                214,
+                877,
+                255
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16 "
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                923,
+                510,
+                937
+            ]
+        }
+    ]
+]

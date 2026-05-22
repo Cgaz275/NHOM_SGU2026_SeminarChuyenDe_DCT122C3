@@ -1,0 +1,3503 @@
+[
+    {
+        "type": "text",
+        "text": "ĐẠI HỌC SÀI GÒN ",
+        "text_level": 1,
+        "bbox": [
+            402,
+            84,
+            592,
+            102
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "KHOA CÔNG NGHỆ THÔNG TIN ",
+        "text_level": 1,
+        "bbox": [
+            327,
+            105,
+            671,
+            124
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTCHITECT & DATABSE ",
+        "text_level": 1,
+        "bbox": [
+            243,
+            188,
+            755,
+            218
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "PERSONA-BASED WEBSITE FOR DIGITAL TWIN CARD ",
+        "text_level": 1,
+        "bbox": [
+            167,
+            226,
+            833,
+            292
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Học phần: Seminar Chuyên Đề ",
+        "bbox": [
+            350,
+            332,
+            647,
+            353
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GVHD: TS. Đỗ Như Tài ",
+        "bbox": [
+            384,
+            353,
+            614,
+            371
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lớp: DCT122C3 ",
+        "bbox": [
+            417,
+            375,
+            580,
+            393
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nhóm sinh viên thực hiện - Nhóm 1: ",
+        "bbox": [
+            327,
+            416,
+            671,
+            435
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/9c561ad986bdb07aa98ab6974471d1df9a69000dda83a0f3b1b3142fbc7946e0.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>STT</td><td>Họ và tên</td><td>MSSV</td></tr><tr><td>1</td><td>Châu Gia Anh</td><td>3122411002</td></tr><tr><td>2</td><td>Dương Lê Khánh</td><td>3122411093</td></tr><tr><td>3</td><td>Phan Thành Đại</td><td>3122411036</td></tr><tr><td>4</td><td>Đào Thị Thanh Tâm</td><td>3122411182</td></tr></table>",
+        "bbox": [
+            145,
+            453,
+            850,
+            627
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "THÀNH PHỐ HỒ CHÍ MINH ",
+        "bbox": [
+            352,
+            808,
+            645,
+            828
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MỤC LỤC ",
+        "text_level": 1,
+        "bbox": [
+            442,
+            84,
+            553,
+            103
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "DANH MỤC CÁC KÝ HIỆU, CHỮ VIẾT TẮT.. ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            106,
+            879,
+            127
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1. Giới thiệu..... ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            130,
+            879,
+            148
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1.1. Mục đích tài liệu.. ",
+            "1.2. Phạm vi tài liệu.. ",
+            "1.3. Công nghệ Stack được sử dụng. ",
+            "1.4. Giả định và ràng buộc. 5 "
+        ],
+        "bbox": [
+            147,
+            150,
+            879,
+            233
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2. Tổng quan Kiến trúc Hệ thống (High-level Architecture).................. .... 6 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            235,
+            879,
+            255
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "2.1. Kiến trúc tổng thể (System Overview Diagram).. .6 ",
+            "2.2. Các tầng trong hệ thống (Layered Architecture).. .6 ",
+            "2.3. Data Flow Diagram (User → Frontend → Backend → Firebase → AI)...........7 ",
+            "2.4. Realtime Architecture. 8 "
+        ],
+        "bbox": [
+            147,
+            257,
+            879,
+            339
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3. Thành phần Hệ thống (System Components)... 8 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            342,
+            879,
+            362
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "3.1. Frontend (Next.js 15).. 8 ",
+            "3.2. Backend API (Node.js + Express.js). 8 ",
+            "3.3. Authentication Service (Firebase Auth).. 9 ",
+            "3.4. Database (Firebase Cloud Firestore). ",
+            "3.5. File Storage (Firebase Cloud Storage).. ",
+            "3.6. AI Service (OpenRouter / OpenAI).. 9 ",
+            "3.7. External Services (QR Code Generator, Analytics…)... 9 "
+        ],
+        "bbox": [
+            147,
+            364,
+            879,
+            510
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "4. Thiết kế Database - Firebase Cloud Firestore.... ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            513,
+            879,
+            530
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "4.1. Nguyên tắc thiết kế Firestore.. 9 ",
+            "4.2. Cấu trúc Collections & Documents.. .13 ",
+            "4.3. Chi tiết các Collection chính.. . 13 "
+        ],
+        "bbox": [
+            147,
+            534,
+            879,
+            595
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "5. Data Models & Schemas.... 13 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            599,
+            879,
+            617
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "5.1. User Model.. .13 ",
+            "5.2. Digital Card Model.. .14 ",
+            "5.3. Reports.. 15 ",
+            "5.4. Conversation & Message Model.. .15 ",
+            "5.5 Ai\\_knowledge\\_base.. . 15 ",
+            "5.6 Analytics\\_cards.. 15 "
+        ],
+        "bbox": [
+            147,
+            619,
+            879,
+            745
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "5.7. Relationship giữa các Collection (Subcollections & References).. 16 ",
+        "bbox": [
+            149,
+            749,
+            877,
+            766
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "5.7.1 Mối quan hệ giữa users và cards (Quan hệ 1 — Nhiều). .16 ",
+            "5.7.2 Mối quan hệ giữa cards và messages (Quan hệ 1 — Nhiều phân cấp).....18 ",
+            "5.7.3 Mối quan hệ giữa cards và messages (Quan hệ 1 — Nhiều phân cấp).....18 ",
+            "5.7.4 Mối quan hệ giữa cards và reports (Quan hệ 1 — Nhiều).. . 18 "
+        ],
+        "bbox": [
+            177,
+            768,
+            877,
+            852
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "6. Authentication & Authorization.. 19 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            855,
+            879,
+            872
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "6.1. Firebase Auth Integration. .19 ",
+        "bbox": [
+            147,
+            876,
+            879,
+            895
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "6.2. Custom Claims & Roles (Card Owner, Admin).. .19 ",
+            "6.3. Security Rules cho Firestore.. 19 ",
+            "6.4. JWT / Session Management. . 19 "
+        ],
+        "bbox": [
+            147,
+            87,
+            880,
+            150
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "7. API Design (Backend - Node.js Express)......... ..20 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            152,
+            879,
+            171
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "7.1. API Architecture Overview.. .20 ",
+            "7.2. Route Organization.. . 22 ",
+            "7.3. Các API chính (Auth, Cards, Chat, Inbox, QR…).. .. 22 ",
+            "7.4. Middleware (Auth, Rate Limiting, Error Handling). . 23 ",
+            "7.5. OpenAI Integration Flow.. . 23 "
+        ],
+        "bbox": [
+            147,
+            174,
+            880,
+            277
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "8. Tích hợp AI Digital Twin.. . 23 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            280,
+            879,
+            299
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "8.1. Kiến trúc AI Prompting.. ..23 ",
+            "8.2. Knowledge Base Generation (persona\\_data.json).. . 23 ",
+            "8.3. System Prompt + Guardrails.. . 23 ",
+            "8.4. Human Takeover Mechanism. ..23 ",
+            "8.5. Fallback Strategy khi AI lỗi. . 24 "
+        ],
+        "bbox": [
+            147,
+            302,
+            880,
+            404
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "9. Realtime Features...... . 24 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            408,
+            879,
+            426
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "9.1. Realtime Chat (Firestore + Client SDK).. . 24 ",
+            "9.2. Inbox realtime cho chủ thẻ. . 24 ",
+            "9.3. Notification (Email + In-app).. ..24 "
+        ],
+        "bbox": [
+            147,
+            429,
+            880,
+            491
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "10. File Storage Architecture... . 24 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            492,
+            879,
+            511
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "10.1. Firebase Cloud Storage Structure. ..24 ",
+            "10.2. Avatar, Cover Image, QR Code. ..24 ",
+            "10.3. Security Rules & Access Control. ..24 "
+        ],
+        "bbox": [
+            147,
+            515,
+            880,
+            574
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "11. Security & Data Protection. . 24 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            579,
+            879,
+            597
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "11.1. Firestore Security Rules chi tiết. . 24 ",
+            "11.2. Rate Limiting & Anti-Spam. . 25 ",
+            "11.3. Data Privacy & Consent.. . 25 ",
+            "11.4. Input Sanitization & Validation.. .. 25 "
+        ],
+        "bbox": [
+            147,
+            600,
+            880,
+            682
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "12. Performance & Scaling...... . 25 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            685,
+            879,
+            704
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "12.1. Firestore Indexing Strategy.. . 25 ",
+            "12.2. Query Optimization.. .. 25 ",
+            "12.3. Caching Strategy.. . 25 ",
+            "12.4. Cost Optimization (Firestore + OpenAI).. . 25 "
+        ],
+        "bbox": [
+            147,
+            707,
+            880,
+            790
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "14. Rủi ro Kiến trúc & Mitigation.... ..26 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            792,
+            879,
+            809
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "15. Phụ lục..... .. 26 ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            813,
+            879,
+            832
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/74139fa96e7445cc6ce0906a7ba0c815da4837fcd62d0f4606a9b87d64ccc237.jpg",
+        "table_caption": [
+            "DANH MỤC CÁC KÝ HIỆU, CHỮ VIẾT TẮT "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Từ viết tắt / Thuật ngữ</td><td>Ý nghĩa / Định nghĩa đầy đủ</td><td>Mô tả trong hệ thống Persona Digital Card</td></tr><tr><td>API</td><td>Application Programming Interface</td><td>Giao diện lập trình ứng dụng, dùng để kết nối Frontend và Backend.</td></tr><tr><td>BaaS</td><td>Backend as a Service</td><td>Dịch vụ phía máy chủ được cung cấp sẵn (trong dự án này là Firebase).</td></tr><tr><td>JWT</td><td>JSON Web Token</td><td>Chuẩn mã hóa dùng để xác thực người dùng thông qua mã Token.</td></tr><tr><td>Firestore</td><td>Google Cloud Firestore</td><td>Cơ sở dữ liệu NoSQL dạng tài liệu được sử dụng để lưu trữ data chính.</td></tr><tr><td>SDK</td><td>Software Development Kit</td><td>Bộ công cụ phát triển phần mềm (Firebase Admin SDK) dùng trên Backend.</td></tr><tr><td>CRUD</td><td>Create, Read, Update, Delete</td><td>4 thao tác cơ bản với dữ liệu (Tạo, Đọc, Cập nhật, Xóa).</td></tr><tr><td>Middleware</td><td>Phần mềm trung gian</td><td>Các hàm kiểm tra trung gian (Xác thực Token, Phân quyền Admin, Chống Spam).</td></tr><tr><td>RAG</td><td>Retrieval-Augmented Generation</td><td>Cơ chế lấy tri thức từ Database để bổ trợ cho AI trả lời chính xác hơn.</td></tr><tr><td>LLM</td><td>Large Language Model</td><td>Mô hình ngôn ngữ lớn (OpenAI GPT-4o-mini) đóng vai trò bộ não cho AI.</td></tr><tr><td>Slug</td><td>Friendly URL Identifier</td><td>Chuỗi ký tự định danh duy nhất trong URL (Ví dụ: persona.com/@dai-phan).</td></tr><tr><td>eKYC</td><td>Electronic Know Your Customer</td><td>Định danh khách hàng điện tử (Trạng thái xác thực thông tin người dùng).</td></tr><tr><td>Rate Limit</td><td>Giới hạn lưu lượng</td><td>Cơ chế chặn các hành vi spam hoặc tấn công DoS vào hệ thống API.</td></tr><tr><td>Digital Twin</td><td>Bản sao kỹ thuật số</td><td>Trợ lý ảo AI đại diện cho thông tin và tính cách của chủ thể.</td></tr><tr><td>Takeover</td><td>Human Takeover</td><td>Tính năng tạm dùng AI để người dùng trực tiếp xử lý tương tác.</td></tr><tr><td>JSON</td><td>JavaScript Object Notation</td><td>Định dạng trao đổi dữ liệu tiêu chuẩn giữa Client và Server.</td></tr><tr><td>RESTful</td><td>Representational State Transfer</td><td>Kiểu kiến trúc xây dựng API dựa trên các phương thức HTTP tiêu chuẩn.</td></tr><tr><td>vCard (VCF)</td><td>Virtual Contact File</td><td>Định dạng file danh bạ điện tử dùng để lưu thông tin vào điện thoại.</td></tr></table>",
+        "bbox": [
+            117,
+            115,
+            879,
+            780
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Giới thiệu ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            85,
+            236,
+            103
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Dự án: Persona Digital Card (Hệ thống Thẻ Danh thiếp Thông minh Tích hợp Trợ lý Đối tượng: Khách hàng (Client/Stakeholders), Đội ngũ Phát triển, QA/QC và Hệ thống Quản trị. ",
+        "bbox": [
+            114,
+            116,
+            880,
+            176
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1.1. Mục đích tài liệu ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            190,
+            317,
+            209
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Tài liệu này đóng vai trò là \"Source of Truth\" (Nguồn chân lý), quy định và mô tả chi tiết toàn bộ kiến trúc tổng thể, cơ sở dữ liệu, luồng xử lý dữ liệu và tiêu chuẩn bảo mật cho dự án Persona Digital Card. Nó cung cấp cơ sở vững chắc cho các quyết định kỹ thuật, phát triển, triển khai và bảo trì. ",
+        "bbox": [
+            114,
+            220,
+            880,
+            302
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1.2. Phạm vi tài liệu ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            315,
+            305,
+            334
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Tài liệu bao phủ toàn bộ thiết kế kiến trúc Backend (Node.js), cấu trúc dữ liệu trên Firestore, tích hợp dịch vụ bên thứ ba (Firebase Auth, Cloud Storage, OpenAI API) và các cơ chế tương tác thời gian thực, bảo mật hệ thống. ",
+        "bbox": [
+            114,
+            347,
+            880,
+            409
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1.3. Công nghệ Stack được sử dụng ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            421,
+            451,
+            441
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Runtime: Node.js ",
+        "bbox": [
+            115,
+            454,
+            283,
+            472
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Framework REST API: Express.js ",
+        "bbox": [
+            115,
+            482,
+            439,
+            501
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Cơ sở dữ liệu: Firebase Cloud Firestore (NoSQL) ",
+        "bbox": [
+            115,
+            511,
+            560,
+            530
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Xác thực: Firebase Authentication (JWT) ",
+        "bbox": [
+            115,
+            540,
+            489,
+            559
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Lưu trữ file: Firebase Cloud Storage ",
+        "bbox": [
+            115,
+            568,
+            449,
+            587
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Bộ não AI: OpenAI API (Model gpt-4o-mini) ",
+        "bbox": [
+            115,
+            597,
+            526,
+            617
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Giao diện người dùng: Next.js 15 (Frontend) ",
+        "bbox": [
+            115,
+            625,
+            525,
+            644
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1.4. Giả định và ràng buộc ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            657,
+            369,
+            678
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Hệ thống yêu cầu kết nối Internet liên tục để xử lý AI và làm mới dữ liệu realtime. ",
+            "- Firestore áp dụng hạn mức query và cấu trúc NoSQL nên cần cấu trúc schema khử chuẩn hoá (denormalized) một phần để tối ưu tốc độ đọc. ",
+            "- Chat AI tiêu tốn token và chi phí lớn nên bắt buộc áp dụng Rate Limiter khắt khe. "
+        ],
+        "bbox": [
+            114,
+            688,
+            879,
+            788
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2. Tổng quan Kiến trúc Hệ thống (High-level Architecture) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            83,
+            669,
+            104
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2.1. Kiến trúc tổng thể (System Overview Diagram) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            115,
+            598,
+            137
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Persona Digital Card tuân theo mô hình Client-Server kết hợp BaaS (Backend-as-a-Service) từ Firebase. Backend Node.js đóng vai trò \"người phán xử\" (Controller), xử lý logic phức tạp, gọi AI và điều tiết quyền truy cập Firestore thông qua Firebase Admin SDK ",
+        "bbox": [
+            112,
+            148,
+            882,
+            229
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/3a4fdb878d13545e2271a528d931eb00f1ec869e0abac8a7e5f047561a061845.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "```mermaid\ngraph TD\n    A[\"Người dùng\"] -->|Client Side| B[\"Frontend - Next.js\"]\n    B --> C[\"Express API\"]\n    C -->|Backend Node.js - Controller| D[\"Firebase Admin SDK\"]\n    D --> E[\"Firebase Auth\"]\n    D --> F[\"Firestore Database\"]\n    D --> G[\"OpenAI API\"]\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            228,
+            230,
+            770,
+            676
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2.2. Các tầng trong hệ thống (Layered Architecture) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            690,
+            605,
+            711
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Backend Node.js tuân thủ nghiêm ngặt Kiến trúc 3 Lớp (3-Tier Structure): ",
+        "bbox": [
+            114,
+            723,
+            793,
+            743
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Routes Layer (Tầng Điều hướng): Nhận request, gắn Middleware xác thực/giới hạn lưu lượng, chuyển tiếp tới Controller. ",
+            "2. Controller Layer (Tầng Kiểm soát): Xử lý input (validation), điều phối luồng từ Service, gom lỗi bằng Global Error Handler và chuẩn hoá kết quả JSON trả về cho Client. ",
+            "3. Service Layer (Tầng Nghiệp vụ): Chứa logic nghiệp vụ lõi (Business Logic), tương tác trực tiếp với Database (Firestore) và các External API (OpenAI). "
+        ],
+        "bbox": [
+            144,
+            757,
+            877,
+            901
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/57e1778c5ed588239945d2dd03b747acaa341dea2324fef0df92de42b4854acf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "```mermaid\ngraph TD\n    A[\"Client Request\"] --> B[\"Router\"]\n    B --> C[\"Auth Middleware\"]\n    C --> D[\"Rate Limit Middleware\"]\n    D --> E[\"Node.js 3-Tie\"]\n    E --> F[\"Controller\"]\n    F --> G[\"Input Validation\"]\n    G --> H[\"Business Logic Service\"]\n    H --> I[\"Firestore\"]\n    H --> J[\"OpenAI API\"]\n    F --> K[\"Global Error Handler\"]\n    K --> F\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            233,
+            83,
+            763,
+            625
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "2.3. Data Flow Diagram (User → Frontend → Backend → Firebase → AI) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            669,
+            810,
+            690
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- User truy cập Frontend (Next.js) -> Gọi API Backend (Node.js) mang kèm Bearer Token (Firebase JWT). ",
+            "- Backend phân giải token với Firebase Auth. Nếu hợp lệ, hệ thống thao tác với Firestore. ",
+            "- Khi có request chat với bản sao số, Backend đọc ngữ cảnh (Knowledge) từ DB, gửi Prompt chuẩn tới OpenAI, nhận phản hồi, lưu lịch sử xuống messages collection và trả về cho Frontend. "
+        ],
+        "bbox": [
+            112,
+            701,
+            875,
+            859
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/b848bd4b2676179cb6a1e69fd83dd00e8b8d8ec834d59718e34401b678385f93.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "```mermaid\ngraph TD\n    A[\"Người dùng\"] -->|Truy cập & gửi yêu cầu Chat| B[\"Frontend (Next.js)\"]\n    B -->|Gọi API (Header: Bearer Token)| C[\"Backend (Node.js)\"]\n    C -->|Middleware verifyToken| D[\"Firebase (Auth/DB)\"]\n    D -->|Trả về UID hợp lệ| E[\"OpenAI API\"]\n    E -->|Trả về phàn hồi AI| F[\"Lường xử lý AI (RAG)\"]\n    F -->|Trả về context dữ liệu| G[\"Gửi Prompt (Context + Message)\"]\n    G -->|Trả về context dữ liệu| H[\"Đọc tri thức (Knowledge) từ Firestore\"]\n    H -->|Trả về context dữ liệu| I[\"Trả về kết quả JSON (Success)\"]\n    I -->|Hiển thị phần hồi trên UI| J[\"Trả về kết quả JSON (Success)\"]\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            137,
+            83,
+            859,
+            467
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "2.4. Realtime Architecture ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            507,
+            369,
+            524
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Hệ thống sử dụng khả năng realtime (Snapshot listeners) của Firestore Client SDK ở frontend để lắng nghe các thay đổi hộp thư (Inbox) và lịch sử Chat mà không cần Backend phải duy trì Socket.io/WebSocket riêng rẽ, giúp giảm tải cực lớn cho Node.js server. ",
+        "bbox": [
+            114,
+            541,
+            882,
+            624
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3. Thành phần Hệ thống (System Components) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            634,
+            558,
+            655
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3.1. Frontend (Next.js 15) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            668,
+            359,
+            688
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Ứng dụng SSR/SSG (Server-Side/Static Generation) giúp tối ưu hoá SEO (cho link thẻ cá nhân public) và tăng tốc độ tải. Giao tiếp với Backend qua RESTful API. ",
+        "bbox": [
+            114,
+            699,
+            880,
+            741
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3.2. Backend API (Node.js + Express.js) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            752,
+            493,
+            773
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Ứng dụng Express gọn nhẹ, stateless, dễ dàng scale on-demand (Ví dụ khi dùng Google Cloud Run hoặc App Engine). Đảm nhiệm chuẩn hóa dữ liệu, bảo mật AI Guardrails và bảo vệ lạm dụng API. ",
+        "bbox": [
+            114,
+            783,
+            880,
+            846
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3.3. Authentication Service (Firebase Auth) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            85,
+            523,
+            104
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Xử lý đăng ký, đăng nhập (Email/Password, Google). Cấp phát JWT Access Token và quản lý phiên. ",
+        "bbox": [
+            112,
+            116,
+            877,
+            157
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3.4. Database (Firebase Cloud Firestore) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            169,
+            496,
+            188
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "BaaS lưu trữ NoSQL theo cấu trúc Collection/Document chuyên phục vụ truy xuất tốc độ cao (sub-100ms). ",
+        "bbox": [
+            112,
+            200,
+            877,
+            242
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3.5. File Storage (Firebase Cloud Storage) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            255,
+            511,
+            274
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Bucket lưu trữ Avatar, Ảnh Cover, QR code trả về URL dùng qua Firebase CDN. ",
+        "bbox": [
+            115,
+            286,
+            830,
+            307
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3.6. AI Service (OpenRouter / OpenAI) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            319,
+            484,
+            339
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "LLM Engine cung cấp khả năng xử lý ngôn ngữ tự nhiên. Persona Digital Card \"tiêm\" tri thức của chủ thẻ vào hệ thống nhắc nhở (System Prompt) nhằm tạo ra trợ lý ảo mang phong cách riêng của từng người. ",
+        "bbox": [
+            112,
+            351,
+            874,
+            413
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3.7. External Services (QR Code Generator, Analytics…) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            427,
+            649,
+            447
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Sử dụng thư viện tạo QR Code nội bộ để render thẻ cứng vCard (NFC/QR) cho truy cập vật lý. ",
+        "bbox": [
+            112,
+            461,
+            857,
+            502
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4. Thiết kế Database - Firebase Cloud Firestore ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            513,
+            560,
+            533
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4.1. Nguyên tắc thiết kế Firestore ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            545,
+            429,
+            567
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Cơ sở dữ liệu phi quan hệ (NoSQL). Tuân theo nguyên tắc \"Dữ liệu được đọc cùng nhau sẽ được lưu cùng nhau\". ",
+        "bbox": [
+            114,
+            578,
+            864,
+            618
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Sử dụng Referencing (ID) giữa Users và Cards, nhưng lồng (Nested Object) các tùy chỉnh AI (aiConfig) thẳng vào thẻ để tối ưu số lần đọc document. ",
+        "bbox": [
+            114,
+            619,
+            865,
+            659
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/ea97f2ae48d58020f3d3ed09ce9a9168af64a25868ec919556df219e1eb6da2d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "```mermaid\ngraph TD\n    A[\"Firestore DB\"] --> B[\"Collection: analytics\"]\n    A --> C[\"Collection: users\"]\n    A --> D[\"Collection: reports\"]\n    A --> E[\"Collection: cards\"]\n    B --> F[\"Doc: global scale\"]\n    B --> G[\"Doc: user\"]\n    C --> H[\"Doc: report\"]\n    D --> I[\"Doc: card\"]\n    E --> J[\"Doc: analytic\"]\n    F --> K[\"totalUsers: number\"]\n    F --> L[\"tableScans: number\"]\n    F --> M[\"TotalMessages: number\"]\n    F --> N[\"linkCards: number\"]\n    G --> O[\"role string - administrator\"]\n    G --> P[\"avatarUt: string\"]\n    G --> Q[\"mreadAtt: timestamp\"]\n    G --> R[\"verified Boolean\"]\n    G --> S[\"autProvider: string\"]\n    H --> T[\"jyStatus: sending/verified/rejected\"]\n    H --> U[\"phone: string\"]\n    H --> V[\"fullName: string\"]\n    H --> W[\"email: string\"]\n    I --> X[\"cardid: reference\"]\n    I --> Y[\"nusion: string\"]\n    I --> Z[\"status: pending/resolved\"]\n    I --> AA[\"createdAtt: timestamp\"]\n    E --> AB[\"jobTitle: string\"]\n    E --> AC[\"userId: reference->userUserIs\"]\n    E --> AD[\"journal: string\"]\n    E --> AE[\"jolog: string\"]\n    E --> AF[\"signarCount: number\"]\n    E --> AG[\"messageCount: number\"]\n    E --> AH[\"subject: string\"]\n    E --> AI[\"node: darklight\"]\n    E --> AJ[\"theme: map\"]\n    E --> AK[\"font: string\"]\n    E --> AL[\"template: reference\"]\n    E --> AM[\"github: string\"]\n    E --> AN[\"linglndn: string\"]\n    E --> AO[\"portfolio: string\"]\n    E --> AP[\"Seduction: string\"]\n    E --> AQ[\"Seduction: messages\"]\n    E --> AR[\"Seduction: analytics\"]\n    AF --> AS[\"Seduction: messageId\"]\n    AG --> AT[\"Seduction: messageId\"]\n    AH --> AU[\"Seduction: messageId\"]\n    AI --> AV[\"Seduction: messageId\"]\n    AJ --> AW[\"Seduction: messageId\"]\n    AK --> AX[\"Seduction: messageId\"]\n    AL --> AY[\"Seduction: messageId\"]\n    AM --> AZ[\"Seduction: messageId\"]\n    AN --> BA[\"Seduction: messageId\"]\n    AO --> BB[\"Seduction: messageId\"]\n    AP --> BC[\"Seduction: messageId\"]\n    AQ --> BD[\"Seduction: messageId\"]\n    AR --> BE[\"Seduction: messageId\"]\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            117,
+            84,
+            884,
+            368
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Để ra được ảnh trên ta bao quát lại PRD, dùng mermaid trên draw để phác họa Database tree ",
+        "bbox": [
+            114,
+            372,
+            807,
+            410
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "DÙNG MERMAID TRÊN DRAW.IO ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            421,
+            469,
+            441
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "mindmap ",
+        "bbox": [
+            115,
+            454,
+            203,
+            472
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "root((Firestore DB)) ",
+        "bbox": [
+            125,
+            484,
+            308,
+            502
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Users\\_Collection[Collection: users] ",
+        "bbox": [
+            176,
+            513,
+            494,
+            532
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "User\\_Doc((Doc: userId)) ",
+        "bbox": [
+            176,
+            543,
+            401,
+            562
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u1[email: string] ",
+        "bbox": [
+            176,
+            573,
+            328,
+            593
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u2[phone: string] ",
+        "bbox": [
+            177,
+            604,
+            332,
+            622
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u3[fullName: string] ",
+        "bbox": [
+            177,
+            633,
+            360,
+            652
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u4[role: string - admin/user] ",
+        "bbox": [
+            177,
+            663,
+            427,
+            682
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u5[authProvider: string] ",
+        "bbox": [
+            177,
+            693,
+            392,
+            712
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u6[isVerified: boolean] ",
+        "bbox": [
+            177,
+            723,
+            382,
+            742
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u7[avatarUrl: string] ",
+        "bbox": [
+            177,
+            752,
+            360,
+            771
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u8[kycStatus: pending/verified/rejected] ",
+        "bbox": [
+            177,
+            783,
+            533,
+            802
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u9[status: active/banned] ",
+        "bbox": [
+            177,
+            813,
+            399,
+            832
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "u10[createdAt: timestamp] ",
+        "bbox": [
+            177,
+            843,
+            414,
+            862
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Cards\\_Collection[Collection: cards] ",
+        "bbox": [
+            174,
+            84,
+            496,
+            104
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Card\\_Doc((Doc: cardId))",
+        "bbox": [
+            177,
+            114,
+            404,
+            135
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c1[userId: reference] ",
+        "bbox": [
+            177,
+            144,
+            364,
+            163
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c2[slug: string] ",
+        "bbox": [
+            177,
+            175,
+            315,
+            194
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c3[fullName: string] ",
+        "bbox": [
+            177,
+            205,
+            360,
+            224
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c4[jobTitle: string] ",
+        "bbox": [
+            177,
+            235,
+            345,
+            255
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c5[slogan: string] ",
+        "bbox": [
+            177,
+            264,
+            335,
+            283
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c6[bio: string] ",
+        "bbox": [
+            177,
+            295,
+            305,
+            314
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c7[status: active/hidden/deleted] ",
+        "bbox": [
+            177,
+            324,
+            464,
+            344
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c8[isPhonePublic: boolean] ",
+        "bbox": [
+            177,
+            353,
+            421,
+            374
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c9[isEmailPublic: boolean] ",
+        "bbox": [
+            177,
+            384,
+            419,
+            404
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c10[createdAt: timestamp] ",
+        "bbox": [
+            177,
+            414,
+            414,
+            433
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c11[deletedAt: timestamp] ",
+        "bbox": [
+            177,
+            444,
+            412,
+            463
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c12[avatarUrl: string] ",
+        "bbox": [
+            177,
+            473,
+            370,
+            492
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "c13[coverUrl: string] ",
+        "bbox": [
+            177,
+            504,
+            365,
+            523
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Theme\\_Object[theme: map] ",
+        "bbox": [
+            177,
+            562,
+            427,
+            583
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "t1[templateId: reference] ",
+        "bbox": [
+            177,
+            593,
+            397,
+            612
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "t2[primaryColor: string] ",
+        "bbox": [
+            177,
+            623,
+            392,
+            643
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "t3[font: string] ",
+        "bbox": [
+            177,
+            653,
+            308,
+            673
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "t4[mode: dark/light] ",
+        "bbox": [
+            177,
+            682,
+            357,
+            703
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "AI\\_Config[aiConfig: map] ",
+        "bbox": [
+            177,
+            743,
+            414,
+            762
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ac1[aiStatus: Ready/Disabled/Error] ",
+        "bbox": [
+            177,
+            773,
+            496,
+            792
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ac2[systemPrompt: string] ",
+        "bbox": [
+            177,
+            802,
+            411,
+            821
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ac3[knowledgeData: map] ",
+        "bbox": [
+            177,
+            833,
+            411,
+            852
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ac4[toneOfVoice: string] ",
+        "bbox": [
+            177,
+            863,
+            395,
+            882
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ac5[isAiPaused: boolean] ",
+        "bbox": [
+            177,
+            893,
+            404,
+            912
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "SocialLinks\\_Object[socialLinks: array of objects] ",
+        "bbox": [
+            174,
+            114,
+            617,
+            135
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "s1[platform: string] ",
+        "bbox": [
+            177,
+            144,
+            350,
+            165
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "s2[url: string] ",
+        "bbox": [
+            177,
+            175,
+            300,
+            194
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Messages\\_SubCollection[SubCollection: messages] ",
+        "bbox": [
+            174,
+            233,
+            635,
+            254
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Msg\\_Doc((Doc: messageId))",
+        "bbox": [
+            177,
+            264,
+            436,
+            283
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "m1[cardId: reference] ",
+        "bbox": [
+            177,
+            294,
+            372,
+            313
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "m2[senderName: string] ",
+        "bbox": [
+            177,
+            324,
+            392,
+            344
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "m3[senderEmail: string] ",
+        "bbox": [
+            177,
+            353,
+            392,
+            374
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "m4[senderPhone: string] ",
+        "bbox": [
+            177,
+            384,
+            395,
+            404
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "m5[content: string] ",
+        "bbox": [
+            177,
+            414,
+            348,
+            433
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "m6[isRead: boolean] ",
+        "bbox": [
+            177,
+            444,
+            362,
+            463
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "m7[isDeleted: boolean] ",
+        "bbox": [
+            177,
+            473,
+            385,
+            492
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "m8[createdAt: timestamp] ",
+        "bbox": [
+            177,
+            504,
+            409,
+            523
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Reports\\_Collection[Collection: reports] ",
+        "bbox": [
+            174,
+            562,
+            526,
+            583
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Report\\_Doc((Doc: reportId))",
+        "bbox": [
+            177,
+            593,
+            434,
+            612
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "r1[cardId: reference] ",
+        "bbox": [
+            177,
+            623,
+            362,
+            643
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "r2[reporterEmail: string] ",
+        "bbox": [
+            177,
+            653,
+            395,
+            673
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "r3[reason: string] ",
+        "bbox": [
+            177,
+            682,
+            332,
+            703
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "r4[status: pending/resolved] ",
+        "bbox": [
+            177,
+            713,
+            424,
+            733
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "r5[createdAt: timestamp] ",
+        "bbox": [
+            177,
+            743,
+            401,
+            762
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Analytics\\_Collection[Collection: analytics\\_cards] ",
+        "bbox": [
+            174,
+            802,
+            617,
+            823
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Analytic\\_Doc((Doc: cardId))",
+        "bbox": [
+            177,
+            832,
+            436,
+            852
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "a1[totalViews: number] ",
+        "bbox": [
+            177,
+            862,
+            387,
+            882
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "a2[vcfDownloads: number] ",
+        "bbox": [
+            177,
+            891,
+            421,
+            912
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "a3[aiChatInteractions: number] ",
+        "bbox": [
+            174,
+            85,
+            454,
+            104
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "a4[lastUpdated: timestamp] ",
+        "bbox": [
+            174,
+            114,
+            422,
+            135
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "4.2. Cấu trúc Collections & Documents ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            176,
+            484,
+            194
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Hệ thống sử dụng cơ sở dữ liệu NoSQL Google Cloud Firestore. Để đáp ứng toàn vẹn các nghiệp vụ (Use Cases) trong tài liệu PRD, cấu trúc các Collection và các trường dữ liệu được chuẩn hóa chi tiết ",
+        "bbox": [
+            112,
+            207,
+            847,
+            268
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "4.3. Chi tiết các Collection chính ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            283,
+            422,
+            302
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bao gồm: users, cards, messages, reports, ai\\_knowledge\\_base, reports, analytics\\_cards (Chi tiết model ở mục 5). ",
+        "bbox": [
+            112,
+            319,
+            879,
+            359
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "5. Data Models & Schemas ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            374,
+            372,
+            391
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "5.1. User Model ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            409,
+            268,
+            426
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Thông tin người quản lý/chủ thẻ. ",
+        "bbox": [
+            115,
+            442,
+            407,
+            463
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "email (String): Địa chỉ thư điện tử cá nhân, dùng làm định danh đăng nhập duy nhất. ",
+            "● phone (String): Số điện thoại liên hệ của người dùng. ",
+            "● fullName (String): Họ và tên đầy đủ của chủ tài khoản. ",
+            "● role (String): Phân quyền truy cập hệ thống, nhận giá trị cấu hình cứng: admin (Quản trị viên) hoặc user (Người dùng cuối). ",
+            "● authProvider (String): Phương thức xác thực nguồn (Ví dụ: password, google). ",
+            "● isVerified (Boolean): Trạng thái xác minh tài khoản thông qua hệ thống kích hoạt. ",
+            "avatarUrl (String): Đường dẫn lưu trữ ảnh đại diện của người dùng trên Cloud Storage. ",
+            "● kycStatus (String): Trạng thái kiểm duyệt thông tin định danh điện tử (pending / verified / rejected). ",
+            "status (String): Trạng thái hoạt động của tài khoản trên hệ thống nền tảng, dùng để quản trị viên xử lý khóa/mở tài khoản (active / banned). ",
+            "● createdAt (Timestamp): Thời điểm khởi tạo tài khoản trên hệ thống. "
+        ],
+        "bbox": [
+            140,
+            467,
+            879,
+            802
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "5.2. Digital Card Model ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            85,
+            342,
+            103
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Đại diện cho một danh thiếp thông minh. ",
+        "bbox": [
+            114,
+            118,
+            479,
+            138
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "userId (Reference): Khóa ngoại liên kết dạng 1 - Nhiều (1 User có thể có nhiều Persona Card) trỏ về Collection users. ",
+            "● slug (String): Chuỗi định danh duy nhất trên URL phục vụ truy cập Public và quét mã QR/NFC (Ví dụ: persona.com/@anthony-simon). ",
+            "fullName, jobTitle, slogan, bio (String): Nhóm siêu dữ liệu (Metadata) hiển thị trực quan thông tin cá nhân của chủ thẻ. ",
+            "● status (String): Trạng thái hiển thị và vòng đời của thẻ, áp dụng cơ chế Soft Delete (Xóa mềm) để bảo toàn dữ liệu thống kê (active / hidden / deleted). ",
+            "● isPhonePublic, isEmailPublic (Boolean): Tùy chọn thiết lập quyền riêng tư cho phép hiển thị hoặc ẩn thông tin liên hệ tĩnh ra Frontend. ",
+            "● createdAt (Timestamp): Thời điểm khởi tạo thẻ danh thiếp. ",
+            "deletedAt (Timestamp): Ghi nhận thời điểm thực hiện thao tác xóa thẻ (Chỉ khả dụng khi status chuyển sang deleted). ",
+            "avatarUrl, coverUrl (String): Đường dẫn hình ảnh đại diện và ảnh bìa tùy biến của thẻ. ",
+            "● aiConfig (Map - Cấu hình Trợ lý ảo): Thành phần cốt lõi điều khiển \"Bản sao kỹ thuật số\": "
+        ],
+        "bbox": [
+            145,
+            147,
+            877,
+            494
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "aiStatus (String): Trạng thái hoạt động độc lập của AI đại diện (Ready / Disabled / Error). ",
+            "systemPrompt (String): Chỉ thị Prompt Engineering định hình phong cách, giới hạn và nhân cách giao tiếp cho Bot. ",
+            "knowledgeData (Map): Tập hợp kho tri thức cá nhân phục vụ cơ chế tra cứu giảm thiểu ảo giác (RAG Context). ",
+            "- toneOfVoice (String): Bộ từ điển quy định giọng văn phản hồi của AI chatbot. ",
+            "isAiPaused (Boolean): Cờ đánh dấu kích hoạt tính năng Human Takeover (Tạm dừng AI để chủ thẻ nhảy vào can thiệp thủ công). "
+        ],
+        "bbox": [
+            204,
+            497,
+            879,
+            699
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "socialLinks (Array of Objects): Danh sách mảng động lưu trữ các liên kết mạng xã hội không giới hạn nền tảng: ",
+        "bbox": [
+            145,
+            701,
+            879,
+            739
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- platform (String): Tên nền tảng mạng xã hội (Ví dụ: facebook, github, tiktok). ",
+            "- url (String): Đường dẫn liên kết trực tiếp. "
+        ],
+        "bbox": [
+            204,
+            742,
+            877,
+            802
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "5.3. Reports ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            85,
+            234,
+            104
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "cardId (Reference): Định danh thẻ bị cộng đồng cắm cờ hoặc khiếu nại vi phạm chính sách. ",
+            "● reporterEmail (String): Email của người thực hiện gửi báo cáo vi phạm. ",
+            "● reason (String): Lý do khiếu nại (Ví dụ: Spam, Inappropriate Content, Scam). ",
+            "status (String): Trạng thái xử lý của đội ngũ Admin đối với đơn khiếu nại (pending / resolved). ",
+            "● createdAt (Timestamp): Thời điểm phát sinh đơn báo cáo. "
+        ],
+        "bbox": [
+            145,
+            118,
+            872,
+            260
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "5.4. Conversation & Message Model ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            277,
+            458,
+            296
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Lưu trữ liên hệ chủ động của khách thăm khi AI bị tắt hoặc khách muốn gọi điện. ",
+        "bbox": [
+            114,
+            309,
+            830,
+            331
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● cardId (Reference): Khóa ngoại định danh chính xác thẻ nhận tin nhắn. ",
+            "senderName (String): Họ tên của khách truy cập để lại lời nhắn. ",
+            "● senderEmail (String): Email của khách để phục vụ chủ thẻ phản hồi liên hệ. ",
+            "● senderPhone (String): Số điện thoại của khách truy cập. ",
+            "● content (String): Nội dung lời nhắn tĩnh hoặc form liên hệ. ",
+            "● isRead (Boolean): Đánh dấu trạng thái chủ thẻ đã đọc hay chưa để phục vụ thông báo (Notification Badge). ",
+            "● isDeleted (Boolean): Cờ xóa mềm tin nhắn từ phía hòm thư người dùng. ",
+            "createdAt (Timestamp): Thời gian hệ thống ghi nhận tin nhắn được gửi thành công. "
+        ],
+        "bbox": [
+            145,
+            340,
+            877,
+            543
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "5.5 Ai\\_knowledge\\_base ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            558,
+            340,
+            578
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "global\\_rules (Document): Lưu trữ tập trung các điều khoản an toàn dữ liệu, chống Jailbreak Prompt, hành vi nói tục chửi bậy, hoặc bàn luận các chủ đề cấm (Guardrails & AI Reading Guide). Dữ liệu này sẽ được trộn tự động với Prompt cá nhân trước khi gửi lên OpenAI API. ",
+        "bbox": [
+            112,
+            589,
+            879,
+            672
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "5.6 Analytics\\_cards ",
+        "text_level": 1,
+        "bbox": [
+            119,
+            684,
+            308,
+            704
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Thống kê hiệu xuất thẻ ",
+        "bbox": [
+            115,
+            714,
+            323,
+            735
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "● totalViews (Number): Tổng số lượt truy cập hiển thị của thẻ. ",
+            "vcfDownloads (Number): Tổng số lượt người dùng nhấn tải file danh bạ cấu trúc vCard 3.0 về điện thoại. ",
+            "aiChatInteractions (Number): Số lượt khách thực hiện trò chuyện tương tác trực tiếp với Bản sao số. ",
+            "● lastUpdated (Timestamp): Thời điểm cập nhật số liệu đồng bộ gần nhất. "
+        ],
+        "bbox": [
+            145,
+            736,
+            875,
+            858
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "5.7. Relationship giữa các Collection (Subcollections & References) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            85,
+            741,
+            104
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Trong kiến trúc cơ sở dữ liệu hệ quản trị Google Cloud Firestore (NoSQL) của dự án, các thực thể dữ liệu được tổ chức và liên kết với nhau thông qua hai phương thức cốt lõi: Root Reference (Tham chiếu ID ở cấp gốc) và Subcollection (Tập hợp dữ liệu con phân cấp). Giải pháp thiết kế này giúp tối ưu hóa tốc độ truy xuất dữ liệu (\\$O(1)\\$), độc lập hóa các khối nghiệp vụ và đảm bảo không vi phạm giới hạn kích thước dung lượng tài liệu (1MB/Document) của Firebase. ",
+        "bbox": [
+            112,
+            118,
+            874,
+            239
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/eba78de239d63e32b6958aa30e3625c1c5e7a0aebb6461be3e806b719cb50703.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "```mermaid\ngraph TD\n    A[\"USERS\"] -->|1:N (userid Reference)| B[\"CARDS\"]\n    B -->|1:N (CardId Reference)| C[\"MESSAGES\"]\n    B -->|1:N (CardId Reference)| D[\"ANALYTICS_CARDS\"]\n    D -->|1:1 (Shared Document ID)| C\n    D -->|1:1 (Shared Document ID)| E[\"REPORTS\"]\n    C --> F[\"messageId PK\"]\n    C --> G steadyp\n    D --> H content\n    D --> I isRead\n    style A fill:#f9f,stroke:#333\n    style B fill:#ccf,stroke:#333\n    style C fill:#cfc,stroke:#333\n    style D fill:#fcc,stroke:#333\n    style E fill:#ffc,stroke:#333\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            117,
+            241,
+            884,
+            654
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "5.7.1 Mối quan hệ giữa users và cards (Quan hệ 1 — Nhiều) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            674,
+            676,
+            695
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Loại liên kết: Root Reference (Tham chiếu cấp gốc). ",
+        "bbox": [
+            114,
+            699,
+            587,
+            720
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Mô tả nghiệp vụ: Một tài khoản người dùng (users) sau khi đăng ký hệ thống có thể khởi tạo và sở hữu nhiều thẻ danh thiếp kỹ thuật số (cards) đại diện cho các Persona khác nhau (Ví dụ: Persona lập trình viên, Persona nhà đầu tư). Tuy nhiên, một thẻ danh thiếp số tại một thời điểm chỉ thuộc quyền sở hữu của duy nhất một tài khoản định danh. ",
+        "bbox": [
+            112,
+            720,
+            879,
+            821
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Giải pháp kỹ thuật: Trong mỗi tài liệu thuộc Collection cards, hệ thống lưu trữ một trường dữ liệu userId có kiểu dữ liệu là chuỗi String (chính là mã Document ID duy nhất được sinh ra từ Collection users). Khi cần lấy danh sách thẻ của một người dùng, ",
+        "bbox": [
+            112,
+            823,
+            880,
+            884
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Backend chỉ cần thực hiện câu lệnh lọc: db.collection('cards').where('userId', '==', req.user.uid) ",
+        "bbox": [
+            115,
+            83,
+            875,
+            124
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "5.7.2 Mối quan hệ giữa cards và messages (Quan hệ 1 — Nhiều phân cấp) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            83,
+            803,
+            104
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Loại liên kết: Subcollection (Tập hợp con lồng nhau). ",
+        "bbox": [
+            114,
+            116,
+            595,
+            135
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Mô tả nghiệp vụ: Mỗi thẻ danh thiếp cá nhân sở hữu một Hòm thư tương tác (Inbox) riêng biệt để lưu trữ các thông tin form liên hệ tĩnh hoặc lời nhắn từ khách truy cập gửi đến khi hệ thống kích hoạt tính năng Human Takeover. Tin nhắn của thẻ nào phải được cô lập tuyệt đối và chỉ có chủ sở hữu của thẻ đó mới có quyền truy cập. ",
+        "bbox": [
+            112,
+            137,
+            877,
+            217
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Giải pháp kỹ thuật: Thay vì tạo một Collection messages độc lập ở cấp gốc, hệ thống tổ chức messages dưới dạng một Subcollection nằm trực tiếp bên trong cấu trúc phân cấp của từng tài liệu cards. Đường dẫn truy xuất dữ liệu trên Firestore có cấu trúc: ",
+        "bbox": [
+            112,
+            218,
+            877,
+            279
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Path:/cards/{cardId}/messages/{messageId} ",
+        "bbox": [
+            115,
+            300,
+            505,
+            320
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Cách thiết kế này giúp Backend dễ dàng tận dụng tính năng kiểm soát quyền truy cập của Firebase Security Rules, tối ưu tốc độ đọc dữ liệu hộp thư theo từng thẻ mà không cần thực hiện các phép toán lặp phức tạp. ",
+        "bbox": [
+            112,
+            340,
+            877,
+            402
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "5.7.3 Mối quan hệ giữa cards và messages (Quan hệ 1 — Nhiều phân cấp) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            420,
+            803,
+            441
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Loại liên kết: Shared Document ID Mapping (Chia sẻ định danh tài liệu). ",
+        "bbox": [
+            114,
+            446,
+            766,
+            465
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Mô tả nghiệp vụ: Mỗi một thẻ danh thiếp số được khởi tạo sẽ đi kèm với duy nhất một bản ghi theo dõi, thống kê hiệu suất thực tế (Lượt xem thẻ, số lượt tải tệp danh bạ vCard, số lượt tương tác trực tiếp với AI Digital Twin). ",
+        "bbox": [
+            112,
+            466,
+            870,
+            527
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Giải pháp kỹ thuật: Các trường dữ liệu thống kê biến động rất liên tục (tăng tuyến tính theo thời gian). Nếu lưu chung vào tài liệu cards, hệ thống sẽ phải thực hiện ghi đè dữ liệu cấu hình giao diện liên tục, gây lãng phí tài nguyên và dễ chạm ngưỡng giới hạn ghi. Do đó, thực thể thống kê được tách hẳn ra một Collection độc lập ở cấp gốc là analytics\\_cards. Để thiết lập mối quan hệ 1:1, hệ thống quy định: Document ID của bản ghi thống kê nằm trong analytics\\_cards phải trùng khít với Document ID của tài liệu cards tương ứng. Khi cần tra cứu, Backend chỉ cần thực hiện: db.collection('analytics\\_cards').doc(cardId).get(). ",
+        "bbox": [
+            112,
+            528,
+            875,
+            691
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "5.7.4 Mối quan hệ giữa cards và reports (Quan hệ 1 — Nhiều) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            710,
+            694,
+            730
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Loại liên kết: Root Reference (Tham chiếu cấp gốc). ",
+        "bbox": [
+            114,
+            735,
+            587,
+            754
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Mô tả nghiệp vụ: Khi khách truy cập phát hiện nội dung trên một thẻ danh thiếp số có hành vi lừa đảo hoặc vi phạm chính sách, họ có thể gửi đơn khiếu nại. Một thẻ danh thiếp có thể nhận nhiều đơn báo cáo vi phạm độc lập từ cộng đồng người dùng trước khi hệ thống Admin xử lý. ",
+        "bbox": [
+            112,
+            755,
+            854,
+            836
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Giải pháp kỹ thuật: Hệ thống duy trì một Collection cấp gốc tên là reports. Mỗi tài liệu báo cáo vi phạm sẽ chứa một trường dữ liệu mang tên cardId (String) lưu trữ ID của thẻ bị cắm cờ. Thiết kế này giúp đội ngũ quản trị hệ thống (Admin) dễ dàng thực hiện các tác vụ gom nhóm, thống kê danh sách các thẻ có lượng báo cáo cao nhất để đưa ra quyết định khóa thẻ (status = 'banned') kịp thời theo đúng quy trình xử lý trong tài liệu PRD. ",
+        "bbox": [
+            112,
+            837,
+            860,
+            897
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            117,
+            84,
+            870,
+            143
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "6. Authentication & Authorization ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            181,
+            441,
+            197
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "6.1. Firebase Auth Integration ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            214,
+            401,
+            233
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Mọi luồng đăng nhập đều xuất phát từ Frontend. Frontend nhận Firebase JWT (IdToken) và truyền qua HTTP Header Authorization: Bearer <token> vào Backend. ",
+        "bbox": [
+            117,
+            249,
+            857,
+            288
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "6.2. Custom Claims & Roles (Card Owner, Admin) ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            334,
+            593,
+            353
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Firebase Auth không mặc định có bảng Roles, vì vậy Middleware Backend tự động map uid của token khớp vào bảng users trong Firestore. ",
+        "bbox": [
+            117,
+            369,
+            848,
+            408
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Nếu thực thi các endpoint nhạy cảm (thống kê tổng, ban thẻ), middleware verifyAdmin sẽ kiểm tra field role === 'admin'. ",
+        "bbox": [
+            117,
+            419,
+            763,
+            458
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "6.3. Security Rules cho Firestore ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            475,
+            421,
+            492
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Mặc dù dùng Admin SDK bỏ qua Firebase Security Rules truyền thống, tài liệu chuẩn hóa quy định mọi request của Client BUỘC PHẢI đi qua phân giải ở API Node.js, ngoại trừ Realtime Chat. ",
+        "bbox": [
+            117,
+            508,
+            874,
+            568
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "6.4. JWT / Session Management ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            615,
+            419,
+            633
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Token được quản lý sinh ra sống ngắn hạn (short-lived tính bằng giờ). Đăng xuất sẽ destroy trên Client và Firebase Auth vô hiệu hoá kết nối. ",
+        "bbox": [
+            117,
+            649,
+            850,
+            687
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "7. API Design (Backend - Node.js Express) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            85,
+            518,
+            104
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "7.1. API Architecture Overview ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            119,
+            414,
+            137
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/0b410796ac0cc4f2fec58d1fe1dde04adf54895d3c7ec0f08add1f6e821386b9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "```mermaid\ngraph TD\n    A[\"Base URL: /api/v1\"] --> B[\"/cards\"]\n    A --> C[\"/users\"]\n    A --> D[\"/reports\"]\n    B --> E[\"/cards/:cardld/messages\"]\n    B --> F[\"/POST/:cardld/qr-config Tủy chỉnh màu/logo QR\"]\n    B --> G[\"/POST/:/Tạo thẻ môi (Auto Active)\"]\n    B --> H[\"GET/:slug Khách xem thẻ bằng Link/QR\"]\n    B --> I[\"PUT/:cardld cập nhật thông tin/Theme\"]\n    B --> J[\"POST/:cardld/upload-docs Tài file PDF/DOCX (RAG)\"]\n    B --> K[\"POST/:khách gửi tin nhân tỉnh\"]\n    B --> L[\"POST/:cardld/ai-config Câu hình System Prompt & Takeover\"]\n    B --> M[\"POST/:messageId/read Đánh dấu đã đọc\"]\n    B --> N[\"/analytics\"]\n    N --> O[\"POST /cards/:cardld/track-vcf Tracking lượt tải danh bạ VCF\"]\n    N --> P[\"POST /global Thống kê lươn (Token, Users) (Admin)\"]\n    N --> Q[\"POST /cards/:cardld Thống kê lươn xem/quét của thể\"]\n    C --> R[\"/auth\"]\n    R --> S[\"POST /register Đăng ký tài khoản\"]\n    R --> T[\"POST /login Đăng nhập\"]\n    C --> U[\"/users\"]\n    U --> V[\"POST /me Lấy profile cá nhân\"]\n    U --> W[\"PUT /me Cập nhật profile (eKYC)\"]\n    U --> X[\"GET / Danh sách Users (Admin)\"]\n    C --> Y[\"/chat\"]\n    Y --> Z[\"POST /cards/:cardld/chat Chat trực tiếp với Al Persona\"]\n    Y --> AA[\"/reports\"]\n    AA --> AB[\"POST /Khách gửi báo cáo vi phạm\"]\n    AA --> AC[\"GET /Xem danh sách báo cáo (Admin)\"]\n    AA --> AD[\"PUT/:reportId/resolve Xử lý vi phạm/Khóa thể (Admin)\"]\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            117,
+            153,
+            884,
+            539
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Tuân thủ RESTful chuẩn. URL có đuôi Versioning API (VD: /api/v1/...). ",
+        "bbox": [
+            114,
+            543,
+            756,
+            564
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Để ra được ảnh trên ta bao quát lại PRD, dùng mermaid trên draw để phác họa API tree ",
+        "bbox": [
+            112,
+            573,
+            847,
+            612
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "DÙNG MERMAID TRÊN DRAW.IO ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            623,
+            469,
+            642
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "%%{init: {\"flowchart\": {\"curve\": \"linear\"}}}%% ",
+        "bbox": [
+            114,
+            654,
+            555,
+            673
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "graph LR ",
+        "bbox": [
+            115,
+            685,
+            204,
+            703
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Base[\"Base URL: /api/v1\"] ",
+        "bbox": [
+            174,
+            714,
+            419,
+            733
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "%% Nhánh 1: Xác thực & User ",
+        "bbox": [
+            174,
+            774,
+            459,
+            792
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Base --> Auth[\"/auth\"] ",
+        "bbox": [
+            174,
+            804,
+            382,
+            823
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Auth --> A1[\"POST /register<br>Đăng ký tài khoản\"] ",
+        "bbox": [
+            174,
+            833,
+            654,
+            853
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Auth --> A2[\"POST /login<br>Đăng nhập\"] ",
+        "bbox": [
+            174,
+            863,
+            568,
+            883
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Auth --> A3[\"POST /forgot-password<br>Quên mật khẩu\"] ",
+        "bbox": [
+            174,
+            893,
+            704,
+            913
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nBase --> Users[\"/users\"]\nUsers --> U1[\"GET /me<br>Lấy profile cá nhân\"]\nUsers --> U2[\"PUT /me<br>Cập nhật profile\"]\nUsers --> U3[\"GET /<br>Danh sách Users (Admin)\"]\nUsers --> U4[\"PUT/:id/status<br>Khóa/Mở User (Admin)\"] \n```",
+        "bbox": [
+            174,
+            114,
+            713,
+            256
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\n%% Nhánh 2: Cards & Config\nBase --> Cards[\"/cards\"]\nCards --> C1[\"POST /<br>Tạo thể mới\"]\nCards --> C2[\"GET/:slug<br>Xem thể (Public)\"]\nCards --> C3[\"PUT/:cardId<br>Cập nhật thông tin/Theme\"]\nCards --> C4[\"GET/me<br>Lấy danh sách thể\"]\nCards --> C5[\"DELETE/:cardId<br>Xóa thể (Soft Delete)\"]\nCards --> C6[\"PUT/:cardId/ai-config<br>Cấu hình AI\"]\nCards --> C7[\"PUT/:cardId/takeover<br>Tạm dùng AI\"] \n```",
+        "bbox": [
+            174,
+            294,
+            713,
+            554
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```erlang\n%% Nhánh 3: Tương tác & Tin nhân\nBase --> Chat[\"/chat\"]\nChat --> CH1[\"POST /cards/: cardId/chat<br>Chat với AI Persona\"] \n```",
+        "bbox": [
+            174,
+            592,
+            776,
+            674
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nBase --> Msg[\"/messages\"]\nMsg --> M1[\"POST /cards/: cardId<br>Gửi tin nhận tĩnh (Public)\"]\nMsg --> M2[\"GET /cards/: cardId<br>Xem danh sách tin\"]\nMsg --> M3[\"PUT/:messageId/read<br>Dánh dấu đã đọc\"]\nMsg --> M4[\"DELETE/:messageId<br>Xóa tin nhận\"] \n```",
+        "bbox": [
+            174,
+            712,
+            766,
+            852
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\n%% Nhánh 4: Admin (Reports) & Thống kê \n```",
+        "bbox": [
+            174,
+            891,
+            568,
+            912
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nBase --> Reports[\"/reports\"]\nReports --> R1[\"POST /<br>Güi báo cáo (Public)\"]\nReports --> R2[\"GET /<br>Xem danh sách (Admin)\"]\nReports --> R3[\"PUT/:reportId/resolve<br>Xử lý vi phạm (Admin)\"]\n\nBase --> Analytics[\"/analytics\"]\nAnalytics --> AN1[\"POST /cards/:cardId/track-vcf<br>Tracking tải VCF\"]\nAnalytics --> AN2[\"GET /cards/:cardId<br>Thống kê thể\"]\nAnalytics --> AN3[\"GET /global<br>Thống kê tổng (Admin)\"]\n\n%% Trang trí màu sắc\nstyle Base fill:#333,stroke:#fff,stroke-width:2px,color:#fff\nstyle Auth fill:#e1bee7,stroke:#8e24aa,stroke-width:2px\nstyle Users fill:#e1bee7,stroke:#8e24aa,stroke-width:2px\nstyle Cards fill:#bbdefb,stroke:#1e88e5,stroke-width:2px\nstyle Chat fill:#ffcc80,stroke:#f57c00,stroke-width:2px\nstyle Msg fill:#ffcc80,stroke:#f57c00,stroke-width:2px\nstyle Reports fill:#ffcdd2,stroke:#e53935,stroke-width:2px\nstyle Analytics fill:#c8e6c9,stroke:#43a047,stroke-width:2px \n```",
+        "bbox": [
+            174,
+            84,
+            840,
+            644
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "7.2. Route Organization ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            657,
+            343,
+            676
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Được chia vào các thư mục: authRoutes.js, userRoutes.js, cardRoutes.js, chatRoutes.js, analyticsRoutes.js, reportRoutes.js. ",
+        "bbox": [
+            114,
+            693,
+            753,
+            733
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "7.3. Các API chính (Auth, Cards, Chat, Inbox, QR…) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            747,
+            619,
+            767
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Auth: /auth/login, /auth/register ",
+            "- Users: /users/me (Lấy thông tin cá nhân) ",
+            "- Cards: /cards (Tạo, sửa, xóa, lấy thẻ public/private). Cấu hình riêng chức năng cập nhật AI tại /cards/:cardId/ai-config. ",
+            "- Chat: /chat/cards/:cardId/chat (Nhận prompt => Trả AI) ",
+            "- Inbox tĩnh: /cards/:cardId/messages (Khách lấy hòm thư và đánh dấu đọc) "
+        ],
+        "bbox": [
+            114,
+            783,
+            860,
+            904
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "\\- Analytics: /analytics/cards/:cardId và /analytics/global ",
+        "bbox": [
+            114,
+            85,
+            610,
+            103
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "7.4. Middleware (Auth, Rate Limiting, Error Handling) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            140,
+            639,
+            159
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- authMiddleware: Giải mã Token (verifyToken), Check Vai trò (verifyAdmin). ",
+            "- rateLimiter: Toàn ứng dụng (100 req/15m), và Chat AI (10 req/1m) dùng express-rate-limit. ",
+            "- errorHandler: Middleware gom lỗi, loại bỏ mã mã rác của JS, trả về { status, message } tiếng Việt thuần 100%. "
+        ],
+        "bbox": [
+            112,
+            174,
+            823,
+            274
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "7.5. OpenAI Integration Flow ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            311,
+            397,
+            330
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "API Chat nhận câu hỏi -> Lấy thẻ từ Database -> Trích xuất knowledgeData -> Đính kèm Guideline (Global Rules + System Prompt của chủ thẻ) -> Bắn về API OpenAI -> Nhận text -> Format sạch sẽ tiếng Việt -> Trả vè Frontend. ",
+        "bbox": [
+            112,
+            345,
+            860,
+            404
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "8. Tích hợp AI Digital Twin ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            421,
+            377,
+            439
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "8.1. Kiến trúc AI Prompting ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            454,
+            384,
+            473
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Áp dụng RAG rút gọn. Context luôn được nhúng tĩnh ở dạng văn bản (text based) vào messages system của thư viện OpenAI. ",
+        "bbox": [
+            112,
+            489,
+            843,
+            529
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "8.2. Knowledge Base Generation (persona\\_data.json) ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            546,
+            614,
+            565
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Thay vì dùng Vector DB phức tạp, toàn bộ profile cá nhân, bio, slogan, link social và knowledge custom được parse thành một JSON thu gọn ép vào bộ Prompt khởi tạo. ",
+        "bbox": [
+            112,
+            580,
+            860,
+            619
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "8.3. System Prompt + Guardrails ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            635,
+            429,
+            655
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Dự án duy trì ai\\_knowledge\\_base trên Database đóng vai trò Guardrails (Vành đai bảo vệ). Không cho bot văng tục, không được phép cung cấp thông tin sai lệch so với Knowledge, từ chối trả lời chính trị. ",
+        "bbox": [
+            112,
+            669,
+            877,
+            729
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "8.4. Human Takeover Mechanism ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            745,
+            434,
+            763
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Trường isAiPaused tạo luồng Takeover. Nếu Admin bấm tạm dừng AI trên App, API Chat tự động ngắt kết nối với LLM và báo câu lệnh cứng: \"Chủ thẻ đang bận, vui lòng để lại tin nhắn!\" ",
+        "bbox": [
+            112,
+            779,
+            875,
+            839
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "8.5. Fallback Strategy khi AI lỗi ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            84,
+            422,
+            104
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Khi OpenAI API quá tải hoặc rate-limit, Backend chèn cấu hình try/catch trả về: \"Hiện tại hộp thư quá tải, bạn vui lòng để lại lời nhắn thủ công nhé!\". ",
+        "bbox": [
+            114,
+            118,
+            823,
+            159
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "9. Realtime Features ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            175,
+            313,
+            192
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "9.1. Realtime Chat (Firestore + Client SDK) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            209,
+            528,
+            228
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Việc nhắn và chờ phản hồi thực chất là Server-side render. Tuy nhiên tương lai nếu dùng Agent phức tạp, Next.js đẩy thẳng stream về. ",
+        "bbox": [
+            114,
+            243,
+            845,
+            283
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "9.2. Inbox realtime cho chủ thẻ ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            299,
+            409,
+            317
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Notification có người nhắn tin được Client listen bằng hàm onSnapshot trực tiếp vào collection messages. ",
+        "bbox": [
+            114,
+            333,
+            860,
+            374
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "9.3. Notification (Email + In-app) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            389,
+            432,
+            409
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "(Định hướng mở rộng: Firebase Cloud Messaging (FCM) hoặc gửi mail tự động qua NodeMailer khi có Lead mới). ",
+        "bbox": [
+            114,
+            423,
+            857,
+            463
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "10. File Storage Architecture ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            479,
+            390,
+            497
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "10.1. Firebase Cloud Storage Structure ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            513,
+            484,
+            532
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Được tổ chức dưới dạng Folder-based: /avatars/{userId}/, /covers/{userId}/. ",
+        "bbox": [
+            115,
+            547,
+            786,
+            567
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "10.2. Avatar, Cover Image, QR Code ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            581,
+            461,
+            600
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "File gửi lên được lấy lại Link tải Public (Download URL), lưu chuỗi String URL vào Database users và cards ",
+        "bbox": [
+            114,
+            616,
+            864,
+            655
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "10.3. Security Rules & Access Control ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            672,
+            474,
+            691
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Thiết lập rule: Chỉ có User đã đăng nhập mới được upload ảnh cho Thư mục mang uid của họ. Mọi người đều có quyền read (Đọc). ",
+        "bbox": [
+            114,
+            706,
+            877,
+            747
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "11. Security & Data Protection ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            762,
+            407,
+            780
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "11.1. Firestore Security Rules chi tiết ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            795,
+            464,
+            814
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Từ chối mọi request write trực tiếp từ Frontend trừ Client Admin. Frontend tạo dữ liệu thông qua Node.js Admin SDK, bỏ qua Rule cục bộ để kiểm soát chặt bằng NodeJS Middleware. ",
+        "bbox": [
+            114,
+            830,
+            877,
+            891
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "11.2. Rate Limiting & Anti-Spam ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            119,
+            431,
+            138
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Phòng tránh tấn công chi phí biên (Billing Attack) lên OpenAI. Spam AI chat sẽ bị khoá IP tĩnh nhờ express-rate-limit. ",
+        "bbox": [
+            114,
+            153,
+            845,
+            193
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "11.3. Data Privacy & Consent ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            239,
+            399,
+            258
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Không chia sẻ số điện thoại và email thật của thẻ ra Frontend (những trường này bị ẩn khi query API) nếu người dùng đánh cờ isEmailPublic = false. ",
+        "bbox": [
+            114,
+            273,
+            874,
+            314
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "11.4. Input Sanitization & Validation ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            359,
+            464,
+            378
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Xoá bỏ các script XSS Injection trước khi nạp vào AI Prompt để tránh rủi ro Jailbreak LLM Prompt ",
+        "bbox": [
+            114,
+            393,
+            874,
+            434
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "12. Performance & Scaling ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            448,
+            372,
+            467
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "12.1. Firestore Indexing Strategy ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            483,
+            427,
+            503
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Sử dụng Composite Indexes cho các query lọc trên slug và status == active của thẻ để tăng tốc độ phân giải đường dẫn Public ",
+        "bbox": [
+            114,
+            517,
+            870,
+            558
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "12.2. Query Optimization ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            573,
+            360,
+            593
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Hạn chế get() toàn bộ tài liệu. Hệ thống chỉ query object với trường tối thiểu. ",
+        "bbox": [
+            114,
+            606,
+            793,
+            628
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "12.3. Caching Strategy ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            642,
+            333,
+            662
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Có thể ứng dụng Redis hoặc Node.js local cache node-cache (Sau này) cho các truy vấn xem thẻ public (/cards/:slug) vì nó rất hiếm khi bị đổi và có lượng request cao nhất. ",
+        "bbox": [
+            114,
+            676,
+            850,
+            736
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "12.4. Cost Optimization (Firestore + OpenAI) ",
+        "text_level": 1,
+        "bbox": [
+            115,
+            752,
+            546,
+            771
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Giới hạn Max Token của Output AI ở mức \\~300-500 Tokens tránh phát sinh chuỗi vô tận dãn ngân sách. Dùng Model gpt-4o-mini cho tỷ lệ giá/hiệu suất tốt nhất ",
+        "bbox": [
+            114,
+            787,
+            867,
+            828
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "14. Rủi ro Kiến trúc & Mitigation ",
+            "15. Phụ lục "
+        ],
+        "bbox": [
+            117,
+            84,
+            434,
+            138
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "A. Firestore Security Rules (mẫu) ",
+            "B. API Endpoints List ",
+            "C. Data Model Diagram ",
+            "D. System Architecture Diagram ",
+            "E. Glossary "
+        ],
+        "bbox": [
+            115,
+            84,
+            434,
+            311
+        ],
+        "page_idx": 25
+    }
+]

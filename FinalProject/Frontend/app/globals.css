@@ -2,18 +2,31 @@
 
 :root {
   color-scheme: dark;
-  --background: #0f0f0f;
-  --foreground: #f5f5f5;
-  --seminar-blue: #215d99;
-  --seminar-card: #e4e4e4;
-  --seminar-surface: #fbf4e8;
-  --card-image-bg: #d9d9d9;
+  --background: #0B0B0B;
+  --foreground: #FFFFFF;
+  --card: #101010;
+  --brand-blue: #2367A2;
+  --electric-blue: #008FEA;
+  --chat-light: #EAF3FC;
+  --text-muted: #B7B7B7;
+  --danger: #E5484D;
+  --success: #2ECC71;
+
+  --seminar-blue: #2367A2;
+  --seminar-card: #101010;
+  --seminar-surface: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-plus-jakarta);
+  --color-card: var(--card);
+  --color-brand-blue: var(--brand-blue);
+  --color-electric-blue: var(--electric-blue);
+  --color-chat-light: var(--chat-light);
+  --color-text-muted: var(--text-muted);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
 }
 
 html {
@@ -199,7 +212,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 20vh;
+  min-height: clamp(360px, 48vw, 680px);
+  overflow: visible;
 }
 
 .hero-title {
@@ -242,7 +256,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
 }
 
 .hero-footer-desc {
@@ -298,6 +312,7 @@ body {
   flex: 1;
   flex-direction: column;
   padding: 0.8rem;
+  background: linear-gradient(180deg, #ffffff 100%, #ffffff 100%);
 }
 
 .floating-card-title {
@@ -305,7 +320,7 @@ body {
   font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #1e1e1e;
+  color: #000000;
   line-height: 1.2;
   letter-spacing: 0.1em;
 }
@@ -316,7 +331,7 @@ body {
   flex: 1;
   font-size: 0.75rem;
   line-height: 1.4;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.72);
 }
 
 /* ── Responsive overrides ─────────────────────────────────── */
