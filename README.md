@@ -205,3 +205,10 @@ Frontend sẽ kết nối qua API endpoint `http://localhost:5000`
 - Để chạy QR code trên thiết bị mobile, cần expose Frontend qua **ngrok**
 - Kiểm tra file `.env` để đảm bảo API endpoints được cấu hình đúng
 
+---
+
+## 5. Demo
+
+### 🎨 Landing Page
+![Landing Page Demo](./FinalProject/AI_Instruction/Frontend/Design/Landing%20Page.png)
+
