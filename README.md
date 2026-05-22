@@ -118,9 +118,40 @@ npm install
 
 #### Bước 2: Thiết lập cấu hình
 
-Tạo file `.env` trong mỗi thư mục hoặc sao chép từ `.env.example`:
-- `FinalProject/Frontend/.env.local` (nếu cần)
-- `FinalProject/Backend/.env` (để kết nối Firebase, OpenAI, etc.)
+Tạo file `.env` và `.env.local` trong mỗi thư mục:
+
+**Backend - `FinalProject/Backend/.env`:**
+```env
+PORT=5000
+OPENAI_API_KEY=your_openai_api_key_here
+FIREBASE_PROJECT_ID=seminar-64fa5
+FIREBASE_PRIVATE_KEY=your_firebase_private_key
+FIREBASE_CLIENT_EMAIL=your_firebase_client_email
+```
+
+**Frontend - `FinalProject/Frontend/.env.local`:**
+```env
+# Thông tin Firebase (lấy từ Firebase Console → Project Settings → General → Web Apps)
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+
+# API URL
+# Khi chạy trên localhost
+NEXT_PUBLIC_API_URL=http://localhost:5000
+# Khi expose qua ngrok
+# NEXT_PUBLIC_API_URL=https://your-ngrok-url.ngrok-free.dev
+```
+
+**Giải thích biến môi trường:**
+- `PORT`: Cổng chạy Backend (mặc định 5000)
+- `OPENAI_API_KEY`: API key từ OpenAI để tích hợp AI chatbot
+- `NEXT_PUBLIC_FIREBASE_*`: Cấu hình Firebase (lấy từ Firebase Console)
+- `NEXT_PUBLIC_API_URL`: URL Backend API mà Frontend sẽ kết nối
 
 #### Bước 3: Chạy ứng dụng
 
